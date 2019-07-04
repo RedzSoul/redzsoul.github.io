@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/stile_index.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <!--Questo è il menu responsive-->
+    <a href="#home" class="active">Home</a>
+    <a href="cpp.html">C++</a>
+    <a href="java.html">Java</a>
+    <a href="files/">Files</a>
+    <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div style="padding-left:16px">
+    <!--Scritte sotto il menu qua nella pagina principale-->
+    <h2>Qualcosa</h2>
+  </div>
+
+  <!--Funzioni Javascript-->
+  <script>
+    function responsiveMenu() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
