@@ -1,0 +1,57 @@
+ricerca binaria
+
+Scrivere una funzione (prima su carta e poi al PC, vi viene più facile), che riceve in input un vettore di interi, la sua lunghezza e un numero intero da cercare. La funzione restituisce true se l'intero è presente, false altrimenti.
+
+ 
+
+L'elemento viene cercato nel vettore utilizzando l'algoritmo di ricerca binaria (cercate di scrivere la funzione da soli, se avete problemi fate riferimento al libro a pag. 204)
+
+ 
+
+Nel main  far caricare all'utente il vettore, chiamare una funzione che verifichi se il vettore è ordinato in modo crescente, decrescente oppure che non è ordinato. Se non è ordinato visualizzo  un msg di errore, altrimenti chiedere all'utente un numero intero da cercare nel vettore e chiamare la funzione ricerca_binaria_crescente se il vettore è ordinato in senso crescente, ricerca_binaria_decrescente se il vettore è ordinato in senso decrescente.
+
+--------------------------------------------------------------------------
+
+exchange sort su un vettore di strutture
+
+definire una struttura studente con campo nome e anno di nascita.
+
+Caricare il vettore con i dati.
+
+scrivere una funzione che ordina il vettore con exchange sort in funzione dell'anno scolastico e un'altra funzione exchange sort che ordina il vettore in funzione del nome.
+
+--------------------------------------------------------------------------
+
+Ricerca di un elemento in vettore
+
+Si scriva una funzione in C++, denominata cerca, che ricerchi la presenza di un elemento in
+un vettore di interi.
+La funzione riceve in ingresso tre parametri:
+1. un vettore di interi  nel quale ricercare il valore;
+2. un un valore intero N che indica quanti elementi contiene il vettore;
+3. il valore intero x che deve essere ricercato.
+La funzione deve restituire un valore intero, ed in particolare:
+ se il valore x è presente nel vettore, allora la funzione restituisce l’indice della posizione
+alla quale si trova tale valore;
+ se il valore x è presente più volte, si restituisca l’indice della prima occorrenza;
+ se il valore x non è presente nel vettore, si restituisca -1.
+
+Chiamare la funzione in un programma. I dati di input e di output devono essere richiestie visualizzati nel main
+
+--------------------------------------------------------------------------
+
+fusione tra due vettori
+
+Creare una funzione che riceve in ingresso due vettori ordinati, le rispettive dimensioni e restituisce un terzo vettore che contiene l'ordinamento dei due vettori precedenti
+
+--------------------------------------------------------------------------
+
+esercizio n. 1: Caricare un vettore di N elementi. Chiedere in ingresso un numero intero. applicare l'algoritmo di ricerca binaria per verificare se il numero intero è presente oppure no.
+
+---------------------------------------------------------------------------
+
+esercizio n. 2 Caricare un vettore di N elementi. Ordinarlo utilizzando il selection sort e il bubble sort (inserire i due algoritmi di ordinamento in due funzioni diverse)
+
+
+--------------------------------------------------------------------------
+

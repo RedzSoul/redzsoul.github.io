@@ -1,0 +1,217 @@
+--------------------------------------------------------------------------
+
+Scrivere un programma che legge da un file di testo e verifica se in ogni riga è presenta la parola bomba anche se sono inframmezzate da altre lettere. Una volta individuata la parola il programma restituisce a video la posizione di ogni singolo caratteri che la costituiscono.
+
+es. aehBstOMjjdjsjdBkkA  visualizza 47811721
+
+nella riga  aehBstMOjjdksjdABkkk  risposta 0
+
+--------------------------------------------------------------------------
+Scrivi un programma che legga due file che contengono ripettivamente i titoli di film e gli attori di ogni film.
+
+Per separare gli attori da un film all'altro si usa il carattere #
+
+es. il primo file contiene 
+
+titolo 1
+
+titolo 2 
+
+titolo 3
+
+il secondo file contiene 
+
+attore 1  film 1
+
+attore 2 film 1
+
+#
+
+attore 1 film 2
+
+attore 2 film 2
+
+attore 3 film 2
+
+#
+
+attore 1 film 3
+
+creare un file unico in cui sia presente per ogni titolo gli attori corrispondenti:
+
+titolo 1 attore 1  film 1 attore 2 film 1
+
+titolo 2 attore 1 film 2 attore 2 film 2 attore 3 film 2
+
+titolo 3 attore 1 film 3
+
+-------------------------------------------------------------------------
+
+Creare una funzione che riceve in ingresso un carattere, una chiave e restituisce una chiave cifrata secondo l'algoritmo di Cesare (lo avete fatto a sistemi altrimenti lo cercate su internet). es, se il carattere è 'c' e la chiave è 4, il carattere restituito è 'g'. Analogamente per una funzione di decifratura. es, se il carattere è 'c' e la chiave è 4, il carattere restituito è 'g'.
+
+Dichiarare una matrice di caratteri il cui contenuto viene letto da un file (il file contiene un carattere per riga)  con un messaggio e ad ogni elemento della matrice applicare la funzione cifratura e inserirlo in una matrice parallela.
+
+stampare la matrice parallela e salvarla in un altro file
+
+scrivere una funzione di decifratura che trasferisce tutti i caratteri della matrice cifrata in una terza matrice on cui ogni carattere ritorna originale. Verificare che la matrice di partenza sia uguale alla terza  matrice 
+
+ 
+
+NOTA IMPORTANTE: per leggere carattere per carattere da un file si usa get.
+
+es. se il file ha il riferimento  myFIle  dopo essere stato aperto, devo usare il metodo  myFile.get(c) dove è una variabile di tipo carattere
+
+-------------------------------------------------------------------------
+Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione) memoizzare i soli multipli di 5 nel file di testo multipli5.txt.
+
+Aggiungere all'esercizio anche la lettura del file
+
+-------------------------------------------------------------------------
+Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione), memorizzare i numeri positivi nel file positivi.txt e quelli negativi nel file negativi.txt
+
+Aggiungere la funzione per la lettura del file
+-------------------------------------------------------------------------
+File prenotazioni dei biglietti in un teatro
+
+Organizzare esercizio con un menu:
+
+    per visualizzare la situazione dei posti liberi/prenotati/riservati  nel teatro;
+    effettuare una prenotazione;
+    riservare un posto
+
+dovete usare una matrice perche i posti sono 10 file ciascuna di 20 posti disponibili.
+
+Il file iniziale sarà tutto formato da zeri e quando si prenota si mette a 1
+---------------------------------------------------------------------------
+
+La biblioteca
+
+Una biblioteca ha identificato tutti i libri della propria
+collezione mediante un codice numerico. Si
+deve realizzare un programma che consenta di
+effettuare le seguenti operazioni memorizzando
+le informazioni relative a un libro (codice, titolo,
+autore, anno di pubblicazione) in un vettore di strutture:
+• aggiunta di un nuovo libro alla collezione;
+• visualizzazione dell’elenco dei libri della collezione;
+• ricerca delle informazioni relative a un libro a partire dal codice;
+• ricerca delle informazioni relative a un libro a partire dal titolo;
+• salvataggio della collezione in un file di testo;
+• caricamento della collezione da un file di testo.
+
+Si ipotizzi che i data siano tutti in sequenza (uno per ogni riga) e che ogni stringa sia formata da una sola parola.
+
+es. nel file ci sono i dati di 3 libri diversi
+
+1
+
+Casa
+
+Mario
+
+2018
+
+2
+
+Fiori
+
+Luigi
+
+2015
+
+3
+
+Computer
+
+Maria
+
+2012
+
+ 
+
+Definire il progetto utilizzando anche il file dei prototipi e delle funzioni. 
+
+ 
+
+In allegato trovate un esempio di come si possono leggere da un file valori interi e stringhe.  /files/2960661/biblioteca.cpp questo è l'esempio del file di input: /files/2960661/in_biblioteca.txt      Il programmino stampa a video quello che legge dal file. Bisogna effettuare tutti i controlli in quanto non è detto che il file di input contenga tutte le informazioni corrette
+--------------------------------------------------------------------------
+
+rivisitazione dell'esercizio della biblioteca con la creazione del documento di specifiche
+
+
+Rivedere la consegna dell'esercizio della biblioteca definendo il documento di specifiche seguendo la bozza in allegato  /files/2960661/Specifiche_Biblioteca.docx
+
+ 
+
+Aggiungere la lettura di stringhe formate da più parole e il controllo che il codice del libro sia univoco
+
+ 
+
+AGGIUNGERE LA RIMOZIONE DI UN LIBRO DOPO AVER SPECIFICATO IL CODICE. Bisogna considerare anche il fatto che il codice non sia presente visualizzando un errore
+
+-------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+esercizio di ripasso
+
+Scrivere una funzione C++ che, a partire da due vettori numerici (il primo di lunghezza costante L1 e il secondo di lunghezza costante L2) ordinati forniti come argomenti, ne costruisca un terzo avente dimensione pari alla somma delle due dimensioni e contenente tutti gli elementi dei due vettori in una sequenza
+ordinata (per esempio, da {1, 2, 4} e {1, 3, 9} si deve ottenere {1, 1, 2, 3, 4, 9}).
+
+Scrivere una funzione analoga che legga il contenuto del vettore da un file (ogni vettore ha un suo file).
+
+In fase di caricamento bisogna verificare che il vettore sia crescente.
+
+Scrivere un programma C++ che permetta all'utente di scegliere il caricamento da console o da file. Successivamente utilizzando la funzione precedente crei il terzo vettore in modo ordinato e poi visualizzi il vettore risultato.
+
+riassumendo
+
+definire la funzione che carica un vettore in modo ordinato da console
+
+definire la funzione che carica un vettore in modo ordinato da file
+
+definire la funzione che ricopia i due vettori nel terzo in modo ordinato
+
+definire la funzione visualizza un vettore (il vettore finale)
+
+ 
+
+definire le interfacce di ogni funzione e commentarle dettagliatamente
+
+
+--------------------------------------------------------------------------
+Scelga la verifica semplificata chi deve recuperare e comunque non si sente sicuro (data la semplicità degli argomenti proposti il voto massimo è 8). Si tratta di due esercizi da svolgere separatamente. /files/2960661/Verifica_aprile_semplificata(2).pdf
+
+ 
+
+Chi si sente sicuro svolga la verifica non semplificata che è un solo esercizio che comprende diverse funzionalità. Il voto max in questo caso è 10.
+
+/files/2960661/Verifica_aprile.pdf
+
+
+-------------------------------------------------------------------------
+ripasso in preparazione verifica di lunedì
+
+Si scriva un programma di gestione dei quadri di vari artisti del 20 esimo secolo. Per ogni quadro bisogna gestire :
+
+     codice identificativo del quadro(string);
+     anno del quadro (un intero);
+     museo di esposizione (string)
+    stato di conservazione (1 in buone condizioni, 0 da restaurare)
+
+Esistono N * M quadri e sono presenti di M artisti.
+
+Nel main realizzare un ciclo in cui è possibile:
+
+    caricare i dati dei quadri prelevandoli da un file (inserirli in una matrice)
+    Caricare da video degli autori (inserendoli in un vettore)
+    Visualizzare a video i dati dei quadri per un particolare autore. Gestire il caso in cui l'autore non è presente.
+    Salvare in un file i dati dei quadri che devono essere restaurati.
+    Inserire in un vettore tutti i quadri di un museo ricevuto come parametro. Tali quadri devono essere ordinati per anno di creazione  e inseriti in un file.
+
+--------------------------------------------------------------------------
+
+esercizio 6: leggere da un file di input una sequenza di numeri interi e inserirli in un vettore di massimo 100 elementi. Ordinare il vettore con un algoritmo a scelta e ricopiare il vettore ordinato in un file di output
+

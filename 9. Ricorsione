@@ -1,0 +1,295 @@
+somma interi pari tra 2 e N
+
+Scrivere una funzione ricorsiva che calcoli e restituisca la somma degli interi pari tra 2 e N. (N in input alla funzione)
+-----------------------------------------------------------------------
+MCD con l'algoritmo di Euclide
+
+scrivere una funzione ricorsiva che implementi il seguente algoritmo che calcola il massimo comune divisore:
+
+Per trovare il MCD(m, n) si effettua la divisione tra m e n; sia r il resto della divisione: se r =0 allora n è il MCD, altrimenti il MCD(m, n) è uguale a MCD(n, r).
+--------------------------------------------------------------------------
+funzioni ricorsive preparazione del compito
+
+2) Scrivere una funzione ricorsiva TIME(n) per il calcolo dei numeri T(n) definiti dalle seguenti relazioni:
+
+T(0) = 0,
+
+T(1) = 1
+
+T(n) = 2T(n − 2) + 5 n ≥ 2
+
+ 
+
+Si scriva la funzione C++ che realizza tale specifica SOLUZIONE. Cosa calcola per N=5?
+
+Fare lo schema con gli RDA
+--------------------------------------------------------------------------
+inverti stringa con l'iterazione e con la ricorsione preparazione verifica
+
+Scrivere una funzione ricorsiva che riceve in ingresso una frase visualizzi a video la stringa invertita.
+
+Prototipo: string invertiStringa (string frase,int lung):
+
+Es: ciao mondo -> odnom oaic
+--------------------------------------------------------------------------
+matrice ricorsiva (per la verifica)
+
+una matrice NxN si dice unitaria se contiene solo cifre pari a 1 sulla diagonale, 0 altrimenti.
+
+Scrivere una funzione ricorsiva che restituisce true se è unitaria, false altrimenti
+
+Come si controlla ogni elemento della matrice?
+
+Partendo dalla riga 0 e colonna 0 possiamo procedere per linee orizzontali. Quando la colonna arriva al valore N (es. 3) la riga aumenta di 1 e la colonna ripassa a zero. In pratica se j==N allora i=i+1 e J=0;
+
+Casi base: se i>N siamo giunti alla fine della matrice senza incontrare errori quindi unitaria, 
+
+se non riusce a risolverlo guardare la soluzione in allegato  /files/2960661/soluzione_matrice_unitaria_con_ricorsione.pdf
+--------------------------------------------------------------------------
+ricerca binaria ricorsiva (preparazione alla verifica)
+
+Scrivere una funzione ricorsiva che verifichi se in un vettore (che si ipotizza ordinato) sia presente un numero utilizzando l'algoritmo di ricerca binaria.
+
+ 
+
+il prototipo della funzione è
+
+bool ricerca_binaria_ricorsiva(int v[], int numero_da_cercare, int limite_inferiore, int limite_superiore)
+
+La funzione restituisce false se non è stato trovato l'intero, false altrimenti. Ricordarsi che con la ricorsione bisogna richiamare la stessa funzione con il limite_superiore e inferiore in modo opportuno
+--------------------------------------------------------------------------
+
+successione di Fibonacci
+
+La successione di Fibonacci (detta anche successione aurea), indicata con F_{n} o con Fib(n), in  matematica indica una successione di interi positivi  in cui ciascun numero a cominciare dal terzo è la somma dei due precedenti, dove i primi due sono (per definizione) F_{1}=1 e F_{2}=1
+
+es. i numeri della successione sono: 1,1,2,3,5,8,13,21,34,55,89,144,...
+
+Dato un numero N (controllare che N sia >=3)  visualizzare i numeri della successione F(N). 
+---------------------------------------------------------------------------
+
+Dato un vettore di n interi, scrivere una funzione ricorsiva C++ che ne scambi gli elementi fino a metterli in ordine inverso rispetto alla posizione iniziale (senza dichiarare vettori aggiuntivi)
+
+-------------------------------------------------------------------------
+
+Iterazione e ricorsione
+
+Scrivere un programma che realizzi il fattoriale con una funzione in modo iterativo, il fattoriale con una funzione ricorsiva, la somma dei primi n numeri con una funzione in modo iterativo e con una funzione ricorsiva.
+
+Attivare ognuna delle funzioni da un main con un switch case
+
+-----------------------------------------------------------------------
+esercizio sull'iterazione e ricorsione
+
+Scrivere un programma in C++ da cui è possibile attivare le seguenti funzioni:
+
+    funzione che restituisce il fattoriale di un numero intero ricevuto in 		ingresso (versione iterativa)
+    funzione che restituisce il fattoriale di un numero intero ricevuto in 		ingresso (versione ricorsiva)
+    funzione che restituisce la somma dei primi N numeri (N ricevuto in 	ingresso). Versione iterativa
+    funzione che restituisce la somma dei primi N numeri (N ricevuto in 	ingresso). Versione ricorsiva
+
+------------------------------------------------------------------------
+prodotto tra due numeri (modalità ricorsiva)
+
+Ricordando che una prodotto tra due numeri (a e b) può essere realizzata come una somma:
+
+a*b =0; se b=0      
+
+a*b = a*(b-1)+a; se b>0
+
+Scrivere una funzione ricorsiva che calcola il prodotto tra due numeri interi. Prototipo: int prodotto(a, b).
+
+utilizzare il seguente schema per la ricorsione
+
+prodotto (a, b) = 0; se b=0                                   CONDIZIONE DI TERMINAZIONE
+
+ prodotto (a, b) =prodotto (a, b-1)+a;    se b>0      PASSO RICORSIVO
+-------------------------------------------------------------------------
+contacifre
+
+Scrivere una funzione ricorsiva che dato un numero decimale restituisca il numero di cifre che compongono il numero stesso (ricordarsi che 235 è composta da 3 cifre. Ogni volta che riesco a dividere per 10 ottengo una cifra. Quale è la condizione di terminazione?)
+
+ 
+Scrivere lo stack con RDA sul quaderno
+-------------------------------------------------------------------------
+numero binario (con la ricorsione)
+
+Scrivere una funzione ricorsiva che calcola il corrispondente in base 2 di un numero decimale inserito utilizzando la ricorsione. 
+
+Suggerimento: utilizzare gli operatori / e %
+
+Identificare la condizione di terminazione
+
+IMportante: la funzione deve essere void., quindi non usare il return all'interno.
+
+ 
+
+Estendere la funzione mettendo come parametro anche la base (in modo tale da fare le trasformazioni da decimale in tutte le basi)
+
+Scrivere sul quaderno lo Stack con gli RDA
+
+-------------------------------------------------------------------------
+
+visualizza e salva vettore in modalità ricorsiva
+
+QUESTA E' LA VERSIONE MODIFICATA DELL'ESERCIZIO DI IERI PER CASA (DESCRITTO IN BASSO): QUANDO SI SALVA IL VETTORE NEI FILE BISOGNA APRIRE IL FILE FUORI DALLA FUNZIONE RICORSIVA E CHIUDERLO ALL'USCITA DELLA FUNZIONE RICORSIVA. IL PROTOTIPO DELLA FUNZIONE SALVA VIENE COSI' MODIFICATO:
+
+SALVA(INT V[], INT L, OFSTREAM & F)
+
+CIOE' SI AGGIUNGE IL FILE APERTO PASsATO COME RIFERIMENTO
+
+ 
+
+Scrivere un programma in cui si chiama una funzione carica che preleva da un file gli elementi di un vettore (la funzione restisce -1 se non è possibile accedere al file, -2 se il numero di elementi presenti nel file è maggiore della dimensione del vettore, il numero di elementi caricati nel vettore altrimenti)
+
+Inserire un ciclo in cui tramite un switch si possono eseguire le operazioni seguenti:
+
+ 
+
+1) funzione ricorsiva che visualizza  a video gli N elementi dell’array dall'indice 0 all'indice N-1.
+
+2)funzione ricorsiva che visualizza a video gli N elementi dell’array dall'indice N-1 all'indice 0.
+
+3) funzione ricorsiva che scrive su file gli N elementi dell’array dall'indice 0 all'indice N-1.
+
+4) funzione ricorsiva che scrive su file gli N elementi dell’array dall'indice N-1 all'indice 0.
+
+5) funzione ricorsiva che restituisce la somma dei numeri presenti nel vettore
+
+ 
+
+I file devono essere inseriti in una cartella e devono essere passati come parametri alle rispettive funzioni che li utilizzano
+
+--------------------------------------------------------------------------
+
+realizza la funzione ricorsiva
+
+
+1) Scrivere una funzione ricorsiva POT(n) per il calcolo dei numeri F(n) definiti dalle seguenti relazioni:
+
+F(n) = 2                 se n=1
+
+F(n) = 2F(n − 1)     se n ≥ 2
+
+Si scriva la funzione C++ che realizza tale specifica SOLUZIONE. Cosa calcola per N=5?
+
+Fare lo schema visto in classe.
+--------------------------------------------------------------------------
+stringa palindroma
+
+scrivere la versione iterativa e quella ricorsiva di una funzione che calcola se una stringa è palindroma
+
+ 
+
+la versione ricorsiva  determina se una stringa è palindroma confrontando ad ogni invocazione i due caratteri estremi della stringa individuati dagli indici forniti come argomento
+
+Prototipo:
+
+bool palindroma(string s, int inizio, int fine);
+
+Nell’invocazione iniziale gli indici forniti come argomento dovranno speciﬁcare l’intera stringa: palindroma("ciao", 0, 3)
+
+--------------------------------------------------------------------------
+
+Scrivi una funzione ricorsiva che ricevuto in ingresso un vettore che è stato caricato con dei numeri presenti in un file, visualizzi gli elementi del vettore in ordine inverso.
+
+--------------------------------------------------------------------------
+
+
+Scrivere una funzione ricorsiva che ricevuto in ingresso un vettori di interi visualizzi l'elemento minimo,
+
+
+Soluzione nel caso di difficoltà: (n = ultima posizione del vettore). Cercate di capirla, potrebbe esservi molto utile nella varifica
+
+int minimo(int A[], int n)
+
+    if (n > 0)
+
+       if (a[n] < minimo(a, n-1))
+
+          return A[n]
+
+       else return minimo(a, n-1)
+
+--------------------------------------------------------------------------
+
+Gli esercizi successivi devono essere svolti su un foglio di protocollo. Per ogni esercizio identificare la condizione di terminazione e la condizione di iterazione.
+Aggiungere tutti i commenti ritenuti necessari per spiegare lo svolgimento
+
+    1. Scrivere una funzione ricorsiva che dato un numero intero visualizzi il numero in ordine inverso. Esempio se il numero in input è 245, deve essere visualizzato 542.
+
+Deve essere anche disegnata in modo chiaro la sequenza di attivazione di RDA supponendo che il numero in input sia proprio 245
+
+
+
+    2. Scrivere una funzione ricorsiva che ricevuta in input una stringa e un carattere e restituisca il numero di occorrenze del carattere nella stringa. Ad esempio se la stinga sia “mamma mia” e il carattere è m, la funzione deve restituire 4
+
+Deve essere anche disegnata in modo chiaro la sequenza di attivazione di RDA supponendo che i dati in input siano “mamma mia” e ‘m’
+
+
+    3. Scrivere una funzione ricorsiva Fibonacci(n) per il calcolo dei numeri della successione di Fibonacci definiti dalle seguenti relazioni: 
+F 0 = 0 , {\displaystyle F_{		
+F(0) = 0 , 
+F(1) = 1;
+F(N)= F(N-1)+ F(N-2);   per ogni N>1
+
+Quali sono gli elementi della sequenza di Fibonacci per N= 12?
+
+    4. Scrivere una funzione iterativa che riceva in input vettore di stringhe, la lunghezza del vettore, e una stringa da cercare e scriva l’algoritmo di ricerca binaria restituendo true nel caso in cui la stringa sia stata trovata, false altrimenti
+
+
+
+
+OPZIONALE  (da fare solo se sono stati terminati i precedenti)
+
+Data una matrice quadrata NxN scrivere una funzione ricorsiva che restituisce true se la matrice ricevuta in ingresso è simmetrica rispetto alla diagonale principale, false altrimenti
+
+Il prototipo della funzione è:
+
+const int N=4; 
+
+bool simmetrica(int matr[][N], int i, int j){
+
+-------------------------------------------------------------------------
+
+
+    3. Scrivere una funzione ricorsiva RIC(n) per il calcolo dei numeri F(n) definiti dalle seguenti relazioni: 
+
+F(0) = 10 
+F(1) = 20 
+F(n) = 3F(n − 1) + 4  se n ≥ 2          (punti 2,0)
+     
+	Quanto vale la funzione per F(10)?
+
+-------------------------------------------------------------------------
+
+
+    2. Scrivere una funzione ricorsiva che ricevuta in input una stringa e un carattere e restituisca il numero di occorrenze del carattere nella stringa. Ad esempio se la stringa sia “nonno giovanni ” e il carattere è n, la funzione deve restituire 45
+Deve essere anche disegnata in modo chiaro la sequenza di attivazione di RDA supponendo che i dati in input siano “nonno giovanni” e ‘n’    (punti 2,5)
+
+--------------------------------------------------------------------------
+
+semplice esercizio sulla ricorsione
+
+Scrivere una funzione ricorsiva  che, avendo in input un
+
+array di n interi non negativi, l'indice iniziale del vettore e l'indice finale del vettore, dia in output il numero degli
+
+elementi positivi presenti nel vettore.
+--------------------------------------------------------------------------
+esercizio sulla ricorsione utilizzando il concetto di funzione
+
+Scrivere una funzione ricorsiva
+
+T(0) = 0; T(1) = 1
+
+T(n) = 2T(n-2)+5  n>=2
+--------------------------------------------------------------------------
+­
+    1. Scrivere in C++ la procedura ricorsiva che effettua la potenza tra due numeri
+-------------------------------------------------------------------------
+
+    2. Scrivere in C++ una procedura ricorsiva che calcoli l'elemento minimo di un vettore di interi. Il prototipo della procedura è il seguente:
+      int minRic(int a [ ], int from, int to)
+
+--------------------------------------------------------------------------

@@ -329,6 +329,21 @@ return 0;
 
 }
 
+-----------------------------------------------------------------------------
+esercizio sui numeri binari
 
+Si ricevono come dati in ingresso due vaori interi positivi minori di 32. Memorizza in due array le rappresentazioni dei numeri in base 2. Effettua poi la somma dei due numeri binari e inserisci il risultato sempre in binario in un terzo array. Visualizza il risultato.
+
+Utilizza le funzioni opportune e commenta il codice
+---------------------------------------------------------------------------
+
+Generare casualmente 10 numeri (compresi tra 1 e 1000) memorizzali in un array, chiedere un valore di
+input (X) all’utente che deve essere compreso tra 1 e 1000 (cicla finchè il valore di input non soddisfi la
+condizione). Scorrere gli elementi del vettore trasformandoli in 0 se è minore o uguale a X, in 1001 se è
+maggiore a X. Successivamente visualizzare il vettore.
+Esempio: se il vettore dopo la generazione dei numeri casuali è [200, 4,25, 400, 45,49] e il numero X = 100,
+il vettore deve trasformarsi in : [1001, 0, 0, 1001, 0, 0]
+
+-------------------------------------------------------------------------
 
 

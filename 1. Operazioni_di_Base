@@ -15,7 +15,13 @@ visualizzarlo
 
 utilizzare il for. Dati di input base ed esponente
 --------------------------------------------------------------------------
-calcolare il fattoriale di n numeri
+calcolo del fattoriale
+
+Si scriva una funzione in C++, denominata fatt, che calcoli il fattoriale di un numero intero
+dato. Per via della velocità di crescita della funzione, il valore restituito deve essere
+codificato in un double, nonostante sia in effetti un valore intero.
+
+Tale funzione deve essere chiamata in un programma che ha richiesto in ingresso un numero intero e che visualizzi il valore del fattoriale calcolato dalla funzione fatt
 -------------------------------------------------------------------------
 calcolare il minimo della sequenza di n numeri e calcolare il massimo della sequenza di n numeri
 -------------------------------------------------------------------------

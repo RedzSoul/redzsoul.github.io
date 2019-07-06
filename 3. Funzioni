@@ -385,5 +385,10 @@ Partendo dal giocatore 1, il programma chiede poi a turno ai giocatori il numero
 
 Il programma termina quando uno dei due giocatori arriva alla casella 100, stampando il vincitore (giocatore 1 o giocatore 2).
 -----------------------------------------------------------------------
+esercizio per cifrare e decifrare un testo con l'algoritmo di Cesare
 
+Scrivere due funzioni: una che cifra e un'altra che decifra il testo. Le funzioni hanno come parametri di ingresso la chiave, il testo da cifrare (o decifrare) e restituiscono il testo cifrato o decifrato.
+
+Nel main chiedere all'utente il testo e la chiave e stampare il risultato corrispondente
+------------------------------------------------------------------------
 

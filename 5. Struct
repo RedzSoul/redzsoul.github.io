@@ -1,0 +1,345 @@
+Realizza un programma che , partendo da un array che contiene i dati personali dei giocatori di una squadra di calcio, permetta di calcolare:
+
+il totale dei goal segnati specificando:
+
+  --- i goal segnati dagli attaccanti (numero di maglia da 7 a 11)
+
+  --- i goal segnati dai centrocampisti(numero di maglia da 4 a 6)
+
+  --- i goal segnati dai difensori (numero di maglia da 2 a 3) (subiti nel caso del portiere con numero 1)
+-------------------------------------------------------------------------
+esercizio con le piante per lunedì 10 dicembre
+
+Caricare in ingresso N piante aromatiche di cui bisogna memorizzare la specie, la città in cui è stato trovata per la prima volta e la sua dimensione media (float).
+
+Richiedere in ingresso la specie di una pianta, visualizzare la sua dimensione media e la città in cui è stato trovata. (Visualizzare un msg di errore nel caso in cui la pianta non esista, se la pianta esiste fermare il ciclo non appena viene trovata)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+variante dell'esercizio sulle piante
+
+Facendo riferimento alla struct dell'esercizio sulle piante e avendo dichiarato un vettore di tipo piante di lunghezza costante, realizzare un ciclo con un menu, in cui l'utente può selezionare le seguenti operazioni:
+
+0)esci dal ciclo
+
+1) aggiungi pianta,
+
+2) ricerca la pianta specificata dall'utente (la ricerca si ferma se si trova la pianta)
+
+3) visualizza le piante presenti
+--------------------------------------------------------------------------
+vettore di studenti (vacanze di Natale 2)
+
+Scrivere un programma C++ che, a partire da un vettore di strutture di studenti di dimensione N (definito dall'utente), (struttura di tipo studente che contiene nome ed età) e caricato dall'utente, copi in un secondo vettore  i soli elementi del primo vettore compresi tra l'età minima e l'età massima; Visualizzare gli elementi del secondo vettore.
+-------------------------------------------------------------------------
+autosalone
+
+Definire la struttura dati Automobile che descrive un’automobile in base a marca, cilindrata, anno di immatricolazione e acquirente (l’acquirente è caratterizzato dai soli nome e cognome). Acquirente è un'altra struttura. Bisogna quindi dichiarare una struttura annidata.
+
+Scrivere una funzione C++ Carica che ricevuto in ingresso un vettore di automobili, la sua lunghezza, permette il caricamento da tastiera.
+
+Scrivere una funzione (crea_vett_acquirenti) che ricevuto in ingresso un vettore di automobili, la sua lunghezza e una cilindrata, restituisca in un vettore di acquirenti il nome e il cognome degli acquirenti che hanno auto con quella cilindrata
+
+Nel main dopo aver dichiarato il vettore di automobili, caricarlo con l'opportuna funzione
+
+Chiedere all'utente una cilindrata, chiamare la funzione crea_vet_acquirenti e visualizzare nel main il nome e il cognome degli acquirenti che hanno tale cilindrata.
+
+ 
+
+esempio di definizione delle strutture
+
+struct Acquirente {
+
+   string nome;
+
+   string cognome;
+
+};
+
+struct Automobile {
+
+      string marca;
+
+      int cilindrata;
+
+     int anno;
+
+     Acquirente x;
+
+};
+
+esempio di dichiarazione di un vettore di Automobili
+
+Automobile V[10];
+
+stampa dell'acquirente della seconda automobile presente nel vettore
+
+(V[1].x).nome
+
+-------------------------------------------------------------------------
+
+Fantacalcio (uso annidato di struct)
+
+Definire la struttura dati Squadra che descrive una squadra di calcio ideale con il relativo allenatore.
+Una squadra è identificata da nome, colore della maglia, punteggio corrente e allenatore. L’allenatore
+è una persona caratterizzata da nome e cognome più il numero dei titoli vinti (un numero intero). Scrivere un programma C++ che, dichiarata una array Fantacalcio di tipo Squadra (per comodità se ne fissi la dimensione a 10 elementi), consenta di inserire da tastiera i dati delle squadre e dei relativi allenatori e di visualizzare il solo
+cognome degli allenatori di squadre che hanno più di 30 punti in classifica, oltre al numero totale di allenatori che hanno vinto almeno un titolo.
+
+Suddividere il programma in più file.
+
+Utilizzare una  funzione che carica il vettore, un'altra funzione che visualizza il cognome degli allenatori che hanno più di 30 punti in classifica, e un'altra funzione che restituisce il numero totale degli allenatori che hanno vinto almeno un titolo.
+
+ 
+
+Nel main chiamare la funzione che carica il vettore, quella che visualizza gli allenatori e visualizzare in numero degli allenatori restituito dalla terza funzione.
+------------------------------------------------------------------------
+
+gestione Stack
+
+Creare un programma che gestisce una struttura dati Pila utilizzando un vettore. La Pila ha una dimensione massima prefissata (si supponga N). Le operazioni che si possono effettuare sulla pila sono inserite in un menu (possono essere eseguite più volte) e sono le seguenti:
+
+SvuotaPila rimuove tutti gli elementi presenti nella pila
+
+Push: inserisce l'elemento ricevuto come parametro in testa alla pila (se non ho superato le dimensioni massime, altrimenti restituisce un errore)
+
+Pop: rimuove il primo elemento in testa alla pila (se esiste, altrimenti restituisce un errore)
+
+Stampa Pila : visualizza tutti gli elementi presenti nella pila
+
+ 
+
+Dividere il progetto in file. 
+
+---------------------------------------------------------------------
+
+Il seguente programma utilizza il vettore per realizzare una struttura dati Pila e Coda
+
+                                                                             parte n. 1  Pila
+
+Creare un programma che gestisce una struttura dati Pila. La Pila ha una dimensione massima prefissata (si supponga N). Le operazioni che si possono effettuare sulla pila sono inserite in un menu (possono essere eseguite più volte) e sono le seguenti:
+
+Svuota_Pila rimuove tutti gli elementi presenti nella pila
+
+Push: inserisce l'elemento ricevuto come parametro in testa alla pila (se non ho superato le dimensioni massime, altrimenti restituisce un errore)
+
+Pop: rimuove il primo elemento in testa alla lista (se esiste, altrimenti restituisce un errore)
+
+Stampa Pila : visualizza tutti gli elementi presenti nella pila
+
+parte n. 2  Coda
+
+Estendere  il programma precedente inserendo la gestione della struttura dati Coda. La Coda ha una dimensione massima prefissata (si supponga M). Le operazioni che si possono effettuare sulla coda sono inserite nel menu (possono essere eseguite più volte) e sono le seguenti:
+
+Svuota_Coda rimuove tutti gli elementi presenti nella Coda
+
+Push: inserisce l'elemento ricevuto come parametro in fondo alla coda (se non ho superato le dimensioni massime, altrimenti restituisce un errore)
+
+Pop: rimuove il primo elemento in testa alla coda (se esiste, altrimenti restituisce un errore) e scorre tutti gli elementi successivi in modo da non lasciare posizioni vuote
+
+Stampa Coda : visualizza tutti gli elementi presenti nella Coda
+
+ 
+
+Le due strutture dati devono essere inserite all'interno di un unico progetto e i file e le funzioni  devono essere organizzati in modo opportuno. Tutto deve essere debitamente commentato
+
+------------------------------------------------------------------------
+
+Si vuole gestire una collezione di Film, per ognuno dei quali si vuole memorizzare: il titolo (string), la durata (int) e il prezzo (float). Questi dati sono memorizzati in 3 vettori. Chiedere all'utente il numero dei film che vuole inserire.
+
+Il programma preveda il seguente menù (l'utente può rieseguire più volte se stesse funzioni):
+    1) Caricamento 
+    2) Visualizzazione 
+    3) Ricerca 
+    4) Costo max e min
+    5) Copia film che superano un certo prezzo
+    6) (opzionale) Nuovo_inserimento 
+    7) Fine programma
+
+Per ogni voce di menù (eccetto l’ultima) prevedere una chiamata ad una funzione. Si ricordi che tutte le funzioni non richiedono in input dati all'utente. Tutto ciò che serve viene richiesto nel main e viene passato in input alle funzioni (tranne che per la funzione carica). Le funzioni non stampano nulla al proprio interno tranne che per la funzione stampa o ove esplicitamente indicato.
+
+Spiegazione delle voci di menù:
+    1) [funzione: carica] Caricamento manuale dei film da tastiera (titolo, durata e prezzo) (opzionale controllare che il titolo non esista già, in tal caso non inserirlo)
+    2) [funzione: stampa] Visualizzazione stile elenco di tutti i film (titolo, durata e prezzo) 
+    3) [funzione: cerca] Riceve in ingresso il titolo del film da cercare. Tale titolo viene richiesto all'utente nel main e : 
+        ◦ se non esiste scrivere (nel main)  un messaggio …
+        ◦ se esiste scrivere (nel main)  il relativo prezzo
+    4) [funzione: minmax] Visualizzazione nel main dei dati del film (titolo, durata, prezzo) che costa di più e quello che costa di meno (si suppone che tutti i film abbiano costi diversi)
+    5)  [funzione: copia_film] La funzione copia in altri tre vettori i dati dei film che superano il prezzo ricevuto in ingresso come parametro. Se nessun film supera il prezzo specificato la funzione visualizza un messaggio di errore, altrimenti dove avere effettuato la copia chiama al suo interno la funzione stampa già definita in precedenza. 
+    6) [funzione opzionale Nuovo_inserimento] Inserimento di un nuovo film(con tutti i suoi dati) in una posizione x e spostamento degli altri nelle posizioni successive. Si ipotizzi che il numero di elementi del vettore utilizzati dall'utente sia sufficiente per effettuare questa operazione.
+-----------------------------------------------------------------------
+caricare una matrice di studenti (struttura con nome e età) di dimensione righe per colonne.
+
+Ogni riga contiene gli studenti di una classe.
+
+scrivere una funzione che inserisce in un vettore l'età media della classe e le visualizzi (utilizzando la funzione stampa vettore)
+
+scrivere una funzione che inserisce in un altro vettore l'età massima degli studenti tra gli studenti di una classe. e le visualizzi (utilizzando la funzione stampa vettore)
+--------------------------------------------------------------------------
+I dati degli N soci di un club filatelico sono memorizzati in un vettore di dimensione N (costante). Per ogni socio i dati sono:
+
+Nome,
+
+Cognome,
+
+Anno di edizione
+
+numero francobolli
+
+Scrivere un programma che, dopo aver caricato i dati dei soci (funzione carica), permette di:
+
+    calcolare (funzione calcola) e stampare la quantità media di francobolli di un anno di edizione fornito in input
+    stampare l'anno di edizione e il numero di francobolli (funzione cerca_anno_e_numero) posseduti da un socio di cui è fornito in 		input 		il nome e il cognome (segnalare se non esiste)
+    Ricopiare (funzione copia_collezionisti) in un vettore (e poi visualizzarli con una funzione stampa) solo i nomi 
+	dei collezionisti che hanno un numero di francobolli maggiori di 1000
+
+definire un menu e richiedere in input i dati necessari nel main e visualizzare gli output sempre nel main(nelle funzioni non richiedere in input dati e non stamparli se non strettamente necessari)
+
+Il progetto deve essere formato da 3 file (main, le funzioni e i prototipi). Al termine dello svolgimento delle esercizio effettuare lo zip dell'intera cartella che deve avere il Cognome dello studente.
+------------------------------------------------------------------------
+esercizio sui menu e con le strutture
+
+Rubrica telefonica
+Si realizzi un programma in linguaggio C++ in grado di gestire una rubrica di nomi e numeri
+telefonici. La rubrica deve contenere fino a 100 voci diverse. Ciascuna voce è composta da
+un nome (max 40 caratteri) e da un numero di telefono (max 20 caratteri).
+Il programma deve fornire all’utente un menù di scelta, con le seguenti voci:
+1) Aggiungi nuova voce in rubrica (controllare che il numero telefonico non esista già, in tal caso non è possibile inserire l'elemento)
+2) Ricerca esatta per nome
+4) Stampa completa rubrica
+0) Esci dal programma
+Una volta che l’utente ha scelto l’operazione desiderata (1-3), il programma acquisirà i
+dati necessari dall’utente ed eseguirà il comando. Nota: nella rubrica non possono esistere
+due voci con lo stesso numero.
+-------------------------------------------------------------------------
+Si realizzi un programma in C++ in grado di gestire le squadre di calcio del campionato 2015/2016.
+
+Ogni squadra contiene le seguenti informazioni:
+
+    nome
+    colore maglia
+    punteggio in classifica
+    nome allenatore.
+
+Il numero delle squadre del campionato non è stabilito a priori, ma viene fissato dall'utente in fase di esecuzione.
+
+Organizzare il programma utilizzando le funzioni e definire i parametri secondo quanto richiesto dalle funzionalità successive.
+
+Il programma deve fornire all’utente un menù di scelta (che può essere richiamato più volte), con le seguenti voci:
+
+1) Caricare le squadre con le relative informazioni (utilizzare una funzione)
+
+2) Visualizzare il nome della squadra che è in rispettivamente in testa e in coda alla classifica (la ricerca dei nomi delle squadre deve essere effettuata in una funzione e le visualizzazioni all'interno del main)
+
+3) Visualizzare il nome dell'allenatore della squadra che ha un punteggio di esattamente 30 punti. (Scrivere una funzione che effettui la ricerca e che restituisca il nome dell'allenatore. Nel caso in cui non esiste nessuna squadra con quel punteggio, nel main bisogna visualizzare un messaggio che indica che non è stato trovato alcuna squadra)
+
+4) esci
+
+Una volta che l’utente ha scelto l’operazione desiderata (1-4), il programma acquisirà i
+dati necessari dall’utente ed eseguirà il comando.
+
+E' richiesto che il progetto venga strutturato in più file.
+--------------------------------------------------------------------------
+autosalone
+
+Si realizzi un programma in C++ in grado di gestire le automobili presenti in un autosalone.
+
+Ogni automobile contiene le seguenti informazioni:
+
+Marca, cilindrata, anno di immatricolazione, nome acquirente
+
+Il numero delle automobili non è stabilito a priori, ma viene fissato dall'utente in fase di esecuzione.
+
+Organizzare il programma utilizzando le funzioni e definire i parametri secondo quanto richiesto dalle funzionalità successive.
+
+Il programma deve fornire all’utente un menù di scelta (che può essere richiamato più volte), con le seguenti voci:
+
+1) caricare i dati di tutte le auto presenti nell'autosalone
+
+2) visualizzare la marca dell'auto con cilindrata minima (usare le funzioni ma le visualizzazioni devono essere fatte nel main)
+
+3) visualizzare il numero totale di auto che sono state immatricolate nell'anno specificato dall'utente (se l'anno non esiste visualizzare un errore nel main)
+
+4) ricopiare in un altro vettore solo le automobili che abbiano una cilindrata maggiore di 2000 e visualizzare i dati presenti nel nuovo vettore
+
+5) esci
+
+Una volta che l’utente ha scelto l’operazione desiderata (1-5), il programma acquisirà i
+dati necessari dall’utente ed eseguirà il comando.
+
+E' richiesto che il progetto venga strutturato in più file.
+---------------------------------------------------------------------------
+Cartoline
+
+Realizzare un programma in linguaggio C+ per registrare le cartoline scambiate tra un
+gruppo di amici (massimo 20 amici).
+L’elenco delle cartoline è memorizzato in un file di testo, (il numero di linee del file è la prima informazione presente nel file stesso). Le righe successive contengono ciascuna tre elementi: il nome del mittente, il nome del
+destinatario ed il nome della località da cui la cartolina è stata inviata. I nomi degli amici
+e delle località devono essere privi di spazi.
+
+Il programma carica i dati del file in una struttura dati in memoria centrale a scelta del programmatore.
+
+Viene richiesto in input all'utente il nome di un amico e il programma deve visualizzare il numero di cartoline che questa persona ha inviato oppure ha ricevuto (gestire anche il caso in cui l'amico non sia presente).
+
+Visualizzare la località più presente e quella meno presente nelle cartoline
+-------------------------------------------------------------------------
+
+
+Il problema esposto deve essere realizzato in linguaggio C++. Ogni problema deve essere corredato di commenti e lo zip deve contenere l'intera cartella
+Le funzioni devono essere inserite in un file opportuno, così come i prototipi delle funzioni.
+Le funzioni già fatte e le strutture già utilizzate nel main possono essere ricopiate da esempi precedenti. Inserire il controllo che i numeri della matrice debbono essere interi.
+
+Si ricordi che tutte le funzioni non richiedono in input dati all'utente. 
+Tutto ciò che serve viene richiesto nel main .
+Scrivere il documento di test prima di scrivere il codice.
+
+Si vuole gestire le ore di lavoro svolte, in una settimana, da alcune persone.
+Prevedere una matrice e 2 vettori, come nell’esempio mostrato in figura:
+
+
+		//FIGURA DA INSERIRE!
+
+
+Realizzare un programma in C++ che preveda il seguente menù:
+    1) Caricamento 
+    2) Media
+    3) Assenze
+    4) Buchi
+    5) Persone che lavorano di più e di meno
+    6) Ore di una persona in un giorno
+    7) Scambio 
+    8) Ordina
+    9) Fine programma
+
+Spiegazione delle voci di menù:
+    1) [funzione: Caricamento] Caricamento manuale (da tastiera) dei 2 vettori (Giorni e Persone) e della matrice (Ore)
+    2)  [funzione: Media] Richiamare una funzione che stampa il nome di ogni persona con la media giornaliera delle ore lavorate (da tale persona). 
+    3) [funzione: Assenze] Richiamare una funzione che stampi il nome delle persone che non hanno lavorato (zero ore) per almeno 3 giorni
+    4) [funzione: Buchi] Richiamare una funzione che stampi il nome delle persone che hanno sempre lavorato tutti i giorni (per ogni giorno le ore sono maggiori di zero)
+
+Notare: Il punto 4 e 5 al loro interno possono chiamare una stessa funzione (definire quale)
+    5) [funzione: Piuemeno] Richiamare una funzione che restituisca la posizione (indice) della persona che in totale ha fatto più ore e la posizione di quello che ne ha fatte di meno (si suppone che ce sia una sola, per ciascun caso. Nel main stampare i nomi di tali persone
+    6) [funzione: OreXY] Stampa delle ore fatte da una certa persona in un certo giorno.
+Nel main chiedere il nome di una persona e il nome di un giorno. 
+Richiamare la funzione.  Nel main stampare il risultato
+    7) [funzione: Scambio] Nel main chiedere i nomi di 2 giorni. 
+Richiamare la funzione per scambiare le ore di tali giorni (per tutte le persone).
+    8) [funzione: Ordina] Richiamare una funzione che stampi il nome delle persone in ordine crescente in base al numero di ore svolte durante la settimana
+
+Dove ritenuto necessario utilizzare funzioni anche se non è espressamente indicato
+
+------------------------------------------------------------------------
+
+Dobbiamo gestire i prodotti di un supermercato e i loro prezzi. Definire una struttura con il campo nome e
+prezzo. Creare un array di nome ARTICOLI di lunghezza costante(N). Caricare l’array con N elementi. Creare
+un menu in cui è possibile eseguire le seguenti operazioni ( il menu deve essere eseguito più volte fino a
+quando l’utente non decide di uscire):
+
+[1]chiedere in ingresso una percentuale all'utente e incrementare tutti i prezzi della
+percentuale specificata
+[2]chiedere in ingresso un prodotto e visualizzare il suo prezzo (se il prodotto viene trovato
+il ciclo deve essere interrotto)
+[3]visualizzare il prezzo medio calcolato tra quelli che costano più di 10 euro
+[4]visualizzare i dati di tutti gli articoli presenti nel vettore
+[5]Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i
+prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.
+
+

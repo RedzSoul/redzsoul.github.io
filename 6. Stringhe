@@ -1,0 +1,223 @@
+trasformazione di un array di caratteri da maiuscolo a minuscolo e viceversa
+
+Chiedere all'utente un insieme di caratteri alfabetici da memorizzare in un vettore precedentemente dichiarato con una lunghezza costante. La sequenza di caratteri termina quanto l'utente inserisce il carattere !
+
+Il caricamento dei caratteri nel vettore si interrompe in 3 casi:
+
+    l'utente ha specificato il carattere ! quindi indica che la sequenza 		di caratteri è terminata. Il programma inizia la sua elaborazione 		utilizzando i caratteri presenti nel vettore che precedono il !
+    la lunghezza della sequenza di caratteri supera la dimensione del 		vettore, in questo il programma termina segnalando un errore
+    l'utente inserisce un carattere non alfabetico cioè diverso da 		a,b.....z e diverso da A,B,....Z  Anche in questo caso il 		programma termina con una segnalazione di errore
+
+Nel caso prosecuzione corretta del programma le operazioni da svolgere sono le seguenti:
+
+    Modificare ogni carattere del vettore sostituendo il carattere 		minuscolo con il corrispondente maiuscolo e viceversa (utilizzare 		la codifica ASCII)
+    Visualizzare i caratteri del vettore dopo la modifica
+
+--------------------------------------------------------------------------
+
+Prima di iniziare l'esercizio ricordare che 
+
+Per misurare la lunghezza di una stringa si utilizza la funzione int length():
+
+esempio 
+
+int i;
+string saluto=”ciao”;
+i = saluto.length(); //produce ... i = 4
+
+Scrivere un programma che riceva in input una stringa ed permette di eseguire le seguenti operazioni tramite un menu (ricordare che la stringa può contenere anche il carattere "spazio" che deve essere ignorato. La stringa viene richiesta in input prima di iniziare il menu):
+
+1)richiedere in input un carattere e restituire quante volte il carattere è presente nella stringa (utilizzare la codifica ASCII). Esempio se la stringa in input è "Buon Natale a tutti" e il carattere specificato dall'utente è 'a' bisogna restituire "il carattere a è presente 3 volte"
+
+2) restituisce TRUE se tutti i caratteri della stringa sono maiuscoli, false altrimenti
+
+3) sostituisce tutti i caratteri maiuscoli con minuscole e viceversa. es. la stringa "Buon Natale a tutti" diventa bUON nATALE A TUTTI"
+
+4)esci
+
+-------------------------------------------------------------------------
+
+ripasso uso delle stringhe
+
+Scrivere una funzione che richiede in in input una stringa e che restitutisce true o false in base al fatto che la funzione è palindroma. Una funzione è palindroma se la leggi da destra e sinistra e ottieni la stessa frase.
+
+Es. anna
+
+i topi non avevano nipoti
+
+Eran i mesi di seminare
+
+O mordo tua nuora, o aro un autodromo
+
+ 
+
+suggerimento di Leandro per gestire gli spazi senza utilizzare while interni:
+while(i < k && palin){
+        if(nm[i] == ' ' && nm[k] == ' '){
+            i++; k--;
+        }else if(nm[i] == ' '){
+            i++;
+        }else if(nm[k] == ' '){
+            k--;
+        }else if(nm[i] != nm[k]){
+            palin = false;
+        }else{
+            i++; k--;
+        }
+    }
+
+Il main chiede ciclicamente una frase all'utente chiama la funzione palindroma e invia un msg se è palindroma o no.
+
+Il ciclo termina quando l'utente indica che vuole terminare (specifica un carattere particolare)
+
+-------------------------------------------------------------------------
+
+conta parole (ripasso per il compito)
+
+Scrivere una funzione C/C++ che determini il numero di parole presenti in una stringa tenendo conto dei vari caratteri di separazione (spazi, punteggiatura, ecc..).Scrivere il corrispondente main che attiva la funzione. All'interno del main visualizzare il numero di parole. Non utilizzare funzioni predefinite.
+
+Il conteggio delle parole deve essere realizzato mediante un algoritmo manuale
+
+-------------------------------------------------------------------------
+
+De Bello Gallico
+
+Nel De bello gallico Giulio Cesare racconta di
+avere utilizzato un codice segreto per comunicare
+in forma scritta con i propri generali: ogni
+singola lettera del messaggio veniva sostituita
+con la lettera che la seguiva nell’ordinamento alfabetico
+(A→ B, B→C, …, Z→A), i simboli delle
+cifre numeriche e i segni di punteggiatura erano
+lasciati invariati. Scrivere due programmi C++: il
+primo deve codificare secondo la regola di Cesare
+una stringa di testo inserita dall’utente e visualizzare
+il risultato, il secondo deve accettare
+una stringa segreta e decodificarla visualizzando
+il testo originale.
+
+--------------------------------------------------------------------
+
+Data una stringa in ingresso, verificare se la stringa è palindroma.
+
+Prima senza utilizzare le funzioni e poi spostando il controllo sulla stringa all'interno di una funzione.
+
+Commentare bene il programma.
+
+Descriver il programma anche in flow chart
+
+-----------------------------------------------------------------------
+
+Scrivere una funzione ContaCaratteri  che riceve in ingresso due stringhe e restituisce come valore di ritorno quanti caratteri della prima stringa sono presenti nella seconda (per esempio, il risultato restituito se i due valori in ingresso sono "PIPPO" e PIPPICALZELUNGHE" è 4)
+
+scrivere una funzione Substr che riceve in ingresso due stringhe s1 e s2 e restituisce 0 se  s1 e sottostringa di s2, -1 altrimenti.  Una stringa è sottostringa di un'altra se è contenuta nell'altra. Ad esempio "cane" è sottostringa di "canestro", fila e sottostringa di "infilare",
+
+scrivere un programma in cui inserire un menu da cui è possibile chiamare la funzione Contacaratteri o Substr dopo aver chiesto in input i valori necessari all'utente
+
+------------------------------------------------------------------------
+
+esercizio 1:
+
+Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. La frase è terminata dall’introduzione del carattere di invio. La frase contiene sia caratteri maiuscoli che caratteri minuscoli, e complessivamente al più 100 caratteri. Il programma deve svolgere le seguenti operazioni:
+
+_ visualizzare la frase inserita
+
+_ costruire una nuova frase in cui il primo carattere di ciascuna parola nella frase di partenza è stato reso maiuscolo. Tutti gli altri caratteri devono essere resi minuscoli.
+
+Il programma deve memorizzare la nuova frase in una opportuna variabile
+
+_ visualizzare la nuova frase.
+
+Ad esempio la frase cHe bElLA gIOrnaTa diviene Che Bella Giornata.
+
+--------------------------------------------------------------------------
+
+esercizio 2:
+
+Sostituisci carattere
+Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. La frase
+è terminata dall’introduzione del carattere di invio e contiene complessivamente al più 100
+caratteri. Il programma deve svolgere le seguenti operazioni:
+1)  visualizzare la frase inserita
+2)  costruire una nuova frase in cui tutte le occorrenze del carattere ’.’ sono sostituite con il carattere di ritorno di linea ’\n’. Il programma deve memorizzare la nuova frase in una opportuna variabile
+3)  visualizzare la nuova frase.
+
+
+------------------------------------------------------------------------
+
+codifica la frase
+
+Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. La
+frase è terminata dall’introduzione del carattere di invio. La frase contiene sia caratteri deve svolgere le seguenti operazioni:
+ visualizzare la frase inserita;
+ costruire una nuova frase tale che ogni lettera vocale presente nella frase di partenza
+sia seguita dalla lettera ’f’ (se la vocale è minuscola) o dalla lettera ’F’ (se la vocale è
+maiuscola) nella nuova frase. Il programma deve memorizzare la nuova frase in una
+opportuna variabile.
+ visualizzare la nuova frase.
+Ad esempio, la frase VacAnze di NaTAle diviene VafcAFnzef dif NafTAFlef.
+
+--------------------------------------------------------------------------
+esercizi sule stringhe
+
+data una frase in ingresso, sostituire tutti gli spazi con underscore (trattino basso). Visualizzare la frase risultante
+--------------------------------------------------------------------------
+esercizio sulle stringhe
+
+Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. Utilizzare le funzioni isupper e islower e toupper e tolower
+--------------------------------------------------------------------------
+
+esercizio per formattare una stringa in ingresso. Deve funzionare in tutti i casi di errore e deve riproporre una nuova data in caso di errore.
+
+--------------------------------------------------------------------------
+ricevere in ingresso due stringhe.
+
+Verificare se sono uguali. Due stringhe sono uguali se hanno le stesse lettere nella stessa posizione indipendemente dal fatto che siano maiuscole o minuscole
+
+es. AdRiaNa è uguale a aDRIana
+
+(suggerimento: traformare le due stringhe tutte in maiuscolo o tutte in minuscolo e fare il confronto)
+
+--------------------------------------------------------------------------
+
+    Data una frase in ingresso (utilizzare il getline) sostituire gli spazii con il carattere -. Visualizzare la stringa risultante.
+
+
+
+
+
+Per quelli che sono in difficoltà trovate la soluzione
+
+int main(int argc, char** argv) {
+
+string frase;int i;
+
+cout<<"Inserisci una frase:";
+
+getline(cin,frase);  
+
+for (i=0; i<=frase.length(); i++){  
+
+if (frase.at(i)==' '){    
+
+frase.at(i)='_';}
+
+}cout<<frase<<endl;
+
+return 0;}
+
+------------------------------------------------------------------------- 
+
+    Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. Utilizzare le funzioni isupper e islower e toupper e tolower.
+
+
+Per quelli che sono in difficoltà di seguito la soluzione
+
+int main(int argc, char** argv) {                // Variabili di input        string frase1;                // Variabili        int l;        char x;        string frase2 = "";                // Input        cout << "Inserire una frase: ";        getline(cin, frase1);                // Calcolo lunghezza stringa        l = frase1.length();                // Ciclo di conversione        for(int i=0; i < l; i++){                              // Estrazione carattere               x = frase1.at(i);                              // Controllo se il carattere Ã¨ MAISCUOLO               if(isupper(x))                                              x = (int)x + 32;                              // Aggiunta del carattere estratto alla stringa di output               frase2 = frase2 + x;        }                // Output        cout << frase2 << endl;}
+
+
+------------------------------------------------------------------------
+
+
+
+
