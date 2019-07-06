@@ -1,0 +1,423 @@
+Scrivere Ciao per un numero di volte definito dall'utente. Inserire il controllo che il numero di volte sia positivo
+
+--------------------------------------------------------------------------
+
+caricamento e calcolo del minimo degli elementi di un vettore
+
+caricare un vettore di 10 interi.+
+
+calcolare l'lemento minimo
+
+visualizzarlo
+
+--------------------------------------------------------------------------
+1 calcolo dell potenza
+
+utilizzare il for. Dati di input base ed esponente
+--------------------------------------------------------------------------
+calcolare il fattoriale di n numeri
+-------------------------------------------------------------------------
+calcolare il minimo della sequenza di n numeri e calcolare il massimo della sequenza di n numeri
+-------------------------------------------------------------------------
+calcolare la media dei voti di uno studente. La sequenza termina con 0.
+controllare il caso in cui la sequenza sia vuota.
+---------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+Scrivere in flow chart e in C++ l'esercizio che chiede all'utente N numeri e conta quanti sono i positivi e i negativi
+-------------------------------------------------------------------------
+scrivere in flow chart e in C++ l'esercizio che richiesti in ingresso N numeri (n specificato dall'utente) conta i numeri pari e i  numeri dispari
+--------------------------------------------------------------------------
+Crea un gioco indovina il numero
+
+    Scrivere un programma che implementi il gioco nel quale l'utente deve indovinare un numero segreto cin una quantità massima di tentativi. Utilizzare una funzione generaNumero che permette di generare casualmente un numero di 4 cifre, mentre la funzione indovinaNumero consente :
+
+    di inserire un numero all'utente
+    confronta il numero da individuare con quello inserito e visualizza il messaggio "troppo grande" o "troppo piccolo"
+    se il numero inserito è corretto la funzione ritorna vero oppure falso
+
+Il programma principale controlla se i tentativi ammessi sono esauriti, se il numero segreto è stato individuato o meno e ripropone una nuova partita
+--------------------------------------------------------------------------
+media di numeri positivi
+
+Dati N numeri in ingresso, calcolare la media dei numeri positivi
+--------------------------------------------------------------------------
+per venerd' 23. calcolare il max utilizzando il while o do while
+
+svolgere esercizio in flow chart e in c++ che calcola il massimo tra una sequenza di 10 numeri con while o do while
+--------------------------------------------------------------------------
+tabellina pitagorica
+--------------------------------------------------------------------------
+uso del while per giovedì 22 ottobre
+
+svolgere il seguente esercizio: utilizzare il while e il do while per ricevere in ingresso una sequenza di numeri che termina con 0 e contare i posistivi e i negativi
+--------------------------------------------------------------------------
+esercizi di preparazione al compito di martedì 3 novembre
+
+svolgere i seguenti esercizi in flow chart e  c++
+
+es. 1: siano dati in input dall'utente il nome, il reddito di N contribuenti (N fornito dall'utente). Stampare i nomi dei contribuenti con reddito superiore a 30.000 euro
+
+es. 2 siano dati in input le età e il sesso ('M' o 'F') di N studenti di una classe  (N fornito dall'utente). Visualizzare la percentuale delle femmine, dei maschi rispetto al totale degli studenti della classe e la percentuale di maggiorenni
+
+es.3 data una sequenza si numeri interi che termina con l'inserimento di 0, contare i numeri positivi e i numeri negativi della sequenza
+
+es. 4 caricare un vettore di dimensione 10 con numeri interi. Moltiplicare tutti i numeri pari presenti nel vettore e visualizzare il risultato
+--------------------------------------------------------------------------
+calcolo del numero minimo
+
+svolgere esercizio in flow chart e c++ che calcola e visualizza l'elemento minimo di una sequenza di interi
+
+--------------------------------------------------------------------------
+
+
+min, mx e media di un vettore
+
+Scrivere un programma in cui si carica un vettore di dimensione costante. Successivamente calcolare il min, max e media e visualizzarlo
+-----------------------------------------------------------------------
+
+calcolo dell'imposta progressiva
+
+Su una somma di denaro deve essere pagata un imposta progressiva secondo lo schema:
+
+da 0 a 5000 euro una imposta (tassa) del 10%
+
+da 5.000 a 15.000 euro 20%
+
+oltre i 15.000 30%
+
+ 
+
+Dopo aver acquisito in input l'importo bisogna calcolare l'imposta complessiva tenendo conto che la parte fino a 5000 ha una tassazione del 10% quella che ecede i 5000  avrà i 20% e così via. Esempio se l'importo è 12.000 l'importo è calcolato come il 10% di 5000 a cui va aggiunto il 20% dei 7000 euro rimanenti
+
+ 
+
+L'output è rappresentata dall'imposta finale da pagare
+
+ 
+
+Scrivere in PSEUDOCODIFICA l'algoritmo che risolve il seguente problema
+
+---------------------------------------------------------------
+volo low cost
+
+Un volo aereo low cost per sola andata con destinazione Londra ha prezzi diversi a seconda dei mesi dell'anno e precisamente:
+
+ 
+
+da gennaio a giugno 26 euro
+
+da luglio, agosto o settembre  40 euro
+
+da ottobre a dicembre 30 euro
+
+Fornito in ingresso il mese di partenza calcolare il costo del biglietto (identificare i dati di input, le costanti e i dati di output)
+
+ 
+
+Scrivere l'algoritmo in pseudocodifica
+-----------------------------------------------------------------
+ESERCIZIO1
+
+Progettare un algoritmo che legga una sequenza di valori numerici ﬁno alla lettura di un valore 0 e scriva quanti valori sono stati letti e la loro somma. (utilizzare il post_condizionale)
+-----------------------------------------------------------------
+somma dei primi n numeri
+
+Scrivere in pseudocodifica, l'algoritmo per il calcolo della somma dei primi n numeri utilizzando 3 variabili.
+
+Scrivere il programma in C++ che realizzi l'algoritmo.
+
+Caricare lo zip del progetto
+---------------------------------------------------------------------
+ESERCIZIO2
+
+Data una sequenza di N numeri interi, contare quanti sono positivi e quanti negativi. Comunicare il numero dei positivi e dei negativi, e la percentuale dei positivi e dei negativi rispetto al totale dei numeri.
+---------------------------------------------------------------------
+
+ESERCIZIO4
+
+Progettare un algoritmo che legga una sequenza di valori numerici ﬁno a che la loro somma è minore di 100 e scriva la somma ottenuta e quanti sono i valori letti.
+
+----------------------------------------------------------------------
+ESERCIZIO3
+
+Progettare un algoritmo che, dato un valore numerico k, legga n numeri e conti quanti di questi sono multipli di k scrivendo il risultato.
+
+------------------------------------------------------------------------
+Si vuole calcolare la spesa per l’acquisto di N libri (N in input). Introdurre da input il prezzo di ogni libro e applicare sul totale il 4% in più per le spese di spedizione. Visualizzare la spesa finale.
+-------------------------------------------------------------------------
+calcolare il max e il min
+
+Chiedere in input un numero intero N (ciclare fino a 10 o fino a quando N sia positivo).
+
+Se ho superato i 10 tentativi dare un errore, altrimenti chiedere in input N numeri interi e al termine del ciclo visualizzare il numero massimo e il numero minimo
+-------------------------------------------------------------------------
+Data una sequenza di N numeri interi verificare se la sequenza è ordinata in ordine crescente.
+
+Ad esempio se la sequenza di numeri è:
+
+5   10  20  30   41  il programma visualizza il messaggio: " ordinata"
+
+se la sequenza è ad esempio:   5   21   32    4   27  89   il programma visualizza il msg  : " Non ordinata"
+
+Nel caso in cui N sia uguale a 1  la sequenza si considera ordinata
+
+
+SUGGERIMENTO: Chiedere in input un valore prima del ciclo (rappresenta il primo numero)
+
+chiedere un solo numero dentro il ciclo e confrontarlo con il precedente
+------------------------------------------------------------------------
+scrivere in C++ un esercizio che realizza la tabellina magica: (ogni numero è il prodotto della riga per la colonna).
+
+Suggerimento: utilizzare un for dentro un for . Ogni for ha un indice diverso 
+
+ 
+
+  1   2   3   4    5   6    7     8    9   10
+
+  2   4   6   8   10  12   14    16   18   20
+
+  3   6   9   12  15  18   21    24   27   30   
+
+  4   8   12  16  20  24   28    32   36   40
+
+  5   10  15  20  25  30   35    40   45   50
+
+  6   12  18  24  30  36   42    48   54   60
+
+  7   14  21  28  35  42   49    56   63   70
+
+  8   16  24  32  40  48   56    64   72   80
+
+  9   18  27  36  45  54   63    72   81   90
+
+  10  20  20  40  50  60   70    80   90  100
+-------------------------------------------------------------------------
+fare in un unico esercizio:
+
+la stampa della parte del triangolo superiore della tabellina pitagorica
+
+successivamente la stampa della diagonale maggiore della tabellina pitagorica
+
+successivamente la stampa della diagonale minore della tabellina pitagorica
+
+la stampa della parte del triangolo inferiore della tabellina pitagorica
+-------------------------------------------------------------------------
+differenza costante
+
+Dati n valori numerici (controllare che siano crescenti altrimenti non si effettuano i controlli successivi) , progettare un algoritmo che scriva se i numeri forniti a partire dal secondo differiscono ognuno dal precedente di un valore costante. In caso affermativo l’algoritmo deve scrivere il valore della differenza, in caso negativo l’algoritmo deve scrivere il valore massimo delle differenze.
+-------------------------------------------------------------------------
+gioco dell'indovina il numero
+
+Il gioco va realizzato in passi:
+
+il computer genera un numero random.
+
+l'utente fa un numero di tentativi per indovinare. Se indovina il numero entro il numero di tentativi massimo, l'utente ha vinto il gioco.
+
+ 
+
+successivamente modificare l'esercizio introducendo i livelli (livello basso con un numero da indovinare fino a 10, medio con un numero da indovinare fino a 100, alto con un numero da indovinare fino a mille. Si possono introdurre degli aiuti facendo in modo che se l'utente sbaglia, lo informa che il numero da indovinare è minore da quello fornito in input, altrimenti è maggiore.
+
+Modifica del gioco facendo giocare contemporaneamente e vinci chi indovina per prima
+------------------------------------------------------------------------
+es. 1  Scrivere un programma che acquisisca da tastiera un intero x e altri N interi e restituisca il numero di elementi maggiori di x presenti ricevuti in ingresso.
+
+es.
+
+se in ingresso di specifica x=10 e  N=4  ela sequenza dei numeri è 3  6  12  21, il programma restituisce 2
+
+se in ingresso di specifica x=4 e  N=5   e la sequenza dei numeri è 3 6 2  1  2 , il programma restituisce 1
+------------------------------------------------------------------------
+es. 2   
+
+Si realizzi un programma che dati due interi N ed M richiesti in input calcoli l'insieme dei numeri compresi tra 1 ed N che sono multipli di M.
+
+Stamparli in ordine crescente.
+
+Esempio:
+N=10
+M= 3
+
+il programma stampa:  3  6  9
+-------------------------------------------------------------------------
+es.3  
+
+Bisogna contare quanti studenti di una classe si chiamano Francesco e quanti Luca. Si riceve in ingresso la sequenza dei nomi degli studenti. Tale sequenza termina quando l’utente inserisce il valore FINE. Stampare al termine i seguenti valori:
+
+Lo studente Francesco è presente X volte
+
+Lo studente Luca è presente Y volte
+-------------------------------------------------------------------------
+
+Dati in input una sequenza di interi (la sequenza termina quando l’utente inserisce lo zero), calcolare la media solo dei numeri positivi (lo zero non va considerato nel calcolo della media). Se nella sequenza è presente il numero 100, non bisogna calcolare la media ma la somma dei numeri negativi presenti nell’intera sequenza.
+
+Es. se la sequenza è  -4  5  8   12   -12  0  la media è 8,333
+
+Se la sequenza è   -3  -5  -6  -10  0   la media è zero
+
+Se la sequenza è -3  -4 -10  30  100  -5  0  devo visualizzare la somma Negativi  -22
+
+-------------------------------------------------------------------------
+USO del MENU e della ripetizione delle operazioni
+
+
+Sono forniti 12 valori in input. Ogni valore rappresenta il numero di presenze giornaliere del mese corrispondente in un albergo.
+
+Ad esempio il valore 300 che è il primo numero in ingresso, indica che nel mese di gennaio ci sono state 300 presenze giornaliere nell’albergo in questione. Se il secondo valore in input è 250, indica che ci sono state nel mese di febbraio 250 presenze giornaliere e così via.
+
+Calcolare:
+
+    la media di presenze nel corso dell'intero anno
+    il numero totale di presenze nei mesi estivi (6,7,8) che rappresentano 		il mese di luglio, agosto e settembre
+    Il mese in cui è stato registrato il massimo di presenze
+    il mese in cui è registrato il numero minimo di presenze
+    la media delle presenze escludendo i mesi estivi
+
+--------------------------------------------------------------------------
+menu di figure geometriche
+
+Realizzare in C++ un menu che stampi a video delle figure
+geometriche fatte di asterischi.
+Le forme geometriche sono:
+     quadrato di asterischi (pieno)
+     quadrato di asterischi (vuoto, cioè sono disegnati solo i bordi)
+     rettangolo pieno
+     rettangolo vuoto
+ 
+
+La scelta va letta da tastiera
+Le dimensioni della figura vanno letta da tastiera
+--------------------------------------------------------------------------
+sequenza di numeri casuali
+
+genera una sequenza di N  numeri casuali tra 1 e 10000 e visualizzare la quantità dei numeri pari e i numeri dispari che sono generati. (N positivo e richiederlo per un numero massimo di tentativi)
+
+Importante la funzione srand(time(NULL)) deve essere chiamata una sola volta fuori dal ciclo.
+
+--------------------------------------------------------------------------
+
+Genera casualmente N numeri compresi tra 1 e 1000 (N maggiore di 0 altrimenti ricicla
+finche è maggiore di zero o non superi un numero massimo di tentativi definito in una
+costante). Calcolare l’elemento minimo e massimo e visualizzarli.
+
+-------------------------------------------------------------------------
+
+Si realizzi un programma che legga da input un intero N ed un float x > 0 e calcoli e
+visualizzi la somma dei prodotti di x per i, con i che varia da 1 ad N (ovvero, il valore s =
+x*1 +x*2 +...+x*N). Ad es. se x=3 e N=5, bisogna fare le seguenti operazioni:
+3*1+3*2+3*3+3*4+3*5
+
+-------------------------------------------------------------------------
+
+Un negoziante per incrementare le sue vendite, prevede di applicare uno sconto in base al
+numero dei pezzi acquistati. Se il cliente compra un pezzo viene applicato il 15% di
+sconto, il 20% per 2 pezzi, il 30% per 3; in tutti gli altri casi lo sconto è del 40%. In input
+deve quindi essere inserito il prezzo unitario del prodotto e la quantità acquistata. Il prezzo
+unitario viene fornito all’inizio del programma, mentre la quantità acquistata è il valore
+intero di un switch. Prima del switch visualizzare il menu in cui si descrivono le offerte.
+Cioè:
+se acquisti un pezzo lo sconto è 15% (premi 1)
+se acquisti due pezzi lo sconto è 20% (premi 2)
+se acquisti tre pezzi lo sconto è 30% (premi 3)
+per qualunque altro numero di pezzi o sconto è del 40%
+Visualizzare lo sconto complessivo applicato e l’importo effettivo che il cliente deve pagare.
+
+estendere l’esercizio in modo tale che
+l’algoritmo sia inserito all’interno di un ciclo e il cliente possa acquistare in ogni ciclo un prodotto
+con un presso differente. Il ciclo termina quanto il cliente seleziona la stringa “FINE-SPESA”
+-------------------------------------------------------------------------
+svolgere l'esercizio che legge in ingresso un numero n e visualizza tutti i numeri pari inferiori a tale numero
+---------------------------------------------------------------------------
+
+esercizi della prima lezione
+
+ESERCIZIO 1:
+
+Chiedere in ingresso all'utente una sequenza di numeri interi. La sequenza termina quando l'utente inserisce il numero 0. Calcolare e visualizzare la media dei numeri positivi e pari e la media di tutti i numeri. Considerare tutti i possibili casi di errore (Il primo numero è zero, non ci sono numero pari e positivi). Realizzare l'esercizio prima in flow chart e poi in c++
+
+ESERCIZIO 2:
+
+Chiedere in ingresso un numero intero. Visualizzare se il numero è primo oppure no
+
+Realizzare l'esercizio prima in flow chart e poi in c++
+
+ESERCIZIO 3:
+
+Chiedere in ingresso due numeri interi. Calcolare il massimo comune divisore e visualizzarlo
+
+Realizzare l'esercizio prima in flow chart e poi in c++
+
+ESERCIZIO 4:
+
+Chiedere in ingresso una sequenza di N numeri (N fornito in input dall'utente)
+
+Calcolare l'elemento massimo e l'elemento minimo.
+
+Realizzare l'esercizio prima in flow chart e poi in c++
+--------------------------------------------------------------------------
+
+    Data una sequenza di numeri in ingresso calcolare e visualizzare il numero minimo (per chi ha difficoltà di seguito c'è la soluzione)
+
+int main(int argc, char** argv) {
+
+                int n,x,i,min;
+
+                cout<<"Inserisci il numero di valori da inserire"<<endl;
+
+                cin>>n;
+
+                if(n>0){
+
+                               for(i==0;i<n;i++){
+
+                                               cout<<"Inserisci il numero"<<endl;
+
+                                               cin>>x;
+
+                                               if(i==0){
+
+                                                               min=x;
+
+                                                              
+
+                                               } else {
+
+                                                               if(min>x) {
+
+                                                                              min=x;
+
+                                                               }
+
+                                               }
+
+                               }
+
+ 
+
+                cout<<"Il numero minore tra quelli inseriti e' "<<min<<endl;
+
+               
+
+                } else { cout<<"INSERISCI SOLO NUMERI POSITIVI!"<<endl;
+
+                }
+
+                system ("PAUSE");
+
+               
+
+               
+
+                return 0;
+
+}
+
+ 
+
+
+
+
+
+
+

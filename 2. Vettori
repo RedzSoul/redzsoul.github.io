@@ -1,0 +1,334 @@
+-------------------------------------------------------------------
+lo studente con l'età massima
+
+Svolgere in C++ l'esercizio svolto in class in flow chart che visualizza il nome e l'età dello studente con età massima (gli studente sono N con N dato di input).
+------------------------------------------------------------------
+Dichiarare un vettore di lunghezza M (costante) Genera casualmente N numeri compresi tra 1 e 1000 (N maggiore di 0 e minore o uguale ad M altrimenti ricicla finche  non superi un numero massimo di tentativi definito in una costante) e memorizzali nel vettore.Calcolare l’elemento minimo e massimo del vettore .
+---------------------------------------------------------------------------
+esercizio per il 23 novembre con i vettori
+
+Dati in input una sequenza di N interi da inserire in un vettore di lunghezza M (costante).Calcolare la media solo dei numeri positivi . Se nella sequenza è presente il numero 100, non bisogna calcolare la media ma la somma dei numeri negativi presenti nell’intera sequenza.
+
+Es. se la sequenza è  -4  5  8   12   -12  0  la media è 8,333
+
+Se la sequenza è   -3  -5  -6  -10  0   la media è zero
+
+Se la sequenza è -3  -4 -10  30  100  -5  0  devo visualizzare la somma Negativi  -22
+---------------------------------------------------------------------------
+calcolo di un numero binario a partire da un numero decimale (versione 1)
+
+Dato in input un numero intero N positivo, tramite un switch in cui si definisce la nuova base (2,8,16) salvare le cifre della trasformazione in un vettore di interi. visualizzare le sue cifre nella nuova base in ordine inverso.
+
+Ricordarsi che le cifre sono i resti della divisione per la base e che il ciclo termina quando il quoziente è uguale a 0
+
+Es. Il numero 13 è l'input, in binario è 1101.
+
+Per quanto riguarda i numeri esadecimali prima di stampare i numeri 10,11,12,13,14,15 trasformali rispettivamente in A, B,C, D, E
+---------------------------------------------------------------------------
+trasformazione di un numero esadecimale, ottale o binario in numero decimale
+--------------------------------------------------------------------------
+esercizio sui vettori paralleli
+
+caricare de vettori di lunghezza N (costante) uno con i nomi di studenti e l'altro con le rispettive età
+
+Dopo aver caricato Visualizzare i nomi degli studenti maggiorenni
+
+successivamente visualizzare il nome dello studente con età max, quello con età min e l'età media tra tutti gli studenti
+---------------------------------------------------------------------------
+ricopiare un vettore di interi positivi in un altro vettore
+
+Dichiarare un vettore A di interi di lunghezza L (costante). Chiedere all'utente quanti interi N vuole inserire (controllare che N sia <=L altrimenti richiedere N), caricare il vettore.
+
+Ricopiare gli elementi positivi del vettore A in un vettore B (sempre di lunghezza L.
+
+in un altro ciclo visualizzare gli elementi di B in ordine inverso
+--------------------------------------------------------------------------
+Ricopiare due vettori in un terzo vettore (lunedì 10 dicembre)
+
+Caricare due vettori di interi V1 e V2, rispettivamente di lunghezza N ed M. Caricare in un terzo vettore V3 (di lunghezza N+M) gli elementi del vettore V1 alternandoli con gli elementi di V2 
+
+cioè V3 deve contenere il primo elemento di V1, poi il primo elemento di V2, poi il secondo elemento di V1, il seconde elemento di V2 e così via. Stare attenti al fatto che le dimensioni dei due vettori non sono uguali, quindi uno potrebbe terminare gli elementi e l'altro no. In tal caso ricopiare tutti gli elementi rimanenti.
+
+es. V1  contiene [1,3,10,30,20]   V2 contiene [44,25,3]
+
+V3 deve essere [1,44,3,25,10,3,30,20]
+------------------------------------------------------------------------
+visualizzare duplicati
+
+Leggi N numeri e inseriscili in un vettore. DOpo il caricamento, visualizza solo i numeri che sono duplicati (presenti due volte).
+
+Es. VET1[20, 3, 40, 5, 20, 7, 40]
+
+visualizzare 20, 40
+--------------------------------------------------------------------------
+visualizza solo una volta
+
+Leggi da input N numeri interi e memorizzali in un array.
+
+Stampa i valori dell'array in sequenza senza stampare lo stesso numero due volte
+
+es. se il vettore contiene  15, 3, 5, 3, 11, 5, 15, 5, 15,11
+
+deve essere stampato 15, 3,5,11
+--------------------------------------------------------------------------
+shift a destra di un vettore
+
+Dichiarare un vettore di L elementi e caricarlo con L-1 elementi.
+
+Chiedere in input all'utente 1 valore intero e inserirlo nella prima posizione effettuando lo shift  verso destra. Visualizzare il vettore risultante
+-------------------------------------------------------------------------
+Caricare un vettore di interi di dimensione N. Invertire gli elementi del vettore senza utilizzare vettori
+ulteriori. Se il vettore A=*3,5,1,7,8,5+, dopo l’inversione A=*5,8,7,1,5,3+
+---------------------------------------------------------------------------
+Definire un vettore di dimensione massima 100 poi chiedere all’utente la dimensione n del vettore e caricarlo di valori interi.  Creare poi un menu (switch) per far scegliere all’utente una delle seguenti alternative:
+
+1 Visualizza il vettore;
+
+2 Visualizza il vettore dall'ultimo elemento al primo;
+
+3 Dato in input un numero intero, dire se è presente nel vettore e in quale posizione. Se è presente, interrompere la ricerca;
+
+4 Ricerca del minimo del vettore;
+
+5 Ricerca del massimo del vettore;
+
+6 Media degli elementi del vettore;
+
+7 Ribalta il contenuto del vettore;
+
+0 Uscita.
+--------------------------------------------------------------------------
+dividi un vettore in due parti
+
+Dato un vettore Vet1 di N interi, costruisci altri due vettori VET 2 e VET3  di dimensioni opportune, contenenti rispettivamente gli elementi di VET1 non maggiori e maggiori di un intero X fornito in ingresso dall'utente. Visualizzare Vet2 e Vet3.
+
+Es.
+
+N=7
+
+VET1=[15,2,30,20, 40, 30,7]
+
+il numero X=20
+
+VET2=[15, 2,20,7]
+
+VET3=[30,40,30]
+
+Utilizzare una funzione copia che riceve in ingresso il vettore di partenza, il vettore in cui bisogna copiare gli elementi, il numero N, un intero vale 0 se devo copiare i maggiori di N, 1 se devo copiare quelli minori uguali a N. La funzione restituisce il numero di elemento copiati nel secondo vettore.
+
+Utilizzare la funzione copia sia per creare VET1 che VET2.
+
+utilizzare una sola versione per la versione stampa
+
+-------------------------------------------------------------------------
+Scrivere una funzione C++ che, a partire da due vettori numerici (il primo di lunghezza costante L1 e il secondo di lunghezza costante L2) ordinati forniti come argomenti, ne costruisca un terzo avente dimensione pari alla somma delle due dimensioni e contenente tutti gli elementi dei due vettori in una sequenza
+ordinata (per esempio, da {1, 2, 4} e {1, 3, 9} si deve ottenere {1, 1, 2, 3, 4, 9}).
+--------------------------------------------------------------------------
+Caricare un vettore di stringhe di dimensioni 15.
+
+Chiedere all'utente un nome e verificare se il nome è presente nel vettore.
+
+Risolvere il problema in flow chart e c++
+--------------------------------------------------------------------------
+lancio dei dadi
+
+calcolo della frequenza di n lanci di un dado.
+Utilizzare il vettore.
+--------------------------------------------------------------------------
+Copiare 2 vettori in un terzo
+
+Caricare due vettori V1 e V2, rispettivamente di lunghezza N ed M. Caricare in un terzo vettore V3 (di lunghezza N+M) primo vettore e il secondo vettore
+--------------------------------------------------------------------------
+Copiare elementi positivi
+
+Caricare un vettore V1 di lunghezza N. Copiare gli elementi positivi presenti nel vettore V1 nel vettore V2. Stampare gli elementi di V2
+--------------------------------------------------------------------------
+Caricare un vettore di interi. Stampare la media di tutti i numeri dispari e la media di tutti i numeri pari presenti nel vettore
+--------------------------------------------------------------------------
+Dati gli stipendi di N dipendenti, realizzare un programma che li memorizzi in un vettore e visualizzi:
+
+    posizione dello stipendio massimo
+    la media delgi stipendi
+    incrementare tutti gli stipendi del 10%
+-------------------------------------------------------------------------
+Generare in modo casuale un insieme di 12 valori interi compresi tra 1 e 100 e memorizzarli in un vettore (A). Visualizzare gli elementi di A. Successivamente copiare tali elementi in un altro vettore (B) in ordine inverso. Visualizzare gli elementi di B
+-------------------------------------------------------------------------
+
+In un array di 12 elementi sono memorizzate le presenza mensili in un albergo nel corso dell'anno. Calcola:
+
+    la media di presenze nel corso dell'intero anno
+    il numero totale di presenze nei mesi estivi (6,7,8) che rappresentano 		il mese di luglio, agosto e settembre
+    Il mese in cui è stato registrato il massimo di presenze
+    il mese in cui è registrato il numero minimo di presenze
+    la media delle presenze escludendo i mesi estivi
+
+svolgere l'algoritmo in flow chart
+-------------------------------------------------------------------------
+Aumentare in percentuale gli elementi di un vettore
+
+Ho un vettore precaricato. Chiedere all'utente una percentuale e aumentare i numeri del vettore di quella percentuale.
+--------------------------------------------------------------------------
+Dato un vettore di stringhe, trovare l'elemento massimo
+--------------------------------------------------------------------------
+Caricare un vettore di numeri interi. Stampare la media di tutti i numeri in posizione pari e la media di tutti i numeri in posizione dispari.
+--------------------------------------------------------------------------
+Caricare un vettore con N numeri interi. Visualizzare un messaggio che indica che il vettore sia formato da tutti numeri uguali oppure no.
+
+Svolgere l'esercizio prima utilizzando un ciclo for e poi un while cioè uscendo dal ciclo quando trovo due elementi diversi.
+
+Svolgere l'esercizio in flow chart e c++
+
+-------------------------------------------------------------------------
+Caricare di vettori di lunghezza 10 contenenti uno l'età degli studenti e l'altro i nomi.
+
+Visualizzare il nome dello studente con l'età massima
+-------------------------------------------------------------------------
+Hai in input due vettori paralleli contenenti i dati relativi ad un supermercato.
+
+PRODOTTO è un vettore di stringhe che contiene i nomi dei prodotti
+
+PREZZO è un vettore di float che contiene i prezzi del corrispondente prodotto
+
+Si supponga che i due vettori siano stati già caricati. Svolgere i punti dell'esercizio seguente in sequenza ( a piacere svolgere i punti utilizzando un menu). I punti dell'esercizio sono i seguenti:
+
+    chiedere in ingresso una percentuale all'utente e incrementare tutti i prezzi della percentuale specificata
+    chiedere in ingresso un prodotto e visualizzare il suo prezzo e controllare che il prodotto non esista
+      Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.
+--------------------------------------------------------------------------
+
+    Si riceve in ingresso dall’utente una sequenza 10 di numeri .  Calcolare la media aritmetica e visualizzarla
+-------------------------------------------------------------------------
+
+    Caricare un vettore di N numeri interi (N definito come costante). I numeri interi sono forniti dall'utente. Sommare tutti i numeri che sono divisibili per 3 e visualizzare come dato di output tale somma. (si ricorda che un numero è divisibile per 3 se il x%3 ==0 cioè il resto della divisione per 3 è zero.)
+-------------------------------------------------------------------------
+Caricare un vettore di 10 numeri interi I numeri interi sono forniti dall'utente. Contare il numero di elementi positivi e  visualizzarlo.
+--------------------------------------------------------------------------
+    Inserisci 10 numeri usando il vettore, modifica questi elementi raddoppiandoli, poi stampa gli elementi modificati.
+--------------------------------------------------------------------------
+    Caricare in modo random un vettore di 10 numeri interi e stamparlo a video, verificare poi quanti numeri pari e quanti numeri dispari ci sono nel vettore e visualizzarli
+-------------------------------------------------------------------------
+Creare un vettore parallelo di libro e del relativo prezzo. Caricarlo
+
+Dichiarare la lunghezza con una unghezza massima e chiedendo all'utente quanti libri vuole gestire.
+
+chiedere in ingresso un libro e restituire il relativo prezzo se il libro non è presente visualizzzare un messaggiio di errore.
+
+Se il libri iniziano con la A va applicato uno scontro del 5%. Visualizzare i prezzi modificati visualizzare i valori modificati
+-------------------------------------------------------------------------
+shiftare gli elementi di un vettore
+
+esercizio in cui si carica un vettore di interi. Scrivere una funzione che richiede in ingresso un numero intero e lo inserisce nella prima posizione shiftando di una posizione tutti gli altri elementi
+
+es,
+
+se il vettore di partenza ho 10 elementi e ne ho messi 3
+
+4   5   6
+
+devo inserire il numero 7 nella prima posizione.
+
+Il vettore risutlate è:
+
+7   4   5   6. Gli elementi del vettore adesso sono 4
+-------------------------------------------------------------------------
+fusione tra due vettori
+
+Dichiarare e precaricare  due vettori con lunghezza a scelta e inserire degli interi in ordine crescente.
+
+Es. A={2.5.6.10}  
+
+B={6.55.66.100}
+
+Ricopiare A e B in un vettore C di dimensione pari alla lunghezza di A + la lunghezza di B in modo tale che C risulti ordinato in modo crescente. E' necessario ricopiare in modo ordinato e non applicare algoritmi di ordinamento in C.
+
+Si suggerisce di non usare il for ma il while  e di svolgere l'esercizio prima in flow chart e solo dopo in c++
+------------------------------------------------------------------------
+Siano dati due vettori di interi inseriti da tastiera. La lunghezza dei due vettori è inserita dall’utente da tastiera. I due vettori possono avere lunghezze diverse, ma possono contenere al massimo 30 numeri. Si scriva un programma in linguaggio C per generare un terzo vettore che contiene l’intersezione tra due vettori. Tale vettore deve contenere i numeri presenti in entrambi i vettori dati.
+
+Ad esempio, si assuma che siano stati inseriti i due vettori:
+
+1 6 15 20 25
+
+2 20 18 6
+
+Il programma deve visualizzare la sequenza 6 20.
+--------------------------------------------------------------------------
+Calcolo delle occorrenze
+
+Scrivere un programma in linguaggio C che legge N numeri interi da tastiera e li memorizza
+in un vettore. Il numero N viene inserito dall’utente ed è minore di 20. Il programma
+deve visualizzare, per ogni cifra contenuta nel vettore, il numero di occorrenze.
+Ad esempio, si supponga N=7 e si consideri la sequenza di numeri 1 6 15 6 2 15 15. Il
+programma deve visualizzare:
+numero 1 occorrenze 1
+numero 6 occorrenze 2
+numero 15 occorrenze 3
+-----------------------------------------------------------------------
+
+concorso di intelligenza
+
+In un concorso di intelligenza, N giudici esprimono il loro giudizio su K candidati. Il
+giudizio è un valore numerico tra 0 e 5.
+Si scriva un programma in linguaggio C per determinare il candidato più intelligente,
+ed il giudice più severo.
+
+------------------------------------------------------------------------
+    Caricare di vettori di lunghezza 10 contenenti uno l'età degli studenti e l'altro i nomi.
+
+Visualizzare il nome dello studente con l'età massima (di seguito la soluzione per quelli che sono in difficoltà)
+
+int main(int argc, char *argv[])
+
+{
+
+   string nomi[10];
+
+   int eta[10],i,max=0,indice=0;
+
+   for (i=0; i<10; i++){
+
+       cout<<"inserire nome"<<endl;
+
+       cin>>nomi[i];
+
+       cout<<"Inserire eta'"<<endl;
+
+       cin>>eta[i];
+
+       if (eta[i]<0){
+
+              cout<<"ERRORE"<<endl;
+
+               }
+
+          
+
+       if (i==1){
+
+              max=eta[0];
+
+           indice=i;      
+
+              }
+
+          
+
+       if (max<eta[i]){
+
+           max=eta[i];
+
+           indice=i;          
+
+                       }      
+
+}
+
+cout<<endl<<"L'alunno "<<nomi[indice]<<" ha l'eta massima fra tutte:"<<max<<endl;
+
+return 0;
+
+}
+
+
+
+
