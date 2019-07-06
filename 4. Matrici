@@ -1,0 +1,140 @@
+matrici
+
+svolgere un esercizio che carica una matrice quadrata (4x4) di interi, e visualizza prima  la diagonale principale e poi quella secondaria.
+-------------------------------------------------------------------------
+visualizzare il triangolo superiore ed inferiore di una matrice
+
+dichiarare una matrice NxN quadrata precaricata.
+
+Visualizzare il trinagolo superiore.
+
+Utilizzare i cicli in modo da effetture un numero di operazioni minori di NxN 
+
+Visualizzare il triangolo inferiore. In questo caso per dare una forma che ricordi il triangolo inferiore utilizzare i cicli completi
+
+--------------------------------------------------------------------------
+uso di funzioni con matrici
+
+scriere una funzione che carica una matrice NxM co in valori specificati dall'utente.
+
+scrivere una funzione che visualizza i valori della matrice
+
+scrivere una funzione che visualizza il triangolo superiore
+
+scrivere una funzione che visualizza il triangolo inferiore
+
+Nel main dichiarare la matrice e chiamare le varie funzioni eseguite
+--------------------------------------------------------------------------
+matrice dominante
+
+Verificare se una matrice quadrata di interi (NxN) è diagonalmente dominante, cioè se la somma dei valori assoluti degli elementi su ciascuna riga, escluso l'elemento sulla diagonale principale, è minore del valore assoluto dell'elemento corrispondente sulla diagonale principale. Questa condizione deve valere per ogni riga.
+
+Per il valore assoluto utilizzare la funzione abs della libreria math.h .
+--------------------------------------------------------------------------
+matrice ordinata
+
+Una matrice si definisce «ordinata per righe» se
+gli elementi di ogni riga sono disposti in ordine
+crescente da sinistra verso destra e tutti gli elementi
+di ogni riga, esclusa la prima, sono maggiori
+di ciascuno degli elementi della riga precedente.
+Scrivere una funzione C/C++ che restituisca
+true, se una matrice fornita come argomento è
+ordinata per righe, false altrimenti.
+--------------------------------------------------------------------------
+matrice simmetrica
+
+Scrivere una funzione C/C++ che determini, producendo
+come risultato true o false, se una matrice
+quadrata di N × N elementi è simmetrica,
+cioè se gli elementi in posizione simmetrica rispetto
+alla diagonale principale sono tutti uguali.
+
+Precaricare la matrice e chiamare la funzione per verificare se è simmetrica
+--------------------------------------------------------------------------
+Il prodotto tra due matrici A e B, quadrate e aventi la stessa dimensione, è una matrice quadrata C della stessa dimensione: l’elemento di coordinate
+(i, j ) della matrice C è la somma dei prodotti degli elementi corrispondenti della i-esima riga di A e della j-esima colonna di B:
+C(i, j ) = A(i, 0) * B(0, j ) + A(i, 1) * B(1, j ) + …
+
+Scrivere una funzione C++ che determini il prodotto tra due matrici quadrate.
+-------------------------------------------------------------------------
+
+voti studenti
+
+Si crei un vettore di stringhe di nome materie ed un vettore di stringhe che contiene i nomi degli studenti. Si crei inoltre una matrice di float che contiene i voti che ogni studente ha nella corrispondente materia.
+
+//IMMAGINE DI TABELLA 
+
+la matrice e i vettori devono essere interpretati secondo l'esempio.
+
+La matrice ha dimensioni RIGHE x COLONNE
+
+il vettore delle materie ha dimensione pari alle COLONNE. Il vettore dei nomi studenti ha dimensione pari a RIGHE
+
+Creare un menu con switch case in cui l'utente può scegliere le seguenti operazioni:
+
+    carica: caricare la matrice e i corrispondenti vettori (realizzarlo in una funzione
+    voto medio: creare una funzione che dato il nome di uno studente, cercare la sua posizione nel vettore degli studenti e calcolare la media dei suoi voti. La funzione restituisce 0 se lo studente non è stato trovato, la media altrimenti. Nel main bisogna stampare "lo studente Mario ha la media pari a xx,xx" oppure "lo studente Mario non è presente"
+
+    Chiedere in input una materia. Chiamare una funzione che restituisca il vettori con gli studenti che hanno un voto pari a quello massimo in quella materia e un vettore di nomi di studenti che hanno il voto minimo in quella materia. Es. se il voto massimo in italiano è 9 e il voto minimo in italiano è 3 devo restituire due vettori, uno che contiene i nomi che hanno voto 9 e uno che contiene i nomi degli studenti con voto 3. 
+
+    Il prototipo della funzione è il seguente:
+
+    bool min_max(string MaterieVett[ ], string colonn, Float VOTI[ ][c],int righe, string studenti[   ], string materia_min_max, string studentiMax[    ], int & max,
+
+                              string studentiMin[    ], int & min ,int &LunghezzaVettMax, int & LunghezzaVettMin)
+
+     
+
+    La funzione restituisce false se non esiste la materia. Nel vetttore studentiMin[    ]ci sono i nomi degli studeti che hanno il voto minimo (la lunghezza del vettore è LunghezzaVettMin. Analogamente per il massimo.
+
+     
+
+    Quando si rierca la materia nel vettore delle materie non bast utilizzare una uguaglianza in quanto Italiano e italiano devono essere considerate uguali, quindi si usa una funzione che riceve in ingresso due stringhe, applica toUpper ad ogni carattere e restituisce true o false in base al fatto che le stringhe siano uguali.
+
+    Nel main bisogna visualizzare per ogni elementi dei vettori min e max
+
+    lo studente Mario ha il voto massimo (7) in italiano
+
+    lo studente Giuseppe ha il voto minimo(5) in italiano
+
+     
+
+     
+
+    Media_migliore: visualizzare il nome dello studente che ha la media migliore (la funzione media_migliore restituisce l’indice dello studente che ha la media più alta e la media stessa. Nel main bisogna visualizzare: lo studente Mario ha la media 8
+    Visualizza promossi. chiamare una funzione che inserisce all'interno di un vettore i nomi degli studenti che hanno tutte sufficienze. La funzione restituisce il numero di studenti presenti nel vettore. Nel main chiamare una funzione stampa vettore a cui si passa come parametro un vettore di stringhe e la lunghezza del vettore
+    Visualizza rimandati. Chiama una funzione che inserisce all'interno di un vettore i nomi degli studenti che hanno da 1 a 3 insufficienze. La funzione restituisce ilnumero di elementi presenti nel vettore. Nel main chiamare una funzione stampa vettore a cui si passa come parametro un vettore di stringhe e la lunghezza del vettore
+
+Il progetto deve essere suddiviso in più file (il main in un file e le funzioni in un altro)
+
+Inserire i controlli per cui non possono essere eseguite le funzionalità di voto medio se non è stata effettuata l'operazione di caricamento
+
+definire correttamente i prototipi delle funzioni
+
+Prevedere tutti i controlli sui dati di input (funzione che controlla che ogni stringa relativa al nome dello studente o al nome delle materie sia formata da caratteri alfabetici)
+
+ 
+
+AGGIUNGERE I CONTROLLI CHE IL NOME E IL COGNOME DELLO STUDENTE SIANO CON LA LETTERA MAIUSCOLa E TUTTI I CONTROLLI SUI NUMERI (VALORE INSERITO NEL SWITCH E NEI VOTI)
+
+--------------------------------------------------------------------------
+
+Applicare la funzione di cifratura e decifratura alle matrici
+
+Creare una funzione che riceve in ingresso un carattere, una chiave e restituisce una chiave cifrata secondo l'algoritmo di Cesare. Analogamente per una funzione di decifratura.
+
+Dichiarare una matrice di caratteri precaricata con un messaggio e ad ogni elemento della matrice applicare la funzione cifratura e inserirlo in una matrice parallela.
+
+Effettuare l'operazione inversa alla matrice cifrata. Chiamare una funzione stampa_matrice prima alla matrice originale, a quella cifrata e a quella decifrata
+
+------------------------------------------------------------------------
+
+Leggere in input due interi positivi n e m e gli elementi di una matrice A di ordine n*m di numeri interi. Verificare se il prodotto di ogni riga è minore o uguale a quello della riga successiva. Stampare “sì” (una sola volta) se la condizione è verificata, stampare “no” (una sola volta) altrimenti.
+
+Visualizzare l'elemento minimo, massimo e medio della matrice.
+
+Utilizzare le funzioni opportune e commentare il codice.
+
+-------------------------------------------------------------------------
+
