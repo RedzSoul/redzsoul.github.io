@@ -16,11 +16,9 @@
 
 	<div id="spoiler">
 		<div>
-			<input type="button" value="Menu" class="bottoneSpoiler"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display = ''; this.parentNode.parentNode.getElementsByTagName('div')['hide'].style.display = 'none'; this.innerText = ''; this.value = 'Nascondi'; } else { this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display = 'none'; this.parentNode.parentNode.getElementsByTagName('div')['hide'].style.display = ''; this.innerText = ''; this.value = 'Menu'; }" />
+			<input type="button" value="Menu" class="bottoneSpoiler" onclick="funzioneSpoilerButton(this);" />
 			<div id="show"
 				style="display: none; background-color:transparent; background-repeat:repeat; margin: 0px;border-style:solid;border-width:1px; padding: 4px; width:98%">
-
 
 				<div class="sommario">
 					<ul>
@@ -42,7 +40,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<!-- CAPITOLO 1-->
 	<div class="capitolo">
