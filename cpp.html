@@ -2,9 +2,9 @@
 
 <head>
 	<title>Esercizi C++</title>
-	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/cpp.css">
-	<meta charset="utf-8">
 	<script type="text/javascript" src="js/funzioni.js"></script>
 </head>
 
@@ -17,7 +17,7 @@
 
 	<div id="spoiler">
 		<div>
-			<input type="button" value="Menu" class="bottoneMenu" onclick="funzioneSpoilerButton(this);" />
+			<input type="button" value="Menu" id="bottoneMenu" onclick="funzioneSpoilerButton(this);" />
 			<div id="show"
 				style="display: none; background-color:transparent; background-repeat:repeat; margin: 0px;border-style:solid;border-width:1px; padding: 4px; width:98%">
 
@@ -85,84 +85,369 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Media di voti</span>
 			<div class="testo">
-				/////////////////
+				Calcolare la media dei voti di uno studente. La sequenza dei voti inseriti termina con 0.<br>
+				Controllare il caso in cui la sequenza sia vuota.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
 			<div class="testo">
-				/////////////////
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 6</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Quanti pari e quanti dispari?</span>
 			<div class="testo">
-				/////////////////
+				Richiesti in ingresso n numeri (n specificato dall'utente) contare i numeri pari ed i numeri dispari.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Media di numeri positivi</span>
 			<div class="testo">
-				/////////////////
+				Dati N numeri in ingresso, calcolare la media dei numeri positivi.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 8</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Massimo con while/do while</span>
 			<div class="testo">
-				/////////////////
+				Calcola il massimo tra una sequenza di 10 numeri con while o do while
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 9</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Positivi/negativi con percentuale</span>
 			<div class="testo">
-				/////////////////
-			</div>
+				Data una sequenza di N numeri interi, contare quanti sono positivi e quanti negativi. Comunicare il
+				numero dei positivi e dei negativi, e la percentuale dei positivi e dei negativi rispetto al totale dei
+				numeri. </div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 10</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Quanti valori e la loro somma</span>
 			<div class="testo">
-				/////////////////
+				Progettare un algoritmo che legga una sequenza di valori numerici fino alla lettura di un valore 0 e
+				scriva quanti valori sono stati letti e la loro somma. (utilizzare il post_condizionale do while)
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 11</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Somma dei primi n numeri</span>
 			<div class="testo">
-				/////////////////
+				Scrivi un algoritmo per il calcolo della somma dei primi n numeri (partendo da 0) utilizzando 3
+				variabili.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 12</span>
-			<span class="titolo">/////////////////</span>
+			<span class="titolo">Somma finche la somma e' minore di 100</span>
 			<div class="testo">
-				/////////////////
+				Progettare un algoritmo che legga una sequenza di valori numerici ﬁno a che la loro somma e' minore di
+				100, scriva la somma ottenuta e quanti sono i valori letti.
 			</div>
 
 		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 13</span>
+			<span class="titolo">Quanti multipli di k?</span>
+			<div class="testo">
+				Progettare un algoritmo che, dato un valore numerico k, legga n numeri e conti quanti di questi sono
+				multipli di k scrivendo il risultato.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 14</span>
+			<span class="titolo">Quanto spendo per l'acquisto di N libri?</span>
+			<div class="testo">
+				Si vuole calcolare la spesa per l'acquisto di N libri (N in input). Introdurre da input il prezzo di
+				ogni libro e applicare sul totale il 4% in piu' per le spese di spedizione. Visualizzare la spesa
+				finale.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 15</span>
+			<span class="titolo">Massimo e minimo con errore</span>
+			<div class="testo">
+				Chiedere in input un numero intero N (ciclare fino a quando N sia positivo).<br>
+				Se ho superato i 3 tentativi di inserire un N positivo dare un errore, altrimenti chiedere in input N
+				numeri interi e al termine del ciclo visualizzare il numero massimo e il numero minimo tra quelli
+				inseriti.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 16</span>
+			<span class="titolo">Media positivi e media totale, con errori</span>
+			<div class="testo">
+				Chiedere in ingresso all'utente una sequenza di numeri interi. La sequenza termina quando l'utente
+				inserisce il numero 0. Calcolare e visualizzare la media dei numeri positivi e pari e la media di tutti
+				i numeri. Considerare tutti i possibili casi di errore (Il primo numero è zero, non ci sono numero pari
+				e positivi).
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 17</span>
+			<span class="titolo">Numero primo?</span>
+			<div class="testo">
+				Chiedere in ingresso un numero intero. Visualizzare se il numero è primo oppure no
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 18</span>
+			<span class="titolo">Massimo Comune Divisore (MCD)</span>
+			<div class="testo">
+				Chiedere in ingresso due numeri interi. Calcolare il massimo comune divisore e visualizzarlo
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 19</span>
+			<span class="titolo">Numeri pari inferiori a n</span>
+			<div class="testo">
+				Leggi in ingresso un numero n e visualizza tutti i numeri pari inferiori a tale numero (fino a 0).
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 20</span>
+			<span class="titolo">Giuseppe e Lorenzo</span>
+			<div class="testo">
+				Bisogna contare quanti studenti di una classe si chiamano Giuseppe e quanti Lorenzo. Si riceve in
+				ingresso la sequenza dei nomi degli studenti. Tale sequenza termina quando l’utente inserisce il valore
+				FINE. <br>Stampare al termine i seguenti valori:
+				<br>
+				Lo studente Giuseppe e' presente X volte.
+				<br>
+				Lo studente Lorenzo e' presente Y volte.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 21</span>
+			<span class="titolo">Media di positivi o somma negativi</span>
+			<div class="testo">
+				Dati in input una sequenza di interi (la sequenza termina quando l’utente inserisce lo zero), calcolare
+				la media solo dei numeri positivi (lo zero non va considerato nel calcolo della media).<br>Se nella
+				sequenza è presente il numero 100, non bisogna calcolare la media ma la somma dei numeri negativi
+				presenti nell’intera sequenza.
+				<br>
+				Es. <br>se la sequenza è -4 5 8 12 -12 0 la media è 8,333
+				<br>
+				Se la sequenza è -3 -5 -6 -10 0 la media è zero
+				<br>
+				Se la sequenza è -3 -4 -10 30 100 -5 0 devo visualizzare la somma Negativi -22
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 22</span>
+			<span class="titolo">Numeri compresi tra 1 e N, multipli di M</span>
+			<div class="testo">
+				Si realizzi un programma che dati due interi N ed M richiesti in input calcoli l'insieme dei numeri
+				compresi tra 1 ed N che sono multipli di M.<br>
+				Stamparli in ordine crescente.
+				<br><br>
+				Esempio:<br>
+				N=10<br>
+				M=3<br>
+				<br>
+				il programma stampa: 3 6 9
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 23</span>
+			<span class="titolo">Numero elementi maggiori di x</span>
+			<div class="testo">
+				Scrivere un programma che acquisisca da tastiera un intero x e altri N interi e restituisca il numero di
+				elementi maggiori di x presenti ricevuti in ingresso. <br>
+				<br>
+				es.
+				<br>
+				se in ingresso di specifica x=10 e N=4 ela sequenza dei numeri è 3 6 12 21, il programma restituisce 2
+				<br>
+				se in ingresso di specifica x=4 e N=5 e la sequenza dei numeri è 3 6 2 1 2 , il programma restituisce 1
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 24</span>
+			<span class="titolo">Indovina il numero</span>
+			<div class="testo">
+
+				Scrivere un programma che implementi il gioco nel quale l'utente deve indovinare un numero segreto con
+				una quantità massima di tentativi. Utilizzare una funzione generaNumero che permette di generare
+				casualmente un numero di 4 cifre, mentre la funzione indovinaNumero consente :
+
+				<li>di inserire un numero all'utente</li>
+				<li>confronta il numero da individuare con quello inserito e visualizza il messaggio "troppo grande" o
+					"troppo piccolo"</li>
+				<li>se il numero inserito è corretto la funzione ritorna vero oppure falso</li>
+
+				Il programma principale controlla se i tentativi ammessi sono esauriti, se il numero segreto è stato
+				individuato o meno e ripropone una nuova partita
+				<br><br>
+				Facoltativo: Aggiornare il gioco inserendo anche 3 livelli di difficoltà (facile, medio e difficile),
+				diminuendo il numero di tentativi a seconda della difficoltà.
+
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 25</span>
+			<span class="titolo">Calcolo del fattoriale</span>
+			<div class="testo">
+				Si scriva una funzione denominata fatt, che calcoli il fattoriale di un numero intero
+				dato. Per via della velocità di crescita della funzione, il valore restituito deve essere
+				codificato in un double, nonostante sia a tutti gli effetti un valore intero.
+
+				Tale funzione deve essere chiamata in un programma che ha richiesto in ingresso un numero intero e che
+				visualizzi il valore del fattoriale calcolato dalla funzione fatt
+
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 26</span>
+			<span class="titolo">Calcolo dell'imposta progressiva</span>
+			<div class="testo">
+				Su una somma di denaro deve essere pagata un imposta progressiva secondo lo schema:
+				<li>da 0 a 5000 euro una imposta (tassa) del 10%</li>
+				<li>da 5.000 a 15.000 euro una tassa del 20%</li>
+				<li>oltre i 15.000 una tassa del 30%</li>
+				<br>
+				Dopo aver acquisito in input l'importo bisogna calcolare l'imposta complessiva tenendo conto che la
+				parte fino a 5000 ha una tassazione del 10% quella che ecede i 5000 avrà il 20% e così via.
+				<br>
+				Esempio se l'importo è 12.000 l'importo è calcolato come il 10% di 5000 a cui va aggiunto il 20% dei
+				7000 euro
+				rimanenti
+				<br>
+				L'output è rappresentata dall'imposta finale da pagare
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 27</span>
+			<span class="titolo">Volo low cost</span>
+			<div class="testo">
+				Un volo aereo low cost per sola andata con destinazione Londra ha prezzi diversi a seconda dei mesi
+				dell'anno e precisamente:<br>
+
+				<li>da gennaio a giugno 26 euro</li>
+				<li>da luglio, agosto o settembre 40 euro</li>
+				<li>da ottobre a dicembre 30 euro</li>
+				<br>
+				Fornito in ingresso il mese di partenza calcolare il costo del biglietto.
+
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 28</span>
+			<span class="titolo">Sequenza ordinata crescente?</span>
+			<div class="testo">
+				Data una sequenza di N numeri interi verificare se la sequenza è ordinata in ordine crescente. <br>
+				Ad esempio se la sequenza di numeri è:<br>
+				<li>5 10 20 30 41 il programma visualizza il messaggio: "Ordinata"</li>
+				<li>5 21 32 4 27 89 il programma visualizza il messaggio: "Non ordinata"</li>
+				
+				Nel caso in cui N sia uguale a 1 la sequenza si considera ordinata
+				<br><br>
+				SUGGERIMENTO: Chiedere in input un valore prima del ciclo (rappresenta il primo numero), chiedere un solo numero dentro il ciclo e confrontarlo con il precedente
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 29</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<div class="testo">
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 30</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<div class="testo">
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 31</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<div class="testo">
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 32</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<div class="testo">
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 33</span>
+			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<div class="testo">
+				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+			</div>
+
+		</div>
+
+
 
 
 
