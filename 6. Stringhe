@@ -218,6 +218,17 @@ int main(int argc, char** argv) {                // Variabili di input        st
 
 ------------------------------------------------------------------------
 
+Scrivere un programma che dopo aver acquisito una stringa da tastiera verifichi se questa è palindroma, stampando un opportuno messaggio all'utente. Una stringa si dice palindroma quando si
+legge allo stesso modo da destra e da sinistra, per esempio anna.
+
+Il programma deve svolgere le seguenti operazioni:
+
+    Visualizzare la stringa inserita
+    Aggiornare la stringa in modo che tutti i caratteri siano minuscoli e visualizzarla
+    Verificare se la stringa è palindroma stampando un opportuno messaggio all'utente.
+
+---------------------------------------------------------------------------
+
 
 
 

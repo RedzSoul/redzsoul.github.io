@@ -392,3 +392,40 @@ Scrivere due funzioni: una che cifra e un'altra che decifra il testo. Le funzion
 Nel main chiedere all'utente il testo e la chiave e stampare il risultato corrispondente
 ------------------------------------------------------------------------
 
+Vogliamo gestire i valori, espressi in millimetri, delle precipitazioni nei vari mesi dell’anno nella zona della provincia di Pisa. Il programma deve prevedere nel main un menu con le seguenti operazioni
+
+● inserimento
+
+● media precipitazioni
+
+● mese più piovoso
+
+● mese meno piovoso
+
+● mesi oltre soglia
+
+● media precipitazioni periodo
+
+● uscita dal menu
+
+Prevedere le seguenti funzioni:
+1. void inserisciPrecipitazioni (int v[ ], int dim)
+    per inserire i valori mensili nel vettore chiedendoli all’utente in input
+2. int valoreMedio (int v[ ], int dim)
+    per calcolare il valore medio delle precipitazioni
+3. int meseMax (int v[ ], int dim)
+    per cercare il mese con il valore massimo di precipitazioni
+4. int meseMin (int v[ ], int dim)
+    per cercare il mese con il valore minimo di precipitazioni
+5. void mesiOltreValore (int v[ ], int dim, int soglia)
+    per visualizzare i mesi i cui valori sono superiori ad un valore dato, ovvero soglia
+6. int mediaPeriodo(int v[ ], int dim, int inizio, int fine)
+    per calcolare la media delle precipitazioni dei mesi compresi tra il mese “inizio” ed il mese “fine” (nota: “fine” deve essere maggiore o uguale a “inizio” ed entrambi devono essere mesi validi, in caso contrario la funzione restituisce -1)
+
+---------------------------------------------------------------------------
+
+Dato un vettore di valori interi, scrivere una funzione C++ contaIntervallo che conti il numero di elementi compresi tra un valore minimo e uno massimo forniti come argomenti alla funzione stessa.
+Scrivere un programma che carichi il vettore chiedendo i valori da tastiera,  chieda all’utente il valore minimo e massimo e utilizzi la funzione contaIntervallo per visualizzare poi il risultato del conteggio.
+
+--------------------------------------------------------------------------
+

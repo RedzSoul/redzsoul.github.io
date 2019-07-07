@@ -138,3 +138,102 @@ Utilizzare le funzioni opportune e commentare il codice.
 
 -------------------------------------------------------------------------
 
+Scrivere un programma per la gestione di alcuni valori interi in una matrice. Il programma deve consentire di:
+
+    Inserire i valori nella matrice
+    Stampare a video la matrice
+    Calcolare i totali per ogni riga
+    Calcolare i totali per ogni colonna
+    Calcolare la media di tutti i valori
+
+Prevedere una opportuna funzione per ognuna delle operazioni elencate sopra. Il programma deve iniziare visualizzando all’utente un menu con tutte le operazioni possibili.
+
+--------------------------------------------------------------------------
+
+Scrivere una funzione C++ che a partire da due vettori di valori numerici interi della stessa dimensione, costruisca una matrice quadrata in cui ogni singolo elemento di coordinate (r, c) sia ottenuto moltiplicando l’r-esimo elemento del primo vettore per il c-esimo elemento del secondo vettore.
+
+Per esempio, dati i vettori
+
+[1, 2, 3]               e             [5, 4, 6]
+
+La matrice risultato dovrà essere
+
+1*5        1*4        1*6
+
+2*5        2*4        2*6
+
+3*5        3*4        3*6
+
+Scrivere un programma C++ che, dopo aver richiesto all’utente l’inserimento dei due vettori, visualizzi gli elementi della matrice ottenuta come risultato dell’applicazione della funzione precedente.
+
+Pertanto, definire e utilizzare le funzioni per:
+
+    Caricare un vettore
+    Stampare una matrice
+    Ottenere la matrice quadrata a partire dai due vettori
+
+--------------------------------------------------------------------------
+
+Esercizio 1
+
+Scrivere una funzione C++ che, a partire da una matrice numerica di r x c elementi, costruisca due vettori di r elementi ciascuno contenenti rispettivamente i valori minimi e massimi di ogni riga della matrice.
+
+Scrivere un programma che, dopo aver richiesto all’utente l’inserimento degli elementi della matrice, costruisca i due vettori applicando la funzione sopra, stampando alla fine i due vettori ottenuti.
+
+Esempio:
+
+2             99          -2           0
+
+5             -8           8             15
+
+6             3             55          4
+
+Vettore minimi di riga = [ -2        -8           3]
+
+Vettore massimi di riga = [99      15          55]
+
+--------------------------------------------------------------------------
+
+Esercizio 2
+
+Scrivere una funzione C++ che, a partire da una matrice numerica di r x c elementi, costruisca due vettori di c elementi ciascuno contenenti rispettivamente i valori minimi e massimi di ogni colonna della matrice.
+
+Scrivere un programma che, dopo aver richiesto all’utente l’inserimento degli elementi della matrice, costruisca i due vettori applicando la funzione sopra, stampando alla fine i due vettori ottenuti.
+
+Esempio:
+
+2             99          -2           0
+
+5             -8           8             15
+
+6             3             55          4
+
+Vettore minimi di colonna= [ 2         -8           -2           0]
+
+Vettore massimi di colonna= [6        99          55          15]
+---------------------------------------------------------------------------
+
+Esercizio 4
+
+Scrivere un programma che consenta di
+
+    caricare una matrice r *c di interi 
+    stampare la matrice
+    stampare solo le righe dispari
+    costruire un vettore contenente per ogni riga la somma dei numeri negativi
+    costruire un vettore contenente per ogni colonna la somma dei numeri positivi
+
+Prevedere una funzione per ognuna delle cinque operazioni elencante sopra.
+
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

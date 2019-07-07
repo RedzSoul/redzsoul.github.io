@@ -55,3 +55,89 @@ esercizio n. 2 Caricare un vettore di N elementi. Ordinarlo utilizzando il selec
 
 --------------------------------------------------------------------------
 
+Scrivere un programma C++ per gestire i clienti di una agenzia immobiliare. 
+
+Ogni cliente è caratterizzato da:
+
+    codice cliente (un intero diverso per ogni cliente)
+    nome
+    città di residenza
+    numero di immobili affidati all'agenzia immobiliare.
+
+ 
+
+Scrivere in C++ le seguenti funzioni:
+
+    inserisciClienti, che consente di inserire i dati dei clienti in un vettore. Prevedere tutti i controlli dei dati inseriti. Per il codice basta controllare che sia > di 0; assumiamo per semplicità che l'utente inserisca tutti codici diversi. 
+    ordinaCodice, che ordina in base al codice il vettore dei clienti preso in input.
+    ricercaPerCodiceOrd, che preso un vettore v di clienti, ordinato in base al codice, ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;
+    ricercaPerCodiceNonOrd, che preso un vettore v di clienti non ordinato ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;
+    ricercaPerCitta, che preso un vettore di clienti v, ordinato in base al codice, e una città ci, stampi i dati di tutti i clienti in v con residenza ci.
+
+ 
+
+Il main, dopo aver chiesto all'utente il numero di clienti da inserire, chiamando le opportune funzioni, consentirà di
+
+    caricare i dati dei clienti
+    cercare i dati di un cliente, chiedendo il relativo codice (NOTA: che il vettore non è ordinato!)
+    ordinare il vettore in base al codice
+    cercare i dati di un cliente, chiedendo il relativo codice (NOTA: questa volta il vettore è ordinato!)
+    cercare i clienti con residenza in una città richiesta da tastiera.
+
+ 
+
+Per le funzioni di ricerca, scegliere di volta in volta, la funzione più efficiente per eseguire il tipo di ricerca richiesta.
+
+-------------------------------------------------------------------------
+
+Un sito web del turismo tiene un elenco aggiornato delle stazioni sciistiche e del manto nevoso (in cm, un intero).
+
+Si deve realizzare un programma che chieda in ingresso, per un insieme di località, il nome della località e l’altezza del manto nevoso (un intero).
+
+A tal fine si definisca una apposita struttura dati stazione.
+
+Si definisca un array di MAXDIM elementi di tipo stazione, e si chiedano all’utente i dati relativi a n <= MAXDIM località (nome e neve), memorizzandoli nell’array (il valore di n viene chiesto all’utente).
+
+Si realizzi una funzione compare(stazione s1, stazione s2) che restituisce -1, 0 o 1 a seconda che il manto nevoso in s1 sia rispettivamente minore, uguale o maggiore al manto nevoso in s2.
+
+Si modifichi l’algoritmo MergeSort visto a lezione, e lo si utilizzi per ordinare le località in base alla neve presente (suggerimento: si usi la funzione compare(…) ) .
+
+Si stampi a video l’elenco ordinato delle località.
+
+---------------------------------------------------------------------------
+
+Si vogliono organizzare i dati relativi ai risultati di una corsa campestre.
+
+Gli iscritti saranno al più 100, ma potranno anche essere meno.
+
+Per ogni partecipante si vuole memorizzare il nominativo (si assume che sia differente per ogni partecipante), il sesso (M/F), l’anno di nascita e il tempo in secondi impiegato per portare a termine la prova.
+
+Realizzare un programma C++ che, una volta definita un’opportuna struttura per memorizzare i dati, visualizzi un menu con le seguenti operazioni possibili:
+
+    Inserimento
+    Visualizzazione dei dati ordinati in base al tempo della prova
+    Visualizzazione dei dati ordinati in base all’anno di nascita (dal più giovane al più anziano)
+    Visualizzazione dei dati ordinati in base al nominativo
+    Ricerca di un nominativo
+    Uscita
+
+ Il programma dovrà comportarsi come segue:
+
+    Quando l’utente inserirà la scelta 1, relativa all’inserimento, il programma chiederà all’utente il numero di partecipanti che vuole inserire, chiamando solo dopo la funzione che consentirà di inserire i dati dei partecipanti in un vettore. Subito dopo l’inserimento, i dati saranno ordinati in base al tempo della prova, in base all’anno di nascita ed in base al nominativo dei partecipanti. I dati ordinati in base ai tre criteri saranno memorizzati in tre vettori diversi. Il primo ordinamento sarà effettuato implementando l’algoritmo Selection Sort, il secondo implementando il Bubble Sort ed il terzo con il Merge Sort.
+    Quando l’utente inserirà la scelta 2, il programma visualizzerà i dati dei partecipanti ordinati in base al tempo di prova.
+    Quando l’utente inserirà la scelta 3, il programma visualizzerà i dati dei partecipanti ordinati in base all’anno di nascita.
+    Quando l’utente inserirà la scelta 4, il programma visualizzerà i dati dei partecipanti ordinati in base al nominativo.
+    Quando l’utente inserirà la scelta 5, il programma chiederà il nominativo da cercare ed effettuerà la ricerca nel modo più efficiente, visualizzando i dati relativi al partecipante cercato.
+    Quando l’utente inserirà la scelta 6, il programma stampa un messaggio di saluto e termina.
+
+Attenzione:
+
+    Nel menu le operazioni 2, 3, 4 e 5 saranno consentite solo dopo l’inserimento.
+    L’operazione di inserimento può essere eseguita anche più volte.
+    Gli ordinamenti saranno eseguiti una sola volta dopo l’inserimento.
+    Bisogna effettuare i dovuti controlli dei dati inseriti da tastiera.
+
+
+---------------------------------------------------------------------------
+
+

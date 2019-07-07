@@ -342,4 +342,146 @@ il ciclo deve essere interrotto)
 [5]Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i
 prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.
 
+--------------------------------------------------------------------------
+
+Scrivere un programma che acquisisca da tastiera i dati di un certo numero di persone e restituisca:
+
+    il numero di persone residenti nella provincia di Pisa
+    il numero di residenti nella città di Pisa
+    i dati della persona che è residente nella città di Pisa da più tempo.
+
+In particolare, il numero di persone viene richiesto inizialmente all’utente. Inoltre, per ogni persona viene richiesto il nome, il cognome e la residenza, della quale interessa solamente la città, la provincia e l’anno in cui è stata richiesta.
+
+Realizzare il programma senza l’uso di vettori.
+
+-------------------------------------------------------------------------
+
+Scrivere un programma che consenta di gestire i dipendenti di un'azienda tramite l'uso di un vettore, che rappresenta il registro dei dipendenti dell'azienda stessa.
+
+Ogni dipendente è caratterizzato
+
+    dal numero di matricola (un intero)
+    dal cognome
+    dall’anno di nascita
+    dal numero di ore lavorate nel mese corrente
+
+Prevedere le seguenti funzioni:
+
+    caricaDipendenti, che consente di inserire i dati di tutti i dipendenti dell'azienda. La matricola viene assegnata dal programma: sarà 1 per il primo dipendente inserito, 2 per il secondo, ecc...
+    stampaDipendente, che consente di stampare i dati del dipendente con matricola m 
+    dipendenteMax, che restituisce i dati del dipendente che ha lavorato più ore nel mese corrente
+    dipendenteMin, che restituisce i dati del dipendente che ha lavorato meno ore nel mese corrente
+    mediaOre, che restituisce la media delle ore lavorate da un dipendente
+    cercaDip, che prende il cognome di un dipendente e restituisce true se esiste  almeno un dipendente con quel cognome e false altrimenti.
+
+La funzione main consentirà all'utente di eseguire una delle seguenti operazioni
+
+    Inserire i dati di tutti i dipendenti, dopo aver richiesto il numero di dipendenti dell'azienda
+    Visualizzare i dati del dipendente con matricola m acquisita da tastiera
+    Visualizzare i dati del dipendente che ha lavorato più ore nel mese corrente
+    Visualizzare i dati del dipendente che ha lavorato meno ore nel mese corrente
+    Visualizzare in numero medio di ore lavorate dai dipendenti
+    Verificare se nell'azienda è presente almeno un dipendente con un dato cognome inserito da tastiera.
+
+-------------------------------------------------------------------------
+
+
+Definire una struttura che descriva una squadra di calcio con il relativo allenatore.
+
+Una squadra è identificata da
+
+    Nome
+    Città di appartenenza
+    Punteggio corrente
+    Allenatore.
+
+L’allenatore è invece caratterizzato da
+
+    Nome
+    Cognome
+    Numero di titoli vinti.
+
+Scrivere un programma C++ che, dopo aver dichiarato una tabella Fantacalcio per gestire i dati delle squadre e aver chiesto all’utente il numero di squadre da inserire
+
+    Consentirà all’utente di inserire i dati delle squadre e dei relativi allenatori
+    Visualizzerà il nome delle squadre che hanno più di N punti in classifica (N verrà chiesto nel main all’utente)
+    Calcolerà e visualizzerà il numero di allenatori che hanno vinto almeno un titolo.
+
+Prevedere una funzione per il caricamento dei dati, una per la visualizzazione al punto 2 e un’altra ancora per il calcolo del numero di allenatori al punto 3.
+
+--------------------------------------------------------------------------
+
+Scrivere un programma per gestire una collezione di Libri.
+
+Ogni libro è caratterizzato da:
+
+    titolo,
+    numero di pagine,
+    prezzo.
+
+Il programma dopo aver chiesto all’utente il numero di libri che vuole inserire, offrirà un menu con le seguenti operazioni:
+
+    Caricamento, che consente l’inserimento da tastiera di tutti i dati dei libri
+    Visualizzazione, che visualizza tutti i dati di tutti i libri
+    Ricerca, che chiede all’utente il titolo del libro da cercare e visualizza il prezzo se il libro è presente. Per la ricerca, implementare una funzione che prenda, oltre al vettore e alla dimensione, anche il titolo come parametro e restituisca il prezzo del libro (se presente) oppure zero.
+    Più costoso e più economico, che visualizza i dati sia del libro più costoso che di quello più economico
+    Incremento del prezzo di una percentuale, che chiede all’utente una percentuale e, richiamando una apposita funzione, incrementa il prezzo dei libri di quella percentuale.
+    Uscita menu
+
+NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
+
+------------------------------------------------------------------------
+
+Scrivere un programma per gestire le informazioni di alcune auto.
+
+Il programma dopo aver chiesto all’utente il numero di autoche vuole inserire, offrirà un menu con le seguenti operazioni:
+
+    Caricamento, che consente l’inserimento da tastiera di tutti i dati delle auto (marca, modello, consumo al km, prezzo dell'allestimento base)
+    Visualizzazione, che visualizza tutti i dati di tutte le auto
+    Ricerca delle auto di una certa marca, che chiede all’utente la marca e stampa i dati di tutte le automobili di quella marca
+    Ricerca del prezzo di una determinata auto, che chiede all'utente marca e modello e restituisce il prezzo. (Assumiamo che sia presente al più una automobile di una determinata marca e di un determinato modello.)
+    Ricerca delle auto dato il prezzo, che chiede all'utente un prezzo e visualizzerà le auto con prezzo maggiore al prezzo inserito
+    Ricerca delle auto dato il consumo, che chiede all'utente un valore di consumo e visualizzerà le auto con consumo inferiore a quello inserito
+    Uscita menu
+
+NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
+
+-------------------------------------------------------------------------
+ESERCITAZIONE DEL 7/11/2018
+
+Considerate la seguente struttura:
+
+ 
+
+struct Studente
+
+{
+
+ int matricola;
+
+string nome;
+
+string telefono;
+
+};
+
+ 
+
+Scrivere in C++ le seguenti funzioni:
+
+    inserisciStudenti, che consente di inserire i dati degli studenti in un vettore vs solo in ordine crescente di matricola. Pertanto, se l’utente inserisce una matricola uguale o inferiore a quella precedentemente inserita, sarà visualizzato un messaggio di errore e sarà nuovamente richiesta la matricola.
+    ricercaPerMatricola, che preso un vettore di studenti vs ordinato in base alla matricola, e un numero di matricola m, cerca lo studente in vs con matricola m. Se lo studente è presente in vs, allora restituisce  il nome, altrimenti restituisce la stringa “NESSUNO”;
+    ricercaPerNome, che preso un vettore di studenti vs ordinato in base alla matricola, e un nome n, stampi i dati di tutti gli studenti in vs con nome n.
+
+ 
+
+Il programma mostrerà all’utente un menu con le tre operazioni che è possibile effettuare, oltre che alla possibilità di terminare l’esecuzione.
+
+ 
+
+Indicare quale algoritmo di ricerca avete implementato nelle due funzioni, motivando la risposta. Per ognuna delle due soluzioni, riportare inoltre le vostre osservazioni sull’efficienza degli algoritmi usati.
+
+-------------------------------------------------------------------------
+
+
 

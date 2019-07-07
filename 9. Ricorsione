@@ -293,3 +293,71 @@ T(n) = 2T(n-2)+5  n>=2
       int minRic(int a [ ], int from, int to)
 
 --------------------------------------------------------------------------
+
+Esercizio 1
+
+Scrivere un programma che calcoli il prodotto tra due numeri interi a e b mediante una formula ricorsiva.
+
+a*b = a*(b-1)+a; se b>0
+
+a*b =0; se b=0.
+
+--------------------------------------------------------------------------
+
+Esercizio 2
+
+Scrivere una funzione ricorsiva che riceve in ingresso una stringa e visualizzi a video la stringa invertita.
+
+--------------------------------------------------------------------------
+
+Scrivere una funzione C++ che implementi la funzione F(N) così definita:
+
+F(N)=1 se N <= 0,
+
+F(N)=-1+4*F(N-1) + F(N-2), altrimenti.
+
+------------------------------------------------------------------------
+Esercizio 2
+
+Scrivere un programma che calcoli il quoziente della divisione tra naturali.
+
+Suggerimento: x/y = (x - y + y)/y = 1 + (x - y)/y. Utilizzare una funzione ricorsiva.
+
+------------------------------------------------------------------------
+
+Esercizio 3
+
+Scrivere una funzione ricorsiva
+
+int minimo (int v[ ], int n);
+
+che determini il minimo di un vettore di interi.
+
+------------------------------------------------------------------------
+
+Esercizio 4
+
+Scrivere una funzione ricorsiva
+
+int visualizzaa (int v[ ], int n);
+
+che visualizzi un vettore di interi.
+
+------------------------------------------------------------------------
+
+Esercizio 1
+
+Scrivere una funzione ricorsiva che calcoli il prodotto tra il numero 10 e un numero n passato come parametro.
+
+-------------------------------------------------------------------------
+
+Esercizio 2
+
+Scrivere una funzione ricorsiva che calcoli la potenza 2^n.
+
+-----------------------------------------------------------------------
+
+
+
+
+

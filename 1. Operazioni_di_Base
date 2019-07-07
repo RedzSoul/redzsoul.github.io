@@ -419,11 +419,117 @@ int main(int argc, char** argv) {
 
 }
 
- 
+---------------------------------------------------------------------
+
+Esercizio 1
+
+Scrivere un programma che chieda all'utente una sequenza di interi positivi verificando che l'utente inserisca alternativamente un numero pari e un numero dispari, cominciando con un numero pari.
+
+La sequenza termina quando l'utente immette un valore minore o uguale a zero oppure se immette due pari consecutivamente o se immette due dispari consecutivamente.
+
+Terminata la lettura dei valori il programma deve stampare la somma di TUTTI i valori pari e poi la somma di TUTTI i valori dispari appartenenti alla sequenza (il valore che causa la terminazione non è considerato parte della sequenza).
+
+Se la sequenza è vuota, cioè il primo numero non è pari e maggiore di zero, allora il programma stampa solo un avvertimento.
+
+Esempi di esecuzione (ogni rettangolo rappresenta un esempio diverso)
+
+Dammi un intero:  -3
+
+La sequenza di numeri e' vuota
+*******************************************************************
+Dammi un intero:  3
+
+La sequenza di numeri e' vuota
+***********************************************************************
+Dammi un intero:  12
+
+Dammi un intero:  5
+
+Dammi un intero:  8
+
+Dammi un intero:  7
+
+Dammi un intero:  11
+
+Il totale dei valori pari e' 20
+
+Il totale dei valori dispari e' 12
+********************************************************************
+Dammi un intero:  6
+
+Dammi un intero:  3
+
+Dammi un intero:  0
+
+Il totale dei valori pari e' 6
+
+Il totale dei valori dispari e' 3
+
+-------------------------------------------------------------------------
+
+Esercizio 2
+
+Scrivere un programma che chieda all'utente un intero n compreso tra 2 e 15, e stampi un triangolo rettangolo di asterischi con altezza n, come negli esempi riportati sotto. Se il numero fornito dall'utente non è compreso nell'intervallo indicato, il programma lo deve chiedere di nuovo.
+
+Esempi di esecuzione (ogni rettangolo rappresenta un esempio diverso)
+
+Dammi un intero compreso tra 2 e 25, estremi inclusi:  5
+
+    *
+
+   **
+
+  ***
+
+ ****
+
+*****
 
 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Dammi un intero compreso tra 2 e 25, estremi inclusi:  1
 
+Dammi un intero compreso tra 2 e 25, estremi inclusi:  2
 
+ *
+
+**
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Dammi un intero compreso tra 2 e 25, estremi inclusi:  100
+
+Dammi un intero compreso tra 2 e 25, estremi inclusi:  15
+
+              *
+
+             **
+
+            ***
+
+           ****
+
+          *****
+
+         ******
+
+        *******
+
+       ********
+
+      *********
+
+     **********
+
+    ***********
+
+   ************
+
+  *************
+
+ **************
+
+***************
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

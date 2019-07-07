@@ -345,5 +345,51 @@ Esempio: se il vettore dopo la generazione dei numeri casuali è [200, 4,25, 400
 il vettore deve trasformarsi in : [1001, 0, 0, 1001, 0, 0]
 
 -------------------------------------------------------------------------
+Esercizio 2
+
+Scrivere una funzione C++ con il seguente prototipo
+
+ 
+
+void derive (float data[], int dim, float diff[]);
+
+ 
+
+che a partire dal vettore data di dimensione dim costruisca il vettore diff.
+
+In particolare, il vettore diff conterrà la differenza tra 2 elementi adiacenti di data:
+
+    diff[0] conterrà la differenza tra il secondo elemento di data ed il primo
+    diff[1] conterrà la differenza tra il terzo elemento di data ed il secondo
+    ...
+
+Scrivere un programma per testare la funzione sopra, caricando i valori del vettore da tastiera 
+
+---------------------------------------------------------------------------
+
+Esercizio 3
+
+Scrivere una funzione avente il seguente prototipo
+
+ 
+
+float prodottoScalare (float a[], float b[], int dim)
+
+
+dove dim rappresenta la dimensione sia di a che di b. La funzione calcola e restituisce il prodotto scalare tra a e b, ovvero la somma dei prodotti tra gli elementi corrispondenti (il primo con  il primo, il secondo con il secondo, ecc) dei due vettori.
+
+---------------------------------------------------------------------------
+
+Scrivere un programma che, dopo aver richiesto all’utente il numero di valori interi che intende inserire,
+
+    carica i valori interi in un array chiedendoli in input all’utente,
+    lo stampa
+    chiede all’utente di inserire una soglia minima
+    calcola la somma di tutti i valori che superano tale soglia e la visualizza all’utente.
+
+Prevedere una funzione per le operazioni 1, 2 e 4 elencante sopra.
+
+-------------------------------------------------------------------------
+
 
 

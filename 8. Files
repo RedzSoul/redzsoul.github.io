@@ -215,3 +215,47 @@ Nel main realizzare un ciclo in cui è possibile:
 
 esercizio 6: leggere da un file di input una sequenza di numeri interi e inserirli in un vettore di massimo 100 elementi. Ordinare il vettore con un algoritmo a scelta e ricopiare il vettore ordinato in un file di output
 
+--------------------------------------------------------------------------
+
+Esercizio 1
+
+Scrivere un programma C++ che consenta di scrivere in un file studenti.txt i dati di alcuni studenti.
+
+In particolare, il programma chiederà all'utente il numero di studenti da inserire e, per ogni studente chiederà il nome, il cognome e l'anno di nascita. I dati di ogni studente saranno scritti su un'unica riga separati da uno spazio, ovvero Cognome Nome AnnoNascita. Nel file ci sarà una riga per ogni studente. Ad ogni esecuzione del programma i dati già presenti sul file non dovranno essere sovrascritti, al contrario i dati dei nuovi studenti saranno aggiunti alla fine del file.
+
+--------------------------------------------------------------------------
+
+Esercizio 2
+
+Data una sequenza di interi forniti dall'utente (il valore 0 interrompe la digitazione) memorizzare i soli multipli di 5 nel file di testo multipli5.txt.
+
+--------------------------------------------------------------------------
+
+Esercizio 3
+
+Data una sequenza di interi forniti dall'utente (il valore 0 interrompe la digitazione) memorizzare i numeri positivi nel file positivi.txt e i numeri negativi nel file negativi.txt.
+
+--------------------------------------------------------------------------
+
+Scrivere un programma (prendendo come esempio la soluzione dell'es. del 7-01) per gestire i dati relativi alle prove orali di alcuni studenti.
+
+Ogni prova orale è caratterizzata da:
+
+    nome dello studente,
+    cognome dello studente,
+    voto,
+    quadrimestre.
+
+I dati relative alle interrogazioni saranno memorizzati in maniera permanente in un file di testo di nome orali.txt. Nel file, i dati di ogni interrogazione saranno memorizzati in una riga diversa in cui ogni dato è separato dall'altro da un punto e virgola.
+
+Il programma, dopo aver caricato in un vettore gli eventuali dati già presenti nel file orali.txt, offrirà un menu con le seguenti operazioni:
+
+    Caricamento, che consente l’inserimento da tastiera dei dati relativi ad una interrogazione. In particolare, una volta scelta questa opzione, il programma chiederà all'utente i dati relativi alla nuova interrogazione. I dati inseriti saranno mantenuti in memoria centrale (nel vettore) e solo alla fine, quando l'esecuzione del programma terminerà, saranno memorizzati sul file in memoria di massa.
+    Visualizzazione che, dopo aver chiesto all'utente il quadrimestre (valori possibili 1, 2, 3 per entrambi i quadrimestri), visualizza i dati di tutte le prove, sia quelli caricate dal file, sia quelle caricate dall'utente durante l'ultima esecuzione del programma.
+    Media, che chiede il nome e cognome dello studente e visualizza i dati di tutti gli orali, la media per ogni quadrimestre e quella complessiva.
+    Uscita menu, che dopo aver memorizzato i dati sul file, termina l'esecuzione del programma.
+
+Prevedere apposite funzioni/procedure per la realizzazione del programma.
+--------------------------------------------------------------------------
+
+
