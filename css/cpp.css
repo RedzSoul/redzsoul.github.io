@@ -81,7 +81,7 @@ table.cifratura td {
   }
 
 
-  .bottoneMenu {
+  #bottoneMenu {
 	background-color: #5C5C5C;
 	border: none;
 	color: white;
@@ -94,3 +94,8 @@ table.cifratura td {
 	cursor: pointer;
 	border-radius: 4px;
   }
+
+  #bottoneMenu:hover {
+	background-color: #555;
+  }
+
