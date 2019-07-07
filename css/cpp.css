@@ -59,6 +59,17 @@ table.cifratura td {
 	margin: 5px;
 }
 
+
+.bottoneSpoiler{
+	width:100px;
+	font-size:12px;
+	margin-left:10px;
+	margin-bottom:3px;
+	padding:0px;
+}
+
+
+
 #bottoneTop {
 	display: none;
 	position: fixed;

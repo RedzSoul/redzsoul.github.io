@@ -10,78 +10,173 @@
 <body>
 
 	<h1> ESERCIZI C++ DIVISI PER CATEGORIA:</h1>
-	<div class="sommario">
-		<ul>
-			<li> <a href="#cap1"> Capitolo 1 - Operazioni di base (condizioni e cicli) </a> </li>
-			<li> <a href="#cap2"> Capitolo 2 - Array (vettori) </a></li>
-			<li> <a href="#cap3"> Capitolo 3 - Funzioni</a></li>
-			<li> <a href="#cap4"> Capitolo 4 - Array bidimensionali (Matrici) </a></li>
-			<li> <a href="#cap5"> Capitolo 5 - Struct </a></li>
-			<li> <a href="#cap6"> Capitolo 6 - Stringhe </a></li>
-			<li> <a href="#cap7"> Capitolo 7 - Ordinamento e ricerca su vettori </a></li>
-			<li> <a href="#cap8"> Capitolo 8 - File di testo </a></li>
-			<li> <a href="#cap9"> Capitolo 9 - Ricorsione </a></li>
-		</ul>
+
+
+	<!-- Questo div è il bottone per far apparire e scomparire il menu! -->
+
+	<div id="spoiler">
+		<div>
+			<input type="button" value="Menu" class="bottoneSpoiler"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display = ''; this.parentNode.parentNode.getElementsByTagName('div')['hide'].style.display = 'none'; this.innerText = ''; this.value = 'Nascondi'; } else { this.parentNode.parentNode.getElementsByTagName('div')['show'].style.display = 'none'; this.parentNode.parentNode.getElementsByTagName('div')['hide'].style.display = ''; this.innerText = ''; this.value = 'Menu'; }" />
+			<div id="show"
+				style="display: none; background-color:transparent; background-repeat:repeat; margin: 0px;border-style:solid;border-width:1px; padding: 4px; width:98%">
+
+
+				<div class="sommario">
+					<ul>
+						<li> <a href="#cap1"> Capitolo 1 - Operazioni di base (condizioni e cicli) </a> </li>
+						<li> <a href="#cap2"> Capitolo 2 - Array (vettori) </a></li>
+						<li> <a href="#cap3"> Capitolo 3 - Funzioni</a></li>
+						<li> <a href="#cap4"> Capitolo 4 - Array bidimensionali (Matrici) </a></li>
+						<li> <a href="#cap5"> Capitolo 5 - Struct </a></li>
+						<li> <a href="#cap6"> Capitolo 6 - Stringhe </a></li>
+						<li> <a href="#cap7"> Capitolo 7 - Ordinamento e ricerca su vettori </a></li>
+						<li> <a href="#cap8"> Capitolo 8 - File di testo </a></li>
+						<li> <a href="#cap9"> Capitolo 9 - Ricorsione </a></li>
+					</ul>
+				</div>
+
+
+			</div>
+			<div id="hide"></div>
+		</div>
 	</div>
 
+	
 
+	<!-- CAPITOLO 1-->
 	<div class="capitolo">
 		<h2 id="cap1"> Capitolo 1 - Operazioni di base (condizioni e cicli) </h2>
 
 		<div class="esercizio">
 			<!--Esercizio con soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Esercizio 1</span>
+			<span class="titolo">Ciao per n volte</span>
 			<div class="testo">
-				Testo dell'esercizio 1
+				Scrivere Ciao per un numero di volte definito dall'utente. Inserire il controllo che il numero di volte
+				sia positivo
 			</div>
+
 			<div class="soluzione">
-				<a href="link_al_testo"> soluzione_link.cpp
-				</a>
-				&nbsp;
-				<a href="link_al_testo"> eventuale_allegato.pdf
-				</a>
+				<a href="files/soluzionicpp/ciaonvolte.cpp"> ciaonvolte.cpp</a>
 			</div>
 		</div>
 
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Area del cerchio</span>
+			<span class="titolo">Calcolo della n-esima potenza</span>
 			<div class="testo">
-				Scrivi un programma che consenta di calcolare l'area del cerchio in
-				base al valore del raggio. Il programma dovr quindi richiedere
-				all'utente il valore del raggio (un numero reale) e mostrare l'area del
-				cerchio corrispondente.
+				Dati di input base ed esponente, calcolare con l'uso di un for la n-esima potenza (base elevato alla
+				esponente).
 			</div>
 
 		</div>
 
 		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Valore assoluto</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
 			<div class="testo">
-				Cosa fa il seguente programma? <br>
-				<pre>
-					// A)
-					int i=0,j,R=3,C=4;
-					while( i < R ) {
-						j=0;
-						while ( j&lt;C ) {
-							cout << i+j;
-							j=j+1;
-						}
-						cout << "\n";
-						i=i+1;
-					}
-					
-				  </pre>
-
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
 			</div>
 
 		</div>
 
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 4</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 5</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 6</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 7</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 8</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 9</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 10</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 11</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 12</span>
+			<span class="titolo">/////////////////</span>
+			<div class="testo">
+				/////////////////
+			</div>
+
+		</div>
+
+
+
+
+
+
+
 	</div>
+
+
+	<!-- CAPITOLO 2-->
+
+
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
 		<h2 id="cap2"> Capitolo 2 - Array (vettori) </h2>
@@ -114,6 +209,10 @@
 
 
 	</div>
+
+
+	<!-- CAPITOLO 3-->
+
 
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
@@ -148,6 +247,10 @@
 
 	</div>
 
+
+	<!-- CAPITOLO 4-->
+
+
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
 		<h2 id="cap4"> Capitolo 4 - Array bidimensionali (Matrici) </h2>
@@ -180,6 +283,9 @@
 
 
 	</div>
+
+	<!-- CAPITOLO 5-->
+
 
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
@@ -214,6 +320,11 @@
 
 	</div>
 
+
+	<!-- CAPITOLO 6-->
+
+
+
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
 		<h2 id="cap6"> Capitolo 6 - Stringhe </h2>
@@ -246,6 +357,11 @@
 
 
 	</div>
+
+
+	<!-- CAPITOLO 7-->
+
+
 
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
@@ -280,6 +396,10 @@
 
 	</div>
 
+
+	<!-- CAPITOLO 8-->
+
+
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
 		<h2 id="cap8"> Capitolo 8 - File di testo </h2>
@@ -312,6 +432,10 @@
 
 
 	</div>
+
+
+	<!-- CAPITOLO 9-->
+
 
 	<div class="capitolo">
 		<!--Esercizio con listati all'interno del testo-->
@@ -346,10 +470,10 @@
 
 	</div>
 
-
-
 	</div>
 
+
+	<!-- Bottone per tornare in cima -->
 
 	<button onclick="topFunction()" id="bottoneTop" title="Torna in cima">Inizio</button>
 
