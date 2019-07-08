@@ -4,44 +4,30 @@
 	<title>Esercizi C++</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/cpp.css">
-	<script type="text/javascript" src="js/funzioni.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/cpp.css">		<!-- Stili CSS per la pagina in generale-->
+	<link rel="stylesheet" href="css/styles.css">		<!-- Stili CSS per il menu -->
 </head>
 
 <body>
 
-	<h1> ESERCIZI C++ DIVISI PER CATEGORIA:</h1>
+	<header>
+		<a href="#home" class="logo" data-scroll>Esercizi C++:</a>
+		<nav class="nav-collapse">
+			<ul>
+				<li class="menu-item"> <a href="#"> Operazioni di base</a> </li>
+				<li class="menu-item"> <a href="#cap2" data-scroll> Vettori </a></li>
+				<li class="menu-item"> <a href="#cap3" data-scroll> Funzioni</a></li>
+				<li class="menu-item"> <a href="#cap4" data-scroll> Matrici </a></li>
+				<li class="menu-item"> <a href="#cap5" data-scroll> Struct </a></li>
+				<li class="menu-item"> <a href="#cap6" data-scroll> Stringhe </a></li>
+				<li class="menu-item"> <a href="#cap7" data-scroll> Ordinamento e ricerca </a></li>
+				<li class="menu-item"> <a href="#cap8" data-scroll> File di testo </a></li>
+				<li class="menu-item"> <a href="#cap9" data-scroll> Ricorsione </a></li>
+			</ul>
+		</nav>
+	</header>
 
-
-	<!-- Questo div è il bottone per far apparire e scomparire il menu! -->
-
-	<div id="spoiler">
-		<div>
-			<input type="button" value="Menu" id="bottoneMenu" onclick="funzioneSpoilerButton(this);" />
-			<div id="show"
-				style="display: none; background-color:transparent; background-repeat:repeat; margin: 0px;border-style:solid;border-width:1px; padding: 4px; width:98%">
-
-				<div class="sommario">
-					<ul>
-						<li> <a href="#cap1"> Capitolo 1 - Operazioni di base (condizioni e cicli) </a> </li>
-						<li> <a href="#cap2"> Capitolo 2 - Array (vettori) </a></li>
-						<li> <a href="#cap3"> Capitolo 3 - Funzioni</a></li>
-						<li> <a href="#cap4"> Capitolo 4 - Array bidimensionali (Matrici) </a></li>
-						<li> <a href="#cap5"> Capitolo 5 - Struct </a></li>
-						<li> <a href="#cap6"> Capitolo 6 - Stringhe </a></li>
-						<li> <a href="#cap7"> Capitolo 7 - Ordinamento e ricerca su vettori </a></li>
-						<li> <a href="#cap8"> Capitolo 8 - File di testo </a></li>
-						<li> <a href="#cap9"> Capitolo 9 - Ricorsione </a></li>
-					</ul>
-				</div>
-
-
-			</div>
-			<div id="hide"></div>
-		</div>
-	</div>
-
-
+	<br><br><br><br><br><br>
 
 	<!-- CAPITOLO 1-->
 	<div class="capitolo">
@@ -394,10 +380,11 @@
 				Ad esempio se la sequenza di numeri è:<br>
 				<li>5 10 20 30 41 il programma visualizza il messaggio: "Ordinata"</li>
 				<li>5 21 32 4 27 89 il programma visualizza il messaggio: "Non ordinata"</li>
-				
+
 				Nel caso in cui N sia uguale a 1 la sequenza si considera ordinata
 				<br><br>
-				SUGGERIMENTO: Chiedere in input un valore prima del ciclo (rappresenta il primo numero), chiedere un solo numero dentro il ciclo e confrontarlo con il precedente
+				SUGGERIMENTO: Chiedere in input un valore prima del ciclo (rappresenta il primo numero), chiedere un
+				solo numero dentro il ciclo e confrontarlo con il precedente
 			</div>
 
 		</div>
@@ -747,7 +734,6 @@
 					Simulazione della console
 				</div>
 
-
 			</div>
 		</div>
 
@@ -761,7 +747,40 @@
 
 	<button onclick="topFunction()" id="bottoneTop" title="Torna in cima">Inizio</button>
 
+	<!-- Funzioni Javascript per far funzionare i pulsanti ed il menu!-->
+
+	<script type="text/javascript" src="js/funzioni.js"></script>
 
 </body>
 
 </html>
+
+	<!-- Questo div è il bottone per far apparire e scomparire il menu! 
+
+	<div id="spoiler">
+		<div>
+			<input type="button" value="Menu" id="bottoneMenu" onclick="funzioneSpoilerButton(this);" />
+			<div id="show"
+				style="display: none; background-color:transparent; background-repeat:repeat; margin: 0px;border-style:solid;border-width:1px; padding: 4px; width:98%">
+
+				<div class="sommario">
+					<ul>
+						<li> <a href="#cap1"> Capitolo 1 - Operazioni di base (condizioni e cicli) </a> </li>
+						<li> <a href="#cap2"> Capitolo 2 - Array (vettori) </a></li>
+						<li> <a href="#cap3"> Capitolo 3 - Funzioni</a></li>
+						<li> <a href="#cap4"> Capitolo 4 - Array bidimensionali (Matrici) </a></li>
+						<li> <a href="#cap5"> Capitolo 5 - Struct </a></li>
+						<li> <a href="#cap6"> Capitolo 6 - Stringhe </a></li>
+						<li> <a href="#cap7"> Capitolo 7 - Ordinamento e ricerca su vettori </a></li>
+						<li> <a href="#cap8"> Capitolo 8 - File di testo </a></li>
+						<li> <a href="#cap9"> Capitolo 9 - Ricorsione </a></li>
+					</ul>
+				</div>
+
+
+			</div>
+			<div id="hide"></div>
+		</div>
+	</div>
+
+-->
