@@ -4,8 +4,8 @@
 	<title>Esercizi C++</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/cpp.css">		<!-- Stili CSS per la pagina in generale-->
-	<link rel="stylesheet" href="css/styles.css">		<!-- Stili CSS per il menu -->
+	<link rel="stylesheet" type="text/css" href="css/cpp.css"> <!-- Stili CSS per la pagina in generale-->
+	<link rel="stylesheet" href="css/styles.css"> <!-- Stili CSS per il menu -->
 </head>
 
 <body class="topnav">
@@ -391,58 +391,306 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 29</span>
-			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<span class="titolo">Reddito superiore a 30.000€</span>
 			<div class="testo">
-				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
-			</div>
+				Siano dati in input dall'utente il nome, il reddito di N contribuenti (N fornito dall'utente).
+				<br>Stampare i nomi dei contribuenti con reddito superiore a 30.000 euro </div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 30</span>
-			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<span class="titolo">Percentuali M, F e maggiorenni</span>
 			<div class="testo">
-				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+				Siano dati in input le età e il sesso ('M' o 'F') di N studenti di una classe (N fornito dall'utente).
+				<br>Visualizzare la percentuale delle femmine, quella dei maschi rispetto al totale degli studenti della
+				classe e la percentuale di maggiorenni in classe.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 31</span>
-			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<span class="titolo">Prodotto numeri pari</span>
 			<div class="testo">
-				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+				Caricare un vettore di dimensione 10 con numeri interi. <br>Moltiplicare tra loro tutti i numeri pari
+				presenti nel vettore e visualizzare il risultato
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 32</span>
-			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<span class="titolo">Tabella pitagorica</span>
 			<div class="testo">
-				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+				scrivere in C++ un esercizio che realizza la tabellina pitagorica: (ogni numero è il prodotto della riga
+				per la colonna).<br>
+
+				Suggerimento: utilizzare un for dentro un for dove ogni for ha un indice diverso <br>
+				<pre>
+				1   2   3   4    5   6    7     8    9   10
+
+				2   4   6   8   10  12   14    16   18   20
+			  
+				3   6   9   12  15  18   21    24   27   30   
+			  
+				4   8   12  16  20  24   28    32   36   40
+			  
+				5   10  15  20  25  30   35    40   45   50
+			  
+				6   12  18  24  30  36   42    48   54   60
+			  
+				7   14  21  28  35  42   49    56   63   70
+			  
+				8   16  24  32  40  48   56    64   72   80
+			  
+				9   18  27  36  45  54   63    72   81   90
+			  
+				10  20  20  40  50  60   70    80   90  100
+			</pre>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 33</span>
-			<span class="titolo">Quanti positivi e quanti negativi?</span>
+			<span class="titolo">Parti della tabellina pitagorica</span>
 			<div class="testo">
-				Chiedere all'utente N numeri e contare quanti sono i numeri positivi ed i negativi.
+
+				Svolgere un esercizio che:
+				<li>stampa la parte del triangolo superiore della tabellina pitagorica</li>
+				<li>stampa la diagonale maggiore della tabellina pitagorica</li>
+				<li>stampa la diagonale minore della tabellina pitagorica</li>
+				<li>stampa la parte del triangolo inferiore della tabellina pitagorica</li>
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 34</span>
+			<span class="titolo">Differenza costante</span>
+			<div class="testo">
+				Dati n valori numerici (controllare che siano crescenti altrimenti restituisce un errore), progettare un
+				algoritmo che scriva se i numeri forniti a partire dal secondo differiscono
+				ognuno dal precedente di un valore costante. <br>In caso affermativo l’algoritmo deve scrivere il valore
+				della differenza, in caso negativo l’algoritmo deve scrivere il valore massimo delle differenze tra i
+				numeri.
+
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 35</span>
+			<span class="titolo">Menu di figure geometriche</span>
+			<div class="testo">
+
+				Realizzare un menu che stampi a video delle figure geometriche fatte di asterischi.<br>
+				Le forme geometriche sono:
+				<li>quadrato di asterischi (pieno)</li>
+				<li>quadrato di asterischi (vuoto, cioè sono disegnati solo i bordi)</li>
+				<li>rettangolo pieno</li>
+				<li>rettangolo vuoto</li>
+
+				La scelta della figura e la sua dimensione va chiesta in input all'utente.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 36</span>
+			<span class="titolo">Presenze giornaliere in albergo</span>
+			<div class="testo">
+
+				Sono forniti 12 valori in input. Ogni valore rappresenta il numero di presenze giornaliere del mese
+				corrispondente in un albergo.<br>
+
+				Ad esempio il valore 300 che è il primo numero in ingresso, indica che nel mese di gennaio ci sono state
+				300 presenze giornaliere nell’albergo in questione. Se il secondo valore in input è 250, indica che ci
+				sono state nel mese di febbraio 250 presenze giornaliere e così via.<br><br>
+
+				Calcolare:<br>
+
+				<li>la media di presenze nel corso dell'intero anno</li>
+				<li>il numero totale di presenze nei mesi estivi (6,7,8) che rappresentano il mese di luglio, agosto e
+					settembre</li>
+				<li>Il mese in cui è stato registrato il massimo di presenze</li>
+				<li>il mese in cui è registrato il numero minimo di presenze</li>
+				<li>la media delle presenze escludendo i mesi estivi</li>
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 37</span>
+			<span class="titolo">Sequenza di numeri casuali</span>
+			<div class="testo">
+
+				Genera una sequenza di N numeri casuali tra 1 e 10000 e visualizzare la quantità dei numeri pari e i
+				numeri dispari che sono generati. (N positivo e richiederlo per un numero massimo di tentativi)
+
+				Importante la funzione srand(time(NULL)) deve essere chiamata una sola volta fuori dal ciclo.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 38</span>
+			<span class="titolo">Minimo e massimo di numeri casuali</span>
+			<div class="testo">
+				Genera casualmente N numeri compresi tra 1 e 1000 (N maggiore di 0 altrimenti ricicla
+				finche è maggiore di zero o non superi un numero massimo di tentativi definito in una
+				costante). Calcolare l’elemento minimo e massimo e visualizzarli.
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 39</span>
+			<span class="titolo">Negozio con sconti</span>
+			<div class="testo">
+				Un negoziante per incrementare le sue vendite, prevede di applicare uno sconto in base al
+				numero dei pezzi acquistati. Se il cliente compra un pezzo viene applicato il 15% di
+				sconto, il 20% per 2 pezzi, il 30% per 3; in tutti gli altri casi lo sconto è del 40%. <br>In input
+				deve quindi essere inserito il prezzo unitario del prodotto e la quantità acquistata. Il prezzo
+				unitario viene fornito all’inizio del programma, mentre la quantità acquistata è il valore
+				intero di un switch. Prima del switch visualizzare il menu in cui si descrivono le offerte.
+				Cioè:
+				<li>se acquisti un pezzo lo sconto è 15% (premi 1)</li>
+				<li>se acquisti due pezzi lo sconto è 20% (premi 2)</li>
+				<li>se acquisti tre pezzi lo sconto è 30% (premi 3)</li>
+				<li>per qualunque altro numero di pezzi o sconto è del 40%</li>
+				<br>
+				Visualizzare lo sconto complessivo applicato e l’importo effettivo che il cliente deve pagare.
+
+				Il menù deve essere messo all’interno di un ciclo in modo che il cliente possa acquistare (in ogni
+				ciclo) un prodotto
+				con un prezzo differente. <br>Il ciclo termina quanto il cliente seleziona la stringa “FINE-SPESA”
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 40</span>
+			<span class="titolo">Prodotto di x per i</span>
+			<div class="testo">
+				Si realizzi un programma che legga da input un intero N ed un float x > 0.<br>Si calcoli e
+				visualizzi la somma dei prodotti di x per i, con i che varia da 1 ad N (ovvero, il valore somma =
+				x*1 + x*2 + ... + x*N).<br>Ad es. se x=3 e N=5, bisogna fare le seguenti operazioni:
+				3*1 + 3*2 + 3*3 + 3*4 + 3*5
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 41</span>
+			<span class="titolo">Somma pari e dispari con condizioni</span>
+			<div class="testo">
+				Scrivere un programma che chieda all'utente una sequenza di interi positivi verificando che l'utente
+				inserisca alternativamente un numero pari e un numero dispari, cominciando con un numero pari.<br>
+
+				La sequenza termina quando l'utente immette un valore minore o uguale a zero, se immette due pari
+				consecutivamente o se immette due dispari consecutivamente.
+
+				Terminata la lettura dei valori il programma deve stampare la somma di TUTTI i valori pari e poi la
+				somma di TUTTI i valori dispari appartenenti alla sequenza (il valore che fa terminare la sequenza di
+				inserimento non va contato nella somma).
+
+				Se la sequenza è vuota, cioè il primo numero non è pari e maggiore di zero, allora il programma stampa
+				solo un avvertimento.
+
+
+				<div class="console">
+					Dammi un intero: -3<br><br>
+
+					La sequenza di numeri e' vuota<br>
+					-------------------------------------<br>
+					Dammi un intero: 3<br><br>
+
+					La sequenza di numeri e' vuota<br>
+					-------------------------------------<br>
+					Dammi un intero: 12<br><br>
+
+					Dammi un intero: 5<br><br>
+
+					Dammi un intero: 8<br><br>
+
+					Dammi un intero: 7<br><br>
+
+					Dammi un intero: 11<br><br>
+
+					Il totale dei valori pari e' 20<br>
+
+					Il totale dei valori dispari e' 12<br>
+					-------------------------------------<br>
+					Dammi un intero: 6<br><br>
+
+					Dammi un intero: 3<br><br>
+
+					Dammi un intero: 0<br><br>
+
+					Il totale dei valori pari e' 6<br>
+
+					Il totale dei valori dispari e' 3<br>
+					-------------------------------------<br>
+				</div>
+
+
+			</div>
+
+		</div>
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 42</span>
+			<span class="titolo">Triangolo rettangolo</span>
+			<div class="testo">
+				Scrivere un programma che chieda all'utente un intero n compreso tra 2 e 15, e stampi un triangolo
+				rettangolo di asterischi con altezza n, come negli esempi riportati sotto. <br>Se il numero fornito
+				dall'utente non è compreso nell'intervallo indicato, il programma lo deve chiedere di nuovo.
+
+				<div class="console">
+					Dammi un intero compreso tra 2 e 25, estremi inclusi: 5<br><br>
+
+					*<br>
+					**<br>
+					***<br>
+					****<br>
+					*****<br>
+
+					-------------------------------------<br>
+
+					Dammi un intero compreso tra 2 e 25, estremi inclusi: 1<br><br>
+
+					Dammi un intero compreso tra 2 e 25, estremi inclusi: 2<br><br>
+
+					*<br>
+					**<br>
+					-------------------------------------<br>
+					Dammi un intero compreso tra 2 e 25, estremi inclusi: 100<br><br>
+
+					Dammi un intero compreso tra 2 e 25, estremi inclusi: 10<br><br>
+
+					*<br>
+					**<br>
+					***<br>
+					****<br>
+					*****<br>
+					******<br>
+					*******<br>
+					********<br>
+					*********<br>
+					**********<br>
+
+					-------------------------------------<br>
+
+				</div>
+
 			</div>
 
 		</div>
 
-
-
-
-
-
-
-
-
 	</div>
+
 
 
 	<!-- CAPITOLO 2-->
@@ -755,7 +1003,7 @@
 
 </html>
 
-	<!-- Questo div è il bottone per far apparire e scomparire il menu! 
+<!-- Questo div è il bottone per far apparire e scomparire il menu! 
 
 	<div id="spoiler">
 		<div>
