@@ -7,13 +7,22 @@ caricare un vettore di 10 interi.+
 calcolare l'lemento minimo
 
 visualizzarlo
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+-----------------------------------------------------------------------
 
+min, mx e media di un vettore
+
+Scrivere un programma in cui si carica un vettore di dimensione costante. Successivamente calcolare il min, max e media e visualizzarlo
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------
 lo studente con l'età massima
 
 Svolgere in C++ l'esercizio svolto in class in flow chart che visualizza il nome e l'età dello studente con età massima (gli studente sono N con N dato di input).
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------
 Dichiarare un vettore di lunghezza M (costante) Genera casualmente N numeri compresi tra 1 e 1000 (N maggiore di 0 e minore o uguale ad M altrimenti ricicla finche  non superi un numero massimo di tentativi definito in una costante) e memorizzali nel vettore.Calcolare l’elemento minimo e massimo del vettore .
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 esercizio per il 23 novembre con i vettori
 
@@ -24,6 +33,7 @@ Es. se la sequenza è  -4  5  8   12   -12  0  la media è 8,333
 Se la sequenza è   -3  -5  -6  -10  0   la media è zero
 
 Se la sequenza è -3  -4 -10  30  100  -5  0  devo visualizzare la somma Negativi  -22
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 calcolo di un numero binario a partire da un numero decimale (versione 1)
 
@@ -44,6 +54,7 @@ caricare de vettori di lunghezza N (costante) uno con i nomi di studenti e l'alt
 Dopo aver caricato Visualizzare i nomi degli studenti maggiorenni
 
 successivamente visualizzare il nome dello studente con età max, quello con età min e l'età media tra tutti gli studenti
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 ricopiare un vettore di interi positivi in un altro vettore
 
@@ -52,6 +63,7 @@ Dichiarare un vettore A di interi di lunghezza L (costante). Chiedere all'utente
 Ricopiare gli elementi positivi del vettore A in un vettore B (sempre di lunghezza L.
 
 in un altro ciclo visualizzare gli elementi di B in ordine inverso
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Ricopiare due vettori in un terzo vettore (lunedì 10 dicembre)
 
@@ -62,6 +74,7 @@ cioè V3 deve contenere il primo elemento di V1, poi il primo elemento di V2, po
 es. V1  contiene [1,3,10,30,20]   V2 contiene [44,25,3]
 
 V3 deve essere [1,44,3,25,10,3,30,20]
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 visualizzare duplicati
 
@@ -80,6 +93,7 @@ Stampa i valori dell'array in sequenza senza stampare lo stesso numero due volte
 es. se il vettore contiene  15, 3, 5, 3, 11, 5, 15, 5, 15,11
 
 deve essere stampato 15, 3,5,11
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 shift a destra di un vettore
 
@@ -107,6 +121,8 @@ Definire un vettore di dimensione massima 100 poi chiedere all’utente la dimen
 7 Ribalta il contenuto del vettore;
 
 0 Uscita.
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 dividi un vettore in due parti
 
@@ -139,29 +155,36 @@ Caricare un vettore di stringhe di dimensioni 15.
 Chiedere all'utente un nome e verificare se il nome è presente nel vettore.
 
 Risolvere il problema in flow chart e c++
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 lancio dei dadi
 
 calcolo della frequenza di n lanci di un dado.
 Utilizzare il vettore.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Copiare 2 vettori in un terzo
 
 Caricare due vettori V1 e V2, rispettivamente di lunghezza N ed M. Caricare in un terzo vettore V3 (di lunghezza N+M) primo vettore e il secondo vettore
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Copiare elementi positivi
 
 Caricare un vettore V1 di lunghezza N. Copiare gli elementi positivi presenti nel vettore V1 nel vettore V2. Stampare gli elementi di V2
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Caricare un vettore di interi. Stampare la media di tutti i numeri dispari e la media di tutti i numeri pari presenti nel vettore
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Dati gli stipendi di N dipendenti, realizzare un programma che li memorizzi in un vettore e visualizzi:
 
     posizione dello stipendio massimo
     la media delgi stipendi
     incrementare tutti gli stipendi del 10%
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Generare in modo casuale un insieme di 12 valori interi compresi tra 1 e 100 e memorizzarli in un vettore (A). Visualizzare gli elementi di A. Successivamente copiare tali elementi in un altro vettore (B) in ordine inverso. Visualizzare gli elementi di B
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 In un array di 12 elementi sono memorizzate le presenza mensili in un albergo nel corso dell'anno. Calcola:
@@ -173,25 +196,30 @@ In un array di 12 elementi sono memorizzate le presenza mensili in un albergo ne
     la media delle presenze escludendo i mesi estivi
 
 svolgere l'algoritmo in flow chart
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Aumentare in percentuale gli elementi di un vettore
 
 Ho un vettore precaricato. Chiedere all'utente una percentuale e aumentare i numeri del vettore di quella percentuale.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Dato un vettore di stringhe, trovare l'elemento massimo
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Caricare un vettore di numeri interi. Stampare la media di tutti i numeri in posizione pari e la media di tutti i numeri in posizione dispari.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Caricare un vettore con N numeri interi. Visualizzare un messaggio che indica che il vettore sia formato da tutti numeri uguali oppure no.
 
 Svolgere l'esercizio prima utilizzando un ciclo for e poi un while cioè uscendo dal ciclo quando trovo due elementi diversi.
 
 Svolgere l'esercizio in flow chart e c++
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Caricare di vettori di lunghezza 10 contenenti uno l'età degli studenti e l'altro i nomi.
 
 Visualizzare il nome dello studente con l'età massima
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Hai in input due vettori paralleli contenenti i dati relativi ad un supermercato.
 
@@ -212,10 +240,13 @@ Si supponga che i due vettori siano stati già caricati. Svolgere i punti dell'e
     Caricare un vettore di N numeri interi (N definito come costante). I numeri interi sono forniti dall'utente. Sommare tutti i numeri che sono divisibili per 3 e visualizzare come dato di output tale somma. (si ricorda che un numero è divisibile per 3 se il x%3 ==0 cioè il resto della divisione per 3 è zero.)
 -------------------------------------------------------------------------
 Caricare un vettore di 10 numeri interi I numeri interi sono forniti dall'utente. Contare il numero di elementi positivi e  visualizzarlo.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
     Inserisci 10 numeri usando il vettore, modifica questi elementi raddoppiandoli, poi stampa gli elementi modificati.
+    OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
     Caricare in modo random un vettore di 10 numeri interi e stamparlo a video, verificare poi quanti numeri pari e quanti numeri dispari ci sono nel vettore e visualizzarli
+    OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Creare un vettore parallelo di libro e del relativo prezzo. Caricarlo
 
