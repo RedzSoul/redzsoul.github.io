@@ -8,43 +8,35 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel='stylesheet' type='text/css' href='header_footer.css'>
-  <link rel="stylesheet" type="text/css" href="../../css/stile_index.css">
+  <link rel="stylesheet" type="text/css" href="../../css/stile_networking.css">
 	<link rel="canonical" href="index.html" />
     </head>
     <body>
 
       <div class="topnav" id="myTopnav">
         <!--Questo è il menu responsive-->
-    			<a href='index.html' class="active">Practice Questions</a>
-    			<a href='subnets.html'>Basic Subnetting</a>
+    			<a href='index.html' class="active">Subnetting</a>
     			<a href='binary.html'>Binary Practice</a>
-    			<a href='vlsm.html'>VLSM Calculator</a>
-          <a href='howto.html'>How to Subnet</a></li>
-          <a href='cheatsheet.html'>Subnetting Cheatsheet</a>
-          <a href='binary_calc.html'>Binary/Hex Calculator</a>
+          <a href='calculator.html'>Calculator</a>  <!--VLSM e bin/exa calculator -->
           <a href='ethernet_wiring.html'>Ethernet Wiring Practice</a>
           <a href='twos.html'>Exponent Practice</a>
+            <!--<a href='sixteens.html'>Multiples of Sixteen </a>-->
           <a href='osi_layer.html'>OSI Layer Practice</a>
           <a href='headers.html'>IP Header Practice</a>
+          <a href='teoria.html'>Teoria</a>
+              <!--<a href='howto.html'>How to Subnet</a>
+              <a href='howtoipv6.html'>How to Subnet IPv6</a>
+              <a href='cheatsheet.html'>Subnetting Cheatsheet</a>
+              <a href='ccna_commands.html'>Top CCNA Commands</a>
+              <a href='ip_allocation.html'>IPv4 v IPv6 Allocation</a>
+              <a href='ipv6_is_huge.html'>Incredible Size of IPv6</a>
+        -->
 
 
         <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
           <i class="fa fa-bars"></i>
         </a>
       </div>
-
-      <!--Funzioni Javascript-->
-      <script>
-        function responsiveMenu() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script>
-
 
 
 		<h1>Subnetting Questions</h1>
@@ -67,9 +59,55 @@
 <p>If these questions seem too difficult, start out with our <a href="subnets.html">basic subnetting</a> questions. You may also want to look at out <a href='ipv6.html'>IPv6 questions</a></p>
 <p> Learning how to subnet is key to passing the <a href='ccna_salary.html'>CCNA</a>, understanding how the internet works and the basis for any <a href='why.html'>networking career</a>. Use this site along with a good CCNA <a href="https://amzn.to/2mWCxzl">book</a> to gain the knowledge you need to succeed.</p>
 
+
+
+
+<h1>Basic Subnetting</h1>
+
+
+<p id='questionsubeasy'></p>
+<div class='questions'>
+<form onsubmit="return false;">
+	<label id='question1'>What is the block size:</label>
+	<input type='text'  id='input1' placeholder='block'/> <span  id='w1'></span><span  id='answer1'> </span><br />
+	<label id='question2'>How many usable hosts does the subnet have:</label>
+	<input type='text'  id='input2' placeholder='hosts'/> <span  id='w2'></span><span id='answer2'> </span><br />
+	<label id='question3'>What is the subnet mask for the last octet:</label>
+	<input type='text'  id='input3' placeholder='mask'/> <span  id='w3'></span><span id='answer3'> </span><br />
+	<label id='question4'>How many subnets of this size are possible in a class C:</label>
+	<input type='text'  id='input4' placeholder='subnets'/> <span  id='w4'></span><span id='answer4'> </span><br />
+	<label id='question5'>Write the last netmask octet in binary:</label>
+	<input type='text'  id='input5' placeholder='binary'/> <span  id='w5'></span><span id='answer5'> </span><br />
+	<p></p>
+
+	<button onClick="check_answerez();">Submit</button>
+</form>
+</div>
+<p><button onclick ="show_answerez();">Show Answers</button>  <button onclick ="next_questionez();">Next</button></p>
+<p>These are basic subnetting questions. You should be able to do these without any problems if you plan to work in networking or are studying for a certificate such as the CCNA.</p>
+<p>Once you have these down, try the more advanced <a href="index.html">questions</a>. If you need help, take a look at <a href="howto.html">our how to</a> and our <a href="cheatsheet.html">subnetting reference cheatsheet</a>.</p>
+
+
+
+
 <small>Copyright 2019. All rights reserved</small>
+
+<!--Funzioni Javascript-->
+
 <script type="text/javascript" src="main.js"></script>
+<script type='text/javascript' src="subnets.js"></script>
+
+<script>
+  function responsiveMenu() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
     </body>
 
-<!-- Mirrored from subnettingpractice.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Sep 2019 15:26:28 GMT -->
 </html>
