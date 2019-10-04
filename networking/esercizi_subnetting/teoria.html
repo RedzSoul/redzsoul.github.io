@@ -50,7 +50,7 @@
       <p>
       The usable hosts are between the network address and the broadcast. So the usable hosts the block size plus one through the next block size minus two.
       </p>
-      <p>Confused? The best way to learn subnetting is to practice! Start with the <a href="subnets.html">basics</a> and go from there.</p>
+      <p>Confused? The best way to learn subnetting is to practice! Start with the <a href="index.html">basics</a> and go from there.</p>
       <h2>A Bit More Depth</h2>
       <p>Learning how to subnet accurately and quickly are keys to success in the IT field and also to passing IT certifications, such as the CCNA. We subnet to avoid having one large network. A single giant network would be an unmanageable mess.</P
       <p>  All subnetting is done in binary, however, because we humans are used to a base-ten system, we translate things into decimal numbers. This makes life a lot easier. It is important to understand the binary behind the decimal. Without understanding the binary, it is difficult to understand why we calculate network masks, broadcast addresses, etc. the way we do. </p>
@@ -113,7 +113,7 @@
       </table>
       Though classful IP addresses are largely a thing of the past, these private ranges are still in existence and must be known by an IT professional. They are used for internal network only not routable through the Internet.
       </p>
-      <p>You may also want to read up on <a href="howtoipv6.html">IPv6</a>.</p>
+      <p>You may also want to read up on <a href="teoria.html">IPv6</a>.</p>
 
 
 <!--                                 -->
@@ -122,10 +122,10 @@
 <h1>How To Subnet IPv6</h1>
 
 
-<p>IPv6 is going to replace <a href="howto.html">IPv4</a>. The simple reason is that IPv4 address space is running out. The world has reached the point where there are not enough 32 bit addresses to link every device which wants to connect to the Internet. IPv6 uses 128 bits. Much larger. Much much larger. IPv6 allows almost 8*10<sup>28</sup> times as many addresses as IPv4. Basically, a number too large for the human mind to grasp.</p>
+<p>IPv6 is going to replace <a href="teoria.html">IPv4</a>. The simple reason is that IPv4 address space is running out. The world has reached the point where there are not enough 32 bit addresses to link every device which wants to connect to the Internet. IPv6 uses 128 bits. Much larger. Much much larger. IPv6 allows almost 8*10<sup>28</sup> times as many addresses as IPv4. Basically, a number too large for the human mind to grasp.</p>
 
-<p>Because of the <a href='ipv6_is_huge.html'>enormity</a> of IPv6 address space, subnetting will change. Currently we use CIDR and VLSM and NAT and other tools to conserve as much IPv4 space as possible. With IPv6 this is no longer a concern. The smallest subnet that is recommended for use in IPv6 is a /64! This means that even if you have 200 devices on a single /64, you still have 2<sup>64</sup>-200 of unused space.</p>
-<p>Because of the scale of IPv6, one no longer really worries about how many hosts are on a subnet. Rather the concern is how many subnets fit within a certain network. If you have a /48, how many /64s can you place inside this /48? These are the questions that IPv6 subnetting asks. Try <a href="ipv6.html">IPv6 Subnetting</a>.</p>
+<p>Because of the <a href='#size'>enormity</a> of IPv6 address space, subnetting will change. Currently we use CIDR and VLSM and NAT and other tools to conserve as much IPv4 space as possible. With IPv6 this is no longer a concern. The smallest subnet that is recommended for use in IPv6 is a /64! This means that even if you have 200 devices on a single /64, you still have 2<sup>64</sup>-200 of unused space.</p>
+<p>Because of the scale of IPv6, one no longer really worries about how many hosts are on a subnet. Rather the concern is how many subnets fit within a certain network. If you have a /48, how many /64s can you place inside this /48? These are the questions that IPv6 subnetting asks.
 <p>IPv6 is written in hexadecimal which uses the digits 0-9 and a-f. A hexadecimal digit represents 4 bits, or 16 decimal units. Each IPv6 address is represented by eight groups of four hexadecimal digits. These groups are separated by colons. An example may be: 2001:0db8:2231:aaec:0000:0000:4a4a:2100. Try practicing <a href="binary.html">binary</a>.</p>
 
 
@@ -146,7 +146,7 @@
 2001:db8::/32 are the documentation addresses.
 <br>
 ff00::/8 are multicast addresses
-<p>Our <a href="cheatsheet.html">subnetting cheatsheet</a> includes IPv6.</p>
+<p>Our <a href="#cheatsheet">subnetting cheatsheet</a> includes IPv6.</p>
 <h2>Correct IPv6 Notation</h2>
 <p>IPv6 addresses should be written a certain way. This will make interpreting the addresses faster and easier, both for humans and for computer programs.</p><p>
 Leading zeros must be removed. 2001:0db8::0001 must be written as  2001:db8::1.<br>
@@ -160,7 +160,7 @@ For more information see <a href="https://tools.ietf.org/html/rfc5952">RFC5952</
 
 <!--                                               -->
 
-<h2>IPv4 Subnet Cheatsheet</h2>
+<h2 id='cheatsheet'>IPv4 Subnet Cheatsheet</h2>
 
 <table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
 <thead>
@@ -726,7 +726,7 @@ For more information see <a href="https://tools.ietf.org/html/rfc5952">RFC5952</
 <td>1</td>
 </tr>
 </table>
-<p>An IP <a href='calc.html'>calculator</a> may be more useful.<br>
+<p>An IP <a href='calculator.html'>calculator</a> may be more useful.<br>
 You will learn all this by simply practicing subnetting</p>
 Feel free to print or save the following IPv4 and IPv6 cheat sheets: <br>
 <a href='images/IPv4_cheat_sheet.png'><img src='images/IPv4_cheat_sheet.png' alt='IPv4 Subnetting Cheat Sheet' height='400' width='340'></a>
@@ -737,6 +737,44 @@ Feel free to print or save the following IPv4 and IPv6 cheat sheets: <br>
 
 <p>If you are studying for the CCNA, you may also be interested in mastering your IPv4 and IPv6 <a href='headers.html'>header</a> information and a good <a href="https://www.amazon.com/gp/product/1118749618/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1118749618&amp;linkCode=as2&amp;tag=subnettingpra-20&amp;linkId=CR5DIQ6P7AK2FX5K">CCNA book</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=subnettingpra-20&amp;l=as2&amp;o=1&amp;a=1118749618" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 .</p>
+
+
+<!--                                                     -->
+
+
+<h1 id='header'>IP Header Format</h1>
+
+<p>An IP datagram is a packet of data made up of two parts; the header and the payload. The payload is the data being sent, and usually used by a higher level application. The header is the IP information used by the IP. You can think of IP similar to a letter. A letter comes with two parts, the actual letter meant to be read by the recipient, and the envelope, which directs the post office on where to send the letter. The header is like the envelope.</p>
+
+
+<p>Like a letter, the post office uses the information on the envelope to see where a letter is coming from and where it is going. You can also judge to see if the letter has been torn or damaged by looking at the envelope. If there are water stains and damage to the envelope, then the letter is probably damaged, and might need to even be re-written. The envelope will also give you hints as to what kind of letter you are getting. Is it a formal looking envelope from a business or a hand written letter from a friend?</p>
+<p>An IP header contains similar information. It includes the source and destination addresses, error checking along with other information which helps deliver data across a network.</p>
+<h2>IPv4 Header Information</h2>
+<p>An IPv4 header has a larger number of fields than the more modern IPv6 headers. It begins with a <strong>version</strong> number. For an IPv4 packet, this will be the number 4. This field tells the IP protocol what version of the IP protocol is being used on this particular piece of data.
+<br>Next comes the <strong>Internet Header Length (IHL)</strong>, which is 4 bits long and specifies the header length. The header length can range from 160 to 480 bits and is always a multiple of 32 bits. IPv4 needs to specify the header length due to the different options which can be added to the header.
+<br>Next comes the <strong>Type of Service</strong> or Differentiated Services Code Point (DSCP) field. This field is largely used for quality of service features such as determining the priority of a packet. For example, a voice over IP packet may be given higher priority over an HTTP packet.
+<br><strong>Total Length</strong> is a 16-bit field used to define the length of the whole packet, including the header and the payload. This can range from 20 bytes of 65,535 bytes.
+<br><strong>Identification</strong> contains a 16-bit value common to all fragments of a message. This is used to reassemble fragmented messages.
+<br><strong>Flags</strong> specify whether a packet has been or is allowed to be fragmented.
+<br><strong>Fragment Offset</strong> specifies where in a fragmented message this particular fragment occurred.
+<br><strong>Time To Live</strong> specifies how many hops the packet can cross before being dropped. This prevents a packet from being sent back and forth forever.
+<br><strong>Protocol</strong> identifies which higher-layer protocol is being carried in the data. Possibilities include TCP, UDP and ICMP.
+<br>The <strong>Header Checksum</strong> is a basic method of error detection. It is used to see if the header data was corrupted during transmission of the packet.
+<br>The <strong>Source Address</strong> and the <strong>Destination Address</strong> specify the originating and destination IP addresses for the packet.
+<br><strong>Options</strong> is a rarely used field of several types of additional options.
+<br><strong>Padding</strong> is used to make sure that the total header size is a multiple of 32 bits. Following all this comes the actual data inside the packet. </p>
+<h2>IPv6 Header Information</h2>
+<p>Like IPv4, IPv6 headers start with the <strong>Version</strong> number. The value 6 identifies the packet as an IPv6 packet.
+<br>This is followed by the <strong>Traffic Class</strong>. The Traffic Class specifies the priority of the packet by assigning a certain class to that packet. For example, a voice packet is probably going to have a higher priority than a data packet due to lag on voice communication being more noticeable.
+<br>This is followed by a <strong>Flow Label</strong>. Packets which belong to the same Flow Label should be routed through the same path. Packets with different Flow Labels can be routed to the same destination using different paths.
+<br>The <strong>Payload Length</strong> specifies the size of the post-header data.
+<br>The <strong>Next Header</strong> identifies the type of header immediately following the IPv6 header, for example a TCP or UDP header.
+<br><strong>Hop Limit</strong> replaces the IPv4 Time to Live data. This specifies how many hops the packet can take before being dropped.
+<br><strong>Source Address</strong> and <strong>Destination Address</strong> specify what IP address the packet originated from and what IP address it is being sent to.
+</p>
+<p>Test your knowledge of IP header fields and the <a href='headers.html'>header order</a>.</p>
+
+
 
 <!--                                                      -->
 
@@ -778,13 +816,13 @@ The output of this command includes the MTU size, the bandwidth label, the mac-a
 This command displays information about Layer 3 protocols on the Cisco device. These include RIP, OSPF and EIGRP. While these protocols have their own specific show commands, the 'show ip protocols' gives a large amount of detail on all running protocols at once. It includes routing information and is often the first Cisco command to run when troubleshooting routing problems due to Network Layer protocols misconfiguration. For IPv6 use 'show ipv6 protocols'
 </p>
 <p>
-The above Cisco commands should be enough to find most details on what a networking device is doing and how it is setup. These are obviously not the only commands you should know and the <a href='ccna_salary.html'>CCNA</a> is not limited to only 'show' commands. The above are a great start to any kind of troubleshooting you may need and are often going to be some of the first commands you will run.
+The above Cisco commands should be enough to find most details on what a networking device is doing and how it is setup. These are obviously not the only commands you should know and the CCNA is not limited to only 'show' commands. The above are a great start to any kind of troubleshooting you may need and are often going to be some of the first commands you will run.
 </p>
 
 
 <!--                                                      -->
 
-<h1>IPv4 and IPv6 Allocation by Continent</h1>
+<h1 id='allocation'>IPv4 and IPv6 Allocation by Continent</h1>
 <p>The amount of IPv4 space is just about used up. That means IPv4 addresses are scarce resources. Scarcity can limit future expansion of the Internet. Those who wish to connect to the world, but do not have a global IP address, cannot do so. This is especially true in the developing world, which has less IPv4 space allocated to it. A transition to IPv6 removes this scarcity and balances the IP addresses allocated to each continent.</p>
 
 
@@ -794,7 +832,7 @@ The above Cisco commands should be enough to find most details on what a network
 <p>
  <h2>Current IPv4 IP Address allocation:</h2></p><p>
 <a href='images/ipv4_allocation.png'><img alt='IPv4 allocation by RIR' src='images/ipv4_allocation.png' height='487' width='576'></a>
-</p><p>As you can see the USA and Canada alone take up almost half the IPv4 allocation of the whole world, while Africa and Latin America have small slivers of IP space. IPv6 is a whole new ball game. First off, the sheer <a href='ipv6_is_huge.html'>size</a> of IPv6 address space is so gigantic that most of it has not been allocated at all and is reserved. <br><h2> Current IPv6 Allocation for the World</h2></p>
+</p><p>As you can see the USA and Canada alone take up almost half the IPv4 allocation of the whole world, while Africa and Latin America have small slivers of IP space. IPv6 is a whole new ball game. First off, the sheer <a href='#size'>size</a> of IPv6 address space is so gigantic that most of it has not been allocated at all and is reserved. <br><h2> Current IPv6 Allocation for the World</h2></p>
 <p><a href='images/ipv6_reserved.png'><img alt='IPv6 reserved addresses' src='images/ipv6_reserved.png' height='581' width='559'></a></p>
 <p>The small slices are all the world's IPv6 allocation so far.
 </p> <p>Each RIR has been assigned a /12 along with a few /23s and other blocks. There has been little need to request more space than these /12s, and because of this, IPv6 RIR allocation is fairly evenly distributed at the moment. As IPv6 usage grows this may slowly change, but because IPv6 addresses will not become scarce resources, developing countries do not have to worry about not being able to receive the IP addresses they desire as their demand grows. The adoption of IPv6 ensures more equal opportunities to develop the Internet. Current IPv6 allocation, excluding reserved address space looks like this:
@@ -808,7 +846,7 @@ Finally, just to put things into size perspectives, all the IPv4 address space i
 
 <!--                                                             -->
 
-<h1>IPv6 Size</h1>
+<h1 id='size'>IPv6 Size</h1>
 <p>An IP address is like an identification number for devices (like computers) on networks (like the Internet). IPv4 addresses are running out and we are moving towards IPv6. Sometimes people express concern about how freely IPv6 addresses are assigned. Because it is nearly impossible for the human mind to grasp the huge numbers that we are talking about when talking about IPv6, the following interactive graphic helps visualize the true size of IPv6. Each circle shows how many IP addresses fit inside a certain slash. Click on the yellow and green to zoom out and in.</p>
 
 <canvas id='huge' width = '800' height='600' style = "border:7px solid black; ">
@@ -820,13 +858,14 @@ Finally, just to put things into size perspectives, all the IPv4 address space i
 <p>This means that the smallest allocation for a subnet is a /64. That seems really wasteful. Why allocate 2<sup>64</sup> IPs to every single subnet? Currently, if you get an IPv4 to IPv6 tunnel, the tunnel provider will give you a /64, and if you request it, will usually give you a /48. To someone coming from the IPv4 world, this seems extremely wasteful.</p>
 <p>However, a single /32 holds as many /64s as all the IPv4 IP address space. And there are over 4 billion /32s! One way of looking at things is that we would need to use 4 billion times the amount of IPv4 space to use up all of IPv6. That is far from something we should worry about.</p>
 <p>These numbers aren't entirely true, as you have certain IPv6 blocks that are not going to be assignable. For example, FF00::/8 is reserved for multicast. Even so, the amount of address space to work with is truly massive.</p>
-<p>Due to the current IETF designation we are only going to be using 1/8th of all IPv6 space. So if we ever do come to a point where we need to worry about running out of space, we can always add another 1/8th to use, and maybe even start being more conservative about address space, in the same way IPv4 went from classful subnetting to CIDR subnetting. Until that unlikely event occurs, we really do not need to be concerned with conserving IPv6 address space the same way we conserver IPv4 address space. IP <a href='ip_allocation.html'>allocation</a> is one less thing the world needs to worry about.</p>
+<p>Due to the current IETF designation we are only going to be using 1/8th of all IPv6 space. So if we ever do come to a point where we need to worry about running out of space, we can always add another 1/8th to use, and maybe even start being more conservative about address space, in the same way IPv4 went from classful subnetting to CIDR subnetting. Until that unlikely event occurs, we really do not need to be concerned with conserving IPv6 address space the same way we conserver IPv4 address space. IP <a href='#allocation'>allocation</a> is one less thing the world needs to worry about.</p>
 
 
 
 <small>Copyright 2019. All rights reserved</small>
 
 <script type='text/javascript' src=js/huge.js></script>
+<script type="text/javascript" src="js/headers.js"></script>
 
 <script>
   function responsiveMenu() {
