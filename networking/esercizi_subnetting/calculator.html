@@ -103,15 +103,50 @@ reason as before, we can only have 192.168.1.0/30, with the next possible networ
 
 
 
+<h1>IPv6 Subnetting Calculator</h1>
+
+<p>Input an IPv6 address and the subnet size in slash notation: </p>
+<form onsubmit="return false;">
+	<label>IPv6 address:</label>
+	<input type='text'  id='ip' value='2001:db8::/32' style="width:300px;"/>
+	<button onClick="calculate();">Calculate</button>
+</form>
+<table  bgcolor="#EEEEEE" cellpadding="2" cellspacing="1">
+	<tr><td>Compressed Address:</td><td id='address'></td></tr>
+	<tr><td>Expanded Address:</td><td id='expanded'></td></tr>
+	<tr><td>Prefix:</td><td id='prefix'></td></tr>
+	<tr><td>Range:</td><td id='first'></td></tr>
+	<tr><td></td><td id='last'></td></tr>
+	<tr><td>Number of /64s:</td><td id='64s'></td></tr>
+</table>
+<p>Select a number of subnets or a subnet size to divide the above into:
+</p>
+<input type='text'  id='subnets' value='4' style="width:60px"/>
+<button onClick="subnet_subnet();">Calculate</button>
+subnets or
+<select id ='slashes'>
+</select>
+<button onClick="subnet_slashes();">Calculate</button>
+<p id='facts'>
+This calculator can be used for IPv6 in the same way VLSM is used to plan an IPv4 network.<br>
+Remember, the <a href='ipv6_is_huge.html'>size</a> of IPv6 can be huge. This calculator can crash your browser if you attempt to have it calculate billions of subnets!<br>
+Because of this, only the first 999 subnets are displayed.
+</p>
+<p id='subnetted'> </p>
+<p>Use the above calculator to plan your IPv6 networks. Because of the huge size of IPv6, we do not care about the number of hosts in a network. Remember, that the smallest recommended subnet is a /64.</p>
 
 
 
 
 
 
-<small>Copyright 2014 SubnettingPractice.com. All rights reserved</small>
-        <script type="text/javascript" src="vlsm.js"></script>
-        <script type="text/javascript" src="binary_calc.js"></script>
+
+
+<small>Copyright 2019. All rights reserved</small>
+        <script type="text/javascript" src="js/vlsm.js"></script>
+        <script type="text/javascript" src="js/binary_calc.js"></script>
+        <script type='text/javascript' src="js/ipv6_subnetting.js"></script>
+
 
         <script>
           function responsiveMenu() {
