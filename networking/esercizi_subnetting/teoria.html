@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from subnettingpractice.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Sep 2019 15:26:19 GMT -->
+<head>
+        <title>Subnetting</title>
+
+	<meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' type='text/css' href='header_footer.css'>
+  <link rel="stylesheet" type="text/css" href="../../css/stile_networking.css">
+	<link rel="canonical" href="index.html" />
+    </head>
+    <body>
+
+      <div class="topnav" id="myTopnav">
+        <!--Questo è il menu responsive-->
+    			<a href='index.html' class="active">Subnetting</a>
+    			<a href='binary.html'>Binary Practice</a>
+          <a href='calculator.html'>Calculator</a>  <!--VLSM e bin/exa calculator -->
+          <a href='ethernet_wiring.html'>Ethernet Wiring Practice</a>
+          <a href='twos.html'>Exponent Practice</a>
+            <!--<a href='sixteens.html'>Multiples of Sixteen </a>-->
+          <a href='osi_layer.html'>OSI Layer Practice</a>
+          <a href='headers.html'>IP Header Practice</a>
+          <a href='teoria.html'>Teoria</a>
+              <!--<a href='howto.html'>How to Subnet</a>
+              <a href='howtoipv6.html'>How to Subnet IPv6</a>
+              <a href='cheatsheet.html'>Subnetting Cheatsheet</a>
+              <a href='ccna_commands.html'>Top CCNA Commands</a>
+              <a href='ip_allocation.html'>IPv4 v IPv6 Allocation</a>
+              <a href='ipv6_is_huge.html'>Incredible Size of IPv6</a>
+        -->
+
+
+        <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+
+
+
+      <h1>How To Subnet</h1>
+
+
+      <h2>The Quick and Easy</h2>
+      <p>
+      There are 2<sup>x</sup> subnets in a network, where x is the number of borrowed subnet bits.
+      </p>
+      <p>
+      There are 2<sup>h</sup>-2 usable hosts in a network, where h is the number of host bits.
+      </p>
+      <p>
+      The block size for a subnet is 256-subnet mask value. Start at zero and count in block sizes. Every block size will be a new network address.
+      </p>
+      <p>
+      The broadcast address is one less than the next network address. Count in block sizes.
+      </p>
+      <p>
+      The usable hosts are between the network address and the broadcast. So the usable hosts the block size plus one through the next block size minus two.
+      </p>
+      <p>Confused? The best way to learn subnetting is to practice! Start with the <a href="subnets.html">basics</a> and go from there.</p>
+      <h2>A Bit More Depth</h2>
+      <p>Learning how to subnet accurately and quickly are keys to success in the IT field and also to passing IT certifications, such as the CCNA. We subnet to avoid having one large network. A single giant network would be an unmanageable mess.</P
+      <p>  All subnetting is done in binary, however, because we humans are used to a base-ten system, we translate things into decimal numbers. This makes life a lot easier. It is important to understand the binary behind the decimal. Without understanding the binary, it is difficult to understand why we calculate network masks, broadcast addresses, etc. the way we do. </p>
+
+      <p>
+      A binary digit is called a <b>bit</b>. It represents a 1 or a 0. An IPv4 address has 32 bits, and an IPv6 address has 128 bits, but let's stick with IPv4 for now. Each IPv4 address is split up into four <b>octets</b> separated by periods. Each bit represents a power of 2. An octet is a group of 8 bits and can have a value ranging from 0 to 255. If you do not know how to count in binary, or convert binary into decimals, and vice versa you should check out the <a href="binary.html">Binary Practice</a> page.
+      </p>
+
+
+      <p>
+      OK, so an IP address is 32 bits. This address is then divided into two parts, the subnet bits and the host bits. The subnet bits show what network a device is on, and the host bits define the individual device. Think of a telephone number, you have an area code and then the number. The area code can be thought of as the subnet bits. Many people who live near one another share an area code, but they all have an individual phone number. The same is of devices on a subnet. They all share the same subnet bits, but then each one has an individual combination of host bits.
+      </p>
+      <p>
+      The way we know which part of the IP address is the subnet bit part and which part is the host bit part is using a <b>subnet mask</b>. A subnet mask (or net-mask) is made up of 32-bits, like a regular IP address, but is used only to divide the subnet bits from the host bits. The subnet bits are all 1s and the host bits are all 0s. So a subnet mask might be 11111111.11111111.1111111.00000000, which in decimal should be 255.255.255.0. This would specify that any IP address with that subnet mask will have the first three octets be used as subnet bits, and the last octet will be used for host bits.
+      </p>
+      <p>
+      You can have subnets inside of subnets. That's essentially what subnetting is; dividing blocks of IPs into smaller blocks. To do this you 'borrow' bits from the host range and add them to the subnetting bits. For example, you can split the above 255.255.255.0 into 4 subnets with the subnet mask of 255.255.255.192. "Wait, what??" Well, lets look back at the binary subnet mask for 255.255.255.0: 11111111.11111111.11111111.00000000. We can 'borrow' two bits from the host bits and create a net subnet mask of 11111111.11111111.11111111.<b>11</b>000000. Changing those two bits from 0s to 1s makes the last octet equal to 192. (Don't get it?  <a href="binary.html">Practice your Binary</a>.) By 'borrowing' those bits you can now create four new subnets within your original subnet. Why four? Because those two bits have four different possible combinations. You can have 00, 01, 10, 11. This number will always be 2<sup>x</sup> where x is the number of 'borrowed' subnet bits.
+      </p>
+      <p>
+      Now we know how many subnets we can create, but how many IPs does each subnet have? That is calculated the same way, only using the host bits. We have 6 host bits left (all the zeros) so we just find 2<sup>y</sup> where y is the number of host bits. 2<sup>6</sup>=64. But <b>wait</b>! That is how many IPs a subnet has, not how many usable hosts a subnet has. Every subnet must have a network address and a broadcast address, and neither of those can ever be used by a host. So the usable hosts is actually <b>2<sup>y</sup>-2</b> where y is the amount of host bits. In this case there are 62 usable bits per subnet. As you can see, learning your <a href="twos.html">powers of two</a> is key to subnetting quickly.
+      </p>
+      <p>
+      The network address is used to identify the network that you are working on and the broadcast IP is used to send messages to every device on that subnet. The network address is always the very first IP address of a subnet, and the broadcast is always the very last IP address of a subnet. In other words, for a network address is the IP address where all the host bits are set to 0 and the broadcast address is the IP address where all the host bits are set to 1.
+      </p>
+      <h2>IP address classes</h2>
+      <p>
+      Though the class system of IP ranges has been replaced by CIDR, many people still talk about the five classes of IP address range. Only three are really important.
+      <br>Class A addresses use the first octet for networking and the last three octets as host bits. The first octet range is 1-126 (or any ip address where the first bit is a 0).
+      <br>Class B addresses use the first two octets for networking and the last two for host bits. The first octet range is from 128-192 (the first two bits are 10).
+      <br>Class C addresses use the first three octets for networking and the last octet for host bits. The range of the first octet is 192-223 (the first three bits are 110 in binary).
+      <br>There are also Class D and E addresses which go from 224-239 and 240-255 and are used for multicast and experimental uses, respectively.
+      </p>
+      <p>
+      Private IP ranges are:<br>
+      <table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
+      <tr>
+      <td>Class</td>
+      <td>Size</td>
+      <td>Subnet Mask</td>
+      <td>Range of IPs</td>
+      </tr>
+      <tr>
+      <td>Class A</td>
+      <td>10.0.0.0/8</td>
+      <td>255.0.0.0</td>
+      <td>10.0.0.0 - 10.255.255.255</td>
+      </tr>
+      <tr>
+      <td>Class B</td>
+      <td>172.16.0.0/12</td>
+      <td>255.240.0.0</td>
+      <td>172.16.0.0 - 172.31.255.255</td>
+      </tr>
+      <tr>
+      <td>Class C</td>
+      <td>192.168.0.0/16</td>
+      <td>255.255.0.0</td>
+      <td>192.168.0.0 - 192.168.255.255</td>
+      </tr>
+      </table>
+      Though classful IP addresses are largely a thing of the past, these private ranges are still in existence and must be known by an IT professional. They are used for internal network only not routable through the Internet.
+      </p>
+      <p>You may also want to read up on <a href="howtoipv6.html">IPv6</a>.</p>
+
+
+<!--                                 -->
+
+
+<h1>How To Subnet IPv6</h1>
+
+
+<p>IPv6 is going to replace <a href="howto.html">IPv4</a>. The simple reason is that IPv4 address space is running out. The world has reached the point where there are not enough 32 bit addresses to link every device which wants to connect to the Internet. IPv6 uses 128 bits. Much larger. Much much larger. IPv6 allows almost 8*10<sup>28</sup> times as many addresses as IPv4. Basically, a number too large for the human mind to grasp.</p>
+
+<p>Because of the <a href='ipv6_is_huge.html'>enormity</a> of IPv6 address space, subnetting will change. Currently we use CIDR and VLSM and NAT and other tools to conserve as much IPv4 space as possible. With IPv6 this is no longer a concern. The smallest subnet that is recommended for use in IPv6 is a /64! This means that even if you have 200 devices on a single /64, you still have 2<sup>64</sup>-200 of unused space.</p>
+<p>Because of the scale of IPv6, one no longer really worries about how many hosts are on a subnet. Rather the concern is how many subnets fit within a certain network. If you have a /48, how many /64s can you place inside this /48? These are the questions that IPv6 subnetting asks. Try <a href="ipv6.html">IPv6 Subnetting</a>.</p>
+<p>IPv6 is written in hexadecimal which uses the digits 0-9 and a-f. A hexadecimal digit represents 4 bits, or 16 decimal units. Each IPv6 address is represented by eight groups of four hexadecimal digits. These groups are separated by colons. An example may be: 2001:0db8:2231:aaec:0000:0000:4a4a:2100. Try practicing <a href="binary.html">binary</a>.</p>
+
+
+<p>Even though these addresses are written in hexadecimal units, they are still large and cumbersome. There are a couple of ways to shorten them. One or more leading zeros from each group can be dropped. A consecutive set of groups with only zeros can be replaced with ::. The above address can be written as: 2001:db8:2231:aaec::4a4a:2100.</p>
+<p>Note that the :: should only be used on more than one section of zeros, and can only be used once per address. 2001::ab32:: is not a valid address because we do not know how many sets of zeros are in each :: group. The address could be 2001:0000:0000:ab32:0000:0000:0000:0000 or it could be 2001:0000:0000:0000:0000:ab32:0000:0000.</p>
+<p>Though the representation of the numbers is different, the computer still uses binary to do the actual subnetting. The binary math is the same, it is just using larger numbers. There is still a network portion and a host portion of every address.</p>
+<p>IPv6 does not use network addresses or broadcast addresses. An address where the host bits are all 0s or all 1s is still valid!</p>
+<p>We also do not use subnet masks for IPv6. Everything is written in slash notation. In IPv6 the first 48 bits are used for networking and routing. The next 16 and used to define subnets. The last 64 and used to identify a host.</p>
+<p>With IPv6 is that every device can create a unique link local address based on the MAC address of the device. What one does is inset 0xFFEE into the middle of the MAC address. This changes the MAC address to 64-bits from 48-bits. The other thing that needs to happen is to flip the 7th bit. A link local unicast address is fe80::/10</p>
+
+
+<h2>The Quick and Easy</h2>
+<p>The number of subnetting bits is the new prefix length minus the original prefix length. So there are 4 subnetting bits when a /48 is broken into /52s (52-48=4).</p>
+<p>The number of subnets possible with x subnetting bits is 2<sup>x</sup>. So if we have 4 subnetting bits, then we can create 2<sup>4</sup>=16 new subnets.</p>
+::1/128 is the loopback address.
+<br>::FFFF:0:0/96 are the IPv4-mapped addresses.
+<br>fe80::/10 are the link-local unicast.<br>
+2001:db8::/32 are the documentation addresses.
+<br>
+ff00::/8 are multicast addresses
+<p>Our <a href="cheatsheet.html">subnetting cheatsheet</a> includes IPv6.</p>
+<h2>Correct IPv6 Notation</h2>
+<p>IPv6 addresses should be written a certain way. This will make interpreting the addresses faster and easier, both for humans and for computer programs.</p><p>
+Leading zeros must be removed. 2001:0db8::0001 must be written as  2001:db8::1.<br>
+"::" must be used to represent the largest number of 16-bit sets of zero as possible.<br>
+If there are multiple places where "::" can be used, and the numbers of zeros are the same, use "::" on the leftmost set of zeros<br>
+"::" cannot be used to shorten a single 16-bit set of zeros.<br>
+Letters in an IPv6 address should be written in lowercase.<br>
+To represent port numbers, wrap an IPv6 address in square brackets then followed by a colon and the port number as [2001:db8::1]:80<br>
+For more information see <a href="https://tools.ietf.org/html/rfc5952">RFC5952</a>.
+</p>
+
+<!--                                               -->
+
+<h2>IPv4 Subnet Cheatsheet</h2>
+
+<table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
+<thead>
+<tr>
+<td>
+<p align="center"><strong>CIDR</strong></p>
+</td>
+<td>
+<p align="center"><strong>Subnet Mask</strong></p>
+</td>
+<td>
+<p align="center"><strong>Total IPs</strong></p>
+</td>
+<td>
+<p align="center"><strong>Usable IPs</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/32</td>
+<td>255.255.255.255</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>/31</td>
+<td>255.255.255.254</td>
+<td>2</td>
+<td>2*</td>
+</tr>
+<tr>
+<td>/30</td>
+<td>255.255.255.252</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>/29</td>
+<td>255.255.255.248</td>
+<td>8</td>
+<td>6</td>
+</tr>
+<tr>
+<td>/28</td>
+<td>255.255.255.240</td>
+<td>16</td>
+<td>14</td>
+</tr>
+<tr>
+<td>/27</td>
+<td>255.255.255.224</td>
+<td>32</td>
+<td>30</td>
+</tr>
+<tr>
+<td>/26</td>
+<td>255.255.255.192</td>
+<td>64</td>
+<td>62</td>
+</tr>
+<tr>
+<td>/25</td>
+<td>255.255.255.128</td>
+<td>128</td>
+<td>126</td>
+</tr>
+<tr>
+<td>/24</td>
+<td>255.255.255.0</td>
+<td>256</td>
+<td>254</td>
+</tr>
+<tr>
+<td>/23</td>
+<td>255.255.254.0</td>
+<td>512</td>
+<td>510</td>
+</tr>
+<tr>
+<td>/22</td>
+<td>255.255.252.0</td>
+<td>1024</td>
+<td>1022</td>
+</tr>
+<tr>
+<td>/21</td>
+<td>255.255.248.0</td>
+<td>2048</td>
+<td>2046</td>
+</tr>
+<tr>
+<td>/20</td>
+<td>255.255.240.0</td>
+<td>4096</td>
+<td>4094</td>
+</tr>
+<tr>
+<td>/19</td>
+<td>255.255.224.0</td>
+<td>8192</td>
+<td>8190</td>
+</tr>
+<tr>
+<td>/18</td>
+<td>255.255.192.0</td>
+<td>16,384</td>
+<td>16,382</td>
+</tr>
+<tr>
+<td>/17</td>
+<td>255.255.128.0</td>
+<td>32,768</td>
+<td>32,766</td>
+</tr>
+<tr>
+<td>/16</td>
+<td>255.255.0.0</td>
+<td>65,536</td>
+<td>65,534</td>
+</tr>
+<tr>
+<td>/15</td>
+<td>255.254.0.0</td>
+<td>131,072</td>
+<td>131,070</td>
+</tr>
+<tr>
+<td>/14</td>
+<td>255.252.0.0</td>
+<td>262,144</td>
+<td>262,142</td>
+</tr>
+<tr>
+<td>/13</td>
+<td>255.248.0.0</td>
+<td>524,288</td>
+<td>524,286</td>
+</tr>
+<tr>
+<td>/12</td>
+<td>255.240.0.0</td>
+<td>1,048,576</td>
+<td>1,048,574</td>
+</tr>
+<tr>
+<td>/11</td>
+<td>255.224.0.0</td>
+<td>2,097,152</td>
+<td>2,097,150</td>
+</tr>
+<tr>
+<td>/10</td>
+<td>255.192.0.0</td>
+<td>4,194,304</td>
+<td>4,194,302</td>
+</tr>
+<tr>
+<td>/9</td>
+<td>255.128.0.0</td>
+<td>8,388,608</td>
+<td>8,388,606</td>
+</tr>
+<tr>
+<td>/8</td>
+<td>255.0.0.0</td>
+<td>16,777,216</td>
+<td>16,777,214</td>
+</tr>
+<tr>
+<td>/7</td>
+<td>254.0.0.0</td>
+<td>33,554,432</td>
+<td>33,554,430</td>
+</tr>
+<tr>
+<td>/6</td>
+<td>252.0.0.0</td>
+<td>67,108,864</td>
+<td>67,108,862</td>
+</tr>
+<tr>
+<td>/5</td>
+<td>248.0.0.0</td>
+<td>134,217,728</td>
+<td>134,217,726</td>
+</tr>
+<tr>
+<td>/4</td>
+<td>240.0.0.0</td>
+<td>268,435,456</td>
+<td>268,435,454</td>
+</tr>
+<tr>
+<td>/3</td>
+<td>224.0.0.0</td>
+<td>536,870,912</td>
+<td>536,870,910</td>
+</tr>
+<tr>
+<td>/2</td>
+<td>192.0.0.0</td>
+<td>1,073,741,824</td>
+<td>1,073,741,822</td>
+</tr>
+<tr>
+<td>/1</td>
+<td>128.0.0.0</td>
+<td>2,147,483,648</td>
+<td>2,147,483,646</td>
+</tr>
+</tbody>
+</table>
+<p>*See <a href="https://tools.ietf.org/rfc/rfc3021.txt">rfc 3021</a></p>
+
+<h2>Private IP ranges</h2>
+<table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
+<tr>
+<td>Class</td>
+<td>Size</td>
+<td>Subnet Mask</td>
+<td>Range of IPs</td>
+</tr>
+<tr>
+<td>Class A</td>
+<td>10.0.0.0/8</td>
+<td>255.0.0.0</td>
+<td>10.0.0.0 - 10.255.255.255</td>
+</tr>
+<tr>
+<td>Class B</td>
+<td>172.16.0.0/12</td>
+<td>255.240.0.0</td>
+<td>172.16.0.0 - 172.31.255.255</td>
+</tr>
+<tr>
+<td>Class C</td>
+<td>192.168.0.0/16</td>
+<td>255.255.0.0</td>
+<td>192.168.0.0 - 192.168.255.255</td>
+</tr>
+</table>
+<h2>IPv6</h2>
+<table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
+<thead>
+<tr>
+<td>
+<p align="center"><strong>Prefix</strong></p>
+</td>
+<td>
+<p align="center"><strong>/48s</strong></p>
+</td>
+<td>
+<p align="center"><strong>/56s</strong></p>
+</td>
+<td>
+<p align="center"><strong>/64s</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/24</td>
+<td>16M</td>
+<td>4G</td>
+<td>1T</td>
+</tr>
+<tr>
+<td>/25</td>
+<td>8M</td>
+<td>2G</td>
+<td>512G</td>
+</tr>
+<tr>
+<td>/26</td>
+<td>4M</td>
+<td>1G</td>
+<td>256G</td>
+</tr>
+<tr>
+<td>/27</td>
+<td>2M</td>
+<td>512M</td>
+<td>128G</td>
+</tr>
+<tr>
+<td>/28</td>
+<td>1M</td>
+<td>256M</td>
+<td>64G</td>
+</tr>
+<tr>
+<td>/29</td>
+<td>512K</td>
+<td>128M</td>
+<td>32G</td>
+</tr>
+<tr>
+<td>/30</td>
+<td>256K</td>
+<td>64M</td>
+<td>16G</td>
+</tr>
+<tr>
+<td>/31</td>
+<td>128K</td>
+<td>32M</td>
+<td>8G</td>
+</tr>
+<tr>
+<td>/32</td>
+<td>64K</td>
+<td>16M</td>
+<td>4G</td>
+</tr>
+<tr>
+<td>/33</td>
+<td>32K</td>
+<td>8M</td>
+<td>2G</td>
+</tr>
+<tr>
+<td>/34</td>
+<td>16K</td>
+<td>4M</td>
+<td>1G</td>
+</tr>
+<tr>
+<td>/35</td>
+<td>8K</td>
+<td>2M</td>
+<td>512M</td>
+</tr>
+<tr>
+<td>/36</td>
+<td>4K</td>
+<td>1M</td>
+<td>256M</td>
+</tr>
+<tr>
+<td>/37</td>
+<td>2K</td>
+<td>512K</td>
+<td>128M</td>
+</tr>
+<tr>
+<td>/38</td>
+<td>1K</td>
+<td>256K</td>
+<td>64M</td>
+</tr>
+<tr>
+<td>/39</td>
+<td>512</td>
+<td>128K</td>
+<td>32M</td>
+</tr>
+<tr>
+<td>/40</td>
+<td>256</td>
+<td>64K</td>
+<td>16M</td>
+</tr>
+<tr>
+<td>/41</td>
+<td>128</td>
+<td>32K</td>
+<td>8M</td>
+</tr>
+<tr>
+<td>/42</td>
+<td>64</td>
+<td>16K</td>
+<td>4M</td>
+</tr>
+<tr>
+<td>/43</td>
+<td>32</td>
+<td>8K</td>
+<td>2M</td>
+</tr>
+<tr>
+<td>/44</td>
+<td>16</td>
+<td>4K</td>
+<td>1M</td>
+</tr>
+<tr>
+<td>/45</td>
+<td>8</td>
+<td>2K</td>
+<td>512K</td>
+</tr>
+<tr>
+<td>/46</td>
+<td>4</td>
+<td>1K</td>
+<td>256K</td>
+</tr>
+<tr>
+<td>/47</td>
+<td>2</td>
+<td>512</td>
+<td>128K</td>
+</tr>
+<tr>
+<td>/48</td>
+<td>1</td>
+<td>256</td>
+<td>64K</td>
+</tr>
+<tr>
+<td>/49</td>
+<td></td>
+<td>128</td>
+<td>32K</td>
+</tr>
+<tr>
+<td>/50</td>
+<td></td>
+<td>64</td>
+<td>16K</td>
+</tr>
+<tr>
+<td>/51</td>
+<td></td>
+<td>32</td>
+<td>8K</td>
+</tr>
+<tr>
+<td>/52</td>
+<td></td>
+<td>16</td>
+<td>4K</td>
+</tr>
+<tr>
+<td>/53</td>
+<td></td>
+<td>8</td>
+<td>2K</td>
+</tr>
+<tr>
+<td>/54</td>
+<td></td>
+<td>4</td>
+<td>1K</td>
+</tr>
+<tr>
+<td>/55</td>
+<td></td>
+<td>2</td>
+<td>512</td>
+</tr>
+<tr>
+<td>/56</td>
+<td></td>
+<td>1</td>
+<td>256</td>
+</tr>
+<tr>
+<td>/57</td>
+<td></td>
+<td></td>
+<td>128</td>
+</tr>
+<tr>
+<td>/58</td>
+<td></td>
+<td></td>
+<td>64</td>
+</tr>
+<tr>
+<td>/59</td>
+<td></td>
+<td></td>
+<td>32</td>
+</tr>
+<tr>
+<td>/60</td>
+<td></td>
+<td></td>
+<td>16</td>
+</tr>
+<tr>
+<td>/61</td>
+<td></td>
+<td></td>
+<td>8</td>
+</tr>
+<tr>
+<td>/62</td>
+<td></td>
+<td></td>
+<td>4</td>
+</tr>
+<tr>
+<td>/63</td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>/64</td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2>IPv6 bit mapping</h2>
+
+
+<p><pre>XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX
+      ||| |||| |||| |||| |||| |||| ||||
+      ||| |||| |||| |||| |||| |||| |||128
+      ||| |||| |||| |||| |||| |||| ||124
+      ||| |||| |||| |||| |||| |||| |120
+      ||| |||| |||| |||| |||| |||| 116
+      ||| |||| |||| |||| |||| |||112
+      ||| |||| |||| |||| |||| ||108
+      ||| |||| |||| |||| |||| |104
+      ||| |||| |||| |||| |||| 100
+      ||| |||| |||| |||| |||96
+      ||| |||| |||| |||| ||92
+      ||| |||| |||| |||| |88
+      ||| |||| |||| |||| 84
+      ||| |||| |||| |||80
+      ||| |||| |||| ||76
+      ||| |||| |||| |72
+      ||| |||| |||| 68
+      ||| |||| |||64
+      ||| |||| ||60
+      ||| |||| |56
+      ||| |||| 52
+      ||| |||48
+      ||| ||44
+      ||| |40
+      ||| 36
+      ||32
+      |28
+      24</pre></p>
+<h2>Binary</h2>
+<table  bgcolor="#EEEEEE" border="1" cellpadding="2" cellspacing="1">
+<tr>
+<td>Bit</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<td>Bit Value</td>
+<td>128</td>
+<td>64</td>
+<td>32</td>
+<td>16</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</table>
+<p>An IP <a href='calc.html'>calculator</a> may be more useful.<br>
+You will learn all this by simply practicing subnetting</p>
+Feel free to print or save the following IPv4 and IPv6 cheat sheets: <br>
+<a href='images/IPv4_cheat_sheet.png'><img src='images/IPv4_cheat_sheet.png' alt='IPv4 Subnetting Cheat Sheet' height='400' width='340'></a>
+<a href='images/ipv6_cheat_sheet.png'><img src='images/ipv6_cheat_sheet.png' alt='IPv6 Subnetting Cheat Sheet' height='400' width='340'></a>
+<br>
+<a href='images/OSI_layer_cheat_sheet.png'><img src='images/OSI_layer_cheat_sheet.png' alt='OSI, TCP/IP layer Cheat Sheet' height='360' width='580'></a>
+
+
+<p>If you are studying for the CCNA, you may also be interested in mastering your IPv4 and IPv6 <a href='headers.html'>header</a> information and a good <a href="https://www.amazon.com/gp/product/1118749618/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1118749618&amp;linkCode=as2&amp;tag=subnettingpra-20&amp;linkId=CR5DIQ6P7AK2FX5K">CCNA book</a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=subnettingpra-20&amp;l=as2&amp;o=1&amp;a=1118749618" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+.</p>
+
+<!--                                                      -->
+
+<h1>The Top Cisco CCNA Commands</h1>
+<p>
+The top commands to know for the CCNA are variations of the 'show' command. Common simulator questions present you with a set of configured devices and ask you to find information about these devices. You must know how to search through a router or switch and find the relevant information. Knowing these commands will not only help you succeed at the CCNA but will be immensely helpful when working with a router whose configuration you do not have documented or memorized. Without further ado, the most useful Cisco commands are:
+</p>
+
+<h2>show running-configuration</h2>
+<p>The 'show run' command is by far the most useful 'show' command you will come across. It gives you a page by page report on how the current device is setup. This include interface information such as the IP address, if the interface is shutdown, etc. You can also see the device-wide information such as which passwords are set, if SSH or telnet is setup and ready for login, etc. You can see when the configuration was last updated and saved along with VLAN information. Basically, if there is a piece of information you do not know, and are unsure how to find that information, start with the 'show running-configuration' command. There is a good chance it will have what you are looking for.
+</p>
+<h2>show interfaces</h2>
+<p>This command will show you detailed information about the interfaces on the device. The command as simply 'show int' alone will display information about each configured on the device, one after the other. If you are looking for information on a specific interface you can input the type and number of the interface to get information about only that one interface, for example 'show int fa 0/1' will only show information about FastEthernet 0/1.
+<br>
+The output of this command includes the MTU size, the bandwidth label, the mac-address, the IP address, the subnet mask, and the errors on the interface. The detailed error report from 'show interfaces' makes this the go-to command when you are having routing issues. You will see not only the number of errors, but the specific type of error, such as giants or collisions or runts, and this will allow you to have an idea of where the problem may be coming from. If you are seeing connection issues, try the 'show int' command.
+<p>
+<h2>show ip route</h2>
+<p>'Show ip route' will display the routing table which is used to find where to send data. This is what you would use to see the next hop for every packet. This is a layer-3 command. It shows which interface will send out a packet destined for a certain IP address. This command will also tell you how the device learned of that route. You can find out if the route is directly connect, static, or learned through a routing protocol such as OSPF of RIP. You can be most specific with this command by including the protocol you are interested in, for example 'show ip route ospf' will display OSPF routes. If you ever need to know which interface is responsible for reaching a certain network, use this command.
+</p>
+<h2>show ip interface</h2>
+<p>The 'show ip int' command will give a detailed layer-3 report of an interface. Like the 'show interfaces' command, you can specify a specific interface to look at such as 'show ip int g 0/2'. This command will show information such as the incoming and outgoing access list, the IP address and the network mast. The command 'show ip interface brief' is also extremely useful for quickly seeing which interfaces are up and what IP address is assigned to each interface. This is a quick and concise way to see what the basic interface status looks like.
+</p>
+<h2>show access-list</h2>
+<p>This command will display the access-lists on the device. This includes every line of the access-list, but does not display which interface that access-list is applied to. To see where an access-list is applied, you will want to run the 'show ip interface' or 'show run' commands. Note that the 'show access-list' command shows access lists for all protocols, whereas 'show ip access-list' only shows IPv4 access-lists and may exclude other existing access-lists, such as IPv6 access-lists. Remember that each access list has a unstated last command of 'deny any'. Use the 'show access-list' command to see exactly what an access-list is doing.
+</p>
+<h2>show cdp neighbor detail</h2>
+<p>'Show cdp neighbor detail' will display information about Cisco devices connected to the device you are on. It is a layer-2 command, so this includes information about switches and even phones. CDP is a Cisco proprietary protocol, so the command will only show information about Cisco devices. The information includes the remote device type, the remote IP address, the remote  interface connected to the device you are on, and the remove device ID. This is a great command for when you need to figure out what other types of devices you are connected to. Say you find a switch in a closet somewhere and have no idea where all the cables from that switch go. You can type 'show cdp neighbor detail' and see what type of device each interface is connected to. No need to go tracing wires throughout the building. The 'show cdp neighbor' command will show much (but not all) of the same information in a more concise format.
+</p>
+
+
+<h2>show vlan</h2>
+<p>The display from this command will show you the information and status of VLANs on the device. This includes the VLAN names, numbers, and the interfaces on which each VLAN can be found. If a certain interface is not listed in this command, that interface is a trunk. Use this command to see which VLANs are active and on which ports.
+</p>
+<h2>show interface trunk</h2>
+<p>Use the 'show interface trunk' command to view all the trunk ports on the device. The display will include information on which VLANs are allowed on which trunk, what the native VLAN is. Use this command to see which ports are used for trunking and which VLANs are allowed to pass through those trunks.
+</p>
+<h2>show ip protocols</h2>
+<p>
+This command displays information about Layer 3 protocols on the Cisco device. These include RIP, OSPF and EIGRP. While these protocols have their own specific show commands, the 'show ip protocols' gives a large amount of detail on all running protocols at once. It includes routing information and is often the first Cisco command to run when troubleshooting routing problems due to Network Layer protocols misconfiguration. For IPv6 use 'show ipv6 protocols'
+</p>
+<p>
+The above Cisco commands should be enough to find most details on what a networking device is doing and how it is setup. These are obviously not the only commands you should know and the <a href='ccna_salary.html'>CCNA</a> is not limited to only 'show' commands. The above are a great start to any kind of troubleshooting you may need and are often going to be some of the first commands you will run.
+</p>
+
+
+<!--                                                      -->
+
+<h1>IPv4 and IPv6 Allocation by Continent</h1>
+<p>The amount of IPv4 space is just about used up. That means IPv4 addresses are scarce resources. Scarcity can limit future expansion of the Internet. Those who wish to connect to the world, but do not have a global IP address, cannot do so. This is especially true in the developing world, which has less IPv4 space allocated to it. A transition to IPv6 removes this scarcity and balances the IP addresses allocated to each continent.</p>
+
+
+<p> Countries and continents which have not had large access to Internet infrastructure have received less IPv4 addresses than countries where the global Internet was rapidly adopted. IPv4 addresses have been allocated based on how many IPs were used up in each region. If a continent was using most of its IP addresses, then it was likely to get a new block. What this means is that developed countries, which connected to the Internet early and in larger numbers have more IPv4 addresses to use, reuse and reallocate. If the world were to stay with IPv4, the lack of IP addresses allocated to the developing world would create a bottleneck and barrier to the development of Internet technologies in those countries. </p>
+<p>IP address space is distributed by the Internet Assigned Numbers Authority (IANA). The IANA distributed blocks of IPs (usually a /8) to a Regional Internet Registry (RIR) who then distributes it out to Internet Service Providers and others. RIRs are:<br>
+<a href='images/rir-map.png'><img alt='RIR map' src='images/rir-map.png' height='283' width='640'></a></p>
+<p>
+ <h2>Current IPv4 IP Address allocation:</h2></p><p>
+<a href='images/ipv4_allocation.png'><img alt='IPv4 allocation by RIR' src='images/ipv4_allocation.png' height='487' width='576'></a>
+</p><p>As you can see the USA and Canada alone take up almost half the IPv4 allocation of the whole world, while Africa and Latin America have small slivers of IP space. IPv6 is a whole new ball game. First off, the sheer <a href='ipv6_is_huge.html'>size</a> of IPv6 address space is so gigantic that most of it has not been allocated at all and is reserved. <br><h2> Current IPv6 Allocation for the World</h2></p>
+<p><a href='images/ipv6_reserved.png'><img alt='IPv6 reserved addresses' src='images/ipv6_reserved.png' height='581' width='559'></a></p>
+<p>The small slices are all the world's IPv6 allocation so far.
+</p> <p>Each RIR has been assigned a /12 along with a few /23s and other blocks. There has been little need to request more space than these /12s, and because of this, IPv6 RIR allocation is fairly evenly distributed at the moment. As IPv6 usage grows this may slowly change, but because IPv6 addresses will not become scarce resources, developing countries do not have to worry about not being able to receive the IP addresses they desire as their demand grows. The adoption of IPv6 ensures more equal opportunities to develop the Internet. Current IPv6 allocation, excluding reserved address space looks like this:
+</p>
+<p><h2>IPv6 Allocation Excluding Reserved</h2><a href='images/ipv6_distribution.png'><img alt='IPv6 allocation' src='images/ipv6_distribution.png' height='430' width='484'></a></p>
+<p>
+Finally, just to put things into size perspectives, all the IPv4 address space is 2^32=4,294,967,296 IP addresses. Every IPv6 RIR has been assigned more than a /12. A single /12 has 2^52=4,503,599,627,370,496 <strong>/64s</strong>! Each /64 contains 2^64 IP addresses. Comparing 2^32 and 2^52 visual is meaningless, the IPv4 number doesn't even render:
+</p><p>
+<a href='images/meaningless.png'><img alt='IPv4 compared to IPv6' src='images/meaningless.png' height='353' width='531'></a></p>
+<p>
+
+<!--                                                             -->
+
+<h1>IPv6 Size</h1>
+<p>An IP address is like an identification number for devices (like computers) on networks (like the Internet). IPv4 addresses are running out and we are moving towards IPv6. Sometimes people express concern about how freely IPv6 addresses are assigned. Because it is nearly impossible for the human mind to grasp the huge numbers that we are talking about when talking about IPv6, the following interactive graphic helps visualize the true size of IPv6. Each circle shows how many IP addresses fit inside a certain slash. Click on the yellow and green to zoom out and in.</p>
+
+<canvas id='huge' width = '800' height='600' style = "border:7px solid black; ">
+<b>It looks like HTML5 canvas does not work in your browser.</b> You will need to use a canvas enabled browser to view the graphic. Basically, IPv6 has 340,282,366,920,938,463,463,374,607,431,768,211,456 possible IP addresses. The size of IPv6 is astounding!
+</canvas>
+
+<p>IPv6 address space is big. Really really big. A /64 is generally the smallest subnet in use. A single /64 has way way more IP addresses than all the IPv4 addresses put together. That is why you wont really ever have to worry about host numbers in IPv6 subnetting.</P>
+
+<p>This means that the smallest allocation for a subnet is a /64. That seems really wasteful. Why allocate 2<sup>64</sup> IPs to every single subnet? Currently, if you get an IPv4 to IPv6 tunnel, the tunnel provider will give you a /64, and if you request it, will usually give you a /48. To someone coming from the IPv4 world, this seems extremely wasteful.</p>
+<p>However, a single /32 holds as many /64s as all the IPv4 IP address space. And there are over 4 billion /32s! One way of looking at things is that we would need to use 4 billion times the amount of IPv4 space to use up all of IPv6. That is far from something we should worry about.</p>
+<p>These numbers aren't entirely true, as you have certain IPv6 blocks that are not going to be assignable. For example, FF00::/8 is reserved for multicast. Even so, the amount of address space to work with is truly massive.</p>
+<p>Due to the current IETF designation we are only going to be using 1/8th of all IPv6 space. So if we ever do come to a point where we need to worry about running out of space, we can always add another 1/8th to use, and maybe even start being more conservative about address space, in the same way IPv4 went from classful subnetting to CIDR subnetting. Until that unlikely event occurs, we really do not need to be concerned with conserving IPv6 address space the same way we conserver IPv4 address space. IP <a href='ip_allocation.html'>allocation</a> is one less thing the world needs to worry about.</p>
+
+
+
+
+<script type='text/javascript' src=huge.js></script>
+
+<script>
+  function responsiveMenu() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+    </body>
+
+</html>
