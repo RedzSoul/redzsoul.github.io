@@ -431,21 +431,21 @@
 				1   2   3   4    5   6    7     8    9   10
 
 				2   4   6   8   10  12   14    16   18   20
-			  
-				3   6   9   12  15  18   21    24   27   30   
-			  
+
+				3   6   9   12  15  18   21    24   27   30
+
 				4   8   12  16  20  24   28    32   36   40
-			  
+
 				5   10  15  20  25  30   35    40   45   50
-			  
+
 				6   12  18  24  30  36   42    48   54   60
-			  
+
 				7   14  21  28  35  42   49    56   63   70
-			  
+
 				8   16  24  32  40  48   56    64   72   80
-			  
+
 				9   18  27  36  45  54   63    72   81   90
-			  
+
 				10  20  20  40  50  60   70    80   90  100
 			</pre>
 			</div>
@@ -971,76 +971,213 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 21</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Visualizzare duplicati</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Leggi N numeri e inseriscili in un vettore. Dopo il caricamento, visualizza solo i numeri che sono duplicati (presenti due volte).
+				<br>
+				Es. VET1[20, 3, 40, 5, 20, 7, 40]
+				<br>
+				visualizzare 20, 40
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 22</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Shift a destra di un vettore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Esercizio in cui si carica un vettore di interi. Scrivere una funzione che richiede in ingresso un numero intero e lo inserisce nella prima posizione shiftando di una posizione tutti gli altri elementi
+				<br><br>
+				es.<br>
+
+				se il vettore di partenza ho 10 elementi e ne ho messi 3
+				<br><br>
+				4   5   6
+				<br><br>
+				devo inserire il numero 7 nella prima posizione.
+				<br>
+				Il vettore risultante è:
+
+				7   4   5   6.
+				<br>Gli elementi del vettore adesso sono 4
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 23</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Inverti contenuto di un vettore senza vettori aggiuntivi</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Caricare un vettore di interi di dimensione N. Invertire gli elementi del vettore senza utilizzare vettori
+				ulteriori. <br>Es. Se il vettore A=[3,5,1,7,8,5], dopo l’inversione A=[5,8,7,1,5,3].
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 24</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Merge vettori ordinati</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere una funzione C++ che, a partire da due vettori numerici ORDINATI (il primo di lunghezza costante L1 e il secondo di lunghezza costante L2, le lunghezze possono essere anche diverse) forniti come argomenti, ne costruisca un terzo avente dimensione pari alla somma delle due dimensioni e contenente tutti gli elementi dei due vettori in una sequenza
+				ordinata <br>(per esempio, da {1, 2, 4} e {1, 3, 9} si deve ottenere {1, 1, 2, 3, 4, 9}).<br>
+				NON SERVE USARE ALGORITMI DI ORDINAMENTO, QUINDI NON VANNO USATI!
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 25</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Dividi un vettore in due parti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Dato un vettore Vet1 di N interi, costruisci altri due vettori VET 2 e VET3  di dimensioni opportune, contenenti rispettivamente gli elementi di VET1 non maggiori e maggiori di un intero X fornito in ingresso dall'utente. Visualizzare Vet2 e Vet3.
+				<br><br>
+				Es.<br>
+
+				N=7
+				<br>
+				VET1=[15, 2, 30, 20, 40, 30, 7]
+				<br>
+				il numero X=20
+				<br>
+				VET2=[15, 2, 20, 7]
+				<br>
+				VET3=[30, 40, 30]
+				<br><br>
+				Utilizzare una funzione copia che riceve in ingresso il vettore di partenza, il vettore in cui bisogna copiare gli elementi, il numero N, un intero vale 0 se devo copiare i maggiori di N, 1 se devo copiare quelli minori uguali a N. La funzione restituisce il numero di elemento copiati nel secondo vettore.
+				<br>
+				Utilizzare la funzione copia sia per creare VET1 che VET2.
+				<br>
+				utilizzare una sola versione per la versione stampa
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 26</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Calcolo di un numero binario a partire da un numero decimale</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Dato in input un numero intero N positivo, tramite uno switch case in cui si definisce la nuova base (2,8,16) salvare le cifre della trasformazione in un vettore di interi. <br>Visualizzare le sue cifre nella nuova base in ordine inverso.
+				<br>
+				Ricordarsi che le cifre sono i resti della divisione per la base e che il ciclo termina quando il quoziente è uguale a 0
+				<br><br>
+				Es. Il numero 13 è l'input, in binario è 1101.
+				<br>
+				Per quanto riguarda i numeri esadecimali prima di stampare i numeri 10,11,12,13,14,15 trasformali rispettivamente in A, B, C, D, E
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 27</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Conversione da esadecimale, ottale o binario in decimale</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivi un programma che permetta la trasformazione di un numero esadecimale, ottale o binario in numero decimale.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 28</span>
+			<span class="titolo">Supermercato vettori paralleli</span>
+			<div class="testo">
+				Hai in input due vettori paralleli contenenti i dati relativi ad un supermercato.<br><br>
+
+				PRODOTTO è un vettore di stringhe che contiene i nomi dei prodotti<br><br>
+
+				PREZZO è un vettore di float che contiene i prezzi del corrispondente prodotto<br><br>
+
+				Si supponga che i due vettori siano stati già caricati. Svolgere i punti dell'esercizio seguente in sequenza ( a piacere svolgere i punti utilizzando un menu). I punti dell'esercizio sono i seguenti:<br>
+
+				    <li>chiedere in ingresso una percentuale all'utente e incrementare tutti i prezzi della percentuale specificata</li>
+				    <li>chiedere in ingresso un prodotto e visualizzare il suo prezzo e controllare che il prodotto non esista</li>
+				    <li>Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.</li>
+
+
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 29</span>
+			<span class="titolo">Libro vettori paralleli</span>
+			<div class="testo">
+				Creare un vettore parallelo di libro e del relativo prezzo. Caricarlo<br>
+
+				Dichiarare la lunghezza con una unghezza massima e chiedendo all'utente quanti libri vuole gestire.<br>
+
+				chiedere in ingresso un libro e restituire il relativo prezzo se il libro non è presente visualizzzare un messaggio di errore.<br><br>
+
+				Se il libri iniziano con la A va applicato uno scontro del 5%. Visualizzare i prezzi modificati visualizzare i valori modificati.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 30</span>
+			<span class="titolo">Intersezione di due vettori</span>
+			<div class="testo">
+				Siano dati due vettori di interi inseriti da tastiera. La lunghezza dei due vettori è inserita dall’utente da tastiera. I due vettori possono avere lunghezze diverse, ma possono contenere al massimo 30 numeri. <br>Si scriva un programma in linguaggio C per generare un terzo vettore che contiene l’intersezione tra due vettori. Tale vettore deve contenere i numeri presenti in entrambi i vettori dati.
+				<br><br>
+				Ad esempio, si assuma che siano stati inseriti i due vettori:
+				<br><br>
+				1 6 15 20 25
+				<br><br>
+				2 20 18 6
+				<br><br>
+				Il programma deve visualizzare la sequenza 6 20.			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 31</span>
+			<span class="titolo">Calcolo delle occorrenze</span>
+			<div class="testo">
+
+				Scrivere un programma in linguaggio C che legge N numeri interi da tastiera e li memorizza
+				in un vettore. <br>Il numero N viene inserito dall’utente ed è minore di 20. Il programma
+				deve visualizzare, per ogni cifra contenuta nel vettore, il numero di occorrenze.<br><br>
+				Ad esempio, si supponga N=7 e si consideri la sequenza di numeri 1 6 15 6 2 15 15.<br>Il
+				programma deve visualizzare:<br>
+				numero 1 occorrenze 1<br>
+				numero 2 occorrenze 1<br>
+				numero 6 occorrenze 2<br>
+				numero 15 occorrenze 3<br>
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 32</span>
+			<span class="titolo">Concorso di intelligenza</span>
+			<div class="testo">
+
+				In un concorso di intelligenza, N giudici esprimono il loro giudizio su K candidati. <br>Il
+				giudizio è un valore numerico tra 0 e 5.<br>
+				Si scriva un programma in linguaggio C per determinare il candidato più intelligente,
+				ed il giudice più severo.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 33</span>
 			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
 			<div class="testo">
 				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
 			</div>
 
 		</div>
-
 
 
 	</div>
@@ -2091,7 +2228,7 @@
 
 </html>
 
-<!-- Questo div è il bottone per far apparire e scomparire il menu! 
+<!-- Questo div è il bottone per far apparire e scomparire il menu!
 
 	<div id="spoiler">
 		<div>

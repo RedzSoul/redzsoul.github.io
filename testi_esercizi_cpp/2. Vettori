@@ -44,8 +44,10 @@ Ricordarsi che le cifre sono i resti della divisione per la base e che il ciclo 
 Es. Il numero 13 è l'input, in binario è 1101.
 
 Per quanto riguarda i numeri esadecimali prima di stampare i numeri 10,11,12,13,14,15 trasformali rispettivamente in A, B,C, D, E
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 trasformazione di un numero esadecimale, ottale o binario in numero decimale
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 esercizio sui vettori paralleli
 
@@ -67,7 +69,7 @@ OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Ricopiare due vettori in un terzo vettore (lunedì 10 dicembre)
 
-Caricare due vettori di interi V1 e V2, rispettivamente di lunghezza N ed M. Caricare in un terzo vettore V3 (di lunghezza N+M) gli elementi del vettore V1 alternandoli con gli elementi di V2 
+Caricare due vettori di interi V1 e V2, rispettivamente di lunghezza N ed M. Caricare in un terzo vettore V3 (di lunghezza N+M) gli elementi del vettore V1 alternandoli con gli elementi di V2
 
 cioè V3 deve contenere il primo elemento di V1, poi il primo elemento di V2, poi il secondo elemento di V1, il seconde elemento di V2 e così via. Stare attenti al fatto che le dimensioni dei due vettori non sono uguali, quindi uno potrebbe terminare gli elementi e l'altro no. In tal caso ricopiare tutti gli elementi rimanenti.
 
@@ -83,6 +85,7 @@ Leggi N numeri e inseriscili in un vettore. DOpo il caricamento, visualizza solo
 Es. VET1[20, 3, 40, 5, 20, 7, 40]
 
 visualizzare 20, 40
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 visualizza solo una volta
 
@@ -100,9 +103,11 @@ shift a destra di un vettore
 Dichiarare un vettore di L elementi e caricarlo con L-1 elementi.
 
 Chiedere in input all'utente 1 valore intero e inserirlo nella prima posizione effettuando lo shift  verso destra. Visualizzare il vettore risultante
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Caricare un vettore di interi di dimensione N. Invertire gli elementi del vettore senza utilizzare vettori
 ulteriori. Se il vettore A=*3,5,1,7,8,5+, dopo l’inversione A=*5,8,7,1,5,3+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 Definire un vettore di dimensione massima 100 poi chiedere all’utente la dimensione n del vettore e caricarlo di valori interi.  Creare poi un menu (switch) per far scegliere all’utente una delle seguenti alternative:
 
@@ -145,10 +150,13 @@ Utilizzare una funzione copia che riceve in ingresso il vettore di partenza, il 
 Utilizzare la funzione copia sia per creare VET1 che VET2.
 
 utilizzare una sola versione per la versione stampa
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Scrivere una funzione C++ che, a partire da due vettori numerici (il primo di lunghezza costante L1 e il secondo di lunghezza costante L2) ordinati forniti come argomenti, ne costruisca un terzo avente dimensione pari alla somma delle due dimensioni e contenente tutti gli elementi dei due vettori in una sequenza
 ordinata (per esempio, da {1, 2, 4} e {1, 3, 9} si deve ottenere {1, 1, 2, 3, 4, 9}).
+
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Caricare un vettore di stringhe di dimensioni 15.
 
@@ -232,6 +240,7 @@ Si supponga che i due vettori siano stati già caricati. Svolgere i punti dell'e
     chiedere in ingresso una percentuale all'utente e incrementare tutti i prezzi della percentuale specificata
     chiedere in ingresso un prodotto e visualizzare il suo prezzo e controllare che il prodotto non esista
       Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
     Si riceve in ingresso dall’utente una sequenza 10 di numeri .  Calcolare la media aritmetica e visualizzarla
@@ -255,6 +264,7 @@ Dichiarare la lunghezza con una unghezza massima e chiedendo all'utente quanti l
 chiedere in ingresso un libro e restituire il relativo prezzo se il libro non è presente visualizzzare un messaggiio di errore.
 
 Se il libri iniziano con la A va applicato uno scontro del 5%. Visualizzare i prezzi modificati visualizzare i valori modificati
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 shiftare gli elementi di un vettore
 
@@ -271,18 +281,22 @@ devo inserire il numero 7 nella prima posizione.
 Il vettore risutlate è:
 
 7   4   5   6. Gli elementi del vettore adesso sono 4
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 fusione tra due vettori
 
 Dichiarare e precaricare  due vettori con lunghezza a scelta e inserire degli interi in ordine crescente.
 
-Es. A={2.5.6.10}  
+Es. A={2.5.6.10}
 
 B={6.55.66.100}
 
 Ricopiare A e B in un vettore C di dimensione pari alla lunghezza di A + la lunghezza di B in modo tale che C risulti ordinato in modo crescente. E' necessario ricopiare in modo ordinato e non applicare algoritmi di ordinamento in C.
 
 Si suggerisce di non usare il for ma il while  e di svolgere l'esercizio prima in flow chart e solo dopo in c++
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 Siano dati due vettori di interi inseriti da tastiera. La lunghezza dei due vettori è inserita dall’utente da tastiera. I due vettori possono avere lunghezze diverse, ma possono contenere al massimo 30 numeri. Si scriva un programma in linguaggio C per generare un terzo vettore che contiene l’intersezione tra due vettori. Tale vettore deve contenere i numeri presenti in entrambi i vettori dati.
 
@@ -293,6 +307,7 @@ Ad esempio, si assuma che siano stati inseriti i due vettori:
 2 20 18 6
 
 Il programma deve visualizzare la sequenza 6 20.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Calcolo delle occorrenze
 
@@ -304,6 +319,7 @@ programma deve visualizzare:
 numero 1 occorrenze 1
 numero 6 occorrenze 2
 numero 15 occorrenze 3
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -----------------------------------------------------------------------
 
 concorso di intelligenza
@@ -312,7 +328,7 @@ In un concorso di intelligenza, N giudici esprimono il loro giudizio su K candid
 giudizio è un valore numerico tra 0 e 5.
 Si scriva un programma in linguaggio C per determinare il candidato più intelligente,
 ed il giudice più severo.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
     Caricare di vettori di lunghezza 10 contenenti uno l'età degli studenti e l'altro i nomi.
 
@@ -342,25 +358,25 @@ int main(int argc, char *argv[])
 
                }
 
-          
+
 
        if (i==1){
 
               max=eta[0];
 
-           indice=i;      
+           indice=i;
 
               }
 
-          
+
 
        if (max<eta[i]){
 
            max=eta[i];
 
-           indice=i;          
+           indice=i;
 
-                       }      
+                       }
 
 }
 
@@ -390,11 +406,11 @@ Esercizio 2
 
 Scrivere una funzione C++ con il seguente prototipo
 
- 
+
 
 void derive (float data[], int dim, float diff[]);
 
- 
+
 
 che a partire dal vettore data di dimensione dim costruisca il vettore diff.
 
@@ -404,7 +420,7 @@ In particolare, il vettore diff conterrà la differenza tra 2 elementi adiacenti
     diff[1] conterrà la differenza tra il terzo elemento di data ed il secondo
     ...
 
-Scrivere un programma per testare la funzione sopra, caricando i valori del vettore da tastiera 
+Scrivere un programma per testare la funzione sopra, caricando i valori del vettore da tastiera
 
 ---------------------------------------------------------------------------
 
@@ -412,7 +428,7 @@ Esercizio 3
 
 Scrivere una funzione avente il seguente prototipo
 
- 
+
 
 float prodottoScalare (float a[], float b[], int dim)
 
@@ -431,6 +447,3 @@ Scrivere un programma che, dopo aver richiesto all’utente il numero di valori 
 Prevedere una funzione per le operazioni 1, 2 e 4 elencante sopra.
 
 -------------------------------------------------------------------------
-
-
-
