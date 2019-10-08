@@ -1,11 +1,341 @@
-<html>
-<head>
-<title>ACL</title>
-</head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.auburn.edu/~mitrege/knowledge/multiple-choice.html -->
+<HTML>
+<!-- Mirrored from www.quest4.org/ccna/ccna-mini-f.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:58:59 GMT -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="Basic Cisco CCNA exam practice questions">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="keywords" content="HTML, Cisco CCNA free mini-test, web-based Cisco CCNA practice test">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>Cisco CCNA Exercise</TITLE>
+<STYLE type=text/css>P {
+	MARGIN-LEFT: 0.5in
+}
+</STYLE><STYLE type=text/css>HR {
+	WIDTH: 50%
+}
+</STYLE>
 
-<body>
-<p>lol</p>
+</HEAD>
+<BODY bgColor=white>
+
+<H3 align=center>Cisco CCNA Mini-Test<br>
+by Subject</H3>
+
+<h5 align=center>Created by Jay Banks</h5>
+
+<H3 align=center>Access Lists</H3>
+
+<p align=center><br>
+<font face="Arial" size="2">Before beginning this practice test, you may wish to<br>
+become familiar with the <a href="sample_access-list.html">Drag-And-Drop Console</a>.</font></p>
+
+<form><blockquote>
+    1. At a client location, you issue a <b>show ip interface </b>command and
+    find an access list numbered 910. What type of access list is this?<BR><INPUT 
+onclick="(form.hints1.value='No.')" 
+type=radio name=q1>  IP Standard<BR><INPUT 
+onclick="(form.hints1.value='No.')" 
+type=radio name=q1>  IP Extended<BR><INPUT onclick="(form.hints1.value='No.')" 
+type=radio name=q1>  IPX Standard<br>
+  <INPUT onclick="(form.hints1.value='Correct. IPX extended access lists are numbered 900-999')" 
+type=radio name=q1 value="1">  IPX Extended
+<p>Answer: <INPUT size=50 name=hints1><BR>
+  </blockquote></form>
+<form><blockquote>
+    2. Which of the following could take the place of the wildcard mask 0.0.0.0
+    in an access list?<BR>
+<INPUT onclick="(form.hints2.value='No')" type=radio name=q1> 
+    any<BR>
+<INPUT onclick="(form.hints2.value='No.')" type=radio name=q1>   deny<BR>
+<INPUT onclick="(form.hints2.value='Correct. Host is the equivalent of the wildcard mask 0.0.0.0')" type=radio name=q1>   host<br>
+<INPUT onclick="(form.hints2.value='No.')" 
+type=radio name=q1 value="1">  all
+  <p>Answer: <INPUT size=50 name=hints2><BR>
+</blockquote></form>
+<form><blockquote>
+    3. Which wildcard mask would be used to include any host from the 170.16.0.0
+    network?<BR>
+<INPUT onclick="(form.hints3.value='No.')" type=radio name=q1>  255.255.0.0<BR>
+<INPUT onclick="(form.hints3.value='No.')" type=radio name=q1>   0.255.255.255<BR>
+<INPUT onclick="(form.hints3.value='No')" type=radio name=q1>  
+    0.0.0.255<br>
+<INPUT onclick="(form.hints3.value='Correct.')" 
+type=radio name=q1 value="1">  0.0.255.255
+  <p>Answer: <INPUT size=50 name=hints3><BR>
+</blockquote></form>
+<form><blockquote>
+    4. At the end of every access list is an implied &quot;permit any&quot;
+    statement.<BR>
+<INPUT onclick="(form.hints4.value='No.')" type=radio name=q1>  True<BR>
+<INPUT onclick="(form.hints4.value='Correct. At the end of every access list is an implied deny all.')" type=radio name=q1>  False
+  <p>Answer: <INPUT size=50 name=hints4><BR>
+  &nbsp;
+</blockquote></form>
+ 
+<form><blockquote>
+    <a name="5">5</a>. <a href="access-list1.html">Load Drag &amp; Drop Console</a>. You may return to
+    this test by hitting the &quot;Back&quot; button following the question.<br>
+    &nbsp;
+</blockquote></form>
+<form><blockquote>
+    6. Which of the following commands is not a valid command to view applied
+    access lists on a Cisco router?<BR>
+<INPUT onclick="(form.hints6.value='No.')" type=radio name=q1>  show ip
+    interface<BR>
+<INPUT onclick="(form.hints6.value='Correct. This is not a valid command.')" type=radio name=q1>   show
+    acl<BR>
+<INPUT onclick="(form.hints6.value='No.')" type=radio name=q1>   show
+    access-list<br>
+<INPUT onclick="(form.hints6.value='No.')" 
+type=radio name=q1 value="1">  show running-config
+  <p>Answer: <INPUT size=50 name=hints6><BR>
+</blockquote></form>
+
+<form><blockquote>
+    7. Which of the following sample commands uses the proper syntax to deny
+    telnet access from IP address 10.1.1.54 into 10.1.1.50?<BR>
+<INPUT onclick="(form.hints7.value='No.')" type=radio name=q1>  access-list 90
+    deny tcp 10.1.1.54 0.0.0.0 10.1.1.50 0.0.0.0 eq 21<BR>
+<INPUT onclick="(form.hints7.value='No.')" type=radio name=q1>   access-list 99
+    deny telnet 10.1.1.54 0.0.0.0 10.1.1.50 0.0.0.0<BR>
+<INPUT onclick="(form.hints7.value='No.')" type=radio name=q1>   access-list 101
+    deny ip 10.1.1.54 0.0.0.0 10.1.1.50 0.0.0.0 telnet<br>
+<INPUT onclick="(form.hints7.value='Correct. This is an extended access list, so it must be numbered 100-199. Choices B & C do not have the proper syntax.')" 
+type=radio name=q1 value="1">  access-list 101 deny tcp 10.1.1.54 0.0.0.0
+    10.1.1.50 0.0.0.0 eq 23
+  <p>Answer: <INPUT size=50 name=hints7><BR>
+</blockquote></form>
+<form><blockquote>
+    7. Extended ACL lists should be placed?<BR>
+<INPUT onclick="(form.hints7.value='No.')" type=radio name=q1>  As close to the
+    packet's destination as possible<BR>
+<INPUT onclick="(form.hints7.value='No.')" type=radio name=q1>   As close to the
+    default gateway as possible<BR>
+<INPUT onclick="(form.hints7.value='Correct.')" type=radio name=q1>   As close to the
+    source of the packet as possible<br>
+<INPUT onclick="(form.hints7.value='No.')" 
+type=radio name=q1 value="1">  As close to a border gateway router as possible
+  <p>Answer: <INPUT size=50 name=hints7><BR>
+</blockquote></form>
+<form><blockquote>
+    8. What wildcard mask would best match any host from the network 10.0.2.0
+    /21?<BR>
+<INPUT onclick="(form.hints8.value='No.')" type=radio name=q1>  0.0.248.255<BR>
+<INPUT onclick="(form.hints8.value='No.')" type=radio name=q1>   0.0.0.0<BR>
+<INPUT onclick="(form.hints8.value='No.')" type=radio name=q1>   255.255.7.0<br>
+<INPUT onclick="(form.hints8.value='Correct. 0.0.7.255 matches all packets with the same 21 bits.')" 
+type=radio name=q1 value="1">  0.0.7.255
+  <p>Answer: <INPUT size=50 name=hints8><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    <a name="9">9</a>. <a href="access-list2.html">Load Drag &amp; Drop Console</a>. You may return to
+    this test by hitting the &quot;Back&quot; button following the question.<br>
+    &nbsp;&nbsp;
+</blockquote></form>
+  <form><blockquote>
+    10. In order to block telnet access to any host from network 172.12.10.0 you
+    configure an access list that contains, among others, the line: access-list 100 deny tcp 172.12.10.0
+    0.0.0.255 eq 23. How do you apply this access list inbound to s0?<BR>
+<INPUT onclick="(form.hints10.value='Correct.')" type=radio name=q1>  
+    Router(config)#interface s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Router(config-if)#ip access-group 100 in<BR>
+<INPUT onclick="(form.hints10.value='No.')" type=radio name=q1>    Router(config)#interface
+    s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Router(config-if)#ip access-list 100 in<BR>
+<INPUT onclick="(form.hints10.value='No.')" type=radio name=q1>    Router(config)#interface
+    s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Router(config-if)#ip access group 100 in<br>
+<INPUT onclick="(form.hints10.value='No.')" 
+type=radio name=q1 value="1">  None of the above
+  <p>Answer: <INPUT size=50 name=hints10><BR>
+  &nbsp;
+</blockquote></form>
+  <form><blockquote>
+    11.&nbsp;A router interface with the IP address of 192.168.1.0 has the
+    following access list, applied inbound:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; ip access-list 100 permit tcp any any eq 23<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; What would happen if a host from the network 172.16.0.0,
+    attempted to SSH to the interface?<br>
+    <BR>
+<INPUT onclick="(form.hints11.value='No.')" type=radio name=q1> SSH traffic
+    would be permitted<br>
+<INPUT onclick="(form.hints11.value='Correct. SSH traffic uses port 22. With the configured access list, telent traffic would be allowed, but all others would be denied.')" type=radio name=q1> SSH traffic
+    would be denied
+  <p>Answer: <INPUT size=50 name=hints11><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    12. Standard access lists should be placed?<BR>
+<INPUT onclick="(form.hints12.value='No.')" type=radio name=q1>  As close to the
+    default gateway as possible<BR>
+<INPUT onclick="(form.hints12.value='No.')" type=radio name=q1>   As close to the
+    source of the packet as possible<BR>
+<INPUT onclick="(form.hints12.value='Correct. The Cisco ICND study guide states that standard ACLs often discard packets that you do not want discarded when they are placed close to the source.')" type=radio name=q1>   As close to the
+    packet's destination as possible<br>
+<INPUT onclick="(form.hints12.value='No.')" 
+type=radio name=q1 value="1">  As close to a border gateway router as possible
+  <p>Answer: <INPUT size=50 name=hints12><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    13. To filter any IP traffic between the network range 10.0.0.0 and
+    10.32.0.0, what wildcard mask would best meet your needs?<BR>
+<INPUT onclick="(form.hints13.value='No.')" type=radio name=q1>     255.255.31.0<BR>
+<INPUT onclick="(form.hints13.value='No.')" type=radio name=q1>    0.0.64.255<BR>
+<INPUT onclick="(form.hints13.value='No.')" type=radio name=q1>    0.64.255.255<br>
+<INPUT onclick="(form.hints13.value='Correct. Networks 10.0.0.0 and 10.32.0.0 have a network block size of 32. Always use one less than the block size.')" 
+type=radio name=q1 value="1">    0.31.255.255
+  <p>Answer: <INPUT size=50 name=hints13><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    14. Which of the following would correctly configure an access list,
+    numbered 10, outbound on a VTY line?<BR>
+<INPUT onclick="(form.hints14.value='No.')" type=radio name=q1> access group 10
+    out<BR>
+<INPUT onclick="(form.hints14.value='No.')" type=radio name=q1> ip access-group
+    10 out<BR>
+<INPUT onclick="(form.hints14.value='Correct. On a VTY, the command is ip access-class.')" type=radio name=q1> ip access-class
+    10 out<br>
+<INPUT onclick="(form.hints14.value='No.')" 
+type=radio name=q1 value="1"> access-list 10 out
+  <p>Answer: <INPUT size=50 name=hints14><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    15. To represent all hosts from network 172.16.3.0 /22, which wildcard mask
+    would be most appropriate?<BR>
+<INPUT onclick="(form.hints15.value='Correct. A CIDR /22 has a network block of 4. Since the mask is always one less than the block, the correct answer is 3.')" type=radio name=q1>   
+    0.0.3.255.<br>
+    <INPUT onclick="(form.hints15.value='No.')" type=radio name=q1>     0.0.15.255<BR>
+<INPUT onclick="(form.hints15.value='No.')" type=radio name=q1>    0.0.16.255<br>
+<INPUT onclick="(form.hints15.value='No.')" 
+type=radio name=q1 value="1">    0.0.4.255
+  <p>Answer: <INPUT size=50 name=hints15><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    16. Review the following extended access list command:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access-list 191
+    deny udp 10.0.0.0 0.255.255.255 lt 1023 any<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What does the <b>any</b> mean in this access
+    list?<BR>
+<INPUT onclick="(form.hints16.value='No.')" type=radio name=q1> Any udp traffic
+    from the 10.0.0.0 network with a port less than 1023 and with<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; any source IP address, will be blocked<BR>
+<INPUT onclick="(form.hints16.value='Correct.')" type=radio name=q1>  Any udp
+    traffic from the 10.0.0.0 network with a port less than 1023 and with<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; any destination IP address, will be blocked<br>
+    <INPUT onclick="(form.hints16.value='No.')" type=radio name=q1>  The command will
+    block any udp, regardless of source or destination<br>
+<INPUT onclick="(form.hints16.value='No.')" 
+type=radio name=q1 value="1"> None of the above
+  <p>Answer: <INPUT size=50 name=hints16><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    17. Which of the following commands uses the proper syntax to block all
+    traffic into network 192.168.3.0 except for SSH traffic?<BR>
+<INPUT onclick="(form.hints17.value='No.')" type=radio name=q1>   ip access-list
+    89 permit any tcp 192.168.3.0 0.0.0.255 eq 23&nbsp;<BR>
+<INPUT onclick="(form.hints17.value='No.')" type=radio name=q1> ip access-list
+    99 permit tcp any 192.168.3.0 0.0.0.255 eq 23<BR>
+<INPUT onclick="(form.hints17.value='No.')" type=radio name=q1> ip access-list
+    100 permit tcp any 192.168.3.0 0.0.0.255 eq 23 any<br>
+<INPUT onclick="(form.hints17.value='Correct.')" 
+type=radio name=q1 value="1"> ip access-list 101 permit tcp any 192.168.3.0
+    0.0.0.255 eq 22
+  <p>Answer: <INPUT size=50 name=hints17><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    18. At a client location, you issue a <b>show ip interface</b> command and
+    find an access list numbered 212. What type of access list is this?<BR>
+<INPUT onclick="(form.hints18.value='No.')" type=radio name=q1>   48-bit MAC
+    address?<BR>
+<INPUT onclick="(form.hints18.value='Correct. 200 - 299 are reserved for protocol type code access lists.')" type=radio name=q1>    Protocol
+    type-code<BR>
+<INPUT onclick="(form.hints18.value='No.')" type=radio name=q1>    IPX SAP<br>
+<INPUT onclick="(form.hints18.value='No.')" 
+type=radio name=q1 value="1"> None of the above
+  <p>Answer: <INPUT size=50 name=hints18><BR>
+  &nbsp;
+</blockquote></form>
+<form><blockquote>
+    <a name="19">19</a>. <a href="access-list3.html">Load Drag &amp; Drop Console</a>. You may return to
+    this test by hitting the &quot;Back&quot; button following the question.<br>
+    &nbsp;
+</blockquote></form>
+<form><blockquote>
+    20. Which of the following access lists use the proper syntax to allow all telnet
+    traffic to host 192.168.1.3, from network 192.168.10.0, and
+    apply the list inbound on s0?<br>
+    &nbsp;<BR>
+<INPUT onclick="(form.hints20.value='No.')" type=radio name=q1>  
+    router(config):access-list 110 permit ip 192.168.10.0 0.0.0.255 host
+    192.168.1.3 eq 23<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config):int e0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config-if):ip access-group 110 in<br>
+    &nbsp;&nbsp;<BR>
+<INPUT onclick="(form.hints20.value='No.')" type=radio name=q1> router(config)&gt;access-list
+    105 permit tcp 192.168.10.0 0.0.0.255 host 192.168.1.3 eq 25<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config)&gt;int s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config-if)&gt;ip access-group 105 in<br>
+    &nbsp;<BR>
+<INPUT onclick="(form.hints20.value='No.')" type=radio name=q1>    router(config)#access-list
+    101 permit 23 192.168.10.0 0.0.0.255 host 192.168.1.3 eq telnet<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config)#int s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config-if)#ip access-group 100 in<br>
+    &nbsp;<br>
+<INPUT onclick="(form.hints20.value='Correct.')" 
+type=radio name=q1 value="1">   router(config)#access-list 100 permit tcp
+    192.168.10.0 0.0.0.255 host 192.168.1.3 eq 23<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config)#int s0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; router(config-if)#ip access-group 100 in
+  <p>Answer: <INPUT size=50 name=hints20><BR>
+  &nbsp;
+</blockquote></form>
 
 
-</body>
-</html>
+
+
+<p align="center">&nbsp;</p>
+<hr noshade size="1">
+<p align="center"><!--webbot bot="HTMLMarkup" startspan --><p>&nbsp;</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+        <p align="left">&nbsp;
+          </p>
+        <p align="left">&nbsp;</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+
+<blockquote>
+  <blockquote>
+        <p align="left">&nbsp;
+    <p align="left">&nbsp;</p>
+  </blockquote>
+</blockquote>
+<!--webbot bot="HTMLMarkup" endspan -->
+</p>
+
+
+
+
+</BODY>
+<!-- Mirrored from www.quest4.org/ccna/ccna-mini-f.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:03 GMT -->
+</HTML>
