@@ -1,0 +1,121 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/comandi_htm/comandi_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:53 GMT -->
+<head>
+<title>Altri comandi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>ALTRI 
+  COMANDI</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questa sezione verranno presi in esame ulteriori comandi CLI che le varie versioni 
+  di IOS ci offrono.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  simbolo &quot;<strong><em>?</em></strong>&quot; &egrave; molto importante, in 
+  quanto in qualsiasi modalit&agrave; ci troviamo, permette di visualizzare tutti 
+  i comandi a nostra disposizione:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/comandi.jpg" width="572" height="443"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/comandi2.jpg" width="572" height="695"></font></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Qualora 
+  non conoscessimo la sintassi completa di un comando o il suo stesso nome, &egrave; 
+  possibile ricorrere sempre al simbolo &quot;<strong><em>?</em></strong>&quot;, 
+  che ci mostrer&agrave; il resto della sintassi. Altro tasto utile &egrave; il 
+  <strong>TAB</strong>, che permette il completamento automatico della parola 
+  che si sta digitando. Logicamente questo tasto non funziona nel momento in cui 
+  c'&egrave; ambiguit&agrave; con altro comando che inizia con le stesse lettere.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Uno 
+  dei tanti comandi che abbiamo gi&agrave; visto &egrave; &quot;<em><strong>show 
+  config</strong></em>&quot;, che consiste nella visualizzazione della configurazione 
+  memorizzate nella <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a>.</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/conf.jpg" width="668" height="595"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Altro 
+  comando gi&agrave; analizzato &egrave; &quot;<strong><em>show vers</em></strong>&quot;, 
+  che ci permette di avere varie informazioni tecniche dell'apparato:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/vers.jpg" width="668" height="427"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  determinare lo stato e informazioni riguardo le interfacce del nostro apparato 
+  &egrave; possibile usare il comando &quot;<strong><em>show interfaces</em></strong>&quot;:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface.jpg" width="664" height="747"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface2.jpg" width="664" height="747"></font></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  possibile visualizzare le stesse informazioni del comando precedente ma in modo 
+  separato per ogni tipo di interfaccia, attraverso i comandi &quot;<strong><em>show 
+  interfaces ATM0</em></strong>&quot;, &quot;<strong><em>show interfaces Dialer0</em></strong>&quot; 
+  e &quot;<strong><em>show interfaces Ethernet0</em></strong>&quot;:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface_atm.jpg" width="668" height="307"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface_dialer.jpg" width="668" height="595"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface_ethernet.jpg" width="668" height="343"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Attraverso 
+  il comando &quot;<strong><em>show ip nat translations</em></strong>&quot; possiamo 
+  visualizzare la treslezione degli indirizzi che effettua il router tra gli IP 
+  locali e l'unico IP pubblico esterno con le relative porte di utilizzo:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/nat.jpg" width="668" height="511"></font></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  comando &quot;<strong><em>show ip interface brief</em></strong>&quot; ci permette 
+  di avere una panoramica sugli indirizzi assegnati alle varie interfacce disponibili 
+  e sul loro stato:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../comandi_file/interface_brief.jpg" width="668" height="187"> 
+  </font></p>
+<p align="center">&nbsp;</p>
+<p align="justify" class="normal">&nbsp;</p>
+<UL>
+  <LI> 
+    <P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+      show proccesses</strong> - Agisce a livello di <a href="../cisco_htm/cisco_comp_princ.html#ram">Ram</a> 
+      e mostra i processi attivi (più o meno come&nbsp; PID in WinNT o PS-AX in 
+      Unix). </font></P>
+  <LI> 
+    <P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+      show protocols</strong> - Agisce a livello di <a href="../cisco_htm/cisco_comp_princ.html#ram">Ram</a> 
+      e visualizza i protocolli di livello 3 attivi e configurati (<a href="../glossario_htm/glossario.html#ip">IP</a>, 
+      <a href="../glossario_htm/glossario.html#ipx">IPX</a> ecc). Visualizza lo 
+      stato delle <a href="../cisco_htm/cisco_comp_princ.html#bri">interfacce</a> 
+      (Up o down) e i relativi indirizzi logici. </font></P>
+  
+  <LI> 
+    <P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+      show memory</strong> - Agisce a livello di <a href="../cisco_htm/cisco_comp_princ.html#ram">Ram</a> 
+      e visualizza le allocazioni di memoria occupate con i relativi processi 
+      e/o programmi allocati. </font></P>
+  
+  <LI> 
+    <P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+      how stacks</strong> - monitorizza l’utilizzo dello stack dei processi e 
+      delle routine di interrupt e visualizza la ragione per l’ultimo riavvio 
+      di sistema </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+      Show buffers</strong><FONT color=#ff0000> </FONT>- fornisce statistiche 
+      per il buffer pools sul router </font></P>
+  <LI> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Router# 
+    show flash</strong> - Agisce a livello di memoria flash e ne visualizza le 
+    informazioni. Grandezza, uso ecc. Ovviamente mostra i files residenti, tra 
+    i quali deve trovarsi la versione del sistema operativo da caricare.</font>
+</UL>
+<UL>
+  <LI> 
+    <P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Show 
+      Arp</strong> - è un comando utilizzato per visualizzare l’IP dei router 
+      associato al MAC delle <a href="../cisco_htm/cisco_comp_princ.html#bri">interfacce</a>. 
+      </font></P>
+  </LI>
+</UL>
+<p>&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">A 
+  questi comandi se ne aggiungono tanti altri, specifici per ogni tipo di esigenza. 
+  Per ulteriori informazioni si f&agrave; riferimento alla documentazione disponibile 
+  sull sito ufficiale della <a href="http://www.cisco.com/" target="NUOVA">Cisco 
+  Systems</a>.</font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/comandi_htm/comandi_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 09:00:36 GMT -->
+</html>

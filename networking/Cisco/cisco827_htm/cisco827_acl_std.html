@@ -1,0 +1,303 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_acl_std.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:33 GMT -->
+<head>
+<title>Access List standard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>ACCESS 
+  LIST standard<a name="acl"></a></em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  ACL (Access Control List) sono una lista di istruzioni da applicare alle interfacce 
+  di un router allo scopo di gestire il traffico, filtrando i pacchetti in entrata 
+  e in uscita.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  ACL possono essere usate per tutti i protocolli di rete routabili.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Esistono 
+  varie ragioni per decidere di adoperare le ACL:</font></p>
+<div align="justify"> 
+  <ul>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Fornire un 
+      livello base di sicurezza: si pu&ograve; per esempio restringere gli accessi 
+      a una determinata rete o sottorete; </font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Limitare 
+      il traffico e aumentare la performance della rete: si pu&ograve;, infatti, 
+      decidere che alcuni pacchetti vengano processati prima di altri. Questo 
+      viene in particolare riferito come queuing </font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Decidere 
+      quale tipo di traffico pu&ograve; essere trasmesso: si pu&ograve; permettere 
+      l&#8217;invio di e-mail e impedire allo stesso tempo il Telnet.</font></li>
+  </ul>
+</div>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  Le ACL vengono elaborate dal router in maniera sequenziale in base all&#8217;ordine 
+  in cui sono state inserite le varie clausole. Appena un pacchetto soddisfa una 
+  delle condizioni, la valutazione s&#8217;interrompe e il resto delle ACL non 
+  viene preso in considerazione. Il pacchetto viene quindi inoltrato o eliminato 
+  secondo l&#8217;istruzione eseguita (figura 1). Se il pacchetto non soddisfa 
+  nessuna delle condizioni viene scartato (si considera cha alla fine di un ACL 
+  non vuota ci sia l&#8217;istruzione deny any ovvero nega tutto).</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/aclstandard01.gif" width="450" height="274"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Figura 
+  1</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  il modo in cui vengono eseguite le ACL (in sequenza) occorre inserire le condizioni 
+  pi&ugrave; restrittive all&#8217;inizio.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Posizionamento 
+  di un’ACL</U></B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Uno 
+  degli aspetti fondamentali da ricordare è il posizionamento delle ACL. Questo 
+  è di non secondaria importanza, in quanto un cattivo posizionamento delle ACL 
+  può aver un impatto negativo sulla rete:</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">- 
+  maggiori risorse utilizzate dal router nel processare i pacchetti; </font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">- 
+  decadimento delle prestazioni della rete; </font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">- 
+  collasso della rete stessa.</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;Due 
+  sono gli aspetti fondamentali da tenere in considerazione nel posizionamento 
+  di un’ACL:</font></P>
+<OL type=1>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+      pacchetti scartati non andranno a utilizzare risorse della rete; </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Processare 
+      le ACL richiede risorse aggiuntive per il router (questo è anche uno dei 
+      motivi per cui non bisogna abusare delle ACL, specie in presenza di processori 
+      poco potenti). </font></P>
+  </LI>
+</OL>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco 
+  consiglia, a riguardo, di posizionare le ACL standard più vicino alla destinazione 
+  e le <a href="cisco827_acl_est.html">ACL Estese</a> più vicino alla sorgente.</font></P>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Configurazione 
+  di una ACL</U></B></font></P>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  creare una ACL su un router Cisco occorre seguire i seguenti passi in configuration 
+  mode:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>1.</strong> 
+  Definire la ACL con il seguente comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config)# 
+  <strong>access-list</strong> access-list number {<strong>permit|deny</strong>} 
+  {test-conditions}</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&#8211; 
+  access-list number &egrave; il numero univoco che identifica ogni ACL e che 
+  ne definisce il tipo (vedi tabella 1). Dalla versione 11.2 del Cisco IOS si 
+  pu&ograve; utilizzare un nome al posto del numero.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&#8211; 
+  Permit e deny definiscono le condizioni (permetti e nega) su come devono essere 
+  maneggiati i pacchetti:<br>
+  Permit indica che il pacchetto ha il permesso di utilizzare una o pi&ugrave; 
+  interfacce specificate di seguito;<br>
+  deny indica che il pacchetto deve essere droppato.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">&#8211; 
+  Il termine finale specifica la condizione da soddisfare.</font></p>
+<TABLE border=1 align="center">
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Protocollo<BR>
+          </B></font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Range<BR>
+          </B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">IP</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">1-99</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Extended 
+          IP</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">100-199</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">AppleTalk</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">600-699</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">IPX</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">800-899</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Extended 
+          IPX</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">900-999</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=420> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">IPX 
+          Service Advertising Protocol</font></P></TD>
+      <TD class=Normal vAlign=top width=192> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">1000-1099</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Access-list 
+  Number </font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>2.</strong> 
+  si deve applicare la ACL a una o pi&ugrave; interfacce:</font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  Router(config-if)# <strong>access-group</strong> access-list number</font></p>
+<p>&nbsp;</p>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>La 
+  wildcard mask</U></B></font></P>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  wildcard mask &egrave; un numero di 32-bit diviso in 4 ottetti, simile alla 
+  subnet-mask. La differenza sostanziale &egrave; che la wildcard-mask indica 
+  quali bit di un indirizzo IP devono essere controllati in un&#8217;ACL: il valore 
+  0 nella wildcard-mask indica che il bit corrispondente deve essere controllato, 
+  il valore 1 che deve essere ignorato.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Es. 
+  Si supponga di voler testare gli indirizzi IP da 172.50.16.0 a 172.50.31.0. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questo caso conviene analizzare esclusivamente gli ultimi due ottetti:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  <img src="../cisco827_file/aclstandard02.gif" width="379" height="177"> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  cui, in questo caso, la wildcard-mask avr&agrave; la forma 0.0.15.255.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Si 
+  possono anche utilizzare delle abbreviazioni. Nel caso si vogliano controllare 
+  tutti gli indirizzi (Cisco li indica con l&#8217;IP 0.0.0.0) si pu&ograve; utilizzare 
+  il termine any; per un singolo indirizzo si utilizza il termine host.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>ESEMPIO</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Invece 
+  di utilizzare la sintassi</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Router(config)# 
+  access-list 1 permit 0.0.0.0 255.255.255.255</em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Router(config)# 
+  access-list 1 permit 172.30.24.12 0.0.0.0</em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">si 
+  pu&ograve; utilizzare</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Router(config)# 
+  access-list 1 permit any</em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Router(config)# 
+  access-list 1 permit host 172.30.24.12</em></font></p>
+<P align="justify">&nbsp;</P>
+<P align="justify">&nbsp;</P>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Standard 
+  ACL</U></B></font></P>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  ACL standard vengono utilizzate per bloccare o permettere il traffico da una 
+  rete o da un host specifico o per negare una suite di protocolli. L&#8217;aspetto 
+  fondamentale delle ACL standard &egrave; che il controllo viene esclusivamente 
+  effettuato sull&#8217;indirizzo sorgente.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  sintassi del comando per i router Cisco &egrave;</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config)# 
+  <strong>access-list</strong> access-list number {<strong>permit|deny</strong>} 
+  source [source wildcard] [<strong>log</strong>]</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">dove</font></p>
+<TABLE border=1 align="center" cellPadding=0 cellSpacing=0>
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Parametri</B></font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Descrizione</B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Access-list-number</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Numero 
+          della ACL. Ne indica il nome e il tipo (es. da 1 a 99 per le ACL IP 
+          standard)</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Permit</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Permette 
+          l’accesso se le condizioni sono soddisfatte</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Deny</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Nega 
+          l’accesso se le condizioni sono soddisfatte</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Source</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Indirizzo 
+          sorgente del pacchetto</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Souce 
+          wildcard</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Optional) 
+          La wildcard mask che deve essere applicata all’indirizzo sorgente</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Log</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Optional) 
+          Attiva i messaggi di log. Questi comprendono l’indirizzo sorgente, il 
+          numero di pacchetti e l’esito del controllo (permit o deny). I log vengono 
+          generati a intervalli di 5 minuti.</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify"></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  eliminare una ACL bisogna utilizzare il comando</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config)# 
+  <strong>no access-list</strong> access-list number</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  volta definite le condizioni si deve applicare la ACL all&#8217;interfaccia 
+  desiderata, secondo la seguente sintassi:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-if)#<strong> 
+  ip access-group</strong> access-list number {<strong>in|out</strong>}</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  parametri utilizzati sono descritti di seguito:</font></p>
+<TABLE border=1 align="center" cellPadding=0 cellSpacing=0>
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Parametri</B></font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Descrizione</B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Access-list-number</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Indica 
+          il numero della ACL che deve essere legata all’interfaccia.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In|out</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Specifica 
+          se la ACL va applicata all’interfaccia in entrata o in uscita. Una ACL 
+          in input fa sì che il router applichi prima la ACL e poi effettui il 
+          routine, mentre in output prima il routine e poi la ACL. Se non è specificato, 
+          per default è out.</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>ESEMPI 
+  DI ACL STANDARD</em></strong></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/aclstandard03.gif" width="370" height="240"></font></p>
+<font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><U><strong>Esempio 
+n. 1</strong></U>: permettere il traffico da una determinate rete o sottorete</p> 
+</font><font face="Verdana, Arial, Helvetica, sans-serif">
+<p><font size="-1">Questo esempio dimostra come permettere tutto il traffico proveniente 
+  dalla rete 172.16.0.0 e contemporaneamente bloccare quello da altre reti (non-172.16.0.0).</font></p>
+<p><font size="-1"><em><strong>access-list 1 permit 172.16.0.0 0.0.255.255</strong></em></font></p>
+<p><font size="-1">(access-list 1 deny any &#8211; implicito, non visibile nella 
+  lista)</font></p>
+<p><font size="-1"><em><strong>interface ethernet 0</strong></em></font></p>
+<p><font size="-1"><strong><em>ip access-group 1 out</em></strong></font></p>
+<p><font size="-1"><strong><em>interface Ethernet 1</em></strong></font></p>
+<p><font size="-1"><strong><em>ip access-group 1 out</em></strong></font></p>
+<p><font size="-1"><U><strong>Esempio n. 2</strong></U>: negare il traffico da 
+  un host specifico</font></p>
+<p><font size="-1">In questo esempio viene bloccato sull&#8217;interfaccia E0 
+  esclusivamente il traffico proveniente dall&#8217;host 172.16.4.23. </font></p>
+<p><font size="-1"><strong><em>access-list 2 deny 172.16.4.23 0.0.0.0</em></strong></font></p>
+<p><font size="-1"><em><strong>access-list 2 permit 0.0.0.0 255.255.255.255</strong></em></font></p>
+<p><font size="-1">(access-list 2 deny any &#8211; implicito, non visibile nella 
+  lista)</font></p>
+<p><font size="-1"><em><strong>interface ethernet 0</strong></em></font></p>
+<p><font size="-1"><strong><em>ip access-group 2 out</em></strong></font></p>
+<p><font size="-1"><br>
+  </font> </p>
+</font>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_acl_std.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:35 GMT -->
+</html>

@@ -1,0 +1,2153 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/tipi_attacchi_htm/tipi_attacchi_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:52 GMT -->
+<head>
+<title>Tipologie di attacchi</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>TIPOLOGIE 
+  DI ATTACCHI</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  router, come qualsiasi altro apparato esposto ad internet, sono oggetto di diversi 
+  tipi di attacchi esterni o interni alla stessa lan sulla quale si trovano.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  politica di sicurezza preventiva pu&ograve; essere effettuata efficacemente 
+  solo a livello di sito utente tramite un'opportuna configurazione degli apparati. 
+  <br>
+  Nel seguito verranno esaminate politiche preventive di sicurezza, illustrando 
+  le forme di protezione realizzabili sul router utente verso i pi&ugrave; comuni 
+  attacchi via rete con particolare attenzione verso i problemi legati ai difetti 
+  intrinseci del protocollo <a href="../glossario_htm/glossario.html#ip">IP</a>. 
+  </font></p>
+<ul>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#dos">Attacchi 
+    di tipo Denial of Service (DoS)</a> </font> 
+    <ul>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#smurfing">Smurfing</a></font></li>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#udp_tcp">Attacchi 
+        UDP-TCP sulle porte di diagnostica del router</a></font></li>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#land">Attacco 
+        &quot;land&quot;</a></font></li>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#tcp_syn">Attacchi 
+        &quot;TCP SYN&quot;</a></font></li>
+    </ul>
+  </li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#ris">Attcchi 
+    attraverso uso non autorizzato delle risorse </a> </font> 
+    <ul>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#lan">Protezione 
+        degli host sulla LAN</a></font></li>
+      <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="tipi_attacchi_intro.html#spamming">Mail 
+        Spamming</a> </font></li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Attacchi 
+  di tipo Denial of Service (DoS)<a name="dos"></a></U></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Gli 
+  attacchi di tipo DoS hanno come scopo principale di rendere non pi&ugrave; utilizzabile 
+  un servizio o una risorsa, eventualmente per sostituirsi ad essa e trarne cos&igrave; 
+  un illecito vantaggio. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  tipologia di questi attacchi &egrave; molto vasta, pu&ograve; andare dall'impedire 
+  la connessione ad un server (o a un router) al mandare in crash lo stesso. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  casi pi&ugrave; diffusi di questa tipologia di attacchi, che verranno presi 
+  in considerazione sono descitti di seguito.</font></p>
+<p align="justify">&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify"><em>Smurfing<a name="smurfing"></a></em></strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Alcuni 
+  disservizi verificatosi in alcuni siti GARR &egrave; causato dall'invio dall'esterno 
+  di pacchetti <a href="../glossario_htm/glossario.html#icmp">ICMP</a> all'indirizzo 
+  di broadcast di una delle reti del sito (&quot;broadcast storm&quot;): lo &quot;smurfing&quot;. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Tale 
+  tipo di attacco coinvolge solitamente tre siti: il sito di origine dell'attacco 
+  (sito <em>O</em>) e altri due siti &quot;vittime&quot;, uno intermedio che &quot;amplifica&quot; 
+  l'attacco (sito <em>I</em>) ed uno terminale (sito <em>T</em>). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Normalmente 
+  dal sito <em>O</em> vengono effettuati ping sull'indirizzo di broadcast di una 
+  (o pi&ugrave; reti) del sito <em>I</em>, con il campo source ip address dell'header 
+  falsificato e posto uguale a quello di un host del sito <em>T</em> (per maggiori 
+  informazioni e specifiche: <a href="http://www.cert.org/advisories/CA-1998-01.html" target="NUOVA">CERT 
+  CA-98.01</a>, <a href="http://www.ietf.org/rfc/rfc2267.txt" target="NUOVA">RFC 2267</a>). con 
+  questo criterio viene generato un flusso consistente di pacchetti <a href="../glossario_htm/glossario.html#icmp">ICMP</a> 
+  dal sito <em>I</em> al sito <em>T.</em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Purtroppo 
+  non c'&egrave; modo per il sito <em>T</em> di difendersi direttamente, se non 
+  attraverso una politica preventiva estesa a quanti pi&ugrave; siti possibile, 
+  con l'intento di eliminare le cause (cio&egrave; ad impedire comportamenti &quot;scorretti&quot; 
+  dei propri utenti). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Pertanto 
+  &egrave; importante impedire che la propria <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  sia origine dell'attacco o amplificatore ignaro (ed allo stesso tempo vittima) 
+  dello stesso. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  evitare che la propria <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  agisca da sito intermedio <em>I</em>, &egrave; necessario disabilitare la possibilit&agrave; 
+  di inviare pacchetti dall'esterno sull'indirizzo di broadcast delle proprie 
+  reti, utilizzando i seguenti comandi: <br>
+  <br>
+  <strong><em>!</em></strong> <em>impedisce di inviare pacchetti broadcast dall'esterno</em> 
+  <br>
+  <em><strong>! <br>
+  interface ethernet 0 <br>
+  ..... <br>
+  no ip directed-broadcast</strong></em> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Questa 
+  operazione deve essere ripetuta su ogni router connesso alla propria <a href="../glossario_htm/glossario.html#lan">LAN</a>. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Inoltre, 
+  per evitare che la propria <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  sia origine dell'attacco o almeno per permettere di individuare l'origine dell'attacco, 
+  &egrave; necessario controllare che i pacchetti che escono dalla <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  abbiano nell'header come source address un indirizzo valido, appartenente alla 
+  <a href="../glossario_htm/glossario.html#lan">LAN</a>. In questo modo &egrave; 
+  almeno possibile evitare di coinvolgere siti &quot;terzi&quot; e risalire all'origine 
+  dell'attacco disponendo di un sistema di monitoraggio sulla <a href="../glossario_htm/glossario.html#lan">LAN</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'<a href="../cisco827_htm/cisco827_acl_std.html">access-list</a> 
+  seguente effettua il controllo richiesto (bisogna ricordare che le <a href="../cisco827_htm/cisco827_acl_est.html#acl_est">access-list 
+  estese</a> sono identificate da un numero compreso nell'intervallo 100-199 e 
+  che l'IOS CISCO effettua il controllo sequenzialmente dalla prima istruzione, 
+  fermandosi al primo match di condizione esatto che trova). <br>
+  <br>
+  <strong><em>!</em></strong> <em>impedisce ai pacchetti con source address falsificato 
+  di uscire dalla LAN</em> <br>
+  <em><strong>! <br>
+  interface serial 0 <br>
+  ...... <br>
+  ip access-group 101 out <br>
+  ..... <br>
+  ! <br>
+  ! </strong>definizione access-list (nell'esempio RETE &egrave; una rete di &quot;classe 
+  C&quot;)<strong> <br>
+  ! <br>
+  access-list 101 permit ip &lt;RETE&gt; 0.0.0.255 any any <br>
+  access-list 101 deny ip any any log</strong></em> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'uso 
+  di una <a href="../cisco827_htm/cisco827_acl_std.html#acl">access-list</a> per 
+  filtrare i pacchetti in uscita dalla propria LAN (&egrave; sufficiente l'access-list 
+  applicata come misura preventiva per lo smurfing) permette di circoscrivere 
+  eventuali attacchi verso terzi provenienti dalla propria LAN. </font></p>
+<p align="justify">&nbsp;</p>
+<li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Attacchi 
+  UDP-TCP sulle porte di diagnostica del router<a name="udp_tcp"></a></strong> 
+  </font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Altro 
+  possibile attacco, di tipo DoS, cui sono soggetti router CISCO, &egrave; l'invio 
+  di un grande numero di pacchetti spuri di tipo <a href="../glossario_htm/glossario.html#udp">UDP</a> 
+  o <a href="../glossario_htm/glossario.html#tcp">TCP</a> sulle porte echo, chargen, 
+  discard e daytime (quest'ultimo solo <a href="../glossario_htm/glossario.html#tcp">TCP</a>). 
+  In questi casi il router, per rispondere alle richieste, pu&ograve; arrivare 
+  inutilmente a consumare una grande percentuale della propria CPU fino, in casi 
+  estremi, ad andare in crash, con l'unica soluzione di spegnere e riaccendere 
+  l'apparecchio. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  evitare ci&ograve;, quindi &egrave; consigliabile disabilitare tale accesso, 
+  con le seguenti istruzioni in configurazione: <br>
+  <br>
+  <em><strong>no service udp-small-servers <br>
+  no service tcp-small-servers</strong></em> </font></p>
+<p align="justify">&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify">Attacco 
+  &quot;land&quot;<a name="land"></a></strong> </font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Come 
+  &egrave; noto, &egrave; diffuso un &quot;tool&quot; (noto come land) che permette 
+  di inviare ad un determinato host pacchetti TCP SYN (di inizio connessione), 
+  con &quot;ip source address&quot; e &quot;port&quot; falsificati e posti uguali 
+  all'indirizzo ed alla porta dell'host di destinazione, causando in alcuni casi 
+  anche lo stallo del router. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  problema era abbastanza evidente nelle vecchie versioni di IOS di Cisco, mentre 
+  &egrave; stato risolto nelle pi&ugrave; recenti versioni, ma negli altri casi 
+  &egrave; necessario applicare un filtro che blocchi per ogni interfaccia la 
+  ricezione di questi pacchetti. <br>
+  <br>
+  <em><strong>!</strong> impedisce l'invio alle interfacce di pacchetti <strong><br>
+  ! </strong>con ip source address uguale a quello dell'interfaccia <strong><br>
+  ! <br>
+  interface ethernet 0 <br>
+  ..... <br>
+  ip address &lt;ETH ADDRESS&gt; &lt;SUBNET MASK&gt; <br>
+  ip access-group 102 in <br>
+  ..... <br>
+  ! <br>
+  !</strong> il filtro &egrave; inutile se l'interfaccia &egrave; unnumbered o 
+  <strong><br>
+  ! </strong>comunque se ha un indirizzo non annunciato <strong><br>
+  ! <br>
+  interface serial 0 <br>
+  ...... <br>
+  ip address &lt;SERIAL ADDRESS&gt; &lt;SUBNET MASK&gt; <br>
+  ip access-group 102 in <br>
+  ..... <br>
+  ! <br>
+  access-list 102 deny ip &lt;ETH ADDRESS&gt; 0.0.0.0 &lt;ETH ADDRESS&gt; 0.0.0.0 
+  <br>
+  access-list 102 deny ip &lt;SERIAL ADDRESS&gt; 0.0.0.0 &lt;SERIAL ADDRESS&gt; 
+  0.0.0.0 <br>
+  access-list 102 permit ip any any</strong></em></font></p>
+<p align="justify">&nbsp;</p>
+<li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Attacchi 
+  &quot;TCP SYN&quot;<a name="tcp_syn"></a> </strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Altro 
+  possibile attacco appartenenti alla categoria <a href="tipi_attacchi_intro.html#dos">DoS</a> 
+  &egrave; l'attacco &quot;TCP SYN&quot;, caratterizzato dalla richiesta di un 
+  grande numero di connessioni, apparentemente da host diversi, ad un router il 
+  quale per&ograve; non ricever&agrave; mai l'acknowledgment di chiusura del &quot;TCP 
+  three-way handshake&quot; per queste connessioni, causando cos&igrave; il riempimento 
+  della sua coda di connessione e quindi realizzando una situazione di Denial 
+  of Service.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questa circostanza non &egrave; possibile rintracciare l'origine dell'attacco 
+  in quanto il mittente viene falsificato, n&eacute; esistono metodi semplici 
+  di difesa (non &egrave; fattibile ad esempio l'attivazione di una <a href="../cisco827_htm/cisco827_acl_std.html">access-list</a> 
+  che filtri le connessioni in ingresso, in quanto normalmente l'ip sorgente &egrave; 
+  falsificato in maniera casuale e quindi un attacco pu&ograve; coprire buona 
+  parte dello space-address di Internet). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Sono 
+  attuabili alcune contromisure come aumentare la dimensione della coda di connessione 
+  (SYN ACK queue) e diminuire il tempo di time-out per il &quot;three-way handshake&quot;. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Anche 
+  in questo caso la realizzazione dell'acces-list per filtrare i pacchetti in 
+  uscita diminuisce la probabilit&agrave; che la <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  sia utilizzata come base per questo tipo di attacchi (&egrave; sufficiente l'<a href="../cisco827_htm/cisco827_acl_std.html#acl">access-list</a> 
+  applicata come misura preventiva per lo smurfing).</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Uso 
+  non autorizzato delle risorse</U></strong><a name="ris"></a> </font></p>
+<p align="justify">&nbsp; </p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify">Protezione 
+  degli host all'interno della LAN</strong><a name="lan"></a> </font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  situazioni normali, difficilmente si pu&ograve; attuare il controllo centralizzato 
+  di tutti gli host sulla propria <a href="../glossario_htm/glossario.html#lan">LAN</a>. 
+  Operazione alternativa consiste nel filtrare selettivamente sul router i servizi 
+  tendenzialmente e ipoteticamente pericolosi. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  linea di principio, la situazione ottimale &egrave; isolare su una <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  dedicata i server &quot;esterni&quot; ovvero quelli che devono essere visibili 
+  a tutti, permettendo l'accesso verso di essi per&ograve; solo limitatamente 
+  ai servizi &quot;ufficiali&quot; offerti; diversamente, per quanto riguarda 
+  invece le macchine utente, dovrebbe essere bloccato tutto il traffico diretto 
+  verso le porte &quot;pericolose&quot; (dalle quali comunque di norma non dovrebbero 
+  essere offerti servizi). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Nella 
+  seguente tabella sono riportati i servizi consigliabile da filtrare o bloccare:</font></p>
+<p align="justify">&nbsp;</p>
+<div align="justify"> 
+  <TABLE width="69%" 
+  border=2 align="center" cellPadding=8 cellSpacing=0 cols=5 bgColor=#CCCCCC>
+    <TBODY>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Servizio</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Porta</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Protocollo</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Azione</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Note</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR></TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>echo</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>7</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>DoS</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>systat</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>11</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>informativo</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>daytime</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>13</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>netstat</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>15</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>informativo&nbsp;</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>quotd</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>17</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>chargen</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>19</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>DoS</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>smtp</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>25</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#663366>Filtrare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>time</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>37</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>inutile</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>tacacs</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>49</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>TCP/UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>domain</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>53</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>Usato principalmente per zone transfer</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>bootp</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>67-68</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>tftp</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>69</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>UDP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>gopher</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>70</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <strong><FONT 
+      color=#ff6666>obsoleto</FONT> 
+          <!--mstheme-->
+          </strong></font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>finger</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>79</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>informativo</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>http</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>80</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>link</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>87</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>supdup</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT color=#ff6666>95</FONT> 
+            </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+    color=#ff6666>pop2</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>109</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+color=#ff6666>TCP</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong> </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><FONT 
+      color=#ff6666>Bloccare</FONT> </strong> </font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+          <!--mstheme-->
+          </strong></font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <FONT 
+      color=#ff6666><strong>obsoleto</strong></FONT> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>pop3</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>110</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>sunrpc</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>111</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>nntp</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>119</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>nbios-ns</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>137</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>nbios-dgm</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>138</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>nbios-ssn</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>139</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>imap</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>143</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>NeWS</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>144</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>snmp</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>161</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>snmptrap</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>162</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>xdmcp</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>177</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>irc</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>194</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>TCP/UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>exec</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>512</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>biff</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>512</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>login</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>513</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>who</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>513</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          <B><FONT 
+      color=#3366ff>informativo</FONT></B> 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>shell</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>514</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>syslog</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>514</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>printer</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>515</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>route</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>520</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>UDP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>uucp</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>540-541</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>mountd</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>635</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>openwin</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>2000</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT 
+      color=#ff6666>TCP</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><FONT color=#ff6666>Bloccare</FONT></B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>NFS</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>2049</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+      <TR> 
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>X11</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>6000-6063</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font> <CENTER>
+            <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Filtrare</B></font> 
+          </CENTER>
+          <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          </font></TD>
+        <TD> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <!--mstheme-->
+          &nbsp; 
+          <!--mstheme-->
+          </font></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</div>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Esistono 
+  diversi siti che effettuano la scansione di tutte le porte aperte dell'host 
+  connesso ad internet, in questo caso del router, uno dei quali &egrave; <a href="http://www.blackcode.com/scan/index.php" target="NUOVA">http://www.blackcode.com/scan/index.php</a>, 
+  che dopo aver identificato l'indirizzo IP del router, nel giro di qualche minuto 
+  effettua la scansione delle porte delle stesso, producendo una lista con dei 
+  risultati del genere, dove possono esserci eventuali <font color="#FF0000"><strong>WARNING!</strong></font> 
+  che ci invitano appunto a filtrare quelle porte.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../tipi_attacchi_file/security_scan.jpg" width="627" height="611"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Mail 
+  Spamming</strong><a name="spamming"></a> </font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Esempio 
+  significativo di uso illecito delle risorse (soprattutto della rete) &egrave; 
+  il &quot;mail spamming&quot;, ovvero l'uso di mailer <a href="../glossario_htm/glossario.html#smtp">SMTP</a> 
+  da parte di utenti non autorizzati per ottenere l'invio di decine di migliaia 
+  di messaggi di e-mail, di solito contenenti messaggi pubblicitari non richiesti 
+  dai destinatari (detti UCE: Unsolicited Commercial E-mails). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  prevenire questo fenomeno, in linea di principio, basta configurare correttamente 
+  gli host di una <a href="../glossario_htm/glossario.html#lan">LAN</a> eliminando 
+  (selettivamente) la possibilit&agrave; di utilizzarli come mail relay dall'esterno.In 
+  realt&agrave; per&ograve;, come abbiamo notato precedentemente, &egrave; necessario 
+  filtrare il servizio smtp dall'esterno verso tutti gli host ritenuti non &quot;affidabili&quot; 
+  (cio&egrave; non controllati direttamente dai reponsabili del sito), lasciando 
+  pieno accesso smtp solo verso i mail server &quot;ufficiali&quot;. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Di 
+  seguito &egrave; definito un esempio di access-list che realizza questo filtro. 
+  <br>
+  <br>
+  <em><strong>!</strong> impedisce le connessioni smtp dall'esterno verso host 
+  non autorizzati <strong><br>
+  !</strong> (nell'esempio si suppone che la connessione verso l'esterno avvenga 
+  <strong><br>
+  !</strong> tramite l'interfaccia serial 0) <strong><br>
+  ! <br>
+  interface serial 0 <br>
+  ...... <br>
+  ip access-group 103 in <br>
+  ..... <br>
+  ! <br>
+  !</strong> definizione access-list (nell'esempio RETE &egrave; una rete di &quot;classe 
+  C&quot;) <strong><br>
+  ! <br>
+  access-list 103 permit tcp any host &lt;MAIL SERVER 1&gt; <br>
+  access-list 103 permit tcp any host &lt;MAIL SERVER 2&gt; <br>
+  access-list 103 deny tcp any &lt;RETE&gt; 0.0.0.255 eq smtp log <br>
+  access-list 103 permit ip any any </strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Bisogna 
+  notare che una simile configurazione non impedisce alle macchine interne di 
+  parlare <a href="../glossario_htm/glossario.html#smtp">SMTP</a> tra di loro n&egrave; 
+  di trasmettere direttamente posta elettronica a tutto il mondo esterno: impedisce 
+  soltanto al mondo esterno di accedere direttamente alla porta <a href="../glossario_htm/glossario.html#smtp">SMTP</a> 
+  delle macchine non autorizzate.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Un 
+  problema ancora oggi che rimane comunque aperto &egrave; lo spamming con il 
+  metodo del &quot;doppio non delivery&quot;. In questo caso lo &quot;spammer&quot;, 
+  per aggirare le protezioni sul mail-relay, invia la mail ad un utente inesistente 
+  in un dato dominio con il campo From falsificato e posto uguale al &quot;bersaglio&quot;: 
+  il sistema di mail del dominio che riceve la mail accetta la stessa (&egrave; 
+  diretto ad utente del proprio dominio) ma poi determina che l'utente &egrave; 
+  inesistente e quindi lo rispedisce al mittente (a quello che crede essere il 
+  mittente ma che in realt&agrave; non &egrave;). </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Purtoppo 
+  a questo non c'&egrave; un vero e proprio modo di difendersi se non segnalando 
+  l'accaduto ai gestori dell'<a href="../glossario_htm/glossario.html#isp">ISP</a> 
+  dal quale avvengono queste connessioni ed eventualmente filtrare la connessione 
+  smtp dalle reti in questione (eliminando quindi anche i mail &quot;legittimi&quot;); 
+  d'altra parte questo tipo di &quot;mail-spamming&quot; &egrave; assolutamente 
+  inefficiente dal punto di vista dello spammer (deve mandare un mail per ogni 
+  &quot;vittima&quot;). </font></p>
+<p align="justify"></p>
+<p align="justify">&nbsp; </p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/tipi_attacchi_htm/tipi_attacchi_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:53 GMT -->
+</html>

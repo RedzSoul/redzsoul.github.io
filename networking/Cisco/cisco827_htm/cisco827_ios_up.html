@@ -1,0 +1,234 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_ios_up.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:29 GMT -->
+<head>
+<title>IOS upgrade</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>IOS UPGRADE</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Normalmente, 
+  per aggiornare l'<a href="../glossario_htm/glossario.html#ios">IOS</a> di un 
+  router, nonostante esistano altri metodi, si utilizza un <a href="cisco827_conf_tipica.html#tftp_server">server 
+  TFTP</a>, dal quale, tramite <a href="cisco827_conf_tipica.html#servertftp">LAN</a>, 
+  e' possibile copiare il file fisicamente all'interno del router. Una volta installato 
+  su una macchina tale servizio, sara' necessario definire la cartella che contiene 
+  l'immagine che vogliamo caricare come directory predefinita del <a href="cisco827_conf_tipica.html#tftp_server">server 
+  TFTP</a>. A questo punto dal router sara' necessario impartire determinati comandi.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'aggiornamento 
+  dell'IOS pu&ograve; essere effettuato anche attraverso la modalit&agrave; <a href="cisco827_rommon.html">ROMMON</a> 
+  con Hyper Terminal, che verr&agrave; descritta nella sezione specifica, oppure, 
+  come viene descritto di eseguito, in modalit&agrave; privilegiata attraverso 
+  <a href="../glossario_htm/glossario.html#telnet">telnet</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  prima cosa da fare &egrave; determinare se l'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  che si ha intenzione montare supporti le caratteristiche tecniche del router, 
+  in termini di modello del router e dimensione di <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  e di <a href="../cisco_htm/cisco_comp_princ.html#ram">memory ram</a> a disposizione.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  bene anche verificare quali novit&agrave; presenta l'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  che stiamo per caricare, quali modifiche sara' necessario apportare alla nostra 
+  configurazione, affinche' tutto continui a funzionare correttamente. Sul sito 
+  <a href="www.cisco.html">Cisco</a> sono presenti le release note di ogni versione, 
+  cos&igrave; da poterci correttamente informare su quel che stiamo per fare. 
+  </font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><img src="../cisco827_file/ios_descr.jpg" width="452" height="613"></strong></font></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  determinare la dimensione della nostra <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  e <a href="../cisco_htm/cisco_comp_princ.html#ram">memory ram</a> basta lanciare 
+  il comando <strong><em>show version </em></strong>che ci dar&agrave; le seguenti 
+  informazioni:</font></p>
+<TABLE width="94%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#show 
+          version </font></p>
+        <p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco 
+          Internetwork Operating System Software<br>
+          IOS (tm) C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+          RELEASE SOFTWARE (fc1)<br>
+          Synched to technology version 12.2(2.5)T<br>
+          TAC Support: http://www.cisco.com/tac<br>
+          Copyright (c) 1986-2002 by cisco Systems, Inc.<br>
+          Compiled Fri 10-May-02 18:28 by philuu<br>
+          Image text-base: 0x80013170, data-base: 0x806429A4</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">ROM: 
+          System Bootstrap, Version 12.2(4r)XM2, RELEASE SOFTWARE (fc1)<br>
+          ROM: C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+          RELEASE SOFTWARE (fc1)</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827 
+          uptime is 6 days, 18 hours, 49 minutes<br>
+          System returned to ROM by power-on<br>
+          System image file is &quot;flash:c820-y6-mz.122-2.XK3.bin&quot;</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">CISCO 
+          C827 (MPC855T) processor (revision 0x501) with 15360K/1024K bytes of 
+          memor y.<br>
+          Processor board ID JAD04460FWG (3605286623), with hardware revision 
+          0000<br>
+          CPU rev number 5<br>
+          Bridging software.<br>
+          1 Ethernet/IEEE 802.3 interface(s)<br>
+          1 ATM network interface(s)<br>
+          128K bytes of non-volatile configuration memory.<br>
+          8192K bytes of processor board System flash (Read/Write)<br>
+          2048K bytes of processor board Web flash (Read/Write)</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Configuration 
+          register is 0x2102</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  volta determinato che l'IOS scelto &egrave; compatibile con il nostro router, 
+  bisogna determinare la disponibilit&agrave; di spazio libero all'interno della 
+  <a href="../cisco_htm/cisco_comp_princ.html#flash">flash memory</a>, attraverso 
+  il comando &quot;<em><strong>show flash</strong></em>&quot; che mostra lo spazio 
+  occupato dall'<a href="../glossario_htm/glossario.html#ios">IOS</a> attualmente 
+  presente nella <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> e 
+  lo spazio libero:</font></p>
+<TABLE width="55%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#show 
+          flash<br>
+          System flash directory:<br>
+          File Length Name/status<br>
+          1 3837464 c820-y6-mz.122-2.XK3.bin<br>
+          [3837528 bytes used, 4551080 available, 8388608 total]<br>
+          8192K bytes of processor board System flash (Read/Write)<br>
+          Cisco827#</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  sempre conveniente e sicuro fare preventivamente un backup dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  attualmente presente nella flash con &quot;<em><strong>copy flash tftp</strong></em>&quot;; 
+  verranno chiesti nome del file da copiare, indirizzo del <a href="cisco827_conf_tipica.html#tftp_server">server 
+  TFTP</a> e nome con il quale salvare l'<a href="../glossario_htm/glossario.html#ios">IOS</a>:</font></p>
+<TABLE width="69%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#copy 
+          flash tftp<br>
+          Source filename []? c820-y6-mz.122-2.XK3.bin<br>
+          Address or name of remote host []? 192.168.0.25<br>
+          Destination filename [c820-y6-mz.122-2.XK3.bin]? c820-y6-mz.122-2.XK3.bin<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          3837464 bytes copied in 30.300 secs (127915 bytes/sec)<br>
+          Cisco827#</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Opzionale 
+  ma consigliato, copiare anche la configurazione di startup con il comando &quot;<em><strong>copy 
+  startup-config tftp</strong></em>&quot;:</font></p>
+<TABLE width="50%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#copy 
+          startup-config tftp<br>
+          Address or name of remote host []? 192.168.0.25<br>
+          Destination filename [cisco827-confg]?<br>
+          !!<br>
+          1824 bytes copied in 0.168 secs<br>
+          Cisco827#</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  Dopo queste operazioni preliminari, ma important,i &egrave; possibile passare 
+  alla copia vera e propria del nuovo <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  nella <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> del router 
+  con il comando<em><strong> </strong></em>&quot;<em><strong>copy tftp://ip_del_tfp_server/nome_del_file_immagine 
+  flash://nome_del_file_immagine</strong></em>&quot; nel quale sono inseriti gi&agrave; 
+  tutti i parametri dell'indirizzo del <a href="cisco827_conf_tipica.html#tftp_server">server 
+  TFTP</a> e dell'immagine dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  da copiare oppure facendo uso del comando &quot;<em><strong>copy tftp flash</strong></em>&quot;.<br>
+  Ci verra' chiesto, prima di iniziare la copia, se e' nostra intenzione cancellare 
+  l'attuale contenuto della <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a>: 
+  dopo avere risposto, avr&agrave; inizio l'operazione di copia vera e propria, 
+  al termine della quale, nella maggior parte dei casi, bastera' un reboot per 
+  partire con il nuovo <a href="../glossario_htm/glossario.html#ios">IOS</a>.</font></p>
+<TABLE width="50%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="left"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#copy 
+          tftp flash<br>
+          Address or name of remote host []? 192.168.0.25<br>
+          Source filename []? c827v-y6-mz.121-1.XB<br>
+          Destination filename [c827v-y6-mz.121-1.XB]?<br>
+          Accessing tftp://192.168.0.25/c827v-y6-mz.121-1.XB...<br>
+          Erase flash: before copying? [confirm]<br>
+          Erasing the flash filesystem will remove all files! Continue? [confirm]<br>
+          Erasing device... eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee<br>
+          ee ...erased<br>
+          Erase of flash: complete<br>
+          Loading c827v-y6-mz.121-1.XB from 192.168.0.25 (via Ethernet0): !!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+          !!!<br>
+          [OK - 3802992/7605248 bytes]</font></p>
+        <p align="left"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Verifying 
+          checksum... OK (0x1ABC)<br>
+          3802992 bytes copied in 58.236 secs (65568 bytes/sec)<br>
+          Cisco827#</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  router alla sua partenza cerca sempre, di default, di caricare la prima immagine 
+  che trova sulla <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a>; 
+  questo significa che se avevamo una <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  abbastanza grande da poter contenere due immagini, e non abbiamo cancellato 
+  il file precedente, o l'intera <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a>, 
+  sara' sempre il vecchio <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  a partire. In questo caso sara' necessario impartire nella global configuration 
+  il seguente comando:<em><strong> boot system flash nome_del_file_immagine</strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Bisogna 
+  ricordarsi quindi che tale comando potrebbe essere gia' presente nella nostra 
+  running-config, e quindi dopo l'upgrade via <a href="cisco827_conf_tipica.html#tftp_server">TFTP</a>, 
+  prima del reload, e' bene verificare che sia corretto: avere il nome di un immagine 
+  non piu' presente non consente spesso al router di partire correttamente e dovremo 
+  quindi lavorare in <a href="cisco827_rommon.html">ROMMON</a>. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  cancellare dalla <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  eventuali files che non ci servono piu' basta digitare<em><strong> delete flash:/nome_del_file_immagine</strong></em>.</font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_ios_up.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:30 GMT -->
+</html>

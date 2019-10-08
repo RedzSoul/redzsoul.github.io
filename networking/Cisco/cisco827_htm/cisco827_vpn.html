@@ -1,0 +1,562 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_vpn.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:40 GMT -->
+<head>
+<title>VPN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>VPN</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Con 
+  il termine VPN si descrivono degli ambiti di una rete pubblica (generalmente 
+  <a href="../glossario_htm/glossario.html#nodo">nodi</a> configurati a questo 
+  scopo) che si scambiano, in modo sicuro, informazioni private.</font><img src="../cisco827_file/vpn.gif" width="320" height="210" align="right"></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  rete privata virtuale (Virtual Private Network) stabilisce dei collegamenti 
+  a <a href="../glossario_htm/glossario.html#livello3">livello di infrastruttura 
+  della rete</a>, piuttosto che a livello delle applicazioni. Il suo scopo &egrave; 
+  quello di rendere sicuro il traffico su una rete (<a href="../glossario_htm/glossario.html#internet">Internet</a>, 
+  <a href="../glossario_htm/glossario.html#intranet">Intranet</a> o <a href="../glossario_htm/glossario.html#extranet">Extranet</a>) 
+  creando un tunnel (tubo virtuale) che, a sua volta, consente ai computer remoti 
+  di scambiarsi le informazioni come se possedessero un collegamento diretto. 
+  In pratica un end to end in una rete condivisa da tutti, o da molti, garantito 
+  dalla codifica dei dati in transito.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  primo vantaggio &egrave; di tipo economico. Infatti, la sicurezza assoluta la 
+  si pu&ograve; avere esclusivamente con un link diretto fra i due end-point, 
+  ma questa modalit&agrave; richiede un collegamento di tipo &quot;dedicato&quot; 
+  che, in ambito <a href="../glossario_htm/glossario.html#wan">WAN</a>, ha dei 
+  costi altissimi. Proviamo semplicemente ad immaginare quanto costa un <a href="../glossario_htm/glossario.html#cdn">CDN</a> 
+  dedicato fra due sedi e moltiplichiamolo per i km che separano le due sedi. 
+  Con le VPN si utilizza <a href="../glossario_htm/glossario.html#internet">Internet</a>, 
+  o una <a href="../glossario_htm/glossario.html#intranet">Intranet</a> gi&agrave; 
+  esistente, senza aggravio di spesa relativa alla connettivit&agrave;. L'unica 
+  spesa da prevedere &egrave; quella relativa agli apparati di supporto e del 
+  sw a corredo. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  rete privata virtuale pu&ograve; essere realizzata mediante due diverse tecnologie:</font></p>
+<div align="justify"> 
+  <ol>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>MODALITA' 
+      TUNNEL</strong>: In questa tecnologia hanno un ruolo fondamentale gli apparati 
+      e, in particolar modo i <a href="../glossario_htm/glossario.html#router">router</a> 
+      e i <a href="../glossario_htm/glossario.html#firewall">firewall</a>. E' la 
+      tecnologia tipica di un collegamento fra una filiale e la sede centrale.<br>
+      Gli apparati sono preposti a trasformare/codificare tutto il traffico fra 
+      gli end-point. Per gli utenti finali non vi &egrave; alcuna percezione della 
+      crittografia applicata.<br>
+      In questa modalit&agrave; i pacchetti di dati vengono inseriti in ulteriori 
+      paccheti richiedendo una maggior performance alla rete. Il tunnelling ha 
+      notevoli vantaggi in tema di sicurezza, tanto che alcuni lo considerano 
+      come ingrediente essenziale di una VPN e lo includono nella sua definizione.</font></li>
+  </ol>
+  <p align="center"><img src="../cisco827_file/vpn2.jpg" width="390" height="250"></p>
+</div>
+<div align="justify"></div>
+<div align="justify"> 
+  <ol start="2">
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>MODALITA' 
+      DI TRASPORTO</strong>: In questa tecnologia hanno un ruolo fondamentale 
+      i software impiegati. Immaginiamo un lavoratore mobile (mobile worker) che 
+      deve collegarsi alla centrale attraverso l'unico carrier disponibile in 
+      qualsiasi punto del mondo: <a href="../glossario_htm/glossario.html#internet">Internet</a>. 
+      Il suo apparato (notebook, palm, wap ecc. ) dovr&agrave; dotarsi di software 
+      per VPN. Il collegamento potr&agrave; essere effettuato con qualsiasi <a href="../glossario_htm/glossario.html#isp">ISP</a> 
+      (Internet service provider) in quanto la cifratura e decifratura dei dati 
+      verr&agrave; garantita dal software a bordo del notebook e dagli apparati 
+      riceventi presso la sede centrale. Internet lascier&agrave; in chiaro solamente 
+      le infomazioni di instradamento IP (header e trailers dei pacchetti). </font></li>
+  </ol>
+</div>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  protocollo <a href="../glossario_htm/glossario.html#tcp">TCP</a> (Transmission 
+  control protocol) nella sua formulazione attuale si occupa del packaging a <a href="../glossario_htm/glossario.html#tcp">livello 
+  4</a> dello standard <a href="../glossario_htm/glossario.html#osi">OSI</a>, con 
+  successivo ripristino dei pacchetti una volta arrivati a destinazione e l'<a href="../glossario_htm/glossario.html#livello3">IP</a> 
+  si assicura che i pacchetti arrivino all'host designato. Oggigiorno, su Internet 
+  viene usato il protocollo <a href="../glossario_htm/glossario.html#ip">IP</a> 
+  versione 4 mentre la versione 5 non &egrave; stata ancora accettata dagli organismi 
+  di standardizzazione. Uno dei propositi annunciati dalla nuova versione di <a href="../glossario_htm/glossario.html#ip">IP</a> 
+  &egrave; quello di poter incrementare l'area di indirizzabilit&agrave; sulla 
+  rete. L'<a href="../glossario_htm/glossario.html#ietf">IETF</a> (Internet engineering 
+  task force) sta lavorando per aggiungere nuove funzionalit&agrave; al protocollo, 
+  compresa la sicurezza. A proposito di quest'ultima area, con particolare riferimento 
+  alla <a href="../glossario_htm/glossario.html#critto">crittografia</a>, abbondano 
+  i brevetti di tipo commerciale e l'<a href="../glossario_htm/glossario.html#ietf">IETF</a> 
+  &egrave; restio ad adottare qualsiasi standard basato su tecnologie non disponibili 
+  liberamente. In definitiva, anche se l'<a href="../glossario_htm/glossario.html#ietf">IETF</a> 
+  continua ad operare per definire un standard VNP tramite il gruppo di lavoro 
+  sulla sicurezza di IP versione 6, restano ancora notevoli ostacoli da superare.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  realt&agrave;, secondo gli esperti, la parte di IPV6 riferita alla tecnologia 
+  di crezione delle VPN &egrave; insufficiente per assicurarne l'interoperabilit&agrave;. 
+  Infatti, due delle assenze principali nelle specifiche riguardano il protocollo 
+  di scambio delle chiavi e uno standard per l'algoritmo di <a href="../glossario_htm/glossario.html#critto">cifratura</a>. 
+  I produttori, in mancanza di metodi standard di <a href="../glossario_htm/glossario.html#critto">crittografia</a> 
+  delle informazioni e di invio delle chiavi di decrittazione agli utenti autorizzati, 
+  proporranno sicuramente soluzioni proprietarie, con tutti gli effetti negativi 
+  che si possono immaginare in termini di interoperabilit&agrave; delle reti.<br>
+  In seguto esamineremo la modalit&agrave; di tunneling implementata da Cisco 
+  sul router 827.<br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Si 
+  possono implementare dei collegamenti VPN sicuri usando il protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> 
+  (Internet Protocol Security) di Cisco Systems in modo da rendere sicuri di dati. 
+  Se il protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> &egrave; 
+  stato implementato correttamente, gli utenti remoti possono accedere con sicurezza 
+  alle risorse dell'azienda, certi della propria privacy. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>L'implementazione 
+  di Cisco del protocollo IPSec</U></strong> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+  nel 1995 la <a href="../glossario_htm/glossario.html#ietf">IETF</a> (Internet 
+  Engineering Task Force) ha standardizzato il protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a>, 
+  i produttori hanno iniziato a offrirne varie implementazioni hardware e software, 
+  infatti Cisco ha implementato il protocollo IPSec nei router.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  sicurezza <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> &egrave; 
+  disponibile nel sistema operativo Cisco <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  (Internetwork Operating System) fin dalla Release 11.3T presentata nel mese 
+  di Aprile del 1998. Prima dell'implementazione del protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a>, 
+  il sistema operativo Cisco <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  era disponibile con la tecnologia <a href="../glossario_htm/glossario.html#cet">CET</a> 
+  (Cisco Encryption Technology), una funzionalit&agrave; di <a href="../glossario_htm/glossario.html#critto">crittografia</a> 
+  proprietaria che viene ancora supportata da Cisco <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  nella versione 12.x. In effetti, il protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> 
+  e la tecnologia <a href="../glossario_htm/glossario.html#cet">CET</a> si possono 
+  usare nella configurazione del router in modo da supportare un sistema misto 
+  di tecnologie vecchie e nuove. Un'altra importante capacit&agrave; fornita da 
+  Cisco &egrave; costituita dal tunneling <a href="../glossario_htm/glossario.html#gre">GRE</a> 
+  (Generic Routing Encapsulation); disponibile a partire dal Cisco IOS Release 
+  10, il tunneling <a href="../glossario_htm/glossario.html#gre">GRE</a> permette 
+  a due router Cisco di passare il traffico non-IP attraverso una rete IP-only. 
+  Questa funzionalit&agrave; risulta particolarmente utile quando &egrave; necessario 
+  passare su <a href="../glossario_htm/glossario.html#internet">Internet</a> del 
+  traffico <a href="../glossario_htm/glossario.html#ipx">IPX</a> o <a href="../glossario_htm/glossario.html#apptal">AppleTalk</a>. 
+  Il protocollo <a href="../glossario_htm/glossario.html#ipx">IPX</a> richiede 
+  un packaging speciale per attraversare le reti che si basano su <a href="../glossario_htm/glossario.html#ip">IP</a>. 
+  Il tunneling <a href="../glossario_htm/glossario.html#gre">GRE</a> incapsula 
+  il protocollo <a href="../glossario_htm/glossario.html#ipx">IPX</a> in un pacchetto 
+  <a href="../glossario_htm/glossario.html#ip">IP</a>. La tecnologia <a href="../glossario_htm/glossario.html#gre">GRE</a> 
+  non serve per implementare il protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a>, 
+  anche se i tunnel <a href="../glossario_htm/glossario.html#gre">GRE</a> forniscono 
+  un livello significativo di flessibilit&agrave; soprattutto quando viene connesso 
+  pi&ugrave; di un sito remoto. Implementato come interfaccia virtuale sul router, 
+  ciascun tunnel <a href="../glossario_htm/glossario.html#gre">GRE</a> pu&ograve; 
+  avere diverse regole di filtraggio e capacit&agrave; di protocollo.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Intorno 
+  a un frame <a href="../glossario_htm/glossario.html#ppp">PPP</a> (un datagramma 
+  <a href="../glossario_htm/glossario.html#ip">IP</a>, un datagramma <a href="../glossario_htm/glossario.html#ipx">IPX</a> 
+  o un frame <a href="../glossario_htm/glossario.html#netbeui">NetBEUI</a>) sono 
+  disposte un'intestazione <a href="../glossario_htm/glossario.html#gre">GRE</a> 
+  (Generic Routing Encapsulation) e IP. Nell'intestazione IP sono presenti gli 
+  indirizzi di origine e destinazione IP che corrispondono al client e al server 
+  <a href="../glossario_htm/glossario.html#vpn">VPN</a>.</font></p>
+<p></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/incapsulamento.gif" width="545" height="166"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>CONFIGURAZIONE</U></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Esistono 
+  diverse documentazioni che possono implementare la configurazione <a href="../glossario_htm/glossario.html#ipsec">IPsec</a>, 
+  ma in generale i passi principali seguiti sono i seguenti:</font></p>
+<ul>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="cisco827_vpn.html#ike">Configurare 
+    la polititica IKE</a>;</font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="cisco827_vpn.html#ipsec">Configurare 
+    le trasformazioni IPsec e protocolli</a>;</font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="cisco827_vpn.html#accesslist">Creare 
+    Access List per la codificazione</a>;</font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="cisco827_vpn.html#cryptomap">Configurare 
+    Crypto Map</a>;</font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="cisco827_vpn.html#cryptomap_ap">Applicare 
+    Crypto Map all'interfaccia</a></font></li>
+</ul>
+<p>&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Configuarare 
+  la politica IKE<a name="ike"></a></a></U></strong></font></li>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="../glossario_htm/glossario.html#ike">IKE</a> 
+  &egrave; un protocollo usato per negoziare automaticamente parametri sicuri, 
+  autenticare, e stabilisce accordi tra i protocolli <a href="../glossario_htm/glossario.html#ipsec">IPsec</a> 
+  dei router.</font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per effettuare 
+  una politica <a href="../glossario_htm/glossario.html#ike">IKE</a>, bisogna usare 
+  i seguenti comandi:</font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>crypto 
+  isakmp policy 1<br>
+  encr 3des<br>
+  authentication pre-share<br>
+  crypto isakmp key sharedkey address 30.30.30.30</em></strong><br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  comando <em><strong>crypto isakmp policy 1</strong></em>, crea una nuova politica 
+  di autenticazione <a href="../glossario_htm/glossario.html#ike">IKE</a>. In questa 
+  politica vengono definiti i parametri necessari per compiere la negoziazione 
+  con il router remoto. Il numero presente alla fine del comando pu&ograve; essere 
+  impostato su un valore compreso tra 1 e 10.000. Questo numero specifica la priorit&agrave; 
+  di questo elemento in relazione con gli elementi simili. &Egrave; anche possibile 
+  creare elementi multipli, con diversi livelli di crittografia per vari siti 
+  remoti. Per esempio, si pu&ograve; crittografare il traffico verso una struttura 
+  di ricerca che gestisca dei dati importanti, usando uno standard pi&ugrave; 
+  elevato rispetto a quello che caratterizza i dati diretti verso altre sedi periferiche. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Encryption 
+  Des</strong> imposta sullo standard <a href="../glossario_htm/glossario.html#des">DES</a> 
+  (Data Encryption Standard) il tipo di crittografia per questa connessione. Attualmente 
+  Cisco offre lo schema <a href="../glossario_htm/glossario.html#3des">3DES</a> 
+  (Triple DES) quale funzionalit&agrave; del sistema operativo Cisco IOS Release 
+  12.0(2)T e versioni successive. Lo schema <a href="../glossario_htm/glossario.html#3des">3DES</a> 
+  &egrave; soggetto a controlli di esportazione pi&ugrave; stringenti rispetto 
+  a quelli che caratterizzano lo schema <a href="../glossario_htm/glossario.html#des">DES</a>, 
+  ma &egrave; pi&ugrave; sicuro di quest'ultimo. Se la sicurezza elevata viene 
+  considerata indispensabile, &egrave; necessario utilizzare l'insieme di funzionalit&agrave; 
+  dello schema <a href="../glossario_htm/glossario.html#3des">3DES</a> (bisogna 
+  tenere presente che, se una parte della propria attivit&agrave; si trova al 
+  di fuori del Nord America, l'esportazione del software <a href="../glossario_htm/glossario.html#3des">3DES</a> 
+  potrebbe risultare alquanto difficile). Il secondo comando di default &egrave; 
+  <a href="../glossario_htm/glossario.html#hash">Hash</a> <a href="../glossario_htm/glossario.html#sha">Sha</a>, 
+  che imposta l'<a href="../glossario_htm/glossario.html#hash">hash</a> per le 
+  negoziazioni <a href="../glossario_htm/glossario.html#ike">IKE</a> sul pi&ugrave; 
+  sicuro algoritmo <a href="../glossario_htm/glossario.html#hash">hash</a> <a href="../glossario_htm/glossario.html#sha-1">SHA-1</a>. 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  chiave pre-share &egrave; usata per identificare e autenticare l'<a href="../glossario_htm/glossario.html#ipsec">IPsec</a> 
+  tunnel e il comando <em><strong>authentication pre-share</strong></em> indica 
+  al processo <a href="../glossario_htm/glossario.html#ike">IKE</a> che le chiavi 
+  necessarie per questa connessione verranno inserite manualmente. In alternativa, 
+  &egrave; possibile usare l'opzione Rsa-Sig che permette ad un'authority <a href="../glossario_htm/glossario.html#ca">CA</a> 
+  (Certificate Authority) di fornire le chiavi. In alternativa si potrebbe usare, 
+  per esempio, il prodotto <a href="../glossario_htm/glossario.html#pki">PKI</a> 
+  di Entrust Technologies per impostare sulla <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  un server di certificati locale. Il vantaggio che accompagna l'uso del server 
+  di certificati &egrave; costituito dalla scalabilit&agrave;. Se la nostra rete 
+  esemplificativa avesse pi&ugrave; di dieci link <a href="../glossario_htm/glossario.html#vpn">VPN</a>, 
+  la gestione manuale delle chiavi inizierebbe rapidamente a richiedere molto 
+  tempo poich&eacute; &egrave; necessario configurare manualmente (usando il comando 
+  <em><strong>crypto isakmp key</strong></em>) le chiavi dei peer potenziali di 
+  ciascun router. Nel caso di una configurazione <a href="../glossario_htm/glossario.html#vpn">VPN</a> 
+  completamente mista, una rete con pi&ugrave; di dieci link <a href="../glossario_htm/glossario.html#vpn">VPN</a> 
+  comporterebbe N x (N - 1) elementi di chiave (per esempio, 5 router comporterebbero 
+  20 chiavi, 10 router comporterebbero 90 chiavi) in ciascun router. Per autenticare 
+  tutte le richieste in arrivo da una connessione crittografata usando un authority 
+  <a href="../glossario_htm/glossario.html#ca">CA</a>, il router pu&ograve; interrogare 
+  quest'ultima al fine di chiedere se la connessione in arrivo viene da un host 
+  autorizzato. Le chiavi si possono generare in corrispondenza di certi intervalli 
+  di tempo in modo da garantire che, se si dovesse verificare una compromissione 
+  della sicurezza, rimarrebbe vulnerabile soltanto il traffico trasmesso dai server 
+  prima del successivo cambiamento di chiavi. Il comando <em><strong>crypto isakmp 
+  key</strong></em> viene usato per impostare la chiave predisposta per questo 
+  host. </font></p>
+<p align="justify">&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify"><U>Configurare 
+  le trasformazioni IPsec e protocolli<a name="ipsec"></a></U></strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  Un <strong>transform-set</strong> &egrave; la combinazione di regole che governa 
+  esattamente il modo in cui i dati vengono crittografati e autenticati. Durante 
+  la negoziazione <a href="../glossario_htm/glossario.html#ike">IKE</a>, i punti 
+  si accordano nell'usare una particolare trasform set per poter proteggere il 
+  flusso di dati. Il processo <a href="../glossario_htm/glossario.html#ike">IKE</a> 
+  stabilisce soltanto l'identit&agrave; di ciascun partecipante alla comunicazione. 
+  Nella fase di negoziazione <a href="../glossario_htm/glossario.html#ike">IKE</a>, 
+  i peer cercano attraverso trasform set quella che sia uguale per tutti, e nel 
+  momento in cui viene trovata viene selezionata e applicata per la protezione 
+  del traffico. Ora che si conosce l'identit&agrave;, si pu&ograve; prendere in 
+  considerazione il passaggio dei dati. Il comando <strong>transform-set </strong>fornisce 
+  entrambe le forme di sicurezza dei pacchetti: <a href="../glossario_htm/glossario.html#ah">AH</a> 
+  (Authentication Header) per l'autenticazione e il rilevamento delle risposte 
+  ed <a href="../glossario_htm/glossario.html#esp">ESP</a> (Encapsulating Security 
+  Payload) per crittografare il carico di dati di ciascun pacchetto. Questo comando 
+  &egrave; caratterizzato da molte combinazioni possibili, in particolare quando 
+  si crea una <a href="../glossario_htm/glossario.html#vpn">VPN</a> <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> 
+  utilizzando hardware non prodotto dal Cisco. Per configurare una politica <a href="../glossario_htm/glossario.html#ike">IKE</a>, 
+  bisogna usare i seguenti comandi nella confugurazione globale:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>crypto 
+  ipsec transform-set vpn-test esp-3des esp-sha-hmac</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Stabilendo 
+  manualmente una connessione sicura, non c'&egrave; negoziazione tra i punti 
+  quindi entrambi i lati devono specificare le stesse serie di trasformazioni.</font></p>
+<p align="justify">&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify"><U>Creare 
+  Access List per la codificazione<a name="accesslist"></a></U></strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  Access List definiscono quanto il traffico IP sar&agrave; protetto con la codifica. 
+  Le Access List estese sono usate per precisare ulteriormente gli indirizzi sorgenti 
+  e destinatari e il tipo di pacchetti.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>ip 
+  access-list extended vpn-static1 <br>
+  permit 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255</em></strong><br>
+  <br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  range di indirizzi nelle Access List rappresenta il traffico localmente per 
+  ogni router. Qualsiasi traffico non protetto verso l'interno, che corrisponde 
+  ad un ingresso di tipo <strong>permit </strong>nell'Access List, sar&agrave; 
+  rifiutata, perch&egrave; IPsec protegge questo tipo di traffico.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Inoltre, 
+  il normale comportamento permette che il resto del traffico sia spedito senza 
+  crittografia e questo processo &egrave; nominato tunneling diviso. Alternativamente, 
+  per fornire alla parte locale protezione con un <a href="../glossario_htm/glossario.html#firewall">firewall</a>, 
+  tutto il traffico dalla parte remota pu&ograve; essere mandato in un luogo centrale 
+  dotato di accesso sicuro ad Internet. Per disabilitare il tunneling diviso e 
+  per mandare traffico su Internet fino ad un router, si f&agrave; uso delle <a href="cisco827_acl_std.html">Access 
+  List</a> di default:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>ip 
+  access-list extended vpn-static1 <br>
+  permit host 192.168.100.0 0.0.0.255.0 any</em></strong></font></p>
+<p align="justify">&nbsp; </p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify"><U>Configurare 
+  Crypto Map<a name="cryptomap"></a></U></strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Fino 
+  a questo punto, ogni elemento &egrave; stato coinvolto soltanto perifericamente 
+  con la protezione dei flussi di dati di routing. Nel comando <em><strong>crypto 
+  map</strong></em>, tutti gli elementi vengono raggruppati, l'ingresso <em><strong>crypto 
+  map</strong></em> unisce gli IPsec uguali, l'insieme di trasformazioni usate 
+  e le access list usate per definire il traffico sono cifrate. Le entrate <em><strong>crypto 
+  map</strong></em> sono valutate in sequenza. Di seguito, il nome del <em><strong>crypto 
+  map</strong></em> <em>static-map</em> ed il numero del crypto-map sono significativi 
+  localmente, 1 &egrave; il numero di sequenza, che si rende necessario quando 
+  si creano pi&ugrave; mapping per fornire diversi livelli di crittografia per 
+  vari flussi di dati, mentre il comando <em> <strong>ipsec-isakmp </strong></em>indica 
+  al mapping che si sta usando il processo <a href="../glossario_htm/glossario.html#ike">IKE</a>. 
+  Il comando <em><strong>set peer </strong></em>imposta la destinazione per questo 
+  flusso di dati protetto. Il comando <em><strong>match address</strong></em>, 
+  indica al protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> 
+  quali pacchetti devono essere protetti. In questo contesto abbiamo usato le 
+  access list per proteggere un pacchetto IP in uscita che corrisponde alla lista 
+  e per indicare al protocollo <a href="../glossario_htm/glossario.html#ipsec">IPSec</a> 
+  di ignorare i pacchetti non corrispondenti alla lista. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>crypto 
+  map static-map local-address Ethernet0<br>
+  crypto map static-map 1 ipsec-isakmp<br>
+  set peer 192.168.101.1<br>
+  set transform-set vpn-test<br>
+  match address vpn-static1</em></strong> </font></p>
+<p align="justify">&nbsp;</p>
+<li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong align="justify"><U>Applicare 
+  Crypto Map alle interfacce<a name="cryptomap_ap"></a></U></strong></font></li>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  crypto map devono essere applicate ad ogni interfaccia per cui il traffico <a href="../glossario_htm/glossario.html#ipsec">IPsec</a> 
+  passer&agrave;.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  applicare crypto map all'interfaccia, bisogna usare i seguenti comandi:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>interface 
+  Ethernet0<br>
+  ip address 192.168.100.100 255.255.255.0<br>
+  crypto map static-map </em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Applicando 
+  crypto map all'interfaccia fisica, si ordina al router di stimare tutto il traffico 
+  con Security Associations Database.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Uso 
+  del Tunneling GRE</U></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Alternativamente, 
+  il traffico da cifrare potrebbe essere spedito su un'interfaccia <a href="../glossario_htm/glossario.html#gre">GRE</a>, 
+  che sarebbe configurata per usare la crittografia <a href="../glossario_htm/glossario.html#ipsec">IPsec</a>. 
+  I pacchetti spediti dall'interfaccia <a href="../glossario_htm/glossario.html#gre">GRE</a> 
+  vengono incapsulati e instradati fuori sull'interfaccia fisica. Usando l'interfaccia 
+  <a href="../glossario_htm/glossario.html#gre">GRE</a>, i due router possono supportare 
+  il protocollo dinamico di instradamento <a href="../glossario_htm/glossario.html#ip">IP</a> 
+  per scambiare gli aggiornamenti di instradamento al di sopra del tunnel, e per 
+  permettere il traffico del multicast IP. Comunque, quando si usa <a href="../glossario_htm/glossario.html#ipsec">IPsec</a> 
+  con <a href="../glossario_htm/glossario.html#gre">GRE</a>, le <a href="cisco827_acl_std.html">access 
+  list</a> per il traffico di cifratura non elencano la rete e le applicazioni 
+  desiderate, ma piuttosto indirizzano per rendere possibile le sorgenti e destinazioni 
+  del tunnel <a href="../glossario_htm/glossario.html#gre">GRE</a> sul senso outbound.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Dopo 
+  avere impostato una configurazione IP di base in corrispondenza di ciascun sito, 
+  la fase successiva prevede la creazione del tunnel <a href="../glossario_htm/glossario.html#gre">GRE</a>. 
+  Il comando Tunnel Source specifica l'indirizzo sorgente che deve essere usato 
+  quando si inviano i pacchetti tunnel; il comando Tunnel Destination indica invece 
+  al router dove inviare i pacchetti tunnel risultanti.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>interface 
+  tunnel1<br>
+  ip address 20.20.20.20 255.255.255.0<br>
+  tunnel source Ethernet0<br>
+  tunnel destination 30.30.30.30<br>
+  crypto map static-map</em></strong><br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  aggiunta alla creazione di una interfaccia tunnel, le <a href="cisco827_acl_std.html">access 
+  list</a> usate per la crypto map devono essere modificate per consentire soltanto 
+  il traffico GRE sul outbound per entrambi i punti.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>ip 
+  access-list extended vpn-static1 <br>
+  permit gre host 192.168.100.1 host 192.168.101.1</em></strong></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Completamento 
+  della VPN</U></strong> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">A 
+  questo punto &egrave; necessario verificare che la VPN funzioni correttamente. 
+  Per verificarlo, eseguire il comando <em><strong>show crypto isakmp sa</strong></em>. 
+  Questo comando <em><strong>show </strong></em>permette di vedere se il processo 
+  <a href="../glossario_htm/glossario.html#ike">IKE</a> ha instaurato un'associazione 
+  di sicurezza con il router remoto. Non si verificher&agrave; nessuna comunicazione 
+  attraverso il tunnel fino a quando il processo <a href="../glossario_htm/glossario.html#ike">IKE</a> 
+  non sar&agrave; stato configurato correttamente. Se non viene instaurata l'associazione 
+  di sicurezza (<a href="../glossario_htm/glossario.html#ike">SA</a>- Security Association) 
+  <a href="../glossario_htm/glossario.html#ike">IKE</a>, si pu&ograve; usare il 
+  comando <em><strong>debug crypto isakmp</strong></em> per vedere se si &egrave; 
+  verificato qualche errore nel processo <a href="../glossario_htm/glossario.html#ike">IKE</a>.<br>
+  </font></p>
+<TABLE width="441" border=0 align="center" bordercolor="#111111" bgColor=#000000>
+  <TBODY>
+    <TR> 
+      <TD width="128" align=left class=normal><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">dst</font></TD>
+      <TD width="108" align=left class=normal><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">src</font></TD>
+      <TD width="71" align=left class=normal><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">state</font></TD>
+      <TD width="70" align=left class=normal><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">conn-id</font></TD>
+      <TD width="42" align=left class=normal><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">slot</font></TD>
+    </TR>
+    <TR> 
+      <TD class=normal align=left height=13><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">30.30.30.30</font></TD>
+      <TD class=normal align=left height=13><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">20.20.20.20</font></TD>
+      <TD class=normal align=left height=13><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">QM_IDLE</font></TD>
+      <TD class=normal align=left height=13><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">1</font></TD>
+      <TD class=normal align=left 
+                  height=13><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">0</font></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp; </p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+  il protocollo <a href="../glossario_htm/glossario.html#ike">IKE</a> conclude 
+  il suo processo, il protocollo IPSec deve creare una associazione <a href="../glossario_htm/glossario.html#sa">SA</a> 
+  con il router remoto. Questo comando permette di verificare che i dati vengano 
+  crittografati. Se si ricevono degli zeri, usare il comando <strong><em>show 
+  crypto ipsec sa</em> </strong>in modo da visualizzare gli errori. L'output seguente 
+  mostra ci&ograve; che viene generato dal comando <em><strong>show crypto ipsec 
+  sa</strong></em>, comprendente alcune informazioni sul numero di pacchetti crittografati. 
+  </font></p>
+<TABLE width="56%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco827#show 
+          crypto ipsec sa<br>
+          #pkts encaps: 10, #pkts encrypt: 10, #pkts digest 10 </font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">#pkts 
+          decaps: 10, #pkts decrypt: 10, #pkts verify 10 </font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">#send 
+          errors 10, #recv errors 0</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Dopo 
+  la verifica dell'implementazione, si avr&agrave; a disposizione una VPN funzionante. 
+  Il listato mostra il testo completo della configurazione , che viene visualizzato 
+  eseguendo il comando <em><strong>show run</strong></em> per il router della 
+  VPN Cisco827. </font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/vpn_pppoe_01.gif" width="595" height="214"></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>version 
+  12.1<br>
+  no service single-slot-reload-enable<br>
+  no service pad<br>
+  service timestamps debug uptime<br>
+  service timestamps log uptime<br>
+  no service password-encryption<br>
+  !<br>
+  hostname 827<br>
+  !<br>
+  logging rate-limit console 10 except errors<br>
+  !<br>
+  ip subnet-zero<br>
+  no ip finger<br>
+  !<br>
+  no ip dhcp-client network-discovery<br>
+  vpdn enable<br>
+  <br>
+  no vpdn logging<br>
+  !<br>
+  vpdn-group pppoe<br>
+  request-dialin<br>
+  protocol pppoe<br>
+  !<br>
+  !<br>
+  !<br>
+  crypto isakmp policy 1<br>
+  encr 3des<br>
+  authentication pre-share<br>
+  group 2<br>
+  crypto isakmp key sharedkey address 30.30.30.30<br>
+  !<br>
+  !<br>
+  crypto ipsec transform-set dsltest esp-3des esp-sha-hmac <br>
+  !<br>
+  crypto map static-map local-address Ethernet0<br>
+  crypto map static-map 1 ipsec-isakmp <br>
+  set peer 30.30.30.30<br>
+  set transform-set vpn-test <br>
+  match address 101<br>
+  !<br>
+  interface Ethernet0<br>
+  ip address 192.168.100.100 255.255.255.0<br>
+  crypto map static-map<br>
+  ip nat inside<br>
+  !<br>
+  interface ATM0<br>
+  no ip address<br>
+  no atm ilmi-keepalive<br>
+  bundle-enable<br>
+  dsl operating-mode ansi-dmt<br>
+  !<br>
+  interface ATM0.1 point-to-point<br>
+  pvc 0/33 </em></strong></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong>!--- 
+  This is usually provided by the ISP</strong></em></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong> protocol 
+  pppoe<br>
+  pppoe-client dial-pool-number 1<br>
+  !<br>
+  !<br>
+  interface Dialer1<br>
+  ip address 20.20.20.20 255.255.255.0</strong></em></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong>!--- 
+  This is provided by the ISP <br>
+  !--- Another variation is ip address negotiated</strong></em></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong> ip 
+  mtu 1492<br>
+  ip Nat outside<br>
+  encapsulation ppp<br>
+  no ip route-cache<br>
+  no ip mroute-cache<br>
+  dialer pool 1<br>
+  ppp authentication chap callin<br>
+  ppp chap hostname testuser<br>
+  ppp chap password 7 00071A1507545A545C<br>
+  crypto map test<br>
+  !<br>
+  ip classless<br>
+  ip route 0.0.0.0 0.0.0.0 Dialer1<br>
+  no ip http server<br>
+  !<br>
+  ip Nat inside source route-map nonat interface Dialer1 overload<br>
+  access-list 1 permit 192.168.100.0 0.0.0.255<br>
+  access-list 101 permit ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255<br>
+  access-list 105 deny ip 192.168.100.0 0.0.0.255 192.168.200.0 0.0.0.255<br>
+  access-list 105 permit ip 192.168.100.0 0.0.0.255 any<br>
+  !<br>
+  route-map nonat permit 10<br>
+  match ip address 105<br>
+  !<br>
+  !<br>
+  line con 0<br>
+  transport input none<br>
+  stopbits 1<br>
+  line vty 0 4<br>
+  login<br>
+  !<br>
+  scheduler max-task-time 5000<br>
+  end</strong></em></font></p>
+<p></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_vpn.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:51 GMT -->
+</html>

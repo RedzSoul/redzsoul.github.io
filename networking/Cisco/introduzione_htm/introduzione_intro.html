@@ -1,0 +1,242 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/introduzione_htm/introduzione_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:13 GMT -->
+<head>
+<title>Introduzione</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i>INTRODUZIONE</i></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  rete a commutazione di messaggi &egrave; composta interamente da elementi riflettenti, 
+  denominati &quot;mirror&quot;. I mirror sono divisi in router, <a href="../glossario_htm/glossario.html#bridge">bridge</a> 
+  e <a href="../glossario_htm/glossario.html#switch">switch</a>; tali dispositivi 
+  ricevono messaggi su una <a href="../cisco_htm/cisco_comp_princ.html#bri">interfaccia</a>, 
+  verificano le destinazioni dei messaggi stessi tramite specifiche tabelle e 
+  li ritrasmettono verso un'altra <a href="../cisco_htm/cisco_comp_princ.html#bri">interfaccia</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'intento 
+  di questo lavoro &egrave; di dare inizialmente un'idea generale riguardo le 
+  funzionalit&agrave; dei router, per poi analizzare nello specifico un determinato 
+  modello di router ADSL della Cisco Systems, il modello 827.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  Router &egrave; un'apparecchiatura che serve a collegare una rete di computer 
+  (PC o Mac) ad un'altra <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+  o ad <a href="../glossario_htm/glossario.html#internet">Internet</a> mediante 
+  un collegamento di tipo <a href="../glossario_htm/glossario.html#lan">LAN</a>/<a href="../glossario_htm/glossario.html#isdn">ISDN</a>/<a href="../glossario_htm/glossario.html#adsl">ADSL</a> 
+  o altro. La versatilit&agrave; di tale apparecchio permette una configurazione 
+  personalizzata con la possibilit&agrave; di discriminare orari e tempi di connessione 
+  e tipologia di accesso per ogni postazione connessa alla rete.</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../introduzione_file/router_blu.gif" width="440" height="100"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  compito del router e' costituito da 2 attivita' principali :</font></p>
+<div align="justify">
+  <ul>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" align="justify">Determinazione 
+      del percorso ottimale, ovvero la strada che il pacchetto deve percorrere attraversando vari router,  
+      per arrivare da un punto A su una rete ad un punto B su un'altra, ottimizzando 
+      i tempi di percorrenza;</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" align="justify">Trasporto 
+      delle informazioni tra 2 reti diverse. </font></li>
+  </ul>
+</div>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  tipica architettura dei router, &egrave; costituita da un algoritmo che calcola 
+  e crea la tabella d'instradamento (tabella di routing), che contiene l'indirizzo 
+  di destinazione, la porta verso cui inoltrare il pacchetto (interface), il numero 
+  di router da attraversare (hops) e il costo in termini di tempo; infine questa 
+  architettura &egrave; completata da un processo di instradamento che schedula 
+  le operazioni verso altre <a href="../glossario_htm/glossario.html#lan">LAN</a>, 
+  <a href="../glossario_htm/glossario.html#wan">WAN</a>, e <a href="../glossario_htm/glossario.html#internet">Internet</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Gli 
+  algoritmi di routing rappresentano regole memorizzate nelle tabelle di routing, 
+  affinch&egrave; pacchetti spediti da un mittente raggiungano le loro destinazioni 
+  attraverso percorsi pi&ugrave; idonei.<br>
+  Questi algoritmi si differenziano in base a diverse caratteristiche, quali:</font></p>
+<div align="justify"> 
+  <ul>
+    <li><strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" align="justify"> 
+      Ottimizzazione</font></strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" align="justify">: 
+      &egrave; l'abilit&agrave; dell'algoritmo a scegliere la strada migliore. 
+      La strada dipende dalla metrica (unit&agrave; di misura per calcolare la 
+      lunghezza del percorso);</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif" align="justify"> 
+      <strong>Semplicit&agrave;</strong>: l'algoritmo deve essere funzionalmente 
+      efficiente con un minimo software e una bassa utilizzazione delle risorse 
+      hardware;</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Robustezza</strong>: 
+      a fronte di guasti hardware, alto traffico, l'algoritmo deve continuare 
+      a lavorare;</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Rapidita' 
+      di convergenza</strong>: quando ad esempio una <a href="../glossario_htm/glossario.html#lan">LAN</a> 
+      non &egrave; pi&ugrave; raggiungibile, i router distribuiscono messaggi 
+      di aggiornamento di tale cambiamento a tutta la rete nel pi&ugrave; breve 
+      tempo possibile perch&eacute; in caso contrario si potrebbero verificare 
+      dei &quot;routing loop&quot;, ossia quando un pacchetto rimane vincolato 
+      a muoversi fra 2 o pi&ugrave; router senza trovare una via d'uscita;</font></li>
+    <li><strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+      Flessibilit&agrave;</font></strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">: 
+      i router devono adattarsi velocemente e accuratamente a una variet&agrave; 
+      di circostanze quali per esempio la caduta di una network; in questo caso 
+      i router devono scegliere il miglior percorso per tutti quei pacchetti che 
+      usavano la network caduta.</font></li>
+  </ul>
+</div>
+<div align="justify">
+  <p>&nbsp;</p>
+</div>
+<TABLE width="56%" border=1 align="center" cellPadding=0 cellSpacing=0 
+      borderColorLight=#999999 borderColorDark=#000000>
+  <TBODY>
+    <TR> 
+      <TD width="30%" bgColor=#0099ff> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">Destin. Address </FONT></TD>
+      <TD width="26%" bgColor=#0099ff> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">Interface </FONT></TD>
+      <TD width="19%" bgColor=#0099ff> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">Hops </FONT></TD>
+      <TD width="25%" bgColor=#0099ff> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">Costo </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">D </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">local </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">0 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">0 </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">B </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">I1 </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">1 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">5 </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">A </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">I1 </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">2 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">2+5=7 </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">C </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">I2 </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">1 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">6 </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">E </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">I3 </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">2 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">10 </FONT></TD>
+    </TR>
+    <TR> 
+      <TD width="30%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">F </FONT></TD>
+      <TD width="26%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">I3 </FONT></TD>
+      <TD width="19%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">1 </FONT></TD>
+      <TD width="25%"> <FONT 
+            face="Trebuchet MS, Arial, Helvetica">3 </FONT></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="center"><strong><em>Tabella di routing</em></strong></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  protocolli di routing mappano la topologia della rete e memorizzano le relative 
+  valutazioni di quella topologia nella tabella di routing, pertanto gli algoritmi 
+  di routing possono essere classificati per tipo:</font></p>
+<div align="justify"> 
+  <ul>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> <strong>Statici 
+      o dinamici</strong>: negli algoritmi statici le tabelle di routing che vengono 
+      memorizzate vengono compilate da una persona (Network Administrator) e i 
+      valori di tali tabelle non cambiano per nessun motivo fin quando il Network 
+      Administrator non li cambia, mentre in quelli dinamici le tabelle vengono 
+      continuamente aggiornate e cambiate a seconda dei cambiamenti della rete 
+      (caduta o inserimento di una network);</font></li>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> <strong>A 
+      percorso singolo o multiplo</strong>: alcuni algoritmi supportano pi&ugrave; 
+      percorsi per una stessa destinazione;</font></li>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> <strong>Gerarchici</strong>: 
+      alcuni router hanno funzioni diverse in quanto pi&ugrave; <a href="../glossario_htm/glossario.html#nodo">nodi</a> 
+      vengono suddivisi in gruppi logici chiamati domain, AS (Autonomous System) 
+      o aree e solo alcuni di questi router possono interagire con ulteriori router 
+      di altri domain, mentre altri possono interagire con router appartenenti 
+      allo stesso domain. </font></li>
+    <li> <strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+      Link State o Distance Vector</font></strong><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">: 
+      link state (conosciuto anche come shortest path first) trasferisce tutte 
+      le informazioni di routing a tutti i <a href="../glossario_htm/glossario.html#nodo">nodi</a>; 
+      comunque ogni router invia solo la porzione di tabella che descrive lo stato 
+      dei suoi link. Gli algoritmi del tipo distance vector inviano tutta o parte 
+      della tabella ai soli router vicini. Quindi link state spedisce piccoli 
+      aggiornamenti a tutti, distance vector spedisce grossi aggiornamenti ma 
+      solo ai router vicini. I link state richiedono pi&ugrave; risorse hardware 
+      necessarie (CPU e memoria) rispetto ai distance vector, ma sono meno propensi 
+      ai routing loop;</font></li>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> <strong>Metrica</strong>: 
+      per selezionare il miglior percorso gli algoritmi scelgono diversi criteri 
+      di scelta, per lunghezza del percorso, per affidabilit&agrave; del link, 
+      per ritardo, per banda passante, per carico di rete. Tuttavia, gli unici 
+      due parametri universalmente accettati sono: </font> 
+      <ul>
+        <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> HOPS: 
+          numero di salti effettuati, cio&egrave; il numero di IS attraversati 
+          lungo il cammino</font>;</li>
+        <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> COSTO: 
+          somma dei costi di tutte le linee attraversate (il costo di una linea 
+          &egrave; inversamente proporzionale alla sua velocit&agrave;).</font> 
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div align="justify">
+  <p>&nbsp;</p>
+  <p align="center"><img src="../introduzione_file/arch_router.gif" width="481" height="552"></p>
+</div>
+<div align="center"><strong><em>Architettura router</em></strong> </div>
+<div align="justify">
+  <ul>
+    <ul>
+      <ul>
+      </ul>
+    </ul>
+  </ul>
+</div>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Un 
+  processo che a volte &egrave; implementato dai router &egrave; il <a href="../glossario_htm/glossario.html#dns">DNS</a> 
+  (Domain Name Service), il quale memorizza nella cache dati <a href="../glossario_htm/glossario.html#dns">DNS</a>; 
+  c</font><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">omunque, 
+  il <a href="../glossario_htm/glossario.html#dns">DNS</a> non &egrave; fondamentale 
+  per l&#8217;architettura di un router, e non tutti concordano che un router 
+  debba offrire tale servizio.</font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/introduzione_htm/introduzione_intro.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:14 GMT -->
+</html>

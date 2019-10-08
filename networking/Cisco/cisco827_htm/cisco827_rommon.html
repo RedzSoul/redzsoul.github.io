@@ -1,0 +1,136 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_rommon.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:30 GMT -->
+<head>
+<title>Rommon</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>ROMMON</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  modalit&agrave; ROMMON (ROM monitor) consiste in una modalit&agrave; ibrida, 
+  &egrave; anche chiamata programma di bootstrap. Il <a href="../glossario_htm/glossario.html#firmware">firmware</a> 
+  di ROM monitor viene lanciato quando il router viene acceso o resettato. Il 
+  <a href="../glossario_htm/glossario.html#firmware">firmware</a> serve ad inizializzare 
+  il processore ed il sistema operativo (<a href="../glossario_htm/glossario.html#ios">IOS</a>) 
+  del router. Questo tipo di modalit&agrave; &egrave; utilizzata per alcuni lavori 
+  di configurazioni, tipo il <a href="cisco827_pass_rec.html">recupero di password</a> 
+  e il download di un <a href="../glossario_htm/glossario.html#ios">IOS</a> attraverso 
+  la porta console. Se non vi &egrave; nessun <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  nella <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> del router 
+  da essere caricato all'avvio, la modalit&agrave; ROM monitor avvia il router.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  accedere in ROM monitor, in avvio del router bisogna premere i tasti <strong>CTRL 
+  + Break</strong>.</font></p>
+<TABLE width="73%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">System 
+          Bootstrap, Version 12.2(4r)XM2, RELEASE SOFTWARE (fc1)<br>
+          TAC Support: http://www.cisco.com/tac<br>
+          Copyright (c) 2002 by cisco Systems, Inc.<br>
+          C800/SOHO series (Board ID: 9-62) platform with 16384 Kbytes of main 
+          memory</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">program 
+          load complete, entry point: 0x80013000, size: 0x3a8cfc<br>
+          Self decompressing the image : #################<br>
+          monitor: command &quot;boot&quot; aborted due to user interrupt<br>
+          rommon 1 &gt;</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp; 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Come 
+  detto in precedenza l'aggiornamento di un nuovo <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  pu&ograve; essere effettuata anche attraverso la modalit&agrave; ROM monitor, 
+  anche se viene scelta normalmente la procedura attraverso la modalit&agrave; 
+  privilegiata. </font> 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  In questa sezione appunto verr&agrave; descritto come caricare nella <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  del router l'immagine dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  attraverso un <a href="cisco827_conf_tipica.html#tftp_server">server TFTP</a> 
+  nella modalit&agrave; ROM monitor, usando il comando &quot;<em><strong>tftpdnld</strong></em>&quot;. 
+  </font> 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  prima cosa da fare &egrave; cambiare l'indirizzo di memoria da 0x2102 (come 
+  solitamente &egrave; settato) in 0x2142 con il comando &quot;<em><strong>confreg 
+  0x2142</strong></em>&quot;,<em><strong> </strong></em>riavviare il router e 
+  rientrare nella modalit&agrave; ROM monitor. </font> 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Prima 
+  di usare il comando &quot;<em><strong>tftpdnl</strong></em>&quot; bisogna settare 
+  delle variabili: </font> 
+<div align="justify"> 
+  <ul>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>IP_ADDRESS</strong>= 
+      ip_address (<em>indirizzo del router</em>)</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>IP_SUBNET_MASK</strong>= 
+      ip_address (<em>maschera di sottorete del router</em>)</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>DEFAULT_GATEWAY</strong>= 
+      ip_address (<em>indirizzo del gateway di default</em>)</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>TFTP_SERVER</strong>= 
+      ip_address (<em>indirizzo del server TFTP che contiene l'IOS</em>)</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>TFTP_FILE</strong>= 
+      filename (<em>nome del file che deve essere copiato dal server TFTP</em>)<br>
+      </font></li>
+  </ul>
+</div>
+<div align="justify"> 
+  <TABLE width="50%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+    <TBODY>
+      <TR> 
+        <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">rommon 
+            1 &gt; IP_ADDRESS=192.168.0.254<br>
+            rommon 1 &gt; IP_SUBNET_MASK=255.255.255.0<br>
+            rommon 1 &gt; DEFAULT_GATEWAY=192.168.0.25<br>
+            rommon 1 &gt; TFTP_SERVER=192.168.0.25<br>
+            rommon 1 &gt; TFTP_FILE=c827v-y6-mz.121-1.XB<br>
+            rommon 1 &gt;<br>
+            </font> </p></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</div>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  volta impostati questi parametri, basta lanciare il comando &quot;<strong><em>tftpdnld</em></strong>&quot; 
+  e l'immagine dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> dal <a href="cisco827_conf_tipica.html#tftp_server">server 
+  TFTP</a> verr&agrave; copiata, similmente come nella modalit&agrave; privilegiata 
+  attraverso <a href="../glossario_htm/glossario.html#telnet">Telnet</a>, nella 
+  memoria <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> del router.</font></p>
+<TABLE width="73%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p align="justify"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">rommon 
+          1 &gt;tftpdnld<br>
+          IP_ADDRESS: 192.168.0.254<br>
+          IP_SUBNET_MASK: 255.255.255.0<br>
+          DEFAULT_GATEWAY: 192.168.0.25<br>
+          TFTP_SERVER: 192.168.0.25<br>
+          TFTP_FILE: c827v-y6-mz.121-1.XB<br>
+          Invoke this command for disaster recovery only.<br>
+          WARNING: all existing data in all partitions on flash will be lost!<br>
+          Do you wish to continue? y/n: [n]:<br>
+          Step 3 If you are sure that you want to continue, enter y in response 
+          to the question in the output:</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Do 
+          you wish to continue? y/n: [n]:y </font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Seguite 
+  queste istruzioni, ci verr&agrave; richiesto di riavviare il router. Durante 
+  l'avvio bisogna rientrare in ROM monitor e ripristinare l'indirizzo di configurazione 
+  da 0x2142 in 0x2102 e riavviarlo nuovamente e lasciarlo partire normalmente.</font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_rommon.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:30 GMT -->
+</html>

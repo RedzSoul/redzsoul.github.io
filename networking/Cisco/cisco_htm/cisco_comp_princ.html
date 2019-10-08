@@ -1,0 +1,180 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco_htm/cisco_comp_princ.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:17 GMT -->
+<head>
+<title>Componenti di un Router Cisco</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>COMPONENTI 
+  DI UN ROUTER CISCO</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  componenti di un router giocano un ruolo chiave nel processo di configurazione. 
+  Sapere quali componenti sono coinvolti nel processo di configurazione permette 
+  di capire come il router immagazzina ed utilizza i comandi eseguiti dall&#8217;utente. 
+  </font> </p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L&#8217;archittetura 
+  interna di un router Cisco &egrave; composta da componenti importante e sono:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  <img src="../cisco_file/architettura.jpg" width="418" height="258"> </font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>RAM<a name="ram"></a></strong> 
+  : nella RAM si trova la configurazione &quot;corrente&quot; del router e le 
+  varie variabili temporanee necessarie al router per il suo funzionamento: tabelle 
+  di routing, arp cache e il buffer riempito dai pacchetti in coda. Il contenuto 
+  della RAM viene perso in fase di spegnimento o riavvio del router (memoria di 
+  tipo &quot;volatile&quot;) . </font> 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>NVRAM<a name="nvram"></a></strong> 
+  (non volatile RAM): preserva la configurazione utile allo startup e al backup. 
+  Contiene il registro di configurazione. Non viene persa in caso di spegnimento 
+  del router; </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>FLASH<a name="flash"></a></strong>: 
+  &egrave; la memoria di tipo &quot;permanente&quot;, nella quale si trova il 
+  sistema operativo (Internetwork Operating System - <a href="../glossario_htm/glossario.html#ios">IOS</a>). 
+  Nella memoria Flash possono essere salvate diverse versioni dell'<a href="../glossario_htm/glossario.html#ios">IOS</a>; 
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>ROM<a name="rom"></a></strong>: 
+  &egrave; la memoria nella quale si trova il software di diagnostica e il software 
+  di base del router (fondamentalmente quello necessario al boot dell'apparato); 
+  l&#8217;aggiornamento software nella ROM richiede la rimozione e sostituzione 
+  dei chip sulla CPU.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>INTERFACCE<a name="bri"></a></strong>: 
+  sono le connessioni di rete sulla scheda madre del router o su moduli di interfaccia 
+  separati, attraverso il quale i pacchetti entrano ed escono dal router, e possono 
+  essere di diversi tipi, quali:</font></p>
+<ul>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="../glossario_htm/glossario.html#aui">AUI</a>: 
+      interfaccia Ethernet di tipo AUI (attachment unit interface); </font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="../glossario_htm/glossario.html#10baset">10BaseT</a>: 
+      interfaccia <a href="../glossario_htm/glossario.html#eth">Ethernet</a> di 
+      tipo <a href="../glossario_htm/glossario.html#10baset">10BasetT</a>; </font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">SERIALE: 
+      interfaccia seriale sincrona (da collegare, con apposito cavo proprietario, 
+      a modem sincroni con interfaccia <a href="../glossario_htm/glossario.html#v35">V.35</a>); 
+      </font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="../glossario_htm/glossario.html#bri">BRI</a>: 
+      interfaccia verso un accesso base <a href="../glossario_htm/glossario.html#isdn">ISDN</a>; 
+      </font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a href="../glossario_htm/glossario.html#atm">ATM</a>: 
+      interfaccia <a href="../glossario_htm/glossario.html#atm">ATM</a>, in fibra 
+      oppure in rame.</font></div>
+  </li>
+</ul>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>CONSOLE</strong>: 
+  si tratta di un interfaccia seriale (asincrona) usata per il collegamento ad 
+  un terminale seriale.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>AUSILIARIA</strong>: 
+  si tratta di una porta seriale asincrona RS232 usata per il collegamento di 
+  altre periferiche (modem, cavo seriale null modem). E' utilizzata spesso per 
+  la configurazione remota.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  componente che sovreintende al funzionamento di tutto l'apparato &egrave; il:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  <strong>Microprocessore</strong>: l</font><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">a 
+  sua potenza varia a seconda della versione del router e della classe a cui l'apparato 
+  appartiene. Diversi router Cisco montano pi&ugrave; di una CPU. I compiti svolti 
+  dal microprocessore sono fondamentalmente i seguenti: </font></p>
+<ul>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">instradare 
+      i pacchetti (processo di forwarding) provenienti dalle varie interfacce 
+      di input e determinare l'interfaccia di uscita dove inoltrare gli stessi;</font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+      calcololare le tabelle di instradamento e l'aggiornamento dei dati di routing;</font></div>
+  </li>
+  <li> 
+    <div align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+      garantire il controllo delle funzioni del router e permetterne la gestione 
+      (attraverso i comandi dell'amministratore). <br>
+      </font></div>
+  </li>
+</ul>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  aggiunta ai componenti del router possiamo trovare delle <strong>Schede di espansione</strong> 
+  che </font><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> si 
+  inseriscono in appositi alloggiamenti (slot) e ospitano vari tipi di interfacce 
+  fisiche (Ethernet, modem ecc.), nonch&egrave; eventuali moduli avanzati.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Performance 
+  dell'apparato</U></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  potenza di un router (intesa come numero di pacchetti al secondo inoltrati) 
+  &egrave; variabile a seconda di alcune scelte architetturali del router stesso:</font></p>
+<div align="justify">
+  <ul>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> i router 
+      di fascia bassa dispongono, generalmente, di schede (interfacce) a funzionalit&agrave; 
+      limitata. Tutto il lavoro viene demandato alla CPU centrale, la cui potenza 
+      pu&ograve; essere variabile a seconda delle prestazioni richieste; </font></li>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> i router 
+      di fascia media dispongono di schede intelligenti che montano, esse stesse, 
+      una CPU a bordo. Queste CPU svolgono autonomamente una consistente parte 
+      del processo di forwarding e la CPU centrale, svincolata da alcuni oneri, 
+      si dedica al calcolo delle tabelle di routing e alla gestione dell' apparato; 
+      </font></li>
+    <li> <font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> i router 
+      di fascia pi&ugrave; alta dispongono di schede particolari che gestiscono 
+      il processo di forwarding direttamente a livello hardware. </font></li>
+  </ul>
+</div>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  segreto del successo dei router Cisco &egrave;, comunque, legato al sistema 
+  di gestione. La potenza, da tutti riconosciuta, del sistema operativo (Internetwork 
+  Operating System - <a href="../glossario_htm/glossario.html#ios">IOS</a>) &egrave; 
+  garanzia di funzionalit&agrave; e prestazioni ecellenti. Questo sistema (che 
+  risiede nella <a href="cisco_comp_princ.html#flash">memoria Flash</a>) permette, 
+  attraverso appositi comandi, di configurare l'apparato secondo le necessit&agrave; 
+  dell'utente. L'<a href="../glossario_htm/glossario.html#ios">IOS</a> non &egrave; 
+  semplice ed intuitivo, ma molto potente.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Il 
+  lavoro della Ram nel Router</U></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  Quando viene acceso il router, la <a href="cisco_comp_princ.html#rom">ROM</a> 
+  esegue un programma di avvio (bootstrap). Questo programma avvia alcuni test 
+  e successivamente carica il software Cisco <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  nella memoria. Il componente EXEC (command executive) che fa parte dell&#8217; 
+  <a href="../glossario_htm/glossario.html#ios">IOS</a> riceve ed esegue i comandi 
+  che vengono immessi dall&#8217;utente.</font> 
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Un 
+  router utilizza la <a href="cisco_comp_princ.html#ram">RAM</a> per caricare il 
+  file di configurazione del router, file che contiene processi e informazioni 
+  sulle interfacce che direttamente influiscono sul funzionamento del router; 
+  nella <a href="cisco_comp_princ.html#ram">RAM</a> sono caricate anche le tabelle 
+  di rete mappate e l&#8217;elenco degli indirizzi del routing.</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco_file/lavoro_ram.jpg" width="450" height="291"><br>
+  </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  versione salvata di questo file di configurazione &egrave; immagazzinato nella 
+  <a href="cisco_comp_princ.html#nvram">NVRAM</a> in modo permanente e viene caricato 
+  nella memoria principale <a href="cisco_comp_princ.html#ram">RAM</a> ogni volta 
+  che il router viene acceso.<br>
+  <br>
+  L&#8217;immagine del sistema operativo <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  non pu&ograve; essere visualizzata sul terminale. L&#8217;immagine viene eseguita 
+  dalla memoria <a href="cisco_comp_princ.html#ram">RAM</a> e caricata da uno delle 
+  diverse origini di input.<br>
+  Il sistema operativo &egrave; strutturato in modo da eseguire delle operazioni 
+  che gestiscono dei task associati con differenti protocolli, come lo spostamento 
+  dei dati, la gestione delle tabelle e dei buffer, gli aggiornamenti degli instradamenti 
+  e l&#8217;esecuzione dei comandi utente. </font> </p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco_htm/cisco_comp_princ.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:18 GMT -->
+</html>

@@ -1,0 +1,377 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_acl_est.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:36 GMT -->
+<head>
+<title>Access List estese</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>ACCESS 
+  LIST estese<a name="acl_est"></a></em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  ACL estese forniscono una maggiore flessibilit&agrave; e controllo se paragonate 
+  a quelle standard. Le ACL estese, infatti, possono effettuare il controllo non 
+  solo sull&#8217;indirizzo del mittente, ma anche su quello del destinatario, 
+  su uno specifico protocollo, sul numero di porta o su altri parametri.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+  controllo effettuato sul protocollo merita una precisazione; infatti, sebbene 
+  le <a href="cisco827_acl_std.html">ACL standard</a> permettano di negare o no 
+  un'intera suite di protocolli (es. <a href="../glossario_htm/glossario.html#ip">IP</a>, 
+  &#8230;) (eseguendo il controllo su un&#8217;intera rete come fanno le <a href="cisco827_acl_std.html">ACL 
+  standard</a>, si effettua di conseguenza anche il controllo sul protocollo di 
+  comunicazione utilizzato), non permettono di gestirne singolarmente le varie 
+  componenti. Al contrario le ACL estese possono effettuare controlli sui singoli 
+  protocolli che compongono la suite (es. <a href="../glossario_htm/glossario.html#icmp">ICMP</a>, 
+  &#8230;).</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Configurazione 
+  di un&#8217;ACL Estesa</U></B></font></P>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  definire un&#8217;ACL Estesa sui router Cisco entrare in configuration mode 
+  ed eseguire i seguenti passi:</font></p>
+<ol>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Definire l&#8217;ACL 
+    secondo la sintassi: </font></li>
+</ol>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  Router(config)# <strong>access-list</strong> access-list-number {<strong>deny 
+  | permit</strong>} protocol source source-wildcard <strong>destination</strong> 
+  destination-wildcard [<strong>operator</strong> operand] [established] [<strong>precedence</strong> 
+  precedence] [log]</font></p>
+<TABLE cellSpacing=0 cellPadding=4 width="99%" align=center 
+                  border=1>
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Parametri</B></font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Descrizione</B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Access-list-number</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Numero 
+          dell’ACL. Ne indica il nome e il tipo (es. da 100 a 199 e da 2000 a 
+          2699 per le ACL IP Estese). E’ importante ricordare che le ACL estese 
+          utilizzano <I>access-list number </I>differenti da quelli utilizzati 
+          dalle standard, anche se riferiti allo stesso protocollo.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Permit</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Permette 
+          l’accesso se le condizioni sono soddisfatte</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Deny</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Nega 
+          l’accesso se le condizioni sono soddisfatte</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Protocol 
+          </font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Il 
+          protocollo di comunicazione; es. IP, TCP, UDP, ICMP, IGRP, …</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Source 
+          e Destination</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Indirizzo 
+          del mittente e&nbsp; del destinatario.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Souce-wildcard 
+          e Destination-wildcard</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+          wildcard mask che deve essere applicata all’indirizzo sorgente e a quello 
+          di destinazione.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Operator 
+          <I>operand</I></font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Un 
+          operatore logico: lt, gt, eq, neq, range (less than, greater than, equal, 
+          not equal, range) e il numero o il nome della porta TCP o UDP (vedi 
+          Tabella n.1). Nel caso dell’operatore <I>range </I>occorre inserire 
+          due valori <I>operand </I>(es. range 21 25)</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Established</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Optional) 
+          Si utilizza solo con il protocollo TCP: indica una “estabilished connection”. 
+          Il controllo viene effettuato solo se il datagramma ha settato il bit 
+          di ACK o RST, mentre non ci sono controlli sul pacchetto iniziale per 
+          stabilire la connessione.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Precedence</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Optional) 
+          Indica un numero da 0 a 7, che specifica la precedenza del pacchetto 
+          rispetto a un altro (Queuing).</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Log</font></P></TD>
+      <TD class=Normal vAlign=top width=489> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Optional) 
+          Attiva i messaggi di log. Questi comprendono l’indirizzo sorgente, il 
+          numero di pacchetti e l’esito del controllo (permit o deny). I log vengono 
+          generati a intervalli di 5 minuti.</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<ol>
+  <li value="2"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Applicare 
+    l’ACL a una o più interfacce: </font></li>
+</ol>
+<P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-if)# 
+  <B>ip access-group</B> <I>access-list number </I>{<B>in</B>|<B>out</B>}</font></P>
+<TABLE cellSpacing=0 cellPadding=4 width="99%" align=center 
+                  border=1>
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Parametri</B></font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Descrizione</B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Access-list-number</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Indica 
+          il numero della ACL che deve essere legata all’interfaccia.</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=139> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In|out</font></P></TD>
+      <TD class=Normal vAlign=top width=513> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Specifica 
+          se la ACL va applicata all’interfaccia in entrata o in uscita. Un’ACL 
+          in input fa sì che il router applichi prima l’ACL e poi effettui il 
+          routing, mentre in output prima il routing e poi l’ACL. Se non è specificato, 
+          per default è out.</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><U>Nota</U>: 
+  &nbsp;&nbsp; Per cancellare un ACL o rimuoverla da un’interfaccia del Router 
+  occorre utilizzare &nbsp;rispettivamente i seguenti comandi:</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config)# 
+  <B>no access-list</B> <I>access-list number</I></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-if)# 
+  <B>no</B> <B>ip access-group</B> <I>access-list number</I></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E’ 
+  consigliabile, prima di cancellare un’ACL, rimuoverla da tutte le interfacce.</font></P>
+<TABLE align="center" bgcolor="#CCCCCC">
+  <TBODY>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Valore 
+          Decimale</B></font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Keyword</B></font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Descrizione</B></font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>TCP/UDP</B></font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">20</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">FTP-DATA</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">FTP 
+          (data)</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">21 
+          </font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">FTP</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">FTP</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">23</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TELNET</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Terminal 
+          connection</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">25</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">SMTP</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">SMTP</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">42</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">NAMESERVER</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Host 
+          Name Server</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">UDP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">53</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">DOMAIN</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">DNS</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP/UDP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">69</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TFTP</font></P></TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TFTP</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">UDP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">70</font></P></TD>
+      <TD class=Normal vAlign=top width=163>&nbsp; </TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Gopher</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP/IP</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=Normal vAlign=top width=132> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">80</font></P></TD>
+      <TD class=Normal vAlign=top width=163>&nbsp; </TD>
+      <TD class=Normal vAlign=top width=163> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">WWW</font></P></TD>
+      <TD class=Normal vAlign=top width=130> <P><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">TCP</font></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  <em><strong>Port-Numbers</strong></em></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><I><strong>ESEMPI 
+  DI ACL ESTESE</strong></I></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/aclEstese01.gif" width="366" height="231"></font></p>
+<P align=center><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Figura 
+  1</strong></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><U>Esempio 
+  n. 1:</U> &nbsp;negare il traffico FTP da una determinate rete o sottorete</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Questo 
+  esempio dimostra come bloccare esclusivamente il traffico FTP.</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>access-list 
+  101 deny tcp 172.16.4.0 0.0.0.255 172.16.3.0 0.0.0.255 eq 21<BR>
+  access-list 101 permit ip 172.16.4.0 0.0.0.255 any</em></strong><BR>
+  (access-list 101 deny any any – implicito, non visibile nella lista)</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>interface 
+  ethernet 0<BR>
+  ip access-group 101</em></strong></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><U><strong>Esempio 
+  n. 2</strong></U>: permettere esclusivamente l’invio di E-mail</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questo esempio viene bloccato sull’interfaccia E0 tutto il traffico a esclusione 
+  della posta elettronica. </font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>access-list 
+  102 permit tcp 172.16.3.0 0.0.0.255 any eq 25 (o eq smtp)</em></strong><BR>
+  (access-list 102 deny any any– implicito, non visibile nella lista)</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>interface 
+  ethernet 0<BR>
+  ip access-group 102 out</em></strong></font></P>
+<P align="justify">&nbsp;</P>
+<P align="center">&nbsp;</P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><I><strong>ESEMPIO</strong></I></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Si 
+  vuole negare all'host B l'accesso al Server FTP e allo stesso tempo negare all'host 
+  C qualsiasi accesso alla rete 172.16.3.0.</font></P>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/aclEstese02.gif" width="450" height="224"></font></p>
+<p align="center"></p>
+<P align=center><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Figura 
+  2</strong></font></P>
+<P></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B>Sul 
+  Router A:</B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>access-list 
+  1 deny host 172.16.4.12 <BR>
+  access-list 1 permit any </em></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>interface 
+  ethernet 1<BR>
+  ip access-group 1</em></font></P>
+<P align="justify" ? font-family:Courier;><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>access-list 
+  101 deny tcp host 172.16.4.15 172.16.3.0 0.0.0.255 eq ftp<BR>
+  access-list 101 permit ip 172.16.4.0 0.0.0.255 any </em></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>interface 
+  ethernet 0<BR>
+  ip access-group 101</em></font></P>
+<P align="justify"></P>
+<P align="justify"></P>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Esempio 
+  pratico: usare le ACL come Firewall</U></B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le 
+  ACL, tra gli altri tipi di utilizzo, possono essere adottate per aumentare la 
+  sicurezza della rete dagli attacchi provenienti dall’esterno (internet). Questo 
+  tipo di configurazione si ottiene configurando opportunamente il <I>border router</I> 
+  ovvero il router connesso verso l’esterno. In questo caso, appunto, il router 
+  avrà anche funzione di firewall. </font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Un 
+  esempio di tale architettura potrebbe essere il seguente (figura n. 3):</font></P>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/aclEstese03.gif" width="450" height="203"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Figura 
+  3</strong></font></p>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questa rete si può pensare, con l’utilizzo delle ACL, di forzare tutto il traffico 
+  proveniente da Internet verso l’<I>application gateway,</I> mentre il router 
+  connesso alla LAN interna accetterà solo i pacchetti provenienti da quest’ultimo.</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Bisogna 
+  comunque evidenziare che l’utilizzo delle ACL come <a href="../glossario_htm/glossario.html#firewall">firewall</a>, 
+  sebbene forniscano un livello base di sicurezza, non offrono in alcun modo tutti 
+  i vantaggi, la flessibilità e il livello di sicurezza di un “<I>classico” </I>&nbsp;<a href="../glossario_htm/glossario.html#firewall">firewall</a> 
+  (hardware o software che sia).</font></P>
+<P align="justify">&nbsp;</P>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Verificare 
+  le ACL</U></B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  visualizzare le informazioni sulle ACL si possono utilizzare i seguenti comandi:</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">–&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Router&gt; <B>show</B> <B>access-list </B>[<I>access-list number</I>]: mostra 
+  il contenuto di tutte le ACL caricate sul router (utilizzando l’opzione <I>access-list 
+  number</I> vengono elencate solo le condizioni di una determinata ACL);</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">–&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Router&gt; <B>show</B> <B>ip interface</B> [<I>interface-type number</I>] : 
+  mostra le informazioni sulle interfacce IP e quindi anche la presenza di un’eventuale 
+  ACL collegata all’interfaccia (le opzioni <I>interface-type</I> e <I>number</I> 
+  permettono di indicare una determinata interfaccia).</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><I>ESEMPIO</I></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router#<B>show</B> 
+  <B>ip interface serial 0</B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Serial0 
+  is down, line protocol is down</font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Internet 
+  address is 172.151.12.16/16<BR>
+  &nbsp; Broadcast address is 255.255.0.0<BR>
+  &nbsp; MTU 1500 bytes,<BR>
+  &nbsp; Helper address is not set<BR>
+  &nbsp; Directed broadcast forwarding is disabled<BR>
+  <I>&nbsp; Outgoing access list 10 is set<BR>
+  &nbsp; Inbound&nbsp; access list is not set</I><BR>
+  &nbsp; Proxy ARP Is Enabled<BR>
+  &nbsp; Security Level Is Default<BR>
+  &nbsp; Split horizon Is Enabled<BR>
+  &nbsp; ICMP redirects are always sent<BR>
+  &nbsp; ICMP unreachables are always sent<BR>
+  &nbsp; ICMP mask replies are never sent<BR>
+  &nbsp; IP fast switching is enabled<BR>
+  &nbsp; IP fast switching on the same interface is enabled<BR>
+  &nbsp; IP Null turbo vector<BR>
+  &nbsp; IP multicast fast switching is enabled<BR>
+  &nbsp; IP multicast distributed fast switching is disabled<BR>
+  </font></P>
+<P align="justify">&nbsp;</P>
+<P align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><B><U>Regole 
+  fondamentali</U></B></font></P>
+<P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+  si utilizzano le ACL ci sono alcune regole e consigli da seguire:</font></P>
+<UL type=square>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Studiare 
+      bene lo scopo che si vuole ottenere con le ACL; </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Inserire 
+      le clausole più restrittive e quelle più utilizzate all’inizio; </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Posizionare 
+      le <a href="cisco827_acl_std.html">ACL Standard</a> più vicino al destinatario; 
+      </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Posizionare 
+      le ACL Estese più vicino al mittente; </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Poiché 
+      non è possibile cambiare l’ordine in cui vengono inserite le varie condizioni 
+      di un’ACL, può essere opportuno scriverle con un editor di testo e poi esportarle 
+      sul router, avendo cura di salvarne una copia. Questo è utile anche in caso 
+      di future modifiche. </font></P>
+  <LI> 
+    <P align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Ricordare 
+      che le ACL, in ogni caso, richiedono l’utilizzo di risorse aggiuntive al 
+      processore del router.</font></P>
+  </LI>
+</UL>
+<p>&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_acl_est.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:39 GMT -->
+</html>

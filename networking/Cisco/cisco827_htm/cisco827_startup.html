@@ -1,0 +1,262 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_startup.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:27 GMT -->
+<head>
+<title>Starup router</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000"background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>STARTUP 
+  ROUTER</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Le fasi 
+  di startup di un router Cisco, e nello specifico del Cisco 827 si possono riassumere 
+  in questi tre passi:</font></p>
+<ul>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Controllo dell'Hardware 
+    </font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Ricerca e caricamento 
+    dell'immagine del sistema operativo </font></li>
+  <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Ricerca e caricamento 
+    della configurazione </font></li>
+</ul>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'operazione 
+  di boot dalla Rom &egrave; analoga a molti elaboratori ed esegue le diagnostiche 
+  di base che, in caso di successo, danno l'avvio al caricamento del sistema operativo.<br>
+  La fase di caricamento dell'IOS &egrave; normalmente effettuata con un ricerca 
+  nella <a href="../cisco_htm/cisco_comp_princ.html#flash">FLASH</a> memory ma 
+  pu&ograve; essere anche configurata diversamente.<br>
+  Per default un router Cisco esegue queste priorit&agrave; di ricerca per caricare 
+  l'immagine dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> se nulla 
+  &egrave; stato configurato a livello di boot system configuration: <a href="../cisco_htm/cisco_comp_princ.html#flash">FLASH</a>, 
+  <a href="cisco827_conf_tipica.html#tftp_server">TFTP Server</a>, <a href="../cisco_htm/cisco_comp_princ.html#rom">ROM</a>.<br>
+  In pratica, agendo sul comando &quot;<em><strong>Router#(config) boot system</strong></em>&quot; 
+  si pu&ograve; indicare l'esatta posizione da cui attingere per il caricamento 
+  dell'<a href="../glossario_htm/glossario.html#ios">IOS</a>.<br>
+  Una volta caricato il sistema operativo esso individua i componenti hardware 
+  testati dall'operazione di boot e li visualizza a terminale.<br>
+  A questo punto viene caricato il file di configurazione che si trova nella <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a>. 
+  Nel caso non venga trovata un installazione valida, il sistema operativo avvia 
+  una procedura interattiva di configurazione basata su domande e risposte (setup 
+  dialog).</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Se 
+  tutto &egrave; andato a buon fine abbiamo la possibilit&agrave; di visualizzare 
+  la configurazione presente in memora <a href="../cisco_htm/cisco_comp_princ.html#ram">RAM</a>:<br>
+  <em><strong>Router# show running-config o Router# write term</strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  quella salvata in <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a>:<br>
+  <em><strong>Router# show startup-config</strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">nel 
+  caso volessimo eliminare la configurazione presente in <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a> 
+  il comando da eseguire &egrave;:<br>
+  <em><strong>Router# erase startup-config o write erase</strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In ogni 
+  caso, se dovessero fallire le configurazioni, se non fossimo sicuri del boot 
+  ecc. il router si pu&ograve; riavviare con l'imputazione del comando: <em><strong>reload</strong></em> 
+  altrimenti possiamo passare al setup interattivo digitando il comando <em><strong>setup</strong></em>.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Collegando 
+  il nostro Cisco 827 attraverso il cavo console al PC e utilizzando un programma 
+  tipo Hyper Terminal configurato come precedentemente visto, all'avvio del router 
+  possiamo avere varie informazioni riguardanti il nostro Cisco 827:</font></p>
+<TABLE width="94%" border=1 align="center" cellPadding=0 cellSpacing=0 
+                  borderColor=#111111 
+                  bgColor=#000000 id=AutoNumber2 style="BORDER-COLLAPSE: collapse">
+  <TBODY>
+    <TR> 
+      <TD width="100%"><p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">System 
+          Bootstrap, Version 12.2(4r)XM2, RELEASE SOFTWARE (fc1)<br>
+          TAC Support: http://www.cisco.com/tac<br>
+          Copyright (c) 2002 by cisco Systems, Inc.<br>
+          C800/SOHO series (Board ID: 9-62) platform with 16384 Kbytes of main 
+          memory</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          program load complete, entry point: 0x80013000, size: 0x3a8cfc</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Self 
+          decompressing the image : ################################################ 
+          ##################################################################### 
+          ##################################################################### 
+          ##################################################################### 
+          ##################################################################### 
+          ################################################################ [OK] 
+          </font></p>
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <blockquote> 
+                    <blockquote> 
+                      <p align="left"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                        Restricted Rights Legend</font></p>
+                    </blockquote>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          Use, duplication, or disclosure by the Government is<br>
+          subject to restrictions as set forth in subparagraph<br>
+          (c) of the Commercial Computer Software - Restricted<br>
+          Rights clause at FAR sec. 52.227-19 and subparagraph<br>
+          (c) (1) (ii) of the Rights in Technical Data and Computer<br>
+          Software clause at DFARS sec. 252.227-7013.</font></p>
+        <blockquote> 
+          <blockquote> 
+            <blockquote> 
+              <blockquote> 
+                <blockquote> 
+                  <blockquote> 
+                    <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+                      cisco Systems, Inc.<br>
+                      170 West Tasman Drive<br>
+                      San Jose, California 95134-1706</font></p>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+        <p align="left"><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Cisco 
+          Internetwork Operating System Software<br>
+          IOS (tm) C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+          RELEASE SOFTWARE (fc1)<br>
+          Synched to technology version 12.2(2.5)T<br>
+          TAC Support: http://www.cisco.com/tac<br>
+          Copyright (c) 1986-2002 by cisco Systems, Inc.<br>
+          Compiled Fri 10-May-02 18:28 by philuu<br>
+          Image text-base: 0x80013170, data-base: 0x806429A4</font></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">CISCO 
+          C827 (MPC855T) processor (revision 0x501) with 15360K/1024K bytes of 
+          memory.<br>
+          Processor board ID JAD04460FWG (3605286623), with hardware revision 
+          0000<br>
+          CPU rev number 5<br>
+          Bridging software.<br>
+          1 Ethernet/IEEE 802.3 interface(s)<br>
+          1 ATM network interface(s)<br>
+          128K bytes of non-volatile configuration memory.<br>
+          8192K bytes of processor board System flash (Read/Write)<br>
+          2048K bytes of processor board Web flash (Read/Write)</font></p>
+        <p>&nbsp;</p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif">Press 
+          RETURN to get started!</font></p>
+        <p></p>
+        <p><font color="#FFFFFF" size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          00:00:10: %LINK-3-UPDOWN: Interface Ethernet0, changed state to up<br>
+          00:00:11: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0, 
+          changed state to up<br>
+          00:00:11: %DIALER-6-BIND: Interface Vi1 bound to profile Di0<br>
+          00:00:11: %SYS-5-CONFIG_I: Configured from memory by console<br>
+          00:00:12: %LINK-3-UPDOWN: Interface ATM0, changed state to down<br>
+          00:00:13: %LINEPROTO-5-UPDOWN: Line protocol on Interface ATM0, changed 
+          state to down<br>
+          00:00:16: %SYS-5-RESTART: System restarted --<br>
+          Cisco Internetwork Operating System Software <br>
+          IOS (tm) C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+          RELEASE SOFTWARE (fc1)<br>
+          Synched to technology version 12.2(2.5)T<br>
+          TAC Support: http://www.cisco.com/tac<br>
+          Copyright (c) 1986-2002 by cisco Systems, Inc.<br>
+          Compiled Fri 10-May-02 18:28 by philuu<br>
+          00:00:16: %SNMP-5-COLDSTART: SNMP agent on host Cisco827 is undergoing 
+          a cold start<br>
+          00:00:34: %LINK-3-UPDOWN: Interface ATM0, changed state to up<br>
+          00:00:35: %LINEPROTO-5-UPDOWN: Line protocol on Interface ATM0, changed 
+          state to up<br>
+          00:00:41: %LINK-3-UPDOWN: Interface Virtual-Access1, changed state to 
+          up<br>
+          00:00:42: %LINEPROTO-5-UPDOWN: Line protocol on Interface Virtual-Access1, 
+          changed state to up<br>
+          Cisco827&gt;</font></p></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Da questa 
+  schermata abbiamo informazioni riguardo la versione del Bootstrap del router 
+  e il tipo di piattaforma con la relativa memory:</font></p>
+<blockquote> 
+  <blockquote> 
+    <p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>System 
+      Bootstrap, Version 12.2(4r)XM2, RELEASE SOFTWARE (fc1)<br>
+      TAC Support: http://www.cisco.com/tac<br>
+      Copyright (c) 2002 by cisco Systems, Inc.<br>
+      C800/SOHO series (Board ID: 9-62) platform with 16384 Kbytes of main memory</em></font></p>
+  </blockquote>
+</blockquote>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  Versione e tecnologia di <a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  montata:</font></p>
+<blockquote> 
+  <blockquote> 
+    <p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Cisco 
+      Internetwork Operating System Software<br>
+      IOS (tm) C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+      RELEASE SOFTWARE (fc1)<br>
+      Synched to technology version 12.2(2.5)T<br>
+      TAC Support: http://www.cisco.com/tac<br>
+      Copyright (c) 1986-2002 by cisco Systems, Inc.<br>
+      Compiled Fri 10-May-02 18:28 by philuu<br>
+      Image text-base: 0x80013170, data-base: 0x806429A4 </em></font></p>
+  </blockquote>
+</blockquote>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Modello 
+  router e alcune caratteristiche tecniche del prodotto, quali processore, memoria 
+  e interfacce:</font></p>
+<blockquote> 
+  <blockquote> 
+    <p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>CISCO 
+      C827 (MPC855T) processor (revision 0x501) with 15360K/1024K bytes of memory.<br>
+      Processor board ID JAD04460FWG (3605286623), with hardware revision 0000<br>
+      CPU rev number 5<br>
+      Bridging software.<br>
+      1 Ethernet/IEEE 802.3 interface(s)<br>
+      1 ATM network interface(s)<br>
+      128K bytes of non-volatile configuration memory.<br>
+      8192K bytes of processor board System flash (Read/Write)<br>
+      2048K bytes of processor board Web flash (Read/Write)</em><br>
+      </font></p>
+  </blockquote>
+</blockquote>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  volta effettuato il caricamento dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  e della configurazione, avviene il cambiamento di stato da <em>down</em> in 
+  <em>up</em> delle interfacce<em>:</em></font></p>
+<blockquote> 
+  <blockquote> 
+    <p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>00:00:10: 
+      %LINK-3-UPDOWN: Interface Ethernet0, changed state to up<br>
+      00:00:11: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0, changed 
+      state to up<br>
+      00:00:11: %DIALER-6-BIND: Interface Vi1 bound to profile Di0<br>
+      00:00:11: %SYS-5-CONFIG_I: Configured from memory by console<br>
+      00:00:12: %LINK-3-UPDOWN: Interface ATM0, changed state to down<br>
+      00:00:13: %LINEPROTO-5-UPDOWN: Line protocol on Interface ATM0, changed 
+      state to down<br>
+      00:00:16: %SYS-5-RESTART: System restarted --<br>
+      Cisco Internetwork Operating System Software <br>
+      IOS (tm) C820 Software (C820-Y6-M), Version 12.2(2)XK3, EARLY DEPLOYMENT 
+      RELEASE SOFTWARE (fc1)<br>
+      Synched to technology version 12.2(2.5)T<br>
+      TAC Support: http://www.cisco.com/tac<br>
+      Copyright (c) 1986-2002 by cisco Systems, Inc.<br>
+      Compiled Fri 10-May-02 18:28 by philuu<br>
+      00:00:16: %SNMP-5-COLDSTART: SNMP agent on host Cisco827 is undergoing a 
+      cold start<br>
+      00:00:34: %LINK-3-UPDOWN: Interface ATM0, changed state to up<br>
+      00:00:35: %LINEPROTO-5-UPDOWN: Line protocol on Interface ATM0, changed 
+      state to up<br>
+      00:00:41: %LINK-3-UPDOWN: Interface Virtual-Access1, changed state to up<br>
+      00:00:42: %LINEPROTO-5-UPDOWN: Line protocol on Interface Virtual-Access1, 
+      changed state to up<br>
+      Cisco827&gt;</em> </font></p>
+    <p align="justify">&nbsp;</p>
+  </blockquote>
+</blockquote>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_startup.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:27 GMT -->
+</html>

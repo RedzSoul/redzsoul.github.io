@@ -1,0 +1,136 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_ios.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:27 GMT -->
+<head>
+<title>Ios e funzionalit&agrave;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>IOS E 
+  FUNZIONALITA'</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">L'IOS 
+  (Internetwork Operating System), non &egrave; altro che il sistema operativo 
+  dei router Cisco, IOS che sono in costante evoluzione ed in costante miglioramento. 
+  Spesso le nuove release introducono migliorie o nuove funzioni, quindi a volte 
+  e' necessario aggiornare tale software, per poter utilizzare a pieno il proprio apparato. 
+  Tutti gli IOS sono disponibili per il download dal sito Cisco; poiche' 
+  l'utilizzo di tale software &egrave; subordinato al pagamento di una licenza, 
+  &egrave; necessario avere delle credenziali (login e password) autorizzate a 
+  tale download. Per poter quindi ottenere tale aggiornamento &egrave; d'obbligo 
+  l'acquisto di uno Smartnet, un contratto di assistenza, che preveda questa possibilit&agrave;. 
+  L'unica altra alternativa &egrave; rivolgersi al proprio rivenditore, che, dietro 
+  il pagamento della relativa licenza d'uso, provveder&agrave; a fornire il CD-Rom 
+  contenente l' IOS richiesto.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  conoscere le caratteristiche e funzionalit&agrave; di un determinato IOS, bisogna 
+  registrati sul CCO (<a href="http://tools.cisco.com/RPF/register/register.do" target="NUOVA">http://www.cisco.com/register</a>) 
+  dove &egrave; possibile accedere al Function Navigator presso l'URL <a href="http://www.cisco.com/go/fn" target="NUOVA">http://www.cisco.com/go/fn</a>. 
+  Questo utilissimo tool ci permette di risalire alle funzionalit&agrave; di un 
+  IOS dato il suo nome (es. c2500-jos56i-l.121-7.bin) oppure, data una feature 
+  che ci interessa, ricavare quali IOS in quali versioni e per quali piattaforme 
+  la supportano.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ios_navigator.jpg" width="558" height="679"></font></p>
+<p align="justify"></p>
+<p align="justify"></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Da 
+  qui possiamo decidere il tipo di ricerca da effettuare; andando su Compare/Release 
+  possiamo confrontare e avere varie informazioni riguardo un IOS in base al tipo 
+  di feature (IP, IP PLUS ...), quali la dimensione richiesta di <a href="../cisco_htm/cisco_comp_princ.html#flash">flash</a> 
+  e <a href="../cisco_htm/cisco_comp_princ.html#ram">memory ram</a> per installarla, 
+  il nome del file, e se in possesso di opportuni accessi scaricare direttamente 
+  l'IOS.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ios_comp.jpg" width="656" height="635"></font></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Come 
+  si &egrave; gi&agrave; accennato precedentemente, gli IOS si diversificano tra 
+  loro per modello di router e relativa feature. Ora passiamo ad esaminare come 
+  in base al nome dell'immagine dell'IOS possiamo determinare queste informazioni.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong></strong></font><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>IOS 
+  Release</U></strong> <br>
+  Le versioni di IOS si distinguono in tre classi principali: 
+  <br>
+  - General Deployment: rappresenta un software di sistema considerato stabile 
+  ed esente da bug; <br>
+  - Early Deployment: questo tipo di release offre oltre alla correzione dei bug 
+  della precedente release nuove features come per esempio il supporto di nuovo 
+  hardware o il miglioramento di alcuni protocolli; <br>
+  - Maintenance Release: sostitisce la General Deployment ed &egrave; rappresentata 
+  dai vari rilasci di manutenzione (es. per la versione 12.0 avremo le Maintenance 
+  12.1 12.2 ecc.).</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Convenzione 
+  nomi</U></strong><br>
+  Il sistema operativo Cisco IOS viene solitamente caricato, o aggiornato copiando 
+  la relativa immagine tramite un <a href="cisco827_conf_tipica.html#tftp_server">TFTP 
+  server</a> nella <a href="../cisco_htm/cisco_comp_princ.html#flash">memoria FLASH</a> 
+  del router. E' necessario conoscere le caratteristche del proprio apparato al 
+  fine di installare la corretta immagine. Il nome di ogni IOS segue uno schema 
+  preciso: Platform-Features-Run-time memory and compression format. <br>
+  Il significato &egrave; il seguente: <br>
+  Platform: &egrave; il modello di router per cui il sistema operativo &egrave; 
+  stato sviluppato (Es. Cisco 2500, Cisco 7000, Cisco 12000) <br>
+  Features: sono le caratteristiche come per esempio i protocolli di routing supportati, 
+  la possibilit&agrave; di fare NAT o di creare connessioni VPN ecc.; <br>
+  Run-time memory and compression format: questo valore &egrave; indicato da due 
+  lettere, la prima identifica in che area di memoria verr&agrave; eseguita l'immagine 
+  del sistema operativo, e la seconda il formato di compressione; </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Lettere 
+  o gruppi di lettere sono assegnate alle releases della Technology ED degli IOS. 
+  Queste lettere quando sono in prima posizione definiscono gli IOS Cisco ED:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">A 
+  = Access Server/Dial technology (per esempio, 11.3AA)<br>
+  D = xDSL technology (per esempio, 11.3DA)<br>
+  E = Enterprise feature set (per esempio, 12.1E)<br>
+  H = SDH/SONET technology (per esempio, 11.3HA)<br>
+  N = Voice, Multimedia, Conference (per esempio, 11.3NA)<br>
+  S = Service Provider (per esempio, 12.0S)<br>
+  T = Consolidated Technology (per esempio, 12.0T)<br>
+  W = ATM/LAN Switching/Layer 3 Switching (per esempio, 12.0W5) </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Dalle 
+  figure seguenti si pu&ograve; notare come per ogni release esistano diversi 
+  livelli revisionati dello stesso IOS e varie rebuild:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ios.gif" width="574" height="240"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ios2.gif" width="675" height="233"></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Convenzione 
+  utilizzata per definire il nome dell'immagine &egrave; data dalla seguente tripla:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">PPPP 
+  = Piattaforma<br>
+  FFFF = Caratteristiche<br>
+  MM = Esecuzione in memoria e formato di compressione </font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ios3.gif" width="453" height="205"></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  base alle seguenti tabelle all'indirizzo <a href="http://www.cisco.com/warp/public/620/5.shtml" target="NUOVA">http://www.cisco.com/warp/public/620/5.shtml</a> 
+  risaliamo al significato delle varie sigle.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  esempio, analizzando il nome di questo IOS <strong>c820-k8osv6y6-mz.122-2.T4.bin</strong> 
+  sappiamo che:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>c820</strong> 
+  = nome della piattaforma (serie 800 e 820)<br>
+  <strong>k8; o; s; v6; y6</strong> = codifica minore o uguale a 64bit; firewall; 
+  sorgente di scambio dell'instradamento; protocollo voce H.323; converte varianti 
+  IP<br>
+  <strong>m; z </strong>= l'immagine si avvia nella RAM; compresso con zip<br>
+  <strong>122-2.T4 </strong>= release principale 12.2, revisione 2, tecnologia 
+  consolidata, rebuild di manutenzione 4 di 12.2(2)T</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  l'IOS <strong>c7200-ajs56-mz</strong>:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong>c7200</strong> 
+  = Router Cisco Serie 7200 <br>
+  <strong>a</strong> = supporto protocollo APPN; <br>
+  <strong>j</strong> =supporto di caratteristiche Enterprise; <br>
+  <strong>s</strong> =supporto di NAT,ISL,VPDN/L2F <br>
+  <strong>56</strong> = supporto di crittografia a 56 bit <br>
+  <strong>m</strong> = esecuzione in RAM <br>
+  <strong>z</strong> =file compresso con Zip</font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_ios.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:29 GMT -->
+</html>

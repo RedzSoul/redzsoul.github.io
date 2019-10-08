@@ -1,0 +1,198 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_conf_alt.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:33 GMT -->
+<head>
+<title>Configurazioni alternative</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>CONFIGURAZIONI 
+  ALTERNATIVE</em></font></h1>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Configurazione 
+  minimale ADSL (PPPoverATM) 1</U></strong></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  hostname &lt;nome_router&gt;<br>
+  enable password &lt;password&gt;<br>
+  !<br>
+  ip subnet-zero<br>
+  ip name-server &lt;Ip_DNS&gt;<br>
+  !<br>
+  interface Ethernet0<br>
+  ip address &lt;Ip_LAN&gt; &lt;subnet-mask&gt;<br>
+  ip nat inside<br>
+  !<br>
+  interface ATM0<br>
+  no ip address<br>
+  no ip directed-broadcast<br>
+  no atm ilmi-keepalive<br>
+  pvc 8/35<br>
+  encapsulation aal5snap<br>
+  oam-pvc manage<br>
+  protocol ppp dialer<br>
+  dialer pool-member 1<br>
+  !<br>
+  interface Dialer0<br>
+  ip address negotiated<br>
+  no ip directed-broadcast<br>
+  encapsulation ppp<br>
+  ip nat outside<br>
+  dialer pool 1<br>
+  dialer-group 1<br>
+  ppp pap sent-username &lt;utente_adsl&gt; password &lt;password_adsl&gt;<br>
+  !<br>
+  ip nat inside source list 101 interface Dialer0 overload<br>
+  ip classless<br>
+  no ip http server<br>
+  !<br>
+  access-list 101 permit ip any any<br>
+  dialer-list 1 protocol ip permit<br>
+  !<br>
+  ip route 0.0.0.0 0.0.0.0 Dialer0<br>
+  !<br>
+  line vty 0 4 <br>
+  password &lt;password&gt;<br>
+  login<br>
+  !<br>
+  end</font></p>
+<p> </p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Configurazione 
+  minimale ADSL (PPPoverATM) 2</U></strong></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  hostname &lt;nome_router&gt;<br>
+  enable password &lt;password&gt;<br>
+  !<br>
+  ip subnet-zero<br>
+  ip name-server &lt;Ip_DNS&gt;<br>
+  !<br>
+  interface Ethernet0<br>
+  ip address &lt;Ip_LAN&gt; &lt;subnet-mask&gt;<br>
+  ip nat inside<br>
+  !<br>
+  interface ATM0<br>
+  no ip address<br>
+  no ip directed-broadcast<br>
+  atm vc-per-vp 64<br>
+  no atm ilmi-keepalive<br>
+  pvc 8/35<br>
+  encapsulation aal5mux ppp dialer<br>
+  oam-pvc manage<br>
+  dialer pool-member 1<br>
+  !<br>
+  interface Dialer0<br>
+  ip address negotiated<br>
+  no ip directed-broadcast<br>
+  encapsulation ppp<br>
+  ip nat outside<br>
+  dialer pool 1<br>
+  dialer-group 1<br>
+  ppp pap sent-username &lt;utente_adsl&gt; password &lt;password_adsl&gt;<br>
+  !<br>
+  ip nat inside source list 101 interface Dialer0 overload<br>
+  ip classless<br>
+  no ip http server<br>
+  !<br>
+  access-list 101 permit ip any any<br>
+  dialer-list 1 protocol ip permit<br>
+  !<br>
+  ip route 0.0.0.0 0.0.0.0 Dialer0<br>
+  !<br>
+  line vty 0 4 <br>
+  password &lt;password&gt;<br>
+  login<br>
+  !<br>
+  end</font></p>
+<p> </p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Configurazione 
+  minimale ADSL (con IP Pubblico)</U></strong></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  hostname &lt;nome_router&gt;<br>
+  enable password &lt;password&gt;<br>
+  !<br>
+  ip subnet-zero<br>
+  ip name-server &lt;Ip_DNS&gt;<br>
+  !<br>
+  interface Ethernet0<br>
+  ip address &lt;Ip_LAN&gt; &lt;subnet-mask&gt;<br>
+  ip nat inside<br>
+  !<br>
+  interface ATM0<br>
+  no ip address<br>
+  no ip mroute-cache<br>
+  ip nat outside<br>
+  no atm ilmi-keepalive<br>
+  dsl operating-mode auto<br>
+  !<br>
+  interface ATM0.1 point-to-point<br>
+  ip address &lt;ip_pubblico_acquistato&gt; 255.255.255.252<br>
+  ip nat outside<br>
+  pvc 8/35<br>
+  oam-pvc manage<br>
+  protocol ip &lt;ip_pubblico_POP&gt; broadcast<br>
+  !<br>
+  ip nat inside source list 101 interface ATM0.1 overload<br>
+  ip classless<br>
+  !<br>
+  access-list 101 permit ip any any<br>
+  dialer-list 1 protocol ip permit<br>
+  !<br>
+  ip route 0.0.0.0 0.0.0.0 ATM0.1<br>
+  no ip http server<br>
+  !<br>
+  line vty 0 4 <br>
+  password &lt;password&gt;<br>
+  login<br>
+  !<br>
+  end</font></p>
+<p align="center"> </p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><U>Configurazione 
+  minimale ADSL (PPPoverEthernet)</U></strong></font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+  hostname &lt;nome_router&gt;<br>
+  enable password &lt;password&gt;<br>
+  !<br>
+  ip subnet-zero<br>
+  ip name-server &lt;Ip_DNS&gt;<br>
+  !<br>
+  vpdn enable<br>
+  no vpdn logging<br>
+  !<br>
+  vpdn-group 1<br>
+  request-dialin<br>
+  protocol pppoe<br>
+  !<br>
+  interface Ethernet0</font></p>
+<p><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> descritpion Connessione 
+  LAN<br>
+  ip address &lt;Ip_LAN&gt; &lt;subnet-mask&gt;<br>
+  !<br>
+  interface Ethernet1<br>
+  descritpion Connessione verso router Adsl<br>
+  pppoe enable<br>
+  pppoe-client dial-pool-number 1 dial-on-demand<br>
+  !<br>
+  interface Dialer1<br>
+  ip address negotiated<br>
+  ip mtu 1492<br>
+  encapsulation ppp<br>
+  dialer pool 1<br>
+  dialer idle-timeout 180 either<br>
+  dialer hold-queue 100<br>
+  dialer-group 1<br>
+  !<br>
+  dialer-list 1 protocol ip permit<br>
+  !<br>
+  ip route 0.0.0.0 0.0.0.0 Dialer1 permanent<br>
+  no ip http server<br>
+  !<br>
+  line vty 0 4 <br>
+  password &lt;password&gt;<br>
+  login<br>
+  !<br>
+  end</font></p>
+<p> </p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_conf_alt.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:33 GMT -->
+</html>

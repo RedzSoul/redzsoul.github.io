@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <title>Networking</title>
 
-  <title>Scegli l'argomento [NETWORKING]</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/stile_networking.css">
+	<link rel="canonical" href="index.html" />
+    </head>
+    <body>
 
-</head>
-<body>
+      <div class="topnav" id="myTopnav">
+        <!--Questo è il menu responsive-->
+			<a href='index.html' class="active">Networking</a>
+    		<a href='Cisco/index.html'>Cisco teoria</a>
+			<a href='esercizi_subnetting/index.html'>Esercizi Subnetting</a>
+			<a href='esercizi_acl/index.html'>Esercizi ACL</a>
+			
+			
 
-  <h1>Seleziona un link qua sotto: </h1>
-  <a href='esercizi_subnetting/'>Esercizi Subnetting</a>
-  <a href='esercizi_acl/'>Esercizi ACL (e teoria)</a>
 
-</body>
+        <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+
+		
+<small>Copyright 2019. All rights reserved</small>
+
+<!--Funzioni Javascript-->
+
+
+<script>
+  function responsiveMenu() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+
+    </body>
+
 </html>

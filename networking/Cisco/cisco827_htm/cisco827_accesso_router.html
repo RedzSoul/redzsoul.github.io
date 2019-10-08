@@ -1,0 +1,100 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_accesso_router.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:21 GMT -->
+<head>
+<title>Accesso al router</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>ACCESSO 
+  AL ROUTER</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  configurazione iniziale del router va effettuata connettendosi tramite un cavo 
+  seriale alla sua porta console. Questa operazione &egrave; necessaria in quanto 
+  il router non &egrave; ancora dotato di un indirizzo IP per poter essere raggiunto 
+  tramite una sessione <a href="../glossario_htm/glossario.html#telnet">telnet</a>. 
+  In seguito, per effettuare verifiche, controlli e modifiche alla configurazione, 
+  potremo raggiungere il router tramite appunto una semplice sessione <a href="../glossario_htm/glossario.html#telnet">telnet</a>.<br>
+  Per collegarsi alla porta console &egrave; sufficiente utilizzare un PC dotato 
+  di un programma di emulazione di terminale (ad esempio Hyper Terminal, in dotazione 
+  con il sistema operativo Windows). Il software va configurato per connettersi 
+  alla porta seriale del PC prescelta (porta seriale COM1, ad esempio), con i 
+  seguenti parametri:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/hyper_term.jpg" width="341" height="393"></font></p>
+<p align="justify">&nbsp; </p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Diversamente, 
+  come gi&agrave; accennato prima, se il router &egrave; gi&agrave; dotato di 
+  un suo <a href="../glossario_htm/glossario.html#ind_ip">indirizzo IP</a>, in 
+  quanto gi&agrave; configurato, &egrave; possibile raggiungerlo tramite una sessione 
+  <a href="../glossario_htm/glossario.html#telnet">Telnet</a> nel seguente modo:</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/telnet.jpg" width="648" height="421"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+  ci colleghiamo in modalit&agrave; terminale (Hyper Terminal o Telnet) al nostro 
+  router abbiamo a disposizione diverse modalit&agrave; che permettono altrettante 
+  funzionalit&agrave; diverse:</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/mod_accesso.gif" width="450" height="509"></font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Tabella 
+  delle modalit&agrave;</em></strong></font></p>
+<p align="center">&nbsp;</p>
+<p></p>
+<TABLE id=AutoNumber2 style="BORDER-COLLAPSE: collapse" 
+                        borderColor=#111111 cellSpacing=0 cellPadding=0 
+                        width="100%" border=1>
+  <TBODY>
+    <TR> 
+      <TD width="44%" colSpan=4> <P class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Modalità 
+          utente</font></P></TD>
+      <TD width="44%" bgColor=#9fe0ff colSpan=2> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router&gt;</FONT></P></TD>
+    </TR>
+    <TR> 
+      <TD width="44%" colSpan=4> <P class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Modalità 
+          privilegiata</font></P></TD>
+      <TD width="44%" bgColor=#9fe0ff colSpan=2> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router#</FONT></P></TD>
+    </TR>
+    <TR> 
+      <TD width="44%" colSpan=4> <P class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Modalità 
+          di configurazione globale</font></P></TD>
+      <TD width="44%" bgColor=#9fe0ff colSpan=2> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config)#</FONT></P></TD>
+    </TR>
+    <TR> 
+      <TD width="88%" colSpan=6>&nbsp;</TD>
+    </TR>
+    <TR> 
+      <TD width="88%" colSpan=6> <P class=normal align=center><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Modalità 
+          di configurazione specifica <BR>
+          &nbsp;</font></P></TD>
+    </TR>
+    <TR> 
+      <TD class=normal style="BACKGROUND-COLOR: #9fe0ff" 
+                            vAlign=bottom width="11%"><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-if)#</FONT></TD>
+      <TD vAlign=bottom width="11%" bgColor=#9fe0ff> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-controller)#</FONT></P></TD>
+      <TD vAlign=bottom width="11%" bgColor=#9fe0ff> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-line)#</FONT></P></TD>
+      <TD vAlign=bottom width="11%" bgColor=#9fe0ff> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-router)#</FONT></P></TD>
+      <TD vAlign=bottom width="11%" bgColor=#9fe0ff> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-subif)#</FONT></P></TD>
+      <TD vAlign=bottom width="11%" bgColor=#9fe0ff> <P class=normal><FONT 
+                              color=#ff0000 size="-1" face="Verdana, Arial, Helvetica, sans-serif">Router(config-ipx-router)#</FONT></P></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<p>&nbsp;</p>
+<P align="justify" class=normal><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+  siamo loggati in modalità privilegiata abbiamo a disposizione una serie di comandi 
+  fondamentali per la verifica dello stato del router e per la verifica delle 
+  configurazioni che vedremo in seguito.</font></P>
+<P align="justify" class=normal>&nbsp;</P>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_accesso_router.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:27 GMT -->
+</html>

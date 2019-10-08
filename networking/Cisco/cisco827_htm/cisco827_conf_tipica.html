@@ -1,0 +1,417 @@
+<html>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_conf_tipica.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:30 GMT -->
+<head>
+<title>Configurazione tipica</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../sfondo.jpg">
+<h1 align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><em>CONFIGURAZIONE 
+  TIPICA</em></font></h1>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  configurazione di un router Cisco pu&ograve; avvenire in diversi modi:</font></p>
+<div align="justify"> 
+  <ul>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> attraverso 
+      un computer connesso al router attraverso la porta console (Hyper Terminal);</font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">tramite imputazione 
+      di comandi da Terminali Virtuali (<a href="../glossario_htm/glossario.html#telnet">Telnet</a>); 
+      </font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Upload di 
+      una configurazione attraverso rete con l'ausilio di <a href="cisco827_conf_tipica.html#tftp_server">un 
+      server TFTP</a> sulla rete. </font></li>
+  </ul>
+</div>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Se 
+  si sta effettuando la prima configurazione del router, bisogner&agrave; usare 
+  una sessione Hyper Terminal attraverso cavo console, diversamente con Telnet 
+  o simili, attraverso il protocollo <a href="../glossario_htm/glossario.html#tcpip">TCP/IP</a>; 
+  indipendentemente dal tipo di collegamento al router (cavo console o ethernet) 
+  la procedura di configurazione &egrave; identica.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Analizziamo, 
+  ora, una classica configurazione del router 827 attraverso la <a href="../glossario_htm/glossario.html#cli">CLI</a> 
+  e i comandi dell'<a href="../glossario_htm/glossario.html#ios">IOS</a> per un 
+  collegamento <a href="../glossario_htm/glossario.html#pppoa">PPPoA</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Accendiamo 
+  il router e aspettiamo che lo stesso prepari l'<a href="../glossario_htm/glossario.html#ios">IOS</a> 
+  e presenti il proprio prompt di comandi.<br>
+  Il router impiega circa 90 secondi per il caricamento del sistema e altri 15-30 
+  per ottenere la sincronizzazione dell'<a href="../glossario_htm/glossario.html#adsl">ADSL</a>.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> 
+  Iniziamo la configurazione passando in modalit&agrave; privilegiata:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router&gt;enable</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Se 
+  il router non &egrave; mai stato configurato in precedenza, non sar&agrave; 
+  necessario inserire nessuna password di accesso. <br>
+  A questo punto il prompt si presenter&agrave; in modalit&agrave; privilegiata 
+  cambiando da <strong><em>&gt;</em></strong> a<em><strong> #</strong></em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Entriamo 
+  ora in modalit&agrave; &quot;configurazione generale&quot; per configurare le 
+  porte. Digitiamo:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router#conf 
+  t</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  apparir&agrave; il prompt in modalit&agrave; configurazione :</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Selezioniamo 
+  ora l&#8217;interfaccia Ethernet 0 (che &egrave; anche l'unica interfaccia Ethernet 
+  presente sul router) digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#interface 
+  ethernet 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  apparir&agrave; il prompt in modalit&agrave; &quot;configurazione interfaccia&quot;:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">A 
+  questo punto dobbiamo assegnare un <a href="../glossario_htm/glossario.html#ip">IP</a> 
+  privato al router (es: 192.168.0.254).<br>
+  E' caldamente consigliato un indirizzamento di classe C, essendo il prodotto 
+  riservato ad ambienti <a href="../glossario_htm/glossario.html#soho">SOHO</a> limitati 
+  ad un massimo di 20 utenti.<br>
+  La maschera di sottorete di default sar&agrave;, ovviamente, 255.255.255.0, 
+  ma si potrebbe optare per maschere non convenzionali nel caso si adottasse una 
+  segmentazione della classe C.<br>
+  Il comando da digitare sar&agrave;:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#ip address 192.168.0.254 255.255.255.0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  rendere operativa l&#8217;interfaccia &egrave; necessario digitare il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#no shutdown</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">che 
+  la render&agrave; attiva e disponibile alla <a href="../glossario_htm/glossario.html#lan">LAN</a>.<br>
+  Prima di passare ai successivi step sar&agrave; necessario uscire dalla configurazione 
+  dell&#8217;interfaccia Ethernet digitando</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#exit</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  ottenendo un nuovo prompt in modalit&agrave; &quot;configurazione generale&quot;:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Passiamo 
+  ora alla configurazione del Dialer in versione <a href="../glossario_htm/glossario.html#pppoa">PPPoA</a> 
+  (PPP over ATM). Un dialer consiste in un meccanismo che permette di associare 
+  pi&ugrave; interfacce virtuali (i dialer appunto) alla stessa interfaccia fisica.<br>
+  La configurazione standard per una connessione a Internet prevede, appunto, 
+  il settaggio &quot;Dialer + ATM&quot;. Entriamo dunque sull&#8217;interfaccia 
+  di configurazione del Dialer digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#interface 
+  dialer 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  otterremo il prompt in modalit&agrave; &quot;configurazione interfaccia&quot;:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">possimo 
+  descriverne la funzione con il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#description 
+  connessione a Internet</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">nel 
+  caso di <a href="../glossario_htm/glossario.html#ip">IP</a> Pubblico dinamico 
+  (assegnato dal provider) dovremo digitare il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#ip address negotiated</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">nel 
+  caso di IP statico indicheremo, invece, il primo IP della subnet di IP pubblici 
+  assegnatici con la relativa maschera di sottorete.</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#ip address ip_address subnet_mask</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">settiamo, 
+  quindi, l&#8217;incapsulamento <a href="../glossario_htm/glossario.html#ppp">PPP</a>, 
+  digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#encapsulation ppp</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e, 
+  affinch&egrave; l&#8217;interfaccia possa essere messa in contatto con la <a href="../glossario_htm/glossario.html#wan">WAN</a> 
+  che fa parte della rete pubblica (provider), digiteremo il comando relativo 
+  al <a href="../glossario_htm/glossario.html#nat">NAT</a> (Network Address Translation):</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#ip nat outside</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  necessario, infine, specificare quanti dialer pool utilizzeremo. In questo caso 
+  uno solo, quello relativo alla connessione a Internet. </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#dialer pool 1</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">definiamo 
+  ora i codici di accesso richiesti dal provider (ISP) con due diverse tipologie 
+  di autenticazione (in base all'<a href="cisco827_password.html">algoritmo utilizzato</a>) 
+  che ci permette di utilizzare il protocollo <a href="../glossario_htm/glossario.html#ppp">ppp</a>, 
+  CHAP e PAP:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#ppp chap hostname xxxxxxx</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  la per la password, digitiamo:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#ppp chap password yyyyyy</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Nel 
+  caso si utilizzi una tipologia di autenticazione PAP il comando sar&agrave; 
+  il seguente:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#ppp pap sent-username xxxxxx password yyyyyy</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Prima 
+  di passare ai successivi step sar&agrave; necessario uscire dalla configurazione 
+  dell&#8217;interfaccia Dialer digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#exit</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Passando 
+  alla configurazione dell&#8217;interfaccia <a href="../glossario_htm/glossario.html#atm">ATM</a>, 
+  &egrave; necessario posizionarsi in modalit&agrave; di configurazione della 
+  stessa con il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config)#interface 
+  ATM 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">ottenendo 
+  un nuovo prompt in modalit&agrave; &quot;configurazione interfaccia&quot;:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  configurare correttamente il circuito PVC (Permanent Virtual Connection) dovremo 
+  avere a disposizione la coppia <a href="../glossario_htm/glossario.html#vpi">VPI</a>/<a href="../glossario_htm/glossario.html#vci">VCI</a> 
+  che serve ad indirizzare il flusso <a href="../glossario_htm/glossario.html#atm">ATM</a>. 
+  Digitiamo (di solito):</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#pvc 8/35</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  l'identificativo del <a href="../glossario_htm/glossario.html#vpi">VPI</a>/<a href="../glossario_htm/glossario.html#vci">VCI</a> 
+  ovvero i campi che servono per l'instradamento.Il percorso di ogni singola cella.</font></p>
+<div align="justify"> 
+  <ul>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"> (Virtual 
+      Path Identifier): identificatore della VPC a cui una cella appartiene. </font></li>
+    <li><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">(Virtual 
+      Channel Identifier): identificatore della VCI a cui una cella appartiene. 
+      </font></li>
+  </ul>
+</div>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  rete <a href="../glossario_htm/glossario.html#atm">ATM</a>, infatti, viene suddivisa 
+  in canali che verranno utilizzati dal passaggio delle celle. Il valore <a href="../glossario_htm/glossario.html#vci">VCI</a>, 
+  infatti, &egrave; il parametro che identifica il canale utilizzato nell&#8217;<a href="../glossario_htm/glossario.html#atm">ATM</a> 
+  per il passaggio dei dati Internet. E, inoltre, necessario individuare il percorso 
+  che la cella deve effettuare nella rete dei server <a href="../glossario_htm/glossario.html#atm">ATM</a>, 
+  specificndo questo valore con il parametro <a href="../glossario_htm/glossario.html#vpi">VPI</a>. 
+  Esso, infatti, indica il percorso che la cella stessa compier&agrave; all&#8217;interno 
+  della rete al fine di occupare sempre lo stesso canale (<a href="../glossario_htm/glossario.html#vci">VCI</a>). 
+  <br>
+  Ovviamente i valori vengono forniti dal provider. Quasi tutti i provider italiani 
+  utilizzano questa coppia <a href="../glossario_htm/glossario.html#vpi">VPI</a>/<a href="../glossario_htm/glossario.html#vci">VCI</a> 
+  sul lato client, ma potrebbe essere anche un altro identificativo, tipo 1/33.<br>
+  In questo caso il prompt cambier&agrave; automaticamente in modalit&agrave; 
+  ATM virtual connection:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-atm-vc)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">I 
+  pacchetti di dati che viaggiano con protocollo <a href="../glossario_htm/glossario.html#ppp">PPP</a>, 
+  nel caso dell&#8217;<a href="../glossario_htm/glossario.html#adsl">ADSL</a> , 
+  dovranno passare per una rete <a href="../glossario_htm/glossario.html#atm">ATM</a> 
+  e verranno incapsulati nella cella <a href="../glossario_htm/glossario.html#atm">ATM</a>, 
+  ottenendo in questo modo il pacchetto di <a href="../glossario_htm/glossario.html#pppoa">PPPoA</a>, 
+  ossia PPP over ATM. <br>
+  Per configurare questo tipo di incapsulamento dati, &egrave; necessario usare 
+  VC Mux come encapsulation. Il riferimento &egrave; la <a href="http://www.ietf.org/rfc/rfc2364.txt" target="NUOVA">RFC 
+  2364</a> - ATM Adaptation Layer 5 (aaal5). Digitiamo quindi:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-atm-vc)#encapsulation aal5mux ppp dialer</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Ora 
+  preoccupiamoci di specificare il dialer pool member. Questo comando associa 
+  all' interfaccia fisica uno o piu' profili DIALER (definiti sopra)</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-atm-vc)#dialer pool-member 1</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">ora 
+  preoccupiamoci di abilitare anche l'interfaccia <a href="../glossario_htm/glossario.html#atm">ATM</a> 
+  verso la <a href="../glossario_htm/glossario.html#wan">WAN</a> con il solito 
+  comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-atm-vc)#no shutdown</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Prima 
+  di passare ai successivi step sar&agrave; necessario uscire dalla configurazione 
+  dell&#8217;interfaccia <a href="../glossario_htm/glossario.html#atm">ATM</a> 
+  digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-atm-vc)#exit</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  necessario, dunque, configuare il <a href="../glossario_htm/glossario.html#nat">NAT</a> 
+  per la nostra rete locale <a href="../glossario_htm/glossario.html#lan">LAN</a>, 
+  abilitando dinamicamente la traslazione degli indirizzi specificati nell&#8217;interfaccia 
+  del dialer (quelli che riceveremo con la negoziazione), digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config)#ip nat inside source list 1 interface dialer 0 overload</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">In 
+  questo modo applichiamo il <a href="../glossario_htm/glossario.html#nat">NAT</a> 
+  ad ogni pacchetto che interessa la access-list 1 assegnando come source address 
+  l'indirizzo pubblico (negoziato) dell'interfaccia Dialer 0 </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">quindi, 
+  per impostare l&#8217;IP route dell&#8217;interfaccia di dialer come default 
+  Gateway, digitiamo:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config)#ip route 0.0.0.0 0.0.0.0 dialer 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">nel 
+  caso di IP statico indicheremo, invece, il primo IP della subnet di IP pubblici 
+  assegnatici con la wildcard mask relativa:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router(config 
+  -if)#ip address ip_address wildcard mask </em> </strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Per 
+  definire una <a href="cisco827_acl_std.html">ACCESS LIST</a> che permetta agli 
+  indirizzi la traslazione, digitate:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router (config)#access-list 
+  1 permit 192.168.0.254 0.0.0.255</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">ora 
+  rientriamo con due piccoli passi nell'interfaccia Ethernet per abilitare il 
+  <a href="../glossario_htm/glossario.html#nat">Nat</a>:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config)#interface ethernet 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  al nuovo prompt::</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Digitiamo 
+  il commando relativo all'abilitazione del <a href="../glossario_htm/glossario.html#nat">NAT</a> 
+  sull&#8217;interfaccia::</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#ip nat inside</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">e 
+  abiliatiamo la stessa digitando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#no shutdown</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Infine, 
+  per uscire dalla configurazione, digitate:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router 
+  (config-if)#exit</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">E' 
+  ora necesario salvare la configurazione sulla <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a> 
+  con il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router#copy 
+  running-config startup-config </em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">o 
+  pi&ugrave; semplicemente:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router#wr 
+  mem</em></strong></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><a name="tftp_server"></a></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Qualora 
+  si voglia effettuare l'upload di una configuarzione attraverso rete con l'ausilio 
+  di un server <a href="../glossario_htm/glossario.html#tftp">TFTP</a>, bisogner&agrave; 
+  usare il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong>Router# 
+  copy tftp running-config</strong></em> </font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">carica 
+  le informazioni di configurazione da un server <a href="../glossario_htm/glossario.html#tftp">TFTP</a>. 
+  Il router visualizza una serie di domande interattive relative al nome e/o indirizzo 
+  di rete del server <a href="../glossario_htm/glossario.html#tftp">TFTP</a> e 
+  il nome del file sorgente.</font></p>
+<p align="center"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><img src="../cisco827_file/ciscotftp.jpg" width="400" height="244"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Logicamente, 
+  una volta eseguita questa procedura bisogna sempre lanciare il comando <strong><em>copy 
+  running-config startup-config </em></strong>per salvare la configurazione nella 
+  <a href="../cisco_htm/cisco_comp_princ.html#nvram">NVRAM</a>.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Una 
+  volta effettuata la configurazione in uno dei modi elencati, &egrave; possibile 
+  verificare che il collegamento sia attivo, usando il comando:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router# 
+  show int atm 0</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">Esso 
+  produrr&agrave; un output simile al seguente:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>ATM0 
+  is up, line protocol is up<br>
+  Hardware is PQUICC_SAR (with Alcatel ADSL Module)<br>
+  MTU 1500 bytes, sub MTU 1500, BW 640 Kbit, DLY 80 usec,<br>
+  reliability 255/255, txload 1/255, rxload 9/255<br>
+  Encapsulation ATM, loopback not set<br>
+  Keepalive not supported<br>
+  Encapsulation(s): AAL5, PVC mode<br>
+  11 maximum active VCs, 51 current VCCs<br>
+  VC idle disconnect time: 300 seconds<br>
+  Last input never, output 00:00:02, output hang never<br>
+  Last clearing of &quot;show interface&quot; counters never<br>
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 4<br>
+  Queueing strategy: Per VC Queueing<br>
+  5 minute input rate 23000 bits/sec, 0 packets/sec<br>
+  5 minute output rate 0 bits/sec, 0 packets/sec<br>
+  316012 packets input, 201550082 bytes, 0 no buffer<br>
+  Received 0 broadcasts, 0 runts, 0 giants, 0 throttles<br>
+  0 input errors, 4029 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort<br>
+  286301 packets output, 24674099 bytes, 0 underruns<br>
+  0 output errors, 0 collisions, 1 interface resets<br>
+  0 output buffer failures, 0 output buffers swapped out</em></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  prima riga mostra lo stato della connessione, in questo caso &egrave; <em>up</em>. 
+  Per scopi diagnostici dal prompt di configurazione del router possiamo anche 
+  eseguire un ping verso un host qualsiasi. Per esempio sul server di Networkingitalia:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em><strong>Router&gt;ping 
+  212.210.123.146</strong></em><br>
+  <em>Type escape sequence to abort.<br>
+  Sending 5, 100-byte ICMP Echos to 212.210.123.146, timeout is 2 seconds:<br>
+  !!!!!<br>
+  Success rate is 100 percent (5/5), round-trip min/avg/max = 104/112/140 m</em></font></p>
+<p align="justify"> </p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif">La 
+  configurazione finale sar&agrave; pi&ugrave; o meno simile alla seguente:</font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><strong><em>Router#show 
+  conf</em></strong></font></p>
+<p align="justify"><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><em>Current 
+  configuration:<br>
+  !<br>
+  Using 1824 out of 131072 bytes<br>
+  !<br>
+  version 12.2<br>
+  no service pad<br>
+  service timestamps debug uptime<br>
+  service timestamps log uptime<br>
+  no service password-encryption<br>
+  !<br>
+  hostname Cisco827<br>
+  !<br>
+  enable secret 5 XXXXXXXX<br>
+  enable password XXXXXXXX<br>
+  !<br>
+  ip subnet-zero<br>
+  !<br>
+  !<br>
+  !<br>
+  interface Ethernet0<br>
+  ip address 192.168.0.254 255.255.255.0<br>
+  ip nat inside<br>
+  no ip route-cache<br>
+  !<br>
+  interface ATM0<br>
+  no ip address<br>
+  no ip route-cache<br>
+  no atm ilmi-keepalive<br>
+  pvc 8/35<br>
+  encapsulation aal5mux ppp dialer<br>
+  dialer pool-member 1<br>
+  !<br>
+  bundle-enable<br>
+  dsl operating-mode auto<br>
+  !<br>
+  interface Dialer0<br>
+  ip address negotiated<br>
+  ip nat outside<br>
+  encapsulation ppp<br>
+  dialer pool 1<br>
+  dialer-group 1<br>
+  ppp chap hostname XXXXXX<br>
+  ppp chap password XXXXXX<br>
+  ppp pap sent-username XXXXXXXX password 7 XXXXXXXX<br>
+  !<br>
+  ip nat inside source list 1 interface Dialer0 overload<br>
+  ip classless<br>
+  ip route 0.0.0.0 0.0.0.0 Dialer0<br>
+  no ip http server<br>
+  !<br>
+  access-list 1 permit 192.168.0.0 0.0.0.255<br>
+  !<br>
+  line con 0<br>
+  stopbits 1<br>
+  line vty 0 4<br>
+  password XXXXXXXX<br>
+  login<br>
+  !<br>
+  scheduler max-task-time 5000<br>
+  end</em></font></p>
+<p align="justify">&nbsp;</p>
+</body>
+
+<!-- Mirrored from www.di-srv.unisa.it/~ads/corso-security/www/CORSO-0203/Cisco/cisco827_htm/cisco827_conf_tipica.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Oct 2019 08:59:33 GMT -->
+</html>
