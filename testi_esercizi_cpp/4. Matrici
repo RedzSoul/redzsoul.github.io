@@ -1,6 +1,7 @@
 matrici
 
 svolgere un esercizio che carica una matrice quadrata (4x4) di interi, e visualizza prima  la diagonale principale e poi quella secondaria.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 visualizzare il triangolo superiore ed inferiore di una matrice
 
@@ -8,10 +9,10 @@ dichiarare una matrice NxN quadrata precaricata.
 
 Visualizzare il trinagolo superiore.
 
-Utilizzare i cicli in modo da effetture un numero di operazioni minori di NxN 
+Utilizzare i cicli in modo da effetture un numero di operazioni minori di NxN
 
 Visualizzare il triangolo inferiore. In questo caso per dare una forma che ricordi il triangolo inferiore utilizzare i cicli completi
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 uso di funzioni con matrici
 
@@ -24,12 +25,14 @@ scrivere una funzione che visualizza il triangolo superiore
 scrivere una funzione che visualizza il triangolo inferiore
 
 Nel main dichiarare la matrice e chiamare le varie funzioni eseguite
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 matrice dominante
 
 Verificare se una matrice quadrata di interi (NxN) è diagonalmente dominante, cioè se la somma dei valori assoluti degli elementi su ciascuna riga, escluso l'elemento sulla diagonale principale, è minore del valore assoluto dell'elemento corrispondente sulla diagonale principale. Questa condizione deve valere per ogni riga.
 
 Per il valore assoluto utilizzare la funzione abs della libreria math.h .
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 matrice ordinata
 
@@ -41,6 +44,7 @@ di ciascuno degli elementi della riga precedente.
 Scrivere una funzione C/C++ che restituisca
 true, se una matrice fornita come argomento è
 ordinata per righe, false altrimenti.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 matrice simmetrica
 
@@ -51,19 +55,22 @@ cioè se gli elementi in posizione simmetrica rispetto
 alla diagonale principale sono tutti uguali.
 
 Precaricare la matrice e chiamare la funzione per verificare se è simmetrica
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Il prodotto tra due matrici A e B, quadrate e aventi la stessa dimensione, è una matrice quadrata C della stessa dimensione: l’elemento di coordinate
 (i, j ) della matrice C è la somma dei prodotti degli elementi corrispondenti della i-esima riga di A e della j-esima colonna di B:
 C(i, j ) = A(i, 0) * B(0, j ) + A(i, 1) * B(1, j ) + …
 
 Scrivere una funzione C++ che determini il prodotto tra due matrici quadrate.
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 voti studenti
 
 Si crei un vettore di stringhe di nome materie ed un vettore di stringhe che contiene i nomi degli studenti. Si crei inoltre una matrice di float che contiene i voti che ogni studente ha nella corrispondente materia.
 
-//IMMAGINE DI TABELLA 
+//IMMAGINE DI TABELLA
 
 la matrice e i vettori devono essere interpretati secondo l'esempio.
 
@@ -76,7 +83,7 @@ Creare un menu con switch case in cui l'utente può scegliere le seguenti operaz
     carica: caricare la matrice e i corrispondenti vettori (realizzarlo in una funzione
     voto medio: creare una funzione che dato il nome di uno studente, cercare la sua posizione nel vettore degli studenti e calcolare la media dei suoi voti. La funzione restituisce 0 se lo studente non è stato trovato, la media altrimenti. Nel main bisogna stampare "lo studente Mario ha la media pari a xx,xx" oppure "lo studente Mario non è presente"
 
-    Chiedere in input una materia. Chiamare una funzione che restituisca il vettori con gli studenti che hanno un voto pari a quello massimo in quella materia e un vettore di nomi di studenti che hanno il voto minimo in quella materia. Es. se il voto massimo in italiano è 9 e il voto minimo in italiano è 3 devo restituire due vettori, uno che contiene i nomi che hanno voto 9 e uno che contiene i nomi degli studenti con voto 3. 
+    Chiedere in input una materia. Chiamare una funzione che restituisca il vettori con gli studenti che hanno un voto pari a quello massimo in quella materia e un vettore di nomi di studenti che hanno il voto minimo in quella materia. Es. se il voto massimo in italiano è 9 e il voto minimo in italiano è 3 devo restituire due vettori, uno che contiene i nomi che hanno voto 9 e uno che contiene i nomi degli studenti con voto 3.
 
     Il prototipo della funzione è il seguente:
 
@@ -84,11 +91,11 @@ Creare un menu con switch case in cui l'utente può scegliere le seguenti operaz
 
                               string studentiMin[    ], int & min ,int &LunghezzaVettMax, int & LunghezzaVettMin)
 
-     
+
 
     La funzione restituisce false se non esiste la materia. Nel vetttore studentiMin[    ]ci sono i nomi degli studeti che hanno il voto minimo (la lunghezza del vettore è LunghezzaVettMin. Analogamente per il massimo.
 
-     
+
 
     Quando si rierca la materia nel vettore delle materie non bast utilizzare una uguaglianza in quanto Italiano e italiano devono essere considerate uguali, quindi si usa una funzione che riceve in ingresso due stringhe, applica toUpper ad ogni carattere e restituisce true o false in base al fatto che le stringhe siano uguali.
 
@@ -98,9 +105,9 @@ Creare un menu con switch case in cui l'utente può scegliere le seguenti operaz
 
     lo studente Giuseppe ha il voto minimo(5) in italiano
 
-     
 
-     
+
+
 
     Media_migliore: visualizzare il nome dello studente che ha la media migliore (la funzione media_migliore restituisce l’indice dello studente che ha la media più alta e la media stessa. Nel main bisogna visualizzare: lo studente Mario ha la media 8
     Visualizza promossi. chiamare una funzione che inserisce all'interno di un vettore i nomi degli studenti che hanno tutte sufficienze. La funzione restituisce il numero di studenti presenti nel vettore. Nel main chiamare una funzione stampa vettore a cui si passa come parametro un vettore di stringhe e la lunghezza del vettore
@@ -114,10 +121,11 @@ definire correttamente i prototipi delle funzioni
 
 Prevedere tutti i controlli sui dati di input (funzione che controlla che ogni stringa relativa al nome dello studente o al nome delle materie sia formata da caratteri alfabetici)
 
- 
+
 
 AGGIUNGERE I CONTROLLI CHE IL NOME E IL COGNOME DELLO STUDENTE SIANO CON LA LETTERA MAIUSCOLa E TUTTI I CONTROLLI SUI NUMERI (VALORE INSERITO NEL SWITCH E NEI VOTI)
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Applicare la funzione di cifratura e decifratura alle matrici
@@ -128,6 +136,7 @@ Dichiarare una matrice di caratteri precaricata con un messaggio e ad ogni eleme
 
 Effettuare l'operazione inversa alla matrice cifrata. Chiamare una funzione stampa_matrice prima alla matrice originale, a quella cifrata e a quella decifrata
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 
 Leggere in input due interi positivi n e m e gli elementi di una matrice A di ordine n*m di numeri interi. Verificare se il prodotto di ogni riga è minore o uguale a quello della riga successiva. Stampare “sì” (una sola volta) se la condizione è verificata, stampare “no” (una sola volta) altrimenti.
@@ -135,7 +144,7 @@ Leggere in input due interi positivi n e m e gli elementi di una matrice A di or
 Visualizzare l'elemento minimo, massimo e medio della matrice.
 
 Utilizzare le funzioni opportune e commentare il codice.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 Scrivere un programma per la gestione di alcuni valori interi in una matrice. Il programma deve consentire di:
@@ -147,7 +156,7 @@ Scrivere un programma per la gestione di alcuni valori interi in una matrice. Il
     Calcolare la media di tutti i valori
 
 Prevedere una opportuna funzione per ognuna delle operazioni elencate sopra. Il programma deve iniziare visualizzando all’utente un menu con tutte le operazioni possibili.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Scrivere una funzione C++ che a partire da due vettori di valori numerici interi della stessa dimensione, costruisca una matrice quadrata in cui ogni singolo elemento di coordinate (r, c) sia ottenuto moltiplicando l’r-esimo elemento del primo vettore per il c-esimo elemento del secondo vettore.
@@ -171,7 +180,8 @@ Pertanto, definire e utilizzare le funzioni per:
     Caricare un vettore
     Stampare una matrice
     Ottenere la matrice quadrata a partire dai due vettori
-
+    
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Esercizio 1
@@ -217,7 +227,7 @@ Esercizio 4
 
 Scrivere un programma che consenta di
 
-    caricare una matrice r *c di interi 
+    caricare una matrice r *c di interi
     stampare la matrice
     stampare solo le righe dispari
     costruire un vettore contenente per ogni riga la somma dei numeri negativi
@@ -226,14 +236,3 @@ Scrivere un programma che consenta di
 Prevedere una funzione per ognuna delle cinque operazioni elencante sopra.
 
 --------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
