@@ -7,7 +7,9 @@ Scrivere un'altra funzione che riceve in ingresso un vettore, la sua lunghezza e
 
 Nel main dichiarare un vettore di lunghezza N.
 
-Chiamare prima la funzione che carica il vettore e successivamente quella che stampa il vettore 
+Chiamare prima la funzione che carica il vettore e successivamente quella che stampa il vettore
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 elementi in un vettore
 
@@ -19,14 +21,15 @@ un programma C++ che, utilizzando la funzione
 precedente e costruendo il vettore a partire
 da valori acquisiti da tastiera, visualizzi il risultato
 del conteggio e il prodotto dopo avere richiesto all’utente i valori minimo e massimo.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 vettoriale di ogni numero del vettore
 
 Dichiarare un vettore di lunghezza costante. Caricarlo con numeri specificati dall'utente con una funzione. Scrivere una fuznione che ricevuto in input un intero restituisce il suo fattoriale.
 
 Scrivere una funzione che prende in input il vettore di partenza, A un altro vettore della stessa lunghezza B e mette nel vettore B ogni fattoriale dell'elemto corrispondente. Esempio se nellla posizione 0 di A è presente 5, nella posizione 0 di B deve essere presente il suo fattoriale e così via. Dopo avere calcolato tutti i fattoriali, chiamare la funzione stampa del vettore fattoriale
-------------------------------------------------------------------------
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+
 --------------------------------------------------------------------------
 esercizio con le funzioni per giovedì 10 gennaio
 
@@ -44,16 +47,16 @@ Le funzioni sono chiamate nel main e devono essere stampati i relativi valori.
 
 Le funzioni devono essere definite alla fine del file e prima del main bisogna definire i prototipi
 
- 
+
 
 AGGIUNGERE due  funzioni che calcolano il minimo e il massimo utilizzando i seguenti prototipi:
 
- 
+
 
 void minmax(int v[], int l, int &min, int &max)
 
 int minmax1(int v[], int l, int &min)   la funzione nel return restiutisce il max
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 esercizio sui vettori e ricerca del minimo con le funzioni
 
@@ -64,13 +67,15 @@ scrivere una funzione stampa che riceve in input un vettore e la sua lunghezza e
 Scrivere una funzione cerca_minimo che riceve in input un vettore, la sua lunghezza e restituisce l'elemento minimo
 
 Nel main chiamare dichiarare un vettore, poi chiamare la funzione carica, poi la funzione stampa e poi visualizzare l'elemto minimo restituisco dalla funzione cerca minimo
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 esercizio di ripasso sui vettori e sull'uso di menu
 
 
 Scrivere una funzione carica vettore che riceve in ingresso un vettore di interi e la sua dimensione (e lo carica con i dati di input). Scrivere una funzione stampa vettore che riceve in ingresso un vettore di interi e la sua dimensione (e lo stampa a video), stampa su file che riceve in ingresso un vettore, la sua dimensione e il file in cui deve essere salvato. Scrivere una funzione sposta che riceve in input un vettore di interi V1, la sua dimensione, un vettore di interi V2, la sua dimensione e sposta tutti gli elementi di V1 in V2 solo se sono multipli di 3. La funzione restituisce il numero di elementi che vengono ricopiati in V2.
 
- 
+
 
 Nel main dichiarare due vettori VETT1 e VETT2 e creare un menu. Le funzioni previste nel menu sono:
 
@@ -91,31 +96,35 @@ stampare il vettore VETT2 su file
 Naturalmente vanno aggiunti tutti i controlli che non è possibile effettuare la funzione stampa di VETT1 se non è prima stato caricato, che non è possibile stampare VETT2 se non è stato prima copiato e così via.
 
 La stampa VETT1 e stampa VETT2 devono chiamare la stessa funzione, analogamente la stampa su file (quest'ultima deve avere cme parametro anche il nome del file dove memorizzare il vettore)
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 calcolatrice con le funzioni
 
 Chiedere all'utente l'operazione che vuole eseguire (+,-,*,:, potenza).
 
 Utilizzare un switch e all'interno di ogni case chiedere i valori di input e chiamare la funzione corrispondente che esegue l'operazione specificata. Visualizzare il risultato (devono essere utilizzate 5 funzioni)
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 calcolatrice completa
 
 chiedere carattere per l'oprazione, fare un switch. Chiedere i dati di input nel switch e passarli come parametrei alla funzone corrispondente. Il risultato dell'operazione viene stampato nel switch.
 
 aggiungere l'operazione logaritmo e radice quadrata
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 creare una funzione che stampa il primo carattere di una stringa
 
 Definire una funzione che chiede in ingresso una stringa e visualizza il primo carattere della stringa
 
 chiamare la funzione nel main.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Creare tre vettori nel main. Il primo(vett1)  con dimensione 10, il secondo (vett2)con dimensione 20 e il terzo con dimensione 10+20 (vett3)
 
 Scrivere una funzione che carica un vettore, una funzione che unisce gli elementi di due vettori e una funzione che stampa il vettore
 
 Nel main chiamare la funzione che carica utilizzando vett1, poi richiamare la stessa funzione per caricare vett2, poi la funzione che unisce vett1 e vett2 e una funzione che stampa vett3
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Dichiarare nel main due vettori paralleli (uno che contiene le età e uno che contiene i corrispondenti nomi)
 
@@ -124,15 +133,7 @@ Scrivere una funzione che carica entrambi i vettori.
 Scrivere una funzione che riceve in ingresso un vettore di interi che restituisce l'INDICE del vettore in cui si trova l'lemento minimo.
 
 nel main chiamare la funzione che carica i vettori e successivamante chiamare la funzione che restuisce l'indice minimo. Tale indice viene usato nel main per visualizzare il nome dello studente con l'età minima
----------------------------------------------------------------------------
-
-scrivere una funzione che carica un vettore
-
-scrivere una funzione che calcola il massimo degli elementi di un vettore e restituisce l'elemento
-
-scrivere una funzione che calcola il minimo degli elementi di un vettore e restituisce l'elemento
-
-nel main dichiarare un vettore e chiamare la funzione massimo  e la funzione minimo visualizzando i corrispondenti valori
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 somma di stringhe e somma di numeri
@@ -144,13 +145,12 @@ Definire una funzione che chiede in ingresso due numeri e stampa la differenza
 Definire un'altra funzione che chiede in ingresso due stringhe e ne fa la concatenzazione e la visualizza
 
 chiamare le tre funzioni nel main
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 1)    scrivere una funzione che chiede in ingresso un numero (intero) positivo all'utente e lo restituisce. La funzione si chiama carica. Scrivere un'altra funzione che calcola se il numero è primo e restituisce true se il numero è primo, false altrimenti chiamare le due funzioni scritte nel main e visualizzare se il numero è primo oppure no.
 
--------------------------------------------------------------------------- 
-
-2)    Scrivere una funzione che carica un vettore di interi con lunghezza ricevuta come parametro. Scrivere una funzione che calcola la somma degli elementi di un vettore e lo restituisce in output. Scrivere una funzione che calcola il numero massimo e il numero minimo e li restituisce in output. Scrivere una funzione che calcola la media degli elementi di un vettore e la restituisce in output. Scrivere una funzione che stampa gli elementi di un vettore. Nel main chiamare rispettivamente la funzione carica, somma, min_max, media, stampa visualizzandone i rispettivi valori restituiti
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 3)    Data una parola p e una lettera x (entrambe da chiedere a video) dire quante volte la lettera x compare nella parola p.
 
@@ -167,12 +167,12 @@ anastasia     a                 4
 pippo            p                3
 
 pippo            a                0
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 4)    Si dichiarino tre vettori paralleli contenenti ciascuno la targa delle automobili, il modello e il relativo prezzo. Scrivere una funzione che carichi i tre vettori.Nel main chiamare la funzione carica e chiedere in ingresso un prezzo. Scrivere e chiamare una funzione che restituisce la targa e il modello di tutte le automobili con prezzo inferiore.
 
- 
+
 
 Es. se i dati in input sono:
 
@@ -190,20 +190,17 @@ il risultato dopo l'esecuzione del problema deve essere il seguente:
 
 targa:WE876TR,  modello:CITROEN, prezzo:13.100
 
-targa:KJ789W,  modello:FERRARI, prezzo:30.000 
+targa:KJ789W,  modello:FERRARI, prezzo:30.000
 
---------------------------------------------------------------------------
-
-5)    Scrivere una funzione conta_caratteri che riceve in ingresso una stringa (parametro per valore), un carattere(parametro per valore) e restituisce il numero di volte che il carattere compare nella stringa. chiamare questa funzione nel main dopo avere chiaesto in ingresso la stringa e il carattere
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
 -------------------------------------------------------------------------
 
 scrivere una funzione che carica il vettore.
 
 Scrivere una funzione che restituisce il  minimo, il massimo e la media degli elementi del vettore utilizzando i parametri per riferimenti
--------------------------------------------------------------------------
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
-    Scrivere una funzione che carica un vettore di interi con lunghezza ricevuta come parametro. Scrivere una funzione che calcola la somma degli elementi di un vettore e lo restituisce in output. Scrivere una funzione che calcola il numero massimo e li restituisce in output. Scrivere una funzione che calcola la media degli elementi di un vettore e la restituisce in output. Scrivere una funzione che stampa gli elementi di un vettore. Nel main chiamare rispettivamente la funzione carica, somma, max, media, stampa visualizzandone i rispettivi valori restituiti
 --------------------------------------------------------------------------
 Un supermercato ha bisogno di gestire il magazzino utilizzando un primo vettore per memorizzare i codici dei diversi prodotti ed un secondo vettore per memorizzaredi ogni prodotto la quantità disponibile. Idue vettori sono paralleli, nel senso che relativamente relativamente a una data posizione troviamo il codice del prodotto nel vettore dei codici e la sua quantità nel vettore delle quantità.
 
@@ -220,6 +217,8 @@ Scrivi un programma che in base alla scelta dell’utente esegua le seguenti ope
 numero N inserito.
 
 Utilizzare le funzioni (le operazioni di stampa si svolgono solo nel main). Utilizzare un fileseparato  per tutte le funzioni
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Caricare N numeri in un vettore V1 di N elementi con una funzione.
 
@@ -228,7 +227,7 @@ Creare una nuova funzione che riceve in ingresso 3 vettori v1, v2 e v3 e un nume
 Creare una funzione che stampi un vdettore.
 
 Nel mai chiamare cla funzione carica passando il parametro V1, poi chimare la funzione che sposta da V1 a V2 e V3 e la funzione che stampa (chiamandola 3 volte rispettivamente con V1, V2, V3
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 I dati relativi al campionato di calcio sono memorizzati in 3 vettori paralleli:
@@ -259,6 +258,8 @@ SQUADRA
 
 In allegato lo zip con la struttura del programma squadre.7z
 
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 scambio di due numeri interi
@@ -266,7 +267,7 @@ scambio di due numeri interi
 scrivere una funzione che riceve in ingresso due numeri interi e ne scambia il valore.
 
 chiamare nel main la funzione dopo aver hciesto in input i valori. visualizzare i valori restituiti dalla funzione scambia
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
@@ -293,12 +294,12 @@ Dopo aver caricato i vettori in una funzione, e scritto una funzione stampa che 
 
 CODICE        NOME    CASA        CLASSE     PREZZO
 
-------        .....   .....    .......    ................. 
-
+------        .....   .....    .......    .................
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
     Creare due vettori paralleli contenenti rispettivamente il nome di uno studente e la città di nascita. Scrivere una funzione che carica i vettori e una funzione che dato in ingresso oltre che i vettori e la lunghezza anche il nome di uno studente  e , restituisca il nome della città in cui è nato nel main. Chiamare queste funzioni nel main.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ----------------------------------------------------------------------------
 I dati di N contribuenti sono caricati in 3 vettori paralleli  di seguito elencati: CODICEFISCALE, CITTA_DI_RESIDENZA,  REDDITO. N deve essere specificato dall'utente.
 
@@ -309,16 +310,19 @@ Dopo aver caricato i vettori in una funzione, e scritto una funzione stampa che 
 CODICEFISCALE               CITTA_DI_RESIDENZA                  REDDITO
 ..............              ...................                 ................
     3. ricopiare i codici fiscali dei contribuenti di una città ricevuta come parametro in un vettore di nome CODFISC_CITTA e stampare il vettore CODFISC_CITTA utilizzando una funzione stampa_codici
-    4. incrementare i redditi del 10% di tutti i contribuenti che hanno un codice fiscale che inizia con FA 
+    4. incrementare i redditi del 10% di tutti i contribuenti che hanno un codice fiscale che inizia con FA
     5. copiare il vettore dei redditi in un vettore di redditi ordinato in modo crescente. Stampare il vettore ottenuto utilizzando una funzione stampa_redditi
 
 
 Tutte le funzioni devono essere chiamate nel main e inserite in un menu dentro ad un ciclo (prevedendo anche la possibilità di uscire). Il caricamento deve essere previsto anche fuori dal ciclo.
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
     1. Dati gli stipendi di N dipendenti (con N chiesto in ingresso all'utente, il che non vuol dire che il vettore è dinamico), realizzare un programma che carichi il vettore, visualizzi la posizione dello stipendio massimo, incrementi lo stipendio di tutti i dipendenti del 10% e visualizzi il vettore degli stipendi dopo che è stato modificato
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
     2. Creare due vettori paralleli contenenti rispettivamente il nome di un fungo e la città in cui è stato trovato. Scrivere una funzione che carica i vettori e una funzione che dato in ingresso oltre che i vettori e la lunghezza anche il nome di un fungo,  restituisca il nome della città in cui è presente. Chiamare queste funzioni nel main.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Creare 4 vettori parallei che contengono i dati di un'aziende agricole.. Il primo vettore NOME contiene il nome dell'azienda, il secondo (DIMENSIONE) contiene i metri quadri del suo campo, il terzo (NOME_PROD) contiene il nome del prodotto e e il quarto (QUANTITA) la produzione giornaliera in quintali.
@@ -345,13 +349,16 @@ Più difficile:
 
 MAX_PROD_GIORN_PRODOTTO è una funzione che restituisce il nome del prodotto che ha come somma maxx  tra le produzioni giornaliere (es. si calcola la somma della quantità di arance prodotte in tutte le aziende, la somma delle pere, dei pomodori e così via e si calcoli il podotto con la somma massima
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
     Scrivere una funzione (verifica_primo) che riceve in ingresso un numero intero e restituisce un valore booleano. Il valore restituito è true se il numero è primo, è false se il numero non è primo.
 
 Scrivere un main in cui si chiede in input un intero all'utente , si chiama la funzione verifica_primo e si visualizza il messaggio " il numero x è primo" oppure "il numero x non è primo".
 
- 
+
 Estendere il progetto del punto precedente (senza cancellare nulla) e nel main dichiarare un vettore di interi di dimensione massima fissata. Chiedere all'utente la dimensione reale del vettore e caricare il vettore con i numeri forniti dall'utente (il caricamento deve essere effettuato all'interno di una funzione). Richiamare la funzione verifica_primo per ogni elemento del vettore e visualizzare solo i numeri primi
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ----------------------------------------------------------------------
 
 gioco dell'oca
@@ -362,7 +369,7 @@ Il gioco dell'oca è un tipico gioco per bambini che include un tabellone con un
 
 I giocatori lanciano due dadi a turno e, partendo dalla casella 1, spostano un proprio contrassegno in avanti di tante caselle quanti sono i punti corrispondenti alla somma dei dadi ottenuta: vince il giocatore che raggiunge per primo la casella finale.
 
- 
+
 
 Si consideri un particolare gioco dell'oca in cui valgono le seguenti regole:
 
@@ -375,7 +382,7 @@ il percorso è costituito da 100 caselle;
 
 Scrivere un programma C++ che simuli il gioco dell'oca tra due giocatori:
 
- 
+
 
 Ipotesi di Soluzione
 
@@ -384,6 +391,7 @@ Prima di tutto, il programma acquisisce da tastiera per ogni casella il relativo
 Partendo dal giocatore 1, il programma chiede poi a turno ai giocatori il numero ottenuto dal lancio dei dadi, ripetendo l'acquisizione se il numero non è compreso tra 2 e 12: dopo ogni acquisizione, calcola e stampa la casella di arrivo finale.
 
 Il programma termina quando uno dei due giocatori arriva alla casella 100, stampando il vincitore (giocatore 1 o giocatore 2).
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -----------------------------------------------------------------------
 esercizio per cifrare e decifrare un testo con l'algoritmo di Cesare
 
@@ -421,11 +429,10 @@ Prevedere le seguenti funzioni:
     per visualizzare i mesi i cui valori sono superiori ad un valore dato, ovvero soglia
 6. int mediaPeriodo(int v[ ], int dim, int inizio, int fine)
     per calcolare la media delle precipitazioni dei mesi compresi tra il mese “inizio” ed il mese “fine” (nota: “fine” deve essere maggiore o uguale a “inizio” ed entrambi devono essere mesi validi, in caso contrario la funzione restituisce -1)
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 
 Dato un vettore di valori interi, scrivere una funzione C++ contaIntervallo che conti il numero di elementi compresi tra un valore minimo e uno massimo forniti come argomenti alla funzione stessa.
 Scrivere un programma che carichi il vettore chiedendo i valori da tastiera,  chieda all’utente il valore minimo e massimo e utilizzi la funzione contaIntervallo per visualizzare poi il risultato del conteggio.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
-
