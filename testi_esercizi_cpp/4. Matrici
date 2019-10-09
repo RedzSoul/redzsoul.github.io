@@ -180,7 +180,7 @@ Pertanto, definire e utilizzare le funzioni per:
     Caricare un vettore
     Stampare una matrice
     Ottenere la matrice quadrata a partire dai due vettori
-    
+
 OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
@@ -202,6 +202,7 @@ Vettore minimi di riga = [ -2        -8           3]
 
 Vettore massimi di riga = [99      15          55]
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Esercizio 2
@@ -221,6 +222,8 @@ Esempio:
 Vettore minimi di colonna= [ 2         -8           -2           0]
 
 Vettore massimi di colonna= [6        99          55          15]
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 
 Esercizio 4
@@ -234,5 +237,5 @@ Scrivere un programma che consenta di
     costruire un vettore contenente per ogni colonna la somma dei numeri positivi
 
 Prevedere una funzione per ognuna delle cinque operazioni elencante sopra.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
