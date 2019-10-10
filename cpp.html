@@ -2583,9 +2583,21 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 15</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Supermercato</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Dobbiamo gestire i prodotti di un supermercato e i loro prezzi. <br>Definire una struttura con il campo nome e
+				prezzo. Creare un array di nome ARTICOLI di lunghezza costante(N). <br>Caricare l’array con N elementi. <br>Creare
+				un menu in cui è possibile eseguire le seguenti operazioni ( il menu deve essere eseguito più volte fino a
+				quando l’utente non decide di uscire):<br><br>
+
+				[1]chiedere in ingresso una percentuale all'utente e incrementare tutti i prezzi della
+				percentuale specificata<br>
+				[2]chiedere in ingresso un prodotto e visualizzare il suo prezzo (se il prodotto viene trovato
+				il ciclo deve essere interrotto)<br>
+				[3]visualizzare il prezzo medio calcolato tra quelli che costano più di 10 euro<br>
+				[4]visualizzare i dati di tutti gli articoli presenti nel vettore<br>
+				[5]Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i
+				prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.<br>
 			</div>
 
 		</div>
@@ -2593,9 +2605,17 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 16</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Residenti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma che acquisisca da tastiera i dati di un certo numero di persone e restituisca:<br><br>
+
+				    <li>il numero di persone residenti nella provincia di Pisa</li>
+				    <li>il numero di residenti nella città di Pisa</li>
+				    <li>i dati della persona che è residente nella città di Pisa da più tempo.</li>
+				<br>
+				In particolare, il numero di persone viene richiesto inizialmente all’utente. Inoltre, per ogni persona viene richiesto il nome, il cognome e la residenza, della quale interessa solamente la città, la provincia e l’anno in cui è stata richiesta.
+				<br>
+				Realizzare il programma senza l’uso di vettori.
 			</div>
 
 		</div>
@@ -2603,19 +2623,65 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 17</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Dipendenti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+				Scrivere un programma che consenta di gestire i dipendenti di un'azienda tramite l'uso di un vettore, che rappresenta il registro dei dipendenti dell'azienda stessa.<br><br>
+
+				Ogni dipendente è caratterizzato<br>
+
+				    <li>dal numero di matricola (un intero)</li>
+				    <li>dal cognome</li>
+				    <li>dall’anno di nascita</li>
+				    <li>dal numero di ore lavorate nel mese corrente</li>
+				<br>
+				Prevedere le seguenti funzioni:<br><br>
+
+				    <li>caricaDipendenti, che consente di inserire i dati di tutti i dipendenti dell'azienda. La matricola viene assegnata dal programma: sarà 1 per il primo dipendente inserito, 2 per il secondo, ecc...</li>
+				    <li>stampaDipendente, che consente di stampare i dati del dipendente con matricola m</li>
+				    <li>dipendenteMax, che restituisce i dati del dipendente che ha lavorato più ore nel mese corrente</li>
+				    <li>dipendenteMin, che restituisce i dati del dipendente che ha lavorato meno ore nel mese corrente</li>
+				    <li>mediaOre, che restituisce la media delle ore lavorate da un dipendente</li>
+				    <li>cercaDip, che prende il cognome di un dipendente e restituisce true se esiste  almeno un dipendente con quel cognome e false altrimenti.</li>
+				<br>
+				La funzione main consentirà all'utente di eseguire una delle seguenti operazioni<br><br>
+
+				    <li>Inserire i dati di tutti i dipendenti, dopo aver richiesto il numero di dipendenti dell'azienda</li>
+				    <li>Visualizzare i dati del dipendente con matricola m acquisita da tastiera</li>
+				    <li>Visualizzare i dati del dipendente che ha lavorato più ore nel mese corrente</li>
+				    <li>Visualizzare i dati del dipendente che ha lavorato meno ore nel mese corrente</li>
+				    <li>Visualizzare in numero medio di ore lavorate dai dipendenti</li>
+				    <li>Verificare se nell'azienda è presente almeno un dipendente con un dato cognome inserito da tastiera.</li>
+				</div>
 
 		</div>
 
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 18</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Squadra di calcio e allenatore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Definire una struttura che descriva una squadra di calcio con il relativo allenatore.<br><br>
+
+				Una squadra è identificata da<br><br>
+
+				    <li>Nome</li>
+				    <li>Città di appartenenza</li>
+				    <li>Punteggio corrente</li>
+				    <li>Allenatore.</li>
+				<br>
+				L’allenatore è invece caratterizzato da<br><br>
+
+				    <li>Nome</li>
+				    <li>Cognome</li>
+				    <li>Numero di titoli vinti.</li>
+				<br>
+				Scrivere un programma C++ che, dopo aver dichiarato una tabella Fantacalcio per gestire i dati delle squadre e aver chiesto all’utente il numero di squadre da inserire<br>
+
+				    <li>Consentirà all’utente di inserire i dati delle squadre e dei relativi allenatori</li>
+				    <li>Visualizzerà il nome delle squadre che hanno più di N punti in classifica (N verrà chiesto nel main all’utente)</li>
+				    <li>Calcolerà e visualizzerà il numero di allenatori che hanno vinto almeno un titolo.</li>
+				<br>
+				Prevedere una funzione per il caricamento dei dati, una per la visualizzazione al punto 2 e un’altra ancora per il calcolo del numero di allenatori al punto 3.
 			</div>
 
 		</div>
@@ -2623,9 +2689,26 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 19</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Collezione di libri</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma per gestire una collezione di Libri.<br><br>
+
+				Ogni libro è caratterizzato da:<br><br>
+
+				    <li>titolo</li>
+				    <li>numero di pagine</li>
+				    <li>prezzo</li>
+				<br>
+				Il programma dopo aver chiesto all’utente il numero di libri che vuole inserire, offrirà un menu con le seguenti operazioni:<br><br>
+
+				    <li>Caricamento, che consente l’inserimento da tastiera di tutti i dati dei libri</li>
+				    <li>Visualizzazione, che visualizza tutti i dati di tutti i libri</li>
+				    <li>Ricerca, che chiede all’utente il titolo del libro da cercare e visualizza il prezzo se il libro è presente. Per la ricerca, implementare una funzione che prenda, oltre al vettore e alla dimensione, anche il titolo come parametro e restituisca il prezzo del libro (se presente) oppure zero.</li>
+				    <li>Più costoso e più economico, che visualizza i dati sia del libro più costoso che di quello più economico</li>
+				    <li>Incremento del prezzo di una percentuale, che chiede all’utente una percentuale e, richiamando una apposita funzione, incrementa il prezzo dei libri di quella percentuale.</li>
+				    <li>Uscita menu</li>
+				<br>
+				NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
 			</div>
 
 		</div>
@@ -2633,12 +2716,63 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 20</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Informazioni su auto</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma per gestire le informazioni di alcune auto.<br>
+
+				Il programma dopo aver chiesto all’utente il numero di autoche vuole inserire, offrirà un menu con le seguenti operazioni:<br><br>
+
+						<li>Caricamento, che consente l’inserimento da tastiera di tutti i dati delle auto (marca, modello, consumo al km, prezzo dell'allestimento base)</li>
+						<li>Visualizzazione, che visualizza tutti i dati di tutte le auto</li>
+						<li>Ricerca delle auto di una certa marca, che chiede all’utente la marca e stampa i dati di tutte le automobili di quella marca</li>
+						<li>Ricerca del prezzo di una determinata auto, che chiede all'utente marca e modello e restituisce il prezzo. (Assumiamo che sia presente al più una automobile di una determinata marca e di un determinato modello.)</li>
+						<li>Ricerca delle auto dato il prezzo, che chiede all'utente un prezzo e visualizzerà le auto con prezzo maggiore al prezzo inserito</li>
+						<li>Ricerca delle auto dato il consumo, che chiede all'utente un valore di consumo e visualizzerà le auto con consumo inferiore a quello inserito</li>
+						<li>Uscita menu</li>
+
+				NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
 			</div>
 
 		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 21</span>
+			<span class="titolo">Studenti e ricerca</span>
+			<div class="testo">
+				Considerate la seguente struttura:<br><br>
+
+
+
+				struct Studente<br>
+
+				{<br>
+
+				 int matricola;<br>
+
+				string nome;<br>
+
+				string telefono;<br>
+
+			};<br>
+			<br>
+
+				Scrivere in C++ le seguenti funzioni:<br><br>
+
+				    <li>inserisciStudenti, che consente di inserire i dati degli studenti in un vettore vs solo in ordine crescente di matricola. Pertanto, se l’utente inserisce una matricola uguale o inferiore a quella precedentemente inserita, sarà visualizzato un messaggio di errore e sarà nuovamente richiesta la matricola.</li>
+				    <li>ricercaPerMatricola, che preso un vettore di studenti vs ordinato in base alla matricola, e un numero di matricola m, cerca lo studente in vs con matricola m. Se lo studente è presente in vs, allora restituisce  il nome, altrimenti restituisce la stringa “NESSUNO”;</li>
+				    <li>ricercaPerNome, che preso un vettore di studenti vs ordinato in base alla matricola, e un nome n, stampi i dati di tutti gli studenti in vs con nome n.</li>
+
+
+				Il programma mostrerà all’utente un menu con le tre operazioni che è possibile effettuare, oltre che alla possibilità di terminare l’esecuzione.<br>
+
+
+
+				Indicare quale algoritmo di ricerca avete implementato nelle due funzioni, motivando la risposta. Per ognuna delle due soluzioni, riportare inoltre le vostre osservazioni sull’efficienza degli algoritmi usati.
+			</div>
+
+		</div>
+
 
 
 	</div>

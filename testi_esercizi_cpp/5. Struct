@@ -358,6 +358,7 @@ il ciclo deve essere interrotto)
 [5]Chiedere all'utente un prezzo e ricopiare in un terzo vettore (di nome PREZZOBIS) i
 prezzi che superano il prezzo ricevuto in ingresso. Stampare il vettore PREZZOBIS.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Scrivere un programma che acquisisca da tastiera i dati di un certo numero di persone e restituisca:
@@ -369,7 +370,7 @@ Scrivere un programma che acquisisca da tastiera i dati di un certo numero di pe
 In particolare, il numero di persone viene richiesto inizialmente all’utente. Inoltre, per ogni persona viene richiesto il nome, il cognome e la residenza, della quale interessa solamente la città, la provincia e l’anno in cui è stata richiesta.
 
 Realizzare il programma senza l’uso di vettori.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 Scrivere un programma che consenta di gestire i dipendenti di un'azienda tramite l'uso di un vettore, che rappresenta il registro dei dipendenti dell'azienda stessa.
@@ -399,6 +400,7 @@ La funzione main consentirà all'utente di eseguire una delle seguenti operazion
     Visualizzare in numero medio di ore lavorate dai dipendenti
     Verificare se nell'azienda è presente almeno un dipendente con un dato cognome inserito da tastiera.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 
@@ -425,6 +427,7 @@ Scrivere un programma C++ che, dopo aver dichiarato una tabella Fantacalcio per 
 
 Prevedere una funzione per il caricamento dei dati, una per la visualizzazione al punto 2 e un’altra ancora per il calcolo del numero di allenatori al punto 3.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Scrivere un programma per gestire una collezione di Libri.
@@ -446,6 +449,7 @@ Il programma dopo aver chiesto all’utente il numero di libri che vuole inserir
 
 NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 
 Scrivere un programma per gestire le informazioni di alcune auto.
@@ -461,7 +465,7 @@ Il programma dopo aver chiesto all’utente il numero di autoche vuole inserire,
     Uscita menu
 
 NOTA: tutte le operazioni elencate sopra devono essere implementate attraverso apposite funzioni.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 ESERCITAZIONE DEL 7/11/2018
 
@@ -497,4 +501,5 @@ Il programma mostrerà all’utente un menu con le tre operazioni che è possibi
 
 Indicare quale algoritmo di ricerca avete implementato nelle due funzioni, motivando la risposta. Per ognuna delle due soluzioni, riportare inoltre le vostre osservazioni sull’efficienza degli algoritmi usati.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
