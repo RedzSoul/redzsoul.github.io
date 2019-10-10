@@ -3107,45 +3107,70 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Ricerca binaria</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione (prima su carta e poi al PC, vi viene più facile), che riceve in input un vettore di interi, la sua lunghezza e un numero intero da cercare. <br>La funzione restituisce true se l'intero è presente, false altrimenti.<br>
+
+				L'elemento viene cercato nel vettore utilizzando l'algoritmo di ricerca binaria (cercate di scrivere la funzione da soli, se avete problemi fate riferimento al libro a pag. 204)<br>
+
+				Nel main  far caricare all'utente il vettore, chiamare una funzione che verifichi se il vettore è ordinato in modo crescente, decrescente oppure che non è ordinato. <br>Se non è ordinato visualizzo  un msg di errore, altrimenti chiedere all'utente un numero intero da cercare nel vettore e chiamare la funzione ricerca_binaria_crescente se il vettore è ordinato in senso crescente, ricerca_binaria_decrescente se il vettore è ordinato in senso decrescente.
 			</div>
 
 		</div>
+
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Exchange sort su un vettore di strutture</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Definire una struttura studente con campo nome e anno di nascita.<br>
+
+				Caricare il vettore con i dati.<br>
+
+				scrivere una funzione che ordina il vettore con exchange sort in funzione dell'anno scolastico e un'altra funzione exchange sort che ordina il vettore in funzione del nome.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Ricerca di un elemento in vettore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Si scriva una funzione in C++, denominata cerca, che ricerchi la presenza di un elemento in
+				un vettore di interi.<br>
+				La funzione riceve in ingresso tre parametri:<br><br>
+				<li>1. un vettore di interi  nel quale ricercare il valore;</li>
+				<li>2. un un valore intero N che indica quanti elementi contiene il vettore;</li>
+				<li>3. il valore intero x che deve essere ricercato.</li>
+				<br>
+				La funzione deve restituire un valore intero, ed in particolare:<br><br>
+				<li> se il valore x è presente nel vettore, allora la funzione restituisce l’indice della posizione
+				alla quale si trova tale valore;</li>
+				<li> se il valore x è presente più volte, si restituisca l’indice della prima occorrenza;</li>
+				<li> se il valore x non è presente nel vettore, si restituisca -1.</li>
+				<br>
+				Chiamare la funzione in un programma. I dati di input e di output devono essere richiestie visualizzati nel main
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Cerco un intero con la ricerca binaria</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Caricare un vettore di N elementi. Chiedere in ingresso un numero intero. <br>Applicare l'algoritmo di ricerca binaria per verificare se il numero intero è presente oppure no.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Ordinamento con selection sort e bubble sort</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+					Caricare un vettore di N elementi. Ordinarlo utilizzando il selection sort e il bubble sort <br>(inserire i due algoritmi di ordinamento in due funzioni diverse)
 			</div>
 
 		</div>
@@ -3154,16 +3179,59 @@
 			<span class="numero">Es. 6</span>
 			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+				Scrivere un programma C++ per gestire i clienti di una agenzia immobiliare.<br><br>
+
+				Ogni cliente è caratterizzato da:<br><br>
+
+				    <li>codice cliente (un intero diverso per ogni cliente)</li>
+				    <li>nome</li>
+				    <li>città di residenza</li>
+				    <li>numero di immobili affidati all'agenzia immobiliare.</li>
+
+
+				<br>
+				Scrivere in C++ le seguenti funzioni:<br><br>
+
+				    <li>inserisciClienti, che consente di inserire i dati dei clienti in un vettore. Prevedere tutti i controlli dei dati inseriti. Per il codice basta controllare che sia > di 0; assumiamo per semplicità che l'utente inserisca tutti codici diversi.</li>
+				    <li>ordinaCodice, che ordina in base al codice il vettore dei clienti preso in input.</li>
+				    <li>ricercaPerCodiceOrd, che preso un vettore v di clienti, ordinato in base al codice, ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;</li>
+				    <li>ricercaPerCodiceNonOrd, che preso un vettore v di clienti non ordinato ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;</li>
+				    <li>ricercaPerCitta, che preso un vettore di clienti v, ordinato in base al codice, e una città ci, stampi i dati di tutti i clienti in v con residenza ci.</li>
+
+				<br>
+
+				Il main, dopo aver chiesto all'utente il numero di clienti da inserire, chiamando le opportune funzioni, consentirà di:<br><br>
+
+				    <li>caricare i dati dei clienti</li>
+				    <li>cercare i dati di un cliente, chiedendo il relativo codice (NOTA: che il vettore non è ordinato!)</li>
+				    <li>ordinare il vettore in base al codice</li>
+				    <li>cercare i dati di un cliente, chiedendo il relativo codice (NOTA: questa volta il vettore è ordinato!)</li>
+				    <li>cercare i clienti con residenza in una città richiesta da tastiera.</li>
+
+				<br>
+
+				Per le funzioni di ricerca, scegliere di volta in volta, la funzione più efficiente per eseguire il tipo di ricerca richiesta.
+				</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Mergesort</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Un sito web del turismo tiene un elenco aggiornato delle stazioni sciistiche e del manto nevoso (in cm, un intero).<br>
+
+				Si deve realizzare un programma che chieda in ingresso, per un insieme di località, il nome della località e l’altezza del manto nevoso (un intero).<br><br>
+
+				A tal fine si definisca una apposita struttura dati stazione.<br>
+
+				Si definisca un array di MAXDIM elementi di tipo stazione, e si chiedano all’utente i dati relativi a n <= MAXDIM località (nome e neve), memorizzandoli nell’array (il valore di n viene chiesto all’utente).<br><br>
+
+				Si realizzi una funzione compare(stazione s1, stazione s2) che restituisce -1, 0 o 1 a seconda che il manto nevoso in s1 sia rispettivamente minore, uguale o maggiore al manto nevoso in s2.<br>
+
+				Si modifichi l’algoritmo MergeSort visto a lezione, e lo si utilizzi per ordinare le località in base alla neve presente (suggerimento: si usi la funzione compare(…) ) .<br><br>
+
+				Si stampi a video l’elenco ordinato delle località.
 			</div>
 
 		</div>
@@ -3172,74 +3240,40 @@
 			<span class="numero">Es. 8</span>
 			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+				Si vogliono organizzare i dati relativi ai risultati di una corsa campestre.<br><br>
+
+				Gli iscritti saranno al più 100, ma potranno anche essere meno.<br>
+
+				Per ogni partecipante si vuole memorizzare il nominativo (si assume che sia differente per ogni partecipante), il sesso (M/F), l’anno di nascita e il tempo in secondi impiegato per portare a termine la prova.<br><br>
+
+				Realizzare un programma C++ che, una volta definita un’opportuna struttura per memorizzare i dati, visualizzi un menu con le seguenti operazioni possibili:<br><br>
+
+				    <li>Inserimento</li>
+				    <li>Visualizzazione dei dati ordinati in base al tempo della prova</li>
+				    <li>Visualizzazione dei dati ordinati in base all’anno di nascita (dal più giovane al più anziano)</li>
+				    <li>Visualizzazione dei dati ordinati in base al nominativo</li>
+				    <li>Ricerca di un nominativo</li>
+				    <li>Uscita</li>
+				<br>
+				 Il programma dovrà comportarsi come segue:<br><br>
+
+				    <li>Quando l’utente inserirà la scelta 1, relativa all’inserimento, il programma chiederà all’utente il numero di partecipanti che vuole inserire, chiamando solo dopo la funzione che consentirà di inserire i dati dei partecipanti in un vettore. <br>Subito dopo l’inserimento, i dati saranno ordinati in base al tempo della prova, in base all’anno di nascita ed in base al nominativo dei partecipanti. <br>I dati ordinati in base ai tre criteri saranno memorizzati in tre vettori diversi. Il primo ordinamento sarà effettuato implementando l’algoritmo Selection Sort, il secondo implementando il Bubble Sort ed il terzo con il Merge Sort.</li>
+				    <li>Quando l’utente inserirà la scelta 2, il programma visualizzerà i dati dei partecipanti ordinati in base al tempo di prova.</li>
+				    <li>Quando l’utente inserirà la scelta 3, il programma visualizzerà i dati dei partecipanti ordinati in base all’anno di nascita.</li>
+				    <li>Quando l’utente inserirà la scelta 4, il programma visualizzerà i dati dei partecipanti ordinati in base al nominativo.</li>
+				    <li>Quando l’utente inserirà la scelta 5, il programma chiederà il nominativo da cercare ed effettuerà la ricerca nel modo più efficiente, visualizzando i dati relativi al partecipante cercato.</li>
+				    <li>Quando l’utente inserirà la scelta 6, il programma stampa un messaggio di saluto e termina.</li>
+				<br>
+				Attenzione:<br><br>
+
+				    Nel menu le operazioni 2, 3, 4 e 5 saranno consentite solo dopo l’inserimento.<br>
+				    L’operazione di inserimento può essere eseguita anche più volte.<br>
+				    Gli ordinamenti saranno eseguiti una sola volta dopo l’inserimento.<br>
+				    Bisogna effettuare i dovuti controlli dei dati inseriti da tastiera.<br>
+
+					</div>
 
 		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 9</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 10</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 11</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 12</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 13</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 14</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 15</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-
 
 	</div>
 

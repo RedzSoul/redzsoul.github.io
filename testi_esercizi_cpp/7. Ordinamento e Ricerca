@@ -2,14 +2,14 @@ ricerca binaria
 
 Scrivere una funzione (prima su carta e poi al PC, vi viene più facile), che riceve in input un vettore di interi, la sua lunghezza e un numero intero da cercare. La funzione restituisce true se l'intero è presente, false altrimenti.
 
- 
+
 
 L'elemento viene cercato nel vettore utilizzando l'algoritmo di ricerca binaria (cercate di scrivere la funzione da soli, se avete problemi fate riferimento al libro a pag. 204)
 
- 
+
 
 Nel main  far caricare all'utente il vettore, chiamare una funzione che verifichi se il vettore è ordinato in modo crescente, decrescente oppure che non è ordinato. Se non è ordinato visualizzo  un msg di errore, altrimenti chiedere all'utente un numero intero da cercare nel vettore e chiamare la funzione ricerca_binaria_crescente se il vettore è ordinato in senso crescente, ricerca_binaria_decrescente se il vettore è ordinato in senso decrescente.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 exchange sort su un vettore di strutture
@@ -20,6 +20,7 @@ Caricare il vettore con i dati.
 
 scrivere una funzione che ordina il vettore con exchange sort in funzione dell'anno scolastico e un'altra funzione exchange sort che ordina il vettore in funzione del nome.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Ricerca di un elemento in vettore
@@ -38,24 +39,19 @@ alla quale si trova tale valore;
 
 Chiamare la funzione in un programma. I dati di input e di output devono essere richiestie visualizzati nel main
 
---------------------------------------------------------------------------
-
-fusione tra due vettori
-
-Creare una funzione che riceve in ingresso due vettori ordinati, le rispettive dimensioni e restituisce un terzo vettore che contiene l'ordinamento dei due vettori precedenti
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 esercizio n. 1: Caricare un vettore di N elementi. Chiedere in ingresso un numero intero. applicare l'algoritmo di ricerca binaria per verificare se il numero intero è presente oppure no.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 
 esercizio n. 2 Caricare un vettore di N elementi. Ordinarlo utilizzando il selection sort e il bubble sort (inserire i due algoritmi di ordinamento in due funzioni diverse)
 
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
-Scrivere un programma C++ per gestire i clienti di una agenzia immobiliare. 
+Scrivere un programma C++ per gestire i clienti di una agenzia immobiliare.
 
 Ogni cliente è caratterizzato da:
 
@@ -64,17 +60,17 @@ Ogni cliente è caratterizzato da:
     città di residenza
     numero di immobili affidati all'agenzia immobiliare.
 
- 
+
 
 Scrivere in C++ le seguenti funzioni:
 
-    inserisciClienti, che consente di inserire i dati dei clienti in un vettore. Prevedere tutti i controlli dei dati inseriti. Per il codice basta controllare che sia > di 0; assumiamo per semplicità che l'utente inserisca tutti codici diversi. 
+    inserisciClienti, che consente di inserire i dati dei clienti in un vettore. Prevedere tutti i controlli dei dati inseriti. Per il codice basta controllare che sia > di 0; assumiamo per semplicità che l'utente inserisca tutti codici diversi.
     ordinaCodice, che ordina in base al codice il vettore dei clienti preso in input.
     ricercaPerCodiceOrd, che preso un vettore v di clienti, ordinato in base al codice, ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;
     ricercaPerCodiceNonOrd, che preso un vettore v di clienti non ordinato ed un codice c, cerca il cliente con codice c nel vettore v. Se il cliente è presente , allora restituisce  l'indice, altrimenti restituisce -1;
     ricercaPerCitta, che preso un vettore di clienti v, ordinato in base al codice, e una città ci, stampi i dati di tutti i clienti in v con residenza ci.
 
- 
+
 
 Il main, dopo aver chiesto all'utente il numero di clienti da inserire, chiamando le opportune funzioni, consentirà di
 
@@ -84,10 +80,11 @@ Il main, dopo aver chiesto all'utente il numero di clienti da inserire, chiamand
     cercare i dati di un cliente, chiedendo il relativo codice (NOTA: questa volta il vettore è ordinato!)
     cercare i clienti con residenza in una città richiesta da tastiera.
 
- 
+
 
 Per le funzioni di ricerca, scegliere di volta in volta, la funzione più efficiente per eseguire il tipo di ricerca richiesta.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 Un sito web del turismo tiene un elenco aggiornato delle stazioni sciistiche e del manto nevoso (in cm, un intero).
@@ -104,6 +101,7 @@ Si modifichi l’algoritmo MergeSort visto a lezione, e lo si utilizzi per ordin
 
 Si stampi a video l’elenco ordinato delle località.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 
 Si vogliono organizzare i dati relativi ai risultati di una corsa campestre.
@@ -137,7 +135,5 @@ Attenzione:
     Gli ordinamenti saranno eseguiti una sola volta dopo l’inserimento.
     Bisogna effettuare i dovuti controlli dei dati inseriti da tastiera.
 
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
-
-
