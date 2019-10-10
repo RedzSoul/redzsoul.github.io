@@ -2789,138 +2789,308 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Trasformazione di un array di caratteri da maiuscolo a minuscolo e viceversa</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+
+				Chiedere all'utente un insieme di caratteri alfabetici da memorizzare in un vettore precedentemente dichiarato con una lunghezza costante. La sequenza di caratteri termina quanto l'utente inserisce il carattere '!'<br>
+				<br>
+				Il caricamento dei caratteri nel vettore si interrompe in 3 casi:<br><br>
+
+				    <li>l'utente ha specificato il carattere '!' quindi indica che la sequenza 		di caratteri è terminata. Il programma inizia la sua elaborazione utilizzando i caratteri presenti nel vettore che precedono il '!'</li>
+				    <li>la lunghezza della sequenza di caratteri supera la dimensione del 		vettore, in questo il programma termina segnalando un errore</li>
+				    <li>l'utente inserisce un carattere non alfabetico cioè diverso da 		a,b.....z e diverso da A,B,....Z  Anche in questo caso il programma termina con una segnalazione di errore</li>
+				<br>
+				Nel caso prosecuzione corretta del programma le operazioni da svolgere sono le seguenti:<br><br>
+
+				    <li>Modificare ogni carattere del vettore sostituendo il carattere 		minuscolo con il corrispondente maiuscolo e viceversa (utilizzare la codifica ASCII)</li>
+				    <li>Visualizzare i caratteri del vettore dopo la modifica</li>
+				</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Operazioni con stringhe</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			<div class="soluzione">
+				Prima di iniziare l'esercizio ricordare che
+
+				per misurare la lunghezza di una stringa si utilizza la funzione int length():<br><br>
+
+				esempio<br><br>
+
+				int i;<br>
+				string saluto=”ciao”;<br>
+				i = saluto.length(); //produce ... i = 4<br><br>
+
+			</div>
+
+				Scrivere un programma che riceva in input una stringa ed permette di eseguire le seguenti operazioni tramite un menu (ricordare che la stringa può contenere anche il carattere "spazio" che deve essere ignorato. La stringa viene richiesta in input prima di iniziare il menu):<br><br>
+
+				1)richiedere in input un carattere e restituire quante volte il carattere è presente nella stringa (utilizzare la codifica ASCII). Esempio se la stringa in input è "Buon Natale a tutti" e il carattere specificato dall'utente è 'a' bisogna restituire "il carattere a è presente 3 volte"<br>
+
+				2) restituisce TRUE se tutti i caratteri della stringa sono maiuscoli, false altrimenti<br>
+
+				3) sostituisce tutti i caratteri maiuscoli con minuscole e viceversa. es. la stringa "Buon Natale a tutti" diventa "bUON nATALE A TUTTI"<br>
+
+				4)esci
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Ripasso uso delle stringhe</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma che dopo aver acquisito una stringa da tastiera verifichi se questa è palindroma, stampando un opportuno messaggio all'utente. <br>Una stringa si dice palindroma quando si
+				legge allo stesso modo da destra e da sinistra, per esempio anna.<br>
+
+				Il programma deve svolgere le seguenti operazioni:<br><br>
+
+				    <li>Visualizzare la stringa inserita</li>
+				    <li>Aggiornare la stringa in modo che tutti i caratteri siano minuscoli e visualizzarla</li>
+				    <li>Verificare se la stringa è palindroma stampando un opportuno messaggio all'utente.</li>
+				<br>
+
+				<div class="soluzione">
+				Es. anna<br>
+
+				i topi non avevano nipoti<br>
+
+				Eran i mesi di seminare<br>
+
+				O mordo tua nuora, o aro un autodromo<br><br>
+
+				suggerimento per gestire gli spazi senza utilizzare while interni:<br>
+				<pre>
+				while(i < k && palin){
+				        if(nm[i] == ' ' && nm[k] == ' '){
+				            i++; k--;
+				        }else if(nm[i] == ' '){
+				            i++;
+				        }else if(nm[k] == ' '){
+				            k--;
+				        }else if(nm[i] != nm[k]){
+				            palin = false;
+				        }else{
+				            i++; k--;
+				        }
+				    }
+				</pre>
+				</div>
+
+				Il main chiede ciclicamente una frase all'utente chiama la funzione palindroma e invia un msg se è palindroma o no.<br>
+
+				Il ciclo termina quando l'utente indica che vuole terminare (specifica un carattere particolare).
 			</div>
 
 		</div>
+
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Conta parole</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione C/C++ che determini il numero di parole presenti in una stringa tenendo conto dei vari caratteri di separazione (spazi, punteggiatura, ecc..).<br>Scrivere il corrispondente main che attiva la funzione. <br>All'interno del main visualizzare il numero di parole. <br>Non utilizzare funzioni predefinite.
+				<br>
+				Il conteggio delle parole deve essere realizzato mediante un algoritmo manuale
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">De Bello Gallico</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Nel De bello gallico Giulio Cesare racconta di
+				avere utilizzato un codice segreto per comunicare
+				in forma scritta con i propri generali: ogni
+				singola lettera del messaggio veniva sostituita
+				con la lettera che la seguiva nell’ordinamento alfabetico
+				(A→ B, B→C, …, Z→A), i simboli delle
+				cifre numeriche e i segni di punteggiatura erano
+				lasciati invariati. <br><br>Scrivere due programmi C++: il
+				primo deve codificare secondo la regola di Cesare
+				una stringa di testo inserita dall’utente e visualizzare
+				il risultato, il secondo deve accettare
+				una stringa segreta e decodificarla visualizzando
+				il testo originale.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 6</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">ContaCaratteri</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere una funzione ContaCaratteri  che riceve in ingresso due stringhe e restituisce come valore di ritorno quanti caratteri della prima stringa sono presenti nella seconda (per esempio, il risultato restituito se i due valori in ingresso sono "PIPPO" e "PIPPICALZELUNGHE" è 4)<br>
+				<br>
+				Scrivere una funzione Substr che riceve in ingresso due stringhe s1 e s2 e restituisce 0 se  s1 e sottostringa di s2, -1 altrimenti.  Una stringa è sottostringa di un'altra se è contenuta nell'altra. Ad esempio "cane" è sottostringa di "canestro", fila e sottostringa di "infilare"<br>
+				<br>
+				Scrivere un programma in cui inserire un menu da cui è possibile chiamare la funzione Contacaratteri o Substr dopo aver chiesto in input i valori necessari all'utente<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Normalizza frase</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. La frase è terminata dall’introduzione del carattere di invio. La frase contiene sia caratteri maiuscoli che caratteri minuscoli, e complessivamente al più 100 caratteri. Il programma deve svolgere le seguenti operazioni:<br><br>
+
+				1) visualizzare la frase inserita<br>
+
+				2) costruire una nuova frase in cui il primo carattere di ciascuna parola nella frase di partenza è stato reso maiuscolo. Tutti gli altri caratteri devono essere resi minuscoli.<br>
+
+				Il programma deve memorizzare la nuova frase in una opportuna variabile<br>
+
+				3) visualizzare la nuova frase.<br><br>
+
+				Ad esempio la frase cHe bElLA gIOrnaTa diviene Che Bella Giornata.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 8</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Sostituisci carattere</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. <br>La frase
+				è terminata dall’introduzione del carattere di invio e contiene complessivamente al più 100
+				caratteri. Il programma deve svolgere le seguenti operazioni:<br><br>
+				1)  visualizzare la frase inserita<br>
+				2)  costruire una nuova frase in cui tutte le occorrenze del carattere ’.’ sono sostituite con il carattere di ritorno di linea ’\n’. Il programma deve memorizzare la nuova frase in una opportuna variabile<br>
+				3)  visualizzare la nuova frase.<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 9</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Codifica la frase</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere un programma in linguaggio C++ che legga una frase introdotta da tastiera. <br>La
+				frase è terminata dall’introduzione del carattere di invio. La frase contiene sia caratteri deve svolgere le seguenti operazioni:<br><br>
+				<li> visualizzare la frase inserita.</li>
+				<li> costruire una nuova frase tale che ogni lettera vocale presente nella frase di partenza
+				sia seguita dalla lettera ’f’ (se la vocale è minuscola) o dalla lettera ’F’ (se la vocale è
+				maiuscola) nella nuova frase. Il programma deve memorizzare la nuova frase in una
+				opportuna variabile.</li>
+				<li> visualizzare la nuova frase.</li>
+				<br>
+				Ad esempio, la frase VacAnze di NaTAle diviene VafcAFnzef dif NafTAFlef.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 10</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Underscore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Data una frase in ingresso, sostituire tutti gli spazi con underscore (trattino basso). Visualizzare la frase risultante
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 11</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Inverti maiuscole e minuscole</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. <br>Utilizzare le funzioni isupper e islower e toupper e tolower
+
+			<div class="soluzione">
+				Per quelli che sono in difficoltà di seguito la soluzione.<br>
+
+				<pre>
+
+				int main(int argc, char** argv) {
+				// Variabili di input
+				string frase1;
+				// Variabili
+				int l;
+				char x;
+				string frase2 = "";
+				// Input
+				cout << "Inserire una frase: ";
+				getline(cin, frase1);
+				// Calcolo lunghezza stringa
+				l = frase1.length();
+				// Ciclo di conversione
+				for(int i=0; i < l; i++){
+					// Estrazione carattere
+					x = frase1.at(i);
+					// Controllo se il carattere è MAISCUOLO
+					if(isupper(x))
+					x = (int)x + 32;
+					// Aggiunta del carattere estratto alla stringa di output
+					frase2 = frase2 + x;
+				}
+				// Output
+				cout << frase2 << endl;
+			}
+
+			</pre>
+
+			</div>
+
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 12</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Verifica se le stringhe sono uguali</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Ricevere in ingresso due stringhe.<br>
+				Verificare se sono uguali. Due stringhe sono uguali se hanno le stesse lettere nella stessa posizione indipendemente dal fatto che siano maiuscole o minuscole<br>
+				<br>
+				es. AdRiaNa è uguale a aDRIana
+				<br>
+				(suggerimento: traformare le due stringhe tutte in maiuscolo o tutte in minuscolo e fare il confronto)
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 13</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Sostituisci spazi con _</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Data una frase in ingresso (utilizzare il getline) sostituire gli spazii con il carattere _. <br>Visualizzare la stringa risultante.
+
+				<div class="soluzione">
+				Per quelli che sono in difficoltà trovate la soluzione.<br>
+				<pre>
+				int main(int argc, char** argv) {
+
+				string frase;
+				int i;
+
+				cout<<"Inserisci una frase:";
+
+				getline(cin,frase);
+
+				for (i=0; i<=frase.length(); i++)
+				{
+
+				if (frase.at(i)==' '){
+
+				frase.at(i)='_';}
+
+				}
+
+				stampo la frase.
+			</pre>
+		</div>
+
 			</div>
 
 		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 14</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
 
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 15</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
 
 
 	</div>

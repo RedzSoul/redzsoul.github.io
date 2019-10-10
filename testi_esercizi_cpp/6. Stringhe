@@ -12,14 +12,14 @@ Nel caso prosecuzione corretta del programma le operazioni da svolgere sono le s
 
     Modificare ogni carattere del vettore sostituendo il carattere 		minuscolo con il corrispondente maiuscolo e viceversa (utilizzare 		la codifica ASCII)
     Visualizzare i caratteri del vettore dopo la modifica
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
-Prima di iniziare l'esercizio ricordare che 
+Prima di iniziare l'esercizio ricordare che
 
 Per misurare la lunghezza di una stringa si utilizza la funzione int length():
 
-esempio 
+esempio
 
 int i;
 string saluto=”ciao”;
@@ -35,6 +35,7 @@ Scrivere un programma che riceva in input una stringa ed permette di eseguire le
 
 4)esci
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 ripasso uso delle stringhe
@@ -49,7 +50,7 @@ Eran i mesi di seminare
 
 O mordo tua nuora, o aro un autodromo
 
- 
+
 
 suggerimento di Leandro per gestire gli spazi senza utilizzare while interni:
 while(i < k && palin){
@@ -70,6 +71,7 @@ Il main chiede ciclicamente una frase all'utente chiama la funzione palindroma e
 
 Il ciclo termina quando l'utente indica che vuole terminare (specifica un carattere particolare)
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 conta parole (ripasso per il compito)
@@ -77,7 +79,7 @@ conta parole (ripasso per il compito)
 Scrivere una funzione C/C++ che determini il numero di parole presenti in una stringa tenendo conto dei vari caratteri di separazione (spazi, punteggiatura, ecc..).Scrivere il corrispondente main che attiva la funzione. All'interno del main visualizzare il numero di parole. Non utilizzare funzioni predefinite.
 
 Il conteggio delle parole deve essere realizzato mediante un algoritmo manuale
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 De Bello Gallico
@@ -95,7 +97,7 @@ una stringa di testo inserita dall’utente e visualizzare
 il risultato, il secondo deve accettare
 una stringa segreta e decodificarla visualizzando
 il testo originale.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------
 
 Data una stringa in ingresso, verificare se la stringa è palindroma.
@@ -105,7 +107,7 @@ Prima senza utilizzare le funzioni e poi spostando il controllo sulla stringa al
 Commentare bene il programma.
 
 Descriver il programma anche in flow chart
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -----------------------------------------------------------------------
 
 Scrivere una funzione ContaCaratteri  che riceve in ingresso due stringhe e restituisce come valore di ritorno quanti caratteri della prima stringa sono presenti nella seconda (per esempio, il risultato restituito se i due valori in ingresso sono "PIPPO" e PIPPICALZELUNGHE" è 4)
@@ -113,7 +115,7 @@ Scrivere una funzione ContaCaratteri  che riceve in ingresso due stringhe e rest
 scrivere una funzione Substr che riceve in ingresso due stringhe s1 e s2 e restituisce 0 se  s1 e sottostringa di s2, -1 altrimenti.  Una stringa è sottostringa di un'altra se è contenuta nell'altra. Ad esempio "cane" è sottostringa di "canestro", fila e sottostringa di "infilare",
 
 scrivere un programma in cui inserire un menu da cui è possibile chiamare la funzione Contacaratteri o Substr dopo aver chiesto in input i valori necessari all'utente
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 
 esercizio 1:
@@ -130,6 +132,7 @@ _ visualizzare la nuova frase.
 
 Ad esempio la frase cHe bElLA gIOrnaTa diviene Che Bella Giornata.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 esercizio 2:
@@ -142,7 +145,7 @@ caratteri. Il programma deve svolgere le seguenti operazioni:
 2)  costruire una nuova frase in cui tutte le occorrenze del carattere ’.’ sono sostituite con il carattere di ritorno di linea ’\n’. Il programma deve memorizzare la nuova frase in una opportuna variabile
 3)  visualizzare la nuova frase.
 
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 
 codifica la frase
@@ -157,17 +160,17 @@ opportuna variabile.
  visualizzare la nuova frase.
 Ad esempio, la frase VacAnze di NaTAle diviene VafcAFnzef dif NafTAFlef.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 esercizi sule stringhe
 
 data una frase in ingresso, sostituire tutti gli spazi con underscore (trattino basso). Visualizzare la frase risultante
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 esercizio sulle stringhe
 
 Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. Utilizzare le funzioni isupper e islower e toupper e tolower
---------------------------------------------------------------------------
-
-esercizio per formattare una stringa in ingresso. Deve funzionare in tutti i casi di errore e deve riproporre una nuova data in caso di errore.
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
 --------------------------------------------------------------------------
 ricevere in ingresso due stringhe.
@@ -177,7 +180,7 @@ Verificare se sono uguali. Due stringhe sono uguali se hanno le stesse lettere n
 es. AdRiaNa è uguale a aDRIana
 
 (suggerimento: traformare le due stringhe tutte in maiuscolo o tutte in minuscolo e fare il confronto)
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
     Data una frase in ingresso (utilizzare il getline) sostituire gli spazii con il carattere -. Visualizzare la stringa risultante.
@@ -194,11 +197,11 @@ string frase;int i;
 
 cout<<"Inserisci una frase:";
 
-getline(cin,frase);  
+getline(cin,frase);
 
-for (i=0; i<=frase.length(); i++){  
+for (i=0; i<=frase.length(); i++){
 
-if (frase.at(i)==' '){    
+if (frase.at(i)==' '){
 
 frase.at(i)='_';}
 
@@ -206,16 +209,17 @@ frase.at(i)='_';}
 
 return 0;}
 
-------------------------------------------------------------------------- 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+-------------------------------------------------------------------------
 
-    Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. Utilizzare le funzioni isupper e islower e toupper e tolower.
+Partendo da una frase in ingresso, visualizzare una frase uguale a quella di partenza dove le lettere maiuscolo sono state trasformate in minuscole. Utilizzare le funzioni isupper e islower e toupper e tolower.
 
 
 Per quelli che sono in difficoltà di seguito la soluzione
 
 int main(int argc, char** argv) {                // Variabili di input        string frase1;                // Variabili        int l;        char x;        string frase2 = "";                // Input        cout << "Inserire una frase: ";        getline(cin, frase1);                // Calcolo lunghezza stringa        l = frase1.length();                // Ciclo di conversione        for(int i=0; i < l; i++){                              // Estrazione carattere               x = frase1.at(i);                              // Controllo se il carattere Ã¨ MAISCUOLO               if(isupper(x))                                              x = (int)x + 32;                              // Aggiunta del carattere estratto alla stringa di output               frase2 = frase2 + x;        }                // Output        cout << frase2 << endl;}
 
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ------------------------------------------------------------------------
 
 Scrivere un programma che dopo aver acquisito una stringa da tastiera verifichi se questa è palindroma, stampando un opportuno messaggio all'utente. Una stringa si dice palindroma quando si
@@ -227,8 +231,5 @@ Il programma deve svolgere le seguenti operazioni:
     Aggiornare la stringa in modo che tutti i caratteri siano minuscoli e visualizzarla
     Verificare se la stringa è palindroma stampando un opportuno messaggio all'utente.
 
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
-
-
-
-
