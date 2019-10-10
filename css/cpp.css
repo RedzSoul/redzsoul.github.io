@@ -75,7 +75,7 @@ table.cifratura td {
 	padding: 12px;
 	border-radius: 4px;
   }
-  
+
   #bottoneTop:hover {
 	background-color: #555;
   }
@@ -99,3 +99,7 @@ table.cifratura td {
 	background-color: #555;
   }
 
+	.testo img {
+	   height: 30%;
+	   width: 100%;
+	}
