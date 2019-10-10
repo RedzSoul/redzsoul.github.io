@@ -2196,132 +2196,443 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Squadra di calcio</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Realizza un programma che, partendo da un array che contiene i dati personali dei giocatori di una squadra di calcio, permetta di calcolare il totale dei goal segnati specificando:<br><br>
+
+				  --- i goal segnati dagli attaccanti (numero di maglia da 7 a 11)<br>
+
+				  --- i goal segnati dai centrocampisti(numero di maglia da 4 a 6)<br>
+
+				  --- i goal segnati dai difensori (numero di maglia da 2 a 3) (subiti nel caso del portiere con numero 1)<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Piante</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Caricare in ingresso N piante aromatiche di cui bisogna memorizzare la specie, la città in cui è stato trovata per la prima volta e la sua dimensione media (float).<br>
+
+				Richiedere in ingresso la specie di una pianta, visualizzare la sua dimensione media e la città in cui è stato trovata. <br>(Visualizzare un msg di errore nel caso in cui la pianta non esista, se la pianta esiste fermare il ciclo non appena viene trovata)
+
+				++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br>
+
+				Facendo riferimento alla struct dell'esercizio sopra e avendo dichiarato un vettore di tipo piante di lunghezza costante, realizzare un ciclo con un menu, in cui l'utente può selezionare le seguenti operazioni:<br>
+
+				0) esci dal ciclo<br>
+
+				1) aggiungi pianta<br>
+
+				2) ricerca la pianta specificata dall'utente (la ricerca si ferma se si trova la pianta)<br>
+
+				3) visualizza le piante presenti<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Vettore di studenti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma C++ che, a partire da un vettore di strutture di studenti di dimensione N (definito dall'utente), (struttura di tipo studente che contiene nome ed età) e caricato dall'utente, copi in un secondo vettore  i soli elementi del primo vettore compresi tra l'età minima e l'età massima; Visualizzare gli elementi del secondo vettore.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Autosalone con struttura annidata</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Definire la struttura dati Automobile che descrive un’automobile in base a marca, cilindrata, anno di immatricolazione e acquirente (l’acquirente è caratterizzato dai soli nome e cognome). Acquirente è un'altra struttura. <br>Bisogna quindi dichiarare una struttura annidata.
+				<br>
+				Scrivere una funzione C++ Carica che ricevuto in ingresso un vettore di automobili, la sua lunghezza, permette il caricamento da tastiera.<br>
+
+				Scrivere una funzione (crea_vett_acquirenti) che ricevuto in ingresso un vettore di automobili, la sua lunghezza e una cilindrata, restituisca in un vettore di acquirenti il nome e il cognome degli acquirenti che hanno auto con quella cilindrata<br>
+
+				Nel main dopo aver dichiarato il vettore di automobili, caricarlo con l'opportuna funzione<br>
+
+				Chiedere all'utente una cilindrata, chiamare la funzione crea_vet_acquirenti e visualizzare nel main il nome e il cognome degli acquirenti che hanno tale cilindrata.
+
+
+				<div class="soluzione">
+				esempio di definizione delle strutture:<br><br>
+
+				struct Acquirente {<br>
+
+				   string nome;<br>
+
+				   string cognome;<br>
+
+				};<br><br>
+
+				struct Automobile {<br>
+
+				      string marca;<br>
+
+				      int cilindrata;<br>
+
+				     int anno;<br>
+
+				     Acquirente x;<br>
+
+				};<br><br>
+
+				esempio di dichiarazione di un vettore di Automobili:<br><br>
+
+				Automobile V[10];<br><br>
+
+				stampa dell'acquirente della seconda automobile presente nel vettore:<br><br>
+
+				cout<<(V[1].x).nome;
 			</div>
+		</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Fantacalcio (uso annidato di struct)</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Definire la struttura dati Squadra che descrive una squadra di calcio ideale con il relativo allenatore.<br>
+				Una squadra è identificata da nome, colore della maglia, punteggio corrente e allenatore.<br>L’allenatore
+				è una persona caratterizzata da nome e cognome più il numero dei titoli vinti (un numero intero).<br>Scrivere un programma C++ che, dichiarata una array Fantacalcio di tipo Squadra (per comodità se ne fissi la dimensione a 10 elementi), consenta di inserire da tastiera i dati delle squadre e dei relativi allenatori e di visualizzare il solo
+				cognome degli allenatori di squadre che hanno più di 30 punti in classifica, oltre al numero totale di allenatori che hanno vinto almeno un titolo.<br>
+				<br>
+				Suddividere il programma in più file.<br>
+
+				Utilizzare una  funzione che carica il vettore, un'altra funzione che visualizza il cognome degli allenatori che hanno più di 30 punti in classifica, e un'altra funzione che restituisce il numero totale degli allenatori che hanno vinto almeno un titolo.<br>
+				<br>
+				Nel main chiamare la funzione che carica il vettore, quella che visualizza gli allenatori e visualizzare in numero degli allenatori restituito dalla terza funzione.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 6</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">gestione Stack (Pila e coda)</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Il seguente programma utilizza il vettore per realizzare una struttura dati Pila e Coda:<br><br>
+
+				####parte n. 1  Pila####<br>
+				<br>
+				Creare un programma che gestisce una struttura dati Pila. <br>La Pila ha una dimensione massima prefissata (si supponga N). Le operazioni che si possono effettuare sulla pila sono inserite in un menu (possono essere eseguite più volte) e sono le seguenti:<br><br>
+
+				<li>Svuota_Pila: rimuove tutti gli elementi presenti nella pila</li>
+
+				<li>Push: inserisce l'elemento ricevuto come parametro in testa alla pila (se non ho superato le dimensioni massime, altrimenti restituisce un errore)</li>
+
+				<li>Pop: rimuove il primo elemento in testa alla lista (se esiste, altrimenti restituisce un errore)</li>
+
+				<li>Stampa Pila: visualizza tutti gli elementi presenti nella pila</li>
+				<br>
+				####parte n. 2  Coda####<br>
+				<br>
+				Estendere  il programma precedente inserendo la gestione della struttura dati Coda.<br>La Coda ha una dimensione massima prefissata (si supponga M). Le operazioni che si possono effettuare sulla coda sono inserite nel menu (possono essere eseguite più volte) e sono le seguenti:<br>
+				<br>
+				<li>Svuota_Coda: rimuove tutti gli elementi presenti nella Coda</li>
+
+				<li>Push: inserisce l'elemento ricevuto come parametro in fondo alla coda (se non ho superato le dimensioni massime, altrimenti restituisce un errore)</li>
+
+				<li>Pop: rimuove il primo elemento in testa alla coda (se esiste, altrimenti restituisce un errore) e scorre tutti gli elementi successivi in modo da non lasciare posizioni vuote</li>
+
+				<li>Stampa Coda: visualizza tutti gli elementi presenti nella Coda</li>
+
+				<br>
+
+				Le due strutture dati devono essere inserite all'interno di un unico progetto e i file e le funzioni  devono essere organizzati in modo opportuno. Tutto deve essere debitamente commentato
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Collezione di Film</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Si vuole gestire una collezione di Film, per ognuno dei quali si vuole memorizzare: il titolo (string), la durata (int) e il prezzo (float). <br>Questi dati sono memorizzati in 3 vettori. Chiedere all'utente il numero dei film che vuole inserire.<br>
+				<br>
+				Il programma preveda il seguente menù (l'utente può rieseguire più volte se stesse funzioni):<br>
+				    1) Caricamento<br>
+				    2) Visualizzazione<br>
+				    3) Ricerca<br>
+				    4) Costo max e min<br>
+				    5) Copia film che superano un certo prezzo<br>
+				    6) (opzionale) Nuovo_inserimento<br>
+				    7) Fine programma<br>
+				<br>
+				Per ogni voce di menù (eccetto l’ultima) prevedere una chiamata ad una funzione.<br>Si ricordi che tutte le funzioni non richiedono in input dati all'utente. <br>Tutto ciò che serve viene richiesto nel main e viene passato in input alle funzioni (tranne che per la funzione carica). <br>Le funzioni non stampano nulla al proprio interno tranne che per la funzione stampa o ove esplicitamente indicato.<br>
+				<br>
+				Spiegazione delle voci di menù:<br>
+				    1) [funzione: carica] Caricamento manuale dei film da tastiera (titolo, durata e prezzo) (opzionale controllare che il titolo non esista già, in tal caso non inserirlo)<br>
+				    2) [funzione: stampa] Visualizzazione stile elenco di tutti i film (titolo, durata e prezzo)<br>
+				    3) [funzione: cerca] Riceve in ingresso il titolo del film da cercare. Tale titolo viene richiesto all'utente nel main e :<br>
+				        ◦◦◦◦◦◦ se non esiste scrivere (nel main)  un messaggio …<br>
+				        ◦◦◦◦◦◦ se esiste scrivere (nel main)  il relativo prezzo<br>
+				    4) [funzione: minmax] Visualizzazione nel main dei dati del film (titolo, durata, prezzo) che costa di più e quello che costa di meno (si suppone che tutti i film abbiano costi diversi)<br>
+				    5)  [funzione: copia_film] La funzione copia in altri tre vettori i dati dei film che superano il prezzo ricevuto in ingresso come parametro. Se nessun film supera il prezzo specificato la funzione visualizza un messaggio di errore, altrimenti dove avere effettuato la copia chiama al suo interno la funzione stampa già definita in precedenza.<br>
+				    6) [funzione opzionale Nuovo_inserimento] Inserimento di un nuovo film(con tutti i suoi dati) in una posizione x e spostamento degli altri nelle posizioni successive. Si ipotizzi che il numero di elementi del vettore utilizzati dall'utente sia sufficiente per effettuare questa operazione.<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 8</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Matrice di studenti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Caricare una matrice di studenti (struttura con nome e età) di dimensione righe per colonne.<br>
+
+				Ogni riga contiene gli studenti di una classe.<br><br>
+
+				Scrivere una funzione che inserisce in un vettore l'età media della classe e le visualizzi (utilizzando la funzione stampa vettore)<br>
+
+				Scrivere una funzione che inserisce in un altro vettore l'età massima degli studenti tra gli studenti di una classe e le visualizzi (utilizzando la funzione stampa vettore)<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 9</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Club Filatelico</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				I dati degli N soci di un club filatelico sono memorizzati in un vettore di dimensione N (costante). Per ogni socio i dati sono:<br><br>
+
+				Nome,<br>
+
+				Cognome,<br>
+
+				Anno di edizione,<br>
+
+				numero francobolli<br><br>
+
+				Scrivere un programma che, dopo aver caricato i dati dei soci (funzione carica), permette di:<br><br>
+
+				    <li>calcolare (funzione calcola) e stampare la quantità media di francobolli di un anno di edizione fornito in input<br>
+				    <li>stampare l'anno di edizione e il numero di francobolli (funzione cerca_anno_e_numero) posseduti da un socio di cui è fornito in	input il nome e il cognome (segnalare se non esiste)<br>
+				    <li>Ricopiare (funzione copia_collezionisti) in un vettore (e poi visualizzarli con una funzione stampa) solo i nomi
+					dei collezionisti che hanno un numero di francobolli maggiori di 1000</li>
+					<br>
+				Definire un menu e richiedere in input i dati necessari nel main e visualizzare gli output sempre nel main(nelle funzioni non richiedere in input dati e non stamparli se non strettamente necessari).<br>
+
+				Il progetto deve essere formato da 3 file (main, le funzioni e i prototipi). <br>Al termine dello svolgimento delle esercizio effettuare lo zip dell'intera cartella che deve avere il Cognome dello studente.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 10</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Rubrica telefonica</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Si realizzi un programma in linguaggio C++ in grado di gestire una rubrica di nomi e numeri
+				telefonici. <br>La rubrica deve contenere fino a 100 voci diverse. Ciascuna voce è composta da
+				un nome (max 40 caratteri) e da un numero di telefono (max 20 caratteri).<br>
+				Il programma deve fornire all’utente un menù di scelta, con le seguenti voci:<br><br>
+				1) Aggiungi nuova voce in rubrica (controllare che il numero telefonico non esista già, in tal caso non è possibile inserire l'elemento)<br>
+				2) Ricerca esatta per nome<br>
+				4) Stampa completa rubrica<br>
+				0) Esci dal programma<br><br>
+				Una volta che l’utente ha scelto l’operazione desiderata (1-3), il programma acquisirà i
+				dati necessari dall’utente ed eseguirà il comando. <br>Nota: nella rubrica non possono esistere
+				due voci con lo stesso numero.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 11</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Campionato di calcio</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Si realizzi un programma in C++ in grado di gestire le squadre di calcio del campionato 2015/2016.<br><br>
+
+				Ogni squadra contiene le seguenti informazioni:<br><br>
+
+				    <li>nome</li>
+				    <li>colore maglia</li>
+				    <li>punteggio in classifica</li>
+				    <li>nome allenatore.</li>
+				<br>
+				Il numero delle squadre del campionato non è stabilito a priori, ma viene fissato dall'utente in fase di esecuzione.<br>
+
+				Organizzare il programma utilizzando le funzioni e definire i parametri secondo quanto richiesto dalle funzionalità successive.<br>
+
+				Il programma deve fornire all’utente un menù di scelta (che può essere richiamato più volte), con le seguenti voci:<br><br>
+
+				1) Caricare le squadre con le relative informazioni (utilizzare una funzione)<br>
+
+				2) Visualizzare il nome della squadra che è in rispettivamente in testa e in coda alla classifica (la ricerca dei nomi delle squadre deve essere effettuata in una funzione e le visualizzazioni all'interno del main)<br>
+
+				3) Visualizzare il nome dell'allenatore della squadra che ha un punteggio di esattamente 30 punti. (Scrivere una funzione che effettui la ricerca e che restituisca il nome dell'allenatore. Nel caso in cui non esiste nessuna squadra con quel punteggio, nel main bisogna visualizzare un messaggio che indica che non è stato trovato alcuna squadra)<br>
+
+				4) esci<br><br>
+
+				Una volta che l’utente ha scelto l’operazione desiderata (1-4), il programma acquisirà i
+				dati necessari dall’utente ed eseguirà il comando.<br>
+
+				E' richiesto che il progetto venga strutturato in più file.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 12</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Autosalone</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+
+				Si realizzi un programma in C++ in grado di gestire le automobili presenti in un autosalone.<br>
+
+				Ogni automobile contiene le seguenti informazioni:<br>
+
+				Marca, cilindrata, anno di immatricolazione, nome acquirente<br>
+
+				Il numero delle automobili non è stabilito a priori, ma viene fissato dall'utente in fase di esecuzione.<br>
+
+				Organizzare il programma utilizzando le funzioni e definire i parametri secondo quanto richiesto dalle funzionalità successive.<br>
+
+				Il programma deve fornire all’utente un menù di scelta (che può essere richiamato più volte), con le seguenti voci:<br><br>
+
+				1) caricare i dati di tutte le auto presenti nell'autosalone<br>
+
+				2) visualizzare la marca dell'auto con cilindrata minima (usare le funzioni ma le visualizzazioni devono essere fatte nel main)<br>
+
+				3) visualizzare il numero totale di auto che sono state immatricolate nell'anno specificato dall'utente (se l'anno non esiste visualizzare un errore nel main)<br>
+
+				4) ricopiare in un altro vettore solo le automobili che abbiano una cilindrata maggiore di 2000 e visualizzare i dati presenti nel nuovo vettore<br>
+
+				5) esci<br>
+				<br>
+				Una volta che l’utente ha scelto l’operazione desiderata (1-5), il programma acquisirà i
+				dati necessari dall’utente ed eseguirà il comando.<br>
+
+				E' richiesto che il progetto venga strutturato in più file.
+		</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 13</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Cartoline</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Realizzare un programma in linguaggio C+ per registrare le cartoline scambiate tra un
+				gruppo di amici (massimo 20 amici).<br>
+				L’elenco delle cartoline è memorizzato in un file di testo, (il numero di linee del file è la prima informazione presente nel file stesso). <br>Le righe successive contengono ciascuna tre elementi: il nome del mittente, il nome del
+				destinatario ed il nome della località da cui la cartolina è stata inviata. <br>I nomi degli amici
+				e delle località devono essere privi di spazi.<br>
+
+				Il programma carica i dati del file in una struttura dati in memoria centrale a scelta del programmatore.<br>
+
+				Viene richiesto in input all'utente il nome di un amico e il programma deve visualizzare il numero di cartoline che questa persona ha inviato oppure ha ricevuto (gestire anche il caso in cui l'amico non sia presente).<br>
+				<br>
+				Visualizzare la località più presente e quella meno presente nelle cartoline
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 14</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Cartellino del lavoratore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Il problema esposto deve essere realizzato in linguaggio C++. Ogni problema deve essere corredato di commenti e lo zip deve contenere l'intera cartella<br>
+				Le funzioni devono essere inserite in un file opportuno, così come i prototipi delle funzioni.<br>
+				Le funzioni già fatte e le strutture già utilizzate nel main possono essere ricopiate da esempi precedenti. <br>Inserire il controllo che i numeri della matrice debbono essere interi.<br>
+				<br>
+				Si ricordi che tutte le funzioni non richiedono in input dati all'utente.<br>
+				Tutto ciò che serve viene richiesto nel main .<br>
+				Scrivere il documento di test prima di scrivere il codice.<br><br>
+
+				Si vuole gestire le ore di lavoro svolte, in una settimana, da alcune persone.<br>
+				Prevedere una matrice e 2 vettori, come nell’esempio mostrato in figura:<br><br>
+
+
+						//FIGURA DA INSERIRE!
+
+				<br>
+				Realizzare un programma in C++ che preveda il seguente menù:<br><br>
+				    1) Caricamento<br>
+				    2) Media<br>
+				    3) Assenze<br>
+				    4) Buchi<br>
+				    5) Persone che lavorano di più e di meno<br>
+				    6) Ore di una persona in un giorno<br>
+				    7) Scambio<br>
+				    8) Ordina<br>
+				    9) Fine programma<br>
+				<br>
+				Spiegazione delle voci di menù:<br><br>
+				    1) [funzione: Caricamento] Caricamento manuale (da tastiera) dei 2 vettori (Giorni e Persone) e della matrice (Ore)<br>
+				    2)  [funzione: Media] Richiamare una funzione che stampa il nome di ogni persona con la media giornaliera delle ore lavorate (da tale persona).<br>
+				    3) [funzione: Assenze] Richiamare una funzione che stampi il nome delle persone che non hanno lavorato (zero ore) per almeno 3 giorni<br>
+				    4) [funzione: Buchi] Richiamare una funzione che stampi il nome delle persone che hanno sempre lavorato tutti i giorni (per ogni giorno le ore sono maggiori di zero)<br>
+				<br>
+				    5) [funzione: Piuemeno] Richiamare una funzione che restituisca la posizione (indice) della persona che in totale ha fatto più ore e la posizione di quello che ne ha fatte di meno (si suppone che ce sia una sola, per ciascun caso. Nel main stampare i nomi di tali persone<br>
+				    6) [funzione: OreXY] Stampa delle ore fatte da una certa persona in un certo giorno.
+				Nel main chiedere il nome di una persona e il nome di un giorno.
+				Richiamare la funzione.  Nel main stampare il risultato<br>
+				    7) [funzione: Scambio] Nel main chiedere i nomi di 2 giorni.
+				Richiamare la funzione per scambiare le ore di tali giorni (per tutte le persone).<br>
+				    8) [funzione: Ordina] Richiamare una funzione che stampi il nome delle persone in ordine crescente in base al numero di ore svolte durante la settimana<br>
+				<br>
+				Dove ritenuto necessario utilizzare funzioni anche se non è espressamente indicato<br>
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 15</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<div class="testo">
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 16</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<div class="testo">
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 17</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<div class="testo">
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 18</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<div class="testo">
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 19</span>
+			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<div class="testo">
+				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 20</span>
 			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
 			<div class="testo">
 				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
