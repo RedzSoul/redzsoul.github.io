@@ -5,21 +5,21 @@ Scrivere un programma che legge da un file di testo e verifica se in ogni riga �
 es. aehBstOMjjdjsjdBkkA  visualizza 47811721
 
 nella riga  aehBstMOjjdksjdABkkk  risposta 0
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Scrivi un programma che legga due file che contengono ripettivamente i titoli di film e gli attori di ogni film.
 
 Per separare gli attori da un film all'altro si usa il carattere #
 
-es. il primo file contiene 
+es. il primo file contiene
 
 titolo 1
 
-titolo 2 
+titolo 2
 
 titolo 3
 
-il secondo file contiene 
+il secondo file contiene
 
 attore 1  film 1
 
@@ -44,7 +44,7 @@ titolo 1 attore 1  film 1 attore 2 film 1
 titolo 2 attore 1 film 2 attore 2 film 2 attore 3 film 2
 
 titolo 3 attore 1 film 3
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 Creare una funzione che riceve in ingresso un carattere, una chiave e restituisce una chiave cifrata secondo l'algoritmo di Cesare (lo avete fatto a sistemi altrimenti lo cercate su internet). es, se il carattere è 'c' e la chiave è 4, il carattere restituito è 'g'. Analogamente per una funzione di decifratura. es, se il carattere è 'c' e la chiave è 4, il carattere restituito è 'g'.
@@ -53,23 +53,24 @@ Dichiarare una matrice di caratteri il cui contenuto viene letto da un file (il 
 
 stampare la matrice parallela e salvarla in un altro file
 
-scrivere una funzione di decifratura che trasferisce tutti i caratteri della matrice cifrata in una terza matrice on cui ogni carattere ritorna originale. Verificare che la matrice di partenza sia uguale alla terza  matrice 
+scrivere una funzione di decifratura che trasferisce tutti i caratteri della matrice cifrata in una terza matrice on cui ogni carattere ritorna originale. Verificare che la matrice di partenza sia uguale alla terza  matrice
 
- 
+
 
 NOTA IMPORTANTE: per leggere carattere per carattere da un file si usa get.
 
 es. se il file ha il riferimento  myFIle  dopo essere stato aperto, devo usare il metodo  myFile.get(c) dove è una variabile di tipo carattere
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione) memoizzare i soli multipli di 5 nel file di testo multipli5.txt.
 
 Aggiungere all'esercizio anche la lettura del file
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione), memorizzare i numeri positivi nel file positivi.txt e quelli negativi nel file negativi.txt
 
 Aggiungere la funzione per la lettura del file
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 File prenotazioni dei biglietti in un teatro
 
@@ -82,6 +83,8 @@ Organizzare esercizio con un menu:
 dovete usare una matrice perche i posti sono 10 file ciascuna di 20 posti disponibili.
 
 Il file iniziale sarà tutto formato da zeri e quando si prenota si mette a 1
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 ---------------------------------------------------------------------------
 
 La biblioteca
@@ -127,13 +130,14 @@ Maria
 
 2012
 
- 
 
-Definire il progetto utilizzando anche il file dei prototipi e delle funzioni. 
 
- 
+Definire il progetto utilizzando anche il file dei prototipi e delle funzioni.
+
+
 
 In allegato trovate un esempio di come si possono leggere da un file valori interi e stringhe.  /files/2960661/biblioteca.cpp questo è l'esempio del file di input: /files/2960661/in_biblioteca.txt      Il programmino stampa a video quello che legge dal file. Bisogna effettuare tutti i controlli in quanto non è detto che il file di input contenga tutte le informazioni corrette
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 rivisitazione dell'esercizio della biblioteca con la creazione del documento di specifiche
@@ -141,14 +145,14 @@ rivisitazione dell'esercizio della biblioteca con la creazione del documento di 
 
 Rivedere la consegna dell'esercizio della biblioteca definendo il documento di specifiche seguendo la bozza in allegato  /files/2960661/Specifiche_Biblioteca.docx
 
- 
+
 
 Aggiungere la lettura di stringhe formate da più parole e il controllo che il codice del libro sia univoco
 
- 
+
 
 AGGIUNGERE LA RIMOZIONE DI UN LIBRO DOPO AVER SPECIFICATO IL CODICE. Bisogna considerare anche il fatto che il codice non sia presente visualizzando un errore
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 -------------------------------------------------------------------------
 
 
@@ -176,15 +180,15 @@ definire la funzione che ricopia i due vettori nel terzo in modo ordinato
 
 definire la funzione visualizza un vettore (il vettore finale)
 
- 
+
 
 definire le interfacce di ogni funzione e commentarle dettagliatamente
 
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 Scelga la verifica semplificata chi deve recuperare e comunque non si sente sicuro (data la semplicità degli argomenti proposti il voto massimo è 8). Si tratta di due esercizi da svolgere separatamente. /files/2960661/Verifica_aprile_semplificata(2).pdf
 
- 
+
 
 Chi si sente sicuro svolga la verifica non semplificata che è un solo esercizio che comprende diverse funzionalità. Il voto max in questo caso è 10.
 
@@ -210,11 +214,11 @@ Nel main realizzare un ciclo in cui è possibile:
     Visualizzare a video i dati dei quadri per un particolare autore. Gestire il caso in cui l'autore non è presente.
     Salvare in un file i dati dei quadri che devono essere restaurati.
     Inserire in un vettore tutti i quadri di un museo ricevuto come parametro. Tali quadri devono essere ordinati per anno di creazione  e inseriti in un file.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 esercizio 6: leggere da un file di input una sequenza di numeri interi e inserirli in un vettore di massimo 100 elementi. Ordinare il vettore con un algoritmo a scelta e ricopiare il vettore ordinato in un file di output
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Esercizio 1
@@ -222,19 +226,7 @@ Esercizio 1
 Scrivere un programma C++ che consenta di scrivere in un file studenti.txt i dati di alcuni studenti.
 
 In particolare, il programma chiederà all'utente il numero di studenti da inserire e, per ogni studente chiederà il nome, il cognome e l'anno di nascita. I dati di ogni studente saranno scritti su un'unica riga separati da uno spazio, ovvero Cognome Nome AnnoNascita. Nel file ci sarà una riga per ogni studente. Ad ogni esecuzione del programma i dati già presenti sul file non dovranno essere sovrascritti, al contrario i dati dei nuovi studenti saranno aggiunti alla fine del file.
-
---------------------------------------------------------------------------
-
-Esercizio 2
-
-Data una sequenza di interi forniti dall'utente (il valore 0 interrompe la digitazione) memorizzare i soli multipli di 5 nel file di testo multipli5.txt.
-
---------------------------------------------------------------------------
-
-Esercizio 3
-
-Data una sequenza di interi forniti dall'utente (il valore 0 interrompe la digitazione) memorizzare i numeri positivi nel file positivi.txt e i numeri negativi nel file negativi.txt.
-
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
 
 Scrivere un programma (prendendo come esempio la soluzione dell'es. del 7-01) per gestire i dati relativi alle prove orali di alcuni studenti.
@@ -256,6 +248,6 @@ Il programma, dopo aver caricato in un vettore gli eventuali dati già presenti 
     Uscita menu, che dopo aver memorizzato i dati sul file, termina l'esecuzione del programma.
 
 Prevedere apposite funzioni/procedure per la realizzazione del programma.
+
+OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 --------------------------------------------------------------------------
-
-

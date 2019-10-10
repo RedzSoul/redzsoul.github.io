@@ -3287,139 +3287,299 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Parola bomba in un file di testo</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma che legge da un file di testo e verifica se in ogni riga è presenta la parola bomba anche se sono inframmezzate da altre lettere. <br>Una volta individuata la parola il programma restituisce a video la posizione di ogni singolo caratteri che la costituiscono.<br>
+				<br>
+				es. aehBstOMjjdjsjdBkkA  visualizza 47811721<br>
+
+				nella riga  aehBstMOjjdksjdABkkk  risposta 0
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">File prenotazioni dei biglietti in un teatro</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Organizzare esercizio con un menu:<br><br>
+
+				    <li>per visualizzare la situazione dei posti liberi/prenotati/riservati nel teatro;</li>
+				    <li>effettuare una prenotazione;</li>
+				    <li>riservare un posto</li>
+				<br>
+				dovete usare una matrice perche i posti sono 10 file ciascuna di 20 posti disponibili.<br>
+
+				Il file iniziale sarà tutto formato da zeri e quando si prenota si mette a 1.<br>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Positivi e negativi</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione), memorizzare i numeri positivi nel file positivi.txt e quelli negativi nel file negativi.txt<br><br>
+
+				Aggiungere la funzione per la lettura del file
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Multipli di 5</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Data una sequenza di numeri interi forniti dall'utente (il valore 0 interrompe la digitazione) memoizzare i soli multipli di 5 nel file di testo multipli5.txt.<br><br>
+
+				Aggiungere all'esercizio anche la lettura del file
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Algoritmo di Cesare con files</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+				Creare una funzione che riceve in ingresso un carattere, una chiave e restituisce una chiave cifrata secondo l'algoritmo di Cesare (lo avete fatto a sistemi altrimenti lo cercate su internet). <br>
+
+				<div class="soluzione">
+				es, se il carattere è 'c' e la chiave è 4, il carattere restituito è 'g'. <br><br>Analogamente per una funzione di decifratura: <br><br>se il carattere è 'g' e la chiave è 4, il carattere restituito è 'c'.<br>
+				</div>
+
+				Dichiarare una matrice di caratteri il cui contenuto viene letto da un file (il file contiene un carattere per riga)  con un messaggio e ad ogni elemento della matrice applicare la funzione cifratura e inserirlo in una matrice parallela.<br>
+
+				stampare la matrice parallela e salvarla in un altro file<br>
+
+				scrivere una funzione di decifratura che trasferisce tutti i caratteri della matrice cifrata in una terza matrice on cui ogni carattere ritorna originale. <br>Verificare che la matrice di partenza sia uguale alla terza  matrice
+				<br><br>
+				NOTA IMPORTANTE: per leggere carattere per carattere da un file si usa get.<br><br>
+
+				es. se il file ha il riferimento  myFIle  dopo essere stato aperto, devo usare il metodo  myFile.get(c) dove è una variabile di tipo carattere			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 6</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Titoli e attori di film</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivi un programma che legga due file che contengono ripettivamente i titoli di film e gli attori di ogni film.<br>
+				Creare un file unico in cui sia presente per ogni titolo gli attori corrispondenti<br>
+				Per separare gli attori da un film all'altro si usa il carattere #<br><br>
+
+
+					il primo file contiene: (titoli di film)
+					<pre>
+					titolo_film_1
+					titolo_film_2
+					titolo_film_3
+					</pre>
+					il secondo file contiene: (attori di ogni film)
+					<pre>
+					attore_1_film_1
+					attore_2_film_1
+					#
+					attore_1_film_2
+					attore_2_film_2
+					attore_3_film_2
+					#
+					attore_1_film_3
+					</pre>
+					creare un file unico (terzo file) in cui sia presente per ogni titolo gli attori corrispondenti:
+					<pre>
+					titolo_film_1: attore_1_film_1 attore_2_film_1
+					titolo_film_2: attore_1_film_2 attore_2_film_2 attore_3_film_2
+					titolo_film_3: attore_1_film_3
+					</pre>
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">La biblioteca</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Una biblioteca ha identificato tutti i libri della propria
+				collezione mediante un codice numerico. <br>Si
+				deve realizzare un programma che consenta di
+				effettuare le seguenti operazioni memorizzando
+				le informazioni relative a un libro (codice, titolo,
+				autore, anno di pubblicazione) in un vettore di strutture:<br><br>
+				<li> aggiunta di un nuovo libro alla collezione;</li>
+				<li> visualizzazione dell’elenco dei libri della collezione;</li>
+				<li> ricerca delle informazioni relative a un libro a partire dal codice;</li>
+				<li> ricerca delle informazioni relative a un libro a partire dal titolo;</li>
+				<li> salvataggio della collezione in un file di testo;</li>
+				<li> caricamento della collezione da un file di testo.</li>
+				<br>
+				PS. Mi raccomando inserire anche il controllo che il codice del libro sia univoco <br>
+				Si ipotizzi che i dati siano tutti in sequenza (uno per ogni riga) e che ogni stringa sia formata da una sola parola. (Aggiungere successivamente la lettura di stringhe formate da più parole)<br><br>
+
+				es. nel file ci sono i dati di 3 libri diversi<br><br>
+				<pre>
+				1
+
+				Casa
+
+				Mario
+
+				2018
+
+				2
+
+				Fiori
+
+				Luigi
+
+				2015
+
+				3
+
+				Computer
+
+				Maria
+
+				2012
+			</pre>
+
+				<br>
+				Definire il progetto utilizzando anche il file dei prototipi e delle funzioni.
+
+				Questo è l'esempio del file di input: <a href="files/in_biblioteca.txt">in_biblioteca.txt</a><br>
+ 				Il programmino allegato (<a href="files/biblioteca.cpp">biblioteca.cpp</a>) stampa a video quello che legge dal file. <br>
+				Bisogna effettuare tutti i controlli in quanto non è detto che il file di input contenga tutte le informazioni corrette.<br>
+
 			</div>
 
 		</div>
+
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 8</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Files e vettori ORDINATI</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere una funzione C++ che, a partire da due vettori numerici (il primo di lunghezza costante L1 e il secondo di lunghezza costante L2) ordinati forniti come argomenti, ne costruisca un terzo avente dimensione pari alla somma delle due dimensioni e contenente tutti gli elementi dei due vettori in una sequenza
+				ordinata (per esempio, da {1, 2, 4} e {1, 3, 9} si deve ottenere {1, 1, 2, 3, 4, 9}).<br><br>
+
+				Scrivere una funzione analoga che legga il contenuto del vettore da un file (ogni vettore ha un suo file).<br>
+
+				In fase di caricamento bisogna verificare che il vettore sia crescente.<br>
+
+				Scrivere un programma C++ che permetta all'utente di scegliere il caricamento da console o da file. <br>Successivamente utilizzando la funzione precedente crei il terzo vettore in modo ordinato e poi visualizzi il vettore risultato.<br>
+				<br>
+				riassumendo:<br><br>
+
+				<li>definire la funzione che carica un vettore in modo ordinato da console</li>
+
+				<li>definire la funzione che carica un vettore in modo ordinato da file</li>
+
+				<li>definire la funzione che ricopia i due vettori nel terzo in modo ordinato</li>
+
+				<li>definire la funzione visualizza un vettore (il vettore finale)</li>
+
+				<br><br>
+
+				definire le interfacce di ogni funzione e commentarle dettagliatamente
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 9</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Gestione dei quadri [matrici]</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Si scriva un programma di gestione dei quadri di vari artisti del 20 esimo secolo. Per ogni quadro bisogna gestire:<br><br>
+
+				     <li>codice identificativo del quadro(string);</li>
+				     <li>anno del quadro (un intero);</li>
+						 <li>museo di esposizione (string)</li>
+				     <li>stato di conservazione (1 in buone condizioni, 0 da restaurare)</li>
+				<br>
+				Esistono N * M quadri e sono presenti di M artisti.<br><br>
+
+				Nel main realizzare un ciclo in cui è possibile:<br><br>
+
+				    <li>caricare i dati dei quadri prelevandoli da un file (inserirli in una matrice)</li>
+				    <li>Caricare da video degli autori (inserendoli in un vettore)</li>
+				    <li>Visualizzare a video i dati dei quadri per un particolare autore. Gestire il caso in cui l'autore non è presente.</li>
+				    <li>Salvare in un file i dati dei quadri che devono essere restaurati.</li>
+				    <li>Inserire in un vettore tutti i quadri di un museo ricevuto come parametro. Tali quadri devono essere ordinati per anno di creazione  e inseriti in un file.</li>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 10</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Files e ordinamento</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Leggere da un file di input una sequenza di numeri interi e inserirli in un vettore di massimo 100 elementi. <br>Ordinare il vettore con un algoritmo a scelta e ricopiare il vettore ordinato in un file di output.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 11</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Uso di append (studenti)</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma C++ che consenta di scrivere in un file studenti.txt i dati di alcuni studenti.<br><br>
+
+				In particolare, il programma chiederà all'utente il numero di studenti da inserire e, per ogni studente chiederà il nome, il cognome e l'anno di nascita. <br>I dati di ogni studente saranno scritti su un'unica riga separati da uno spazio, ovvero Cognome Nome AnnoNascita. <br>Nel file ci sarà una riga per ogni studente. <br>Ad ogni esecuzione del programma i dati già presenti sul file non dovranno essere sovrascritti, al contrario i dati dei nuovi studenti saranno aggiunti alla fine del file.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 12</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Prove orali studenti</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma per gestire i dati relativi alle prove orali di alcuni studenti.<br><br>
+
+				Ogni prova orale è caratterizzata da:<br><br>
+
+				    <li>nome dello studente,</li>
+				    <li>cognome dello studente,</li>
+				    <li>voto,</li>
+				    <li>quadrimestre.</li>
+				<br>
+				I dati relative alle interrogazioni saranno memorizzati in maniera permanente in un file di testo di nome orali.txt. <br>Nel file, i dati di ogni interrogazione saranno memorizzati in una riga diversa in cui ogni dato è separato dall'altro da un punto e virgola.<br>
+				<br>
+				Il programma, dopo aver caricato in un vettore gli eventuali dati già presenti nel file orali.txt, offrirà un menu con le seguenti operazioni:<br><br>
+
+				    <li>Caricamento, che consente l’inserimento da tastiera dei dati relativi ad una interrogazione. In particolare, una volta scelta questa opzione, il programma chiederà all'utente i dati relativi alla nuova interrogazione. I dati inseriti saranno mantenuti in memoria centrale (nel vettore) e solo alla fine, quando l'esecuzione del programma terminerà, saranno memorizzati sul file in memoria di massa.</li>
+				    <li>Visualizzazione che, dopo aver chiesto all'utente il quadrimestre (valori possibili 1, 2, 3 per entrambi i quadrimestri), visualizza i dati di tutte le prove, sia quelli caricate dal file, sia quelle caricate dall'utente durante l'ultima esecuzione del programma.</li>
+				    <li>Media, che chiede il nome e cognome dello studente e visualizza i dati di tutti gli orali, la media per ogni quadrimestre e quella complessiva.</li>
+				    <li>Uscita menu, che dopo aver memorizzato i dati sul file, termina l'esecuzione del programma.</li>
+						<br>
+				Prevedere apposite funzioni/procedure per la realizzazione del programma.
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 13</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Gattile</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+
+			 Si scriva un programma per la  gestione di un gattile.<br>Per ogni gatto bisogna memorizzare: <br><br>
+			 <li>Un codice identificativo del gatto (string); </li>
+			 <li>L’età del gatto in anni (un intero); </li>
+			 <li>Il peso del gatto reale in Kg (un float); </li>
+			 <li>Il peso del gatto ottimale in Kg (un float);</li>
+			 <br><br>
+			 Nel gattile esistono N * M gatti e sono presenti M volontari che si occupano ciascuno di nutrire N gatti.<br>
+			 Nel main realizzare un ciclo in cui è possibile:<br><br>
+			 1. caricare i dati dei gatti prelevandoli da un file (funzione carica_gatti con gli opportuni parametri compreso il nome del file).  (nome del file gatti.txt)<br><br>
+			 2. Caricare da video i dati dei volontari (funzione carica_volontari)<br><br>
+			 3. Visualizzare a video  i dati dei gatti per un particolare volontario. (funzione visualizza_gatti_di_un_volontario, la funzione riceve come parametri ovviamente anche la matrice e il vettore dei volontari). Gestire il caso in cui il volontario non è presente.<br><br>
+			 4. Salvare in un file i dati dei gatti che devono essere visitati da un medico cioè sono in sottopeso (funzione gatti_da_visitare)<br><br>
+			 5. Inserire in un vettore tutti i gatti dal peso perfetto (peso reale è uguale a quello ottimale) (funzione peso_perfetto). Il vettore deve risultare ordinato per età in modo crescente. Visualizzare a video  i dati di tali gatti.<br>
+
+		 </div>
 
 		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 14</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-		<div class="esercizio">
-			<!--Esercizio senza soluzione-->
-			<span class="numero">Es. 15</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
-			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
-
-		</div>
-
 
 	</div>
 
