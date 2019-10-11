@@ -3594,138 +3594,439 @@
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 1</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Somma interi pari tra 2 e N</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere una funzione ricorsiva che calcoli e restituisca la somma degli interi pari tra 2 e N. (N in input alla funzione).
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 2</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">MCD con l'algoritmo di Euclide</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere una funzione ricorsiva che implementi il seguente algoritmo che calcola il massimo comune divisore:<br><br>
+
+				Per trovare il MCD(m, n) si effettua la divisione tra m e n; sia r il resto della divisione: <br>se r = 0 allora n è il MCD, altrimenti il MCD(m, n) è uguale a MCD(n, r).
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 3</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Inverti stringa con la ricorsione</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione ricorsiva che riceve in ingresso una frase visualizzi a video la stringa invertita.<br><br>
+
+				Prototipo: string invertiStringa (string frase,int lung);<br><br>
+
+				Es: ciao mondo -> odnom oaic
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 4</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Matrice ricorsiva</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Una matrice NxN si dice unitaria se contiene solo cifre pari a 1 sulla diagonale, 0 altrimenti.<br>
+
+				Scrivere una funzione ricorsiva che restituisce true se è unitaria, false altrimenti<br><br>
+
+				Come si controlla ogni elemento della matrice?<br>
+
+				Partendo dalla riga 0 e colonna 0 possiamo procedere per linee orizzontali. Quando la colonna arriva al valore N (es. 3) la riga aumenta di 1 e la colonna ripassa a zero.<br>In pratica se j==N allora i=i+1 e J=0;
+				<br><br>
+				Casi base: se i>N siamo giunti alla fine della matrice senza incontrare errori quindi unitaria,
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 5</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Ricerca binaria ricorsiva</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione ricorsiva che verifichi se in un vettore (che si ipotizza ordinato) sia presente un numero utilizzando l'algoritmo di ricerca binaria.<br><br>
+
+				il prototipo della funzione è:<br>
+
+				bool ricerca_binaria_ricorsiva(int v[], int numero_da_cercare, int limite_inferiore, int limite_superiore);<br><br>
+
+				La funzione restituisce false se non è stato trovato l'intero, false altrimenti. <br>Ricordarsi che con la ricorsione bisogna richiamare la stessa funzione con il limite_superiore e inferiore in modo opportuno
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 6</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Successione di Fibonacci</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				La successione di Fibonacci (detta anche successione aurea), indicata con F_{n} o con Fib(n), in  matematica indica una successione di interi positivi  in cui ciascun numero a cominciare dal terzo è la somma dei due precedenti, dove i primi due sono (per definizione) F_{1}=1 e F_{2}=1.<br><br>
+
+				es. i numeri della successione sono: 1,1,2,3,5,8,13,21,34,55,89,144,...<br><br>
+
+				Dato un numero N (controllare che N sia >=3)  visualizzare i numeri della successione F(N).
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 7</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Inverti vettore</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Dato un vettore di n interi, scrivere una funzione ricorsiva C++ che ne scambi gli elementi fino a metterli in ordine inverso rispetto alla posizione iniziale (senza dichiarare vettori aggiuntivi).
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 8</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Fattoriale iterativo e ricorsione</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere un programma che realizzi il fattoriale con una funzione in modo iterativo, il fattoriale con una funzione ricorsiva, la somma dei primi n numeri con una funzione in modo iterativo e con una funzione ricorsiva.<br><br>
+
+				Attivare ognuna delle funzioni da un main con un switch case
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 9</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Esercizio sull'iterazione e ricorsione</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere un programma in C++ da cui è possibile attivare le seguenti funzioni:<br><br>
+
+				    <li>funzione che restituisce il fattoriale di un numero intero ricevuto in 		ingresso (versione iterativa)</li>
+				    <li>funzione che restituisce il fattoriale di un numero intero ricevuto in 		ingresso (versione ricorsiva)</li>
+				    <li>funzione che restituisce la somma dei primi N numeri (N ricevuto in ingresso). Versione iterativa</li>
+				    <li>funzione che restituisce la somma dei primi N numeri (N ricevuto in ingresso). Versione ricorsiva</li>
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 10</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Prodotto tra due numeri</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
-			</div>
+
+				Ricordando che una prodotto tra due numeri (a e b) può essere realizzata come una somma:<br><br>
+
+				a*b =0; se b=0<br>
+
+				a*b = a*(b-1)+a; se b>0<br><br>
+
+				Scrivere una funzione ricorsiva che calcola il prodotto tra due numeri interi. Prototipo: int prodotto(a, b).<br><br>
+
+				utilizzare il seguente schema per la ricorsione:<br><br>
+				CONDIZIONE DI TERMINAZIONE:<br><br>
+				prodotto (a, b) = 0; se b=0                                   <br><br>
+				PASSO RICORSIVO:<br><br>
+				 prodotto (a, b) =prodotto (a, b-1)+a;    se b>0      			<br>
+			 </div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 11</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Contacifre</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+					Scrivere una funzione ricorsiva che dato un numero decimale restituisca il numero di cifre che compongono il numero stesso (ricordarsi che 235 è composta da 3 cifre. Ogni volta che riesco a dividere per 10 ottengo una cifra. Quale è la condizione di terminazione?)
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 12</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Numero binario (con la ricorsione)</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione ricorsiva che calcola il corrispondente in base 2 di un numero decimale inserito utilizzando la ricorsione.<br><br>
+
+				Suggerimento: utilizzare gli operatori / e %<br><br>
+
+				Identificare la condizione di terminazione<br>
+
+				Importante: la funzione deve essere void., quindi non usare il return all'interno.<br><br>
+
+				Estendere la funzione mettendo come parametro anche la base (in modo tale da fare le trasformazioni da decimale in tutte le basi)
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 13</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Visualizza e salva vettore in modalità ricorsiva</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				QUANDO SI SALVA IL VETTORE NEI FILE BISOGNA APRIRE IL FILE FUORI DALLA FUNZIONE RICORSIVA E CHIUDERLO ALL'USCITA DELLA FUNZIONE RICORSIVA. <br>IL PROTOTIPO DELLA FUNZIONE SALVA VIENE COSI' MODIFICATO:<br><br>
+
+				SALVA(INT V[], INT L, OFSTREAM & F)<br><br>
+
+				CIOE' SI AGGIUNGE IL FILE APERTO PASSATO COME RIFERIMENTO<br><br>
+
+				Scrivere un programma in cui si chiama una funzione carica che preleva da un file gli elementi di un vettore (la funzione restisce -1 se non è possibile accedere al file, -2 se il numero di elementi presenti nel file è maggiore della dimensione del vettore, il numero di elementi caricati nel vettore altrimenti)<br><br>
+
+				Inserire un ciclo in cui tramite un switch si possono eseguire le operazioni seguenti:<br><br>
+
+				1) funzione ricorsiva che visualizza  a video gli N elementi dell’array dall'indice 0 all'indice N-1.<br>
+
+				2)funzione ricorsiva che visualizza a video gli N elementi dell’array dall'indice N-1 all'indice 0.<br>
+
+				3) funzione ricorsiva che scrive su file gli N elementi dell’array dall'indice 0 all'indice N-1.<br>
+
+				4) funzione ricorsiva che scrive su file gli N elementi dell’array dall'indice N-1 all'indice 0.<br>
+
+				5) funzione ricorsiva che restituisce la somma dei numeri presenti nel vettore<br><br>
+
+
+
+				I file devono essere inseriti in una cartella e devono essere passati come parametri alle rispettive funzioni che li utilizzano
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 14</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Funzione ricorsiva</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+
+				Scrivere una funzione ricorsiva POT(n) per il calcolo dei numeri F(n) definiti dalle seguenti relazioni:<br><br>
+
+				se n=1<br>
+				F(n) = 2  <br><br>
+
+				se n ≥ 2<br>
+				F(n) = 2F(n − 1)<br><br>
+
+				Si scriva la funzione C++ che realizza tale specifica SOLUZIONE. Cosa calcola per N=5?<br>
+
 			</div>
 
 		</div>
 		<div class="esercizio">
 			<!--Esercizio senza soluzione-->
 			<span class="numero">Es. 15</span>
-			<span class="titolo">Minimo e massimo di una sequenza, senza vettori</span>
+			<span class="titolo">Stringa palindroma</span>
 			<div class="testo">
-				Calcolare il minimo ed il massimo di una sequenza di n numeri, senza utilizzare nessun vettore.
+				Scrivere la versione iterativa e quella ricorsiva di una funzione che calcola se una stringa è palindroma<br>
+
+				la versione ricorsiva  determina se una stringa è palindroma confrontando ad ogni invocazione i due caratteri estremi della stringa individuati dagli indici forniti come argomento<br><br>
+
+				Prototipo:<br><br>
+
+				bool palindroma(string s, int inizio, int fine);<br><br>
+
+				Nell’invocazione iniziale gli indici forniti come argomento dovranno speciﬁcare l’intera stringa: palindroma("ciao", 0, 3)
 			</div>
 
 		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 16</span>
+			<span class="titolo">Minimo di un vettore [ricorsivo]</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva che ricevuto in ingresso un vettori di interi visualizzi l'elemento minimo.
+
+				<div class="soluzione">
+					<a href="files/soluzionicpp/minimoricorsivo.cpp">minimoricorsivo.cpp</a>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 17</span>
+			<span class="titolo">Esercizi vari ricorsione</span>
+			<div class="testo">
+
+				Gli esercizi successivi devono essere svolti su un foglio di protocollo. Per ogni esercizio identificare la condizione di terminazione e la condizione di iterazione.<br>
+				Aggiungere tutti i commenti ritenuti necessari per spiegare lo svolgimento<br><br>
+
+				    1. Scrivere una funzione ricorsiva che dato un numero intero visualizzi il numero in ordine inverso. Esempio se il numero in input è 245, deve essere visualizzato 542.<br><br>
+
+
+				    2. Scrivere una funzione ricorsiva che ricevuta in input una stringa e un carattere e restituisca il numero di occorrenze del carattere nella stringa. Ad esempio se la stinga sia “mamma mia” e il carattere è m, la funzione deve restituire 4<br><br>
+
+				Deve essere anche disegnata in modo chiaro la sequenza di attivazione di RDA supponendo che i dati in input siano “mamma mia” e ‘m’<br><br>
+
+
+				    3. Scrivere una funzione ricorsiva Fibonacci(n) per il calcolo dei numeri della successione di Fibonacci definiti dalle seguenti relazioni:<br><br>
+				F(0) = 0 ,<br>
+				F(1) = 1;<br>
+				F(N)= F(N-1)+ F(N-2);   per ogni N>1 <br><br>
+
+				Quali sono gli elementi della sequenza di Fibonacci per N= 12?<br><br>
+
+				    4. Scrivere una funzione iterativa che riceva in input vettore di stringhe, la lunghezza del vettore, e una stringa da cercare e scriva l’algoritmo di ricerca binaria restituendo true nel caso in cui la stringa sia stata trovata, false altrimenti<br><br>
+
+
+				5. Data una matrice quadrata NxN scrivere una funzione ricorsiva che restituisce true se la matrice ricevuta in ingresso è simmetrica rispetto alla diagonale principale, false altrimenti<br>
+				<br>
+				Il prototipo della funzione è:<br><br>
+
+				const int N=4;<br>
+
+				bool simmetrica(int matr[][N], int i, int j)
+
+				</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 18</span>
+			<span class="titolo">Calcolo ricorsivo secondo una relazione</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva RIC(n) per il calcolo dei numeri F(n) definiti dalle seguenti relazioni:<br><br>
+
+				F(0) = 10<br>
+				F(1) = 20<br>
+				F(n) = 3F(n − 1) + 4  ____________se n ≥ 2          (punti 2,0)<br><br>
+
+				Quanto vale la funzione per F(10)?
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 19</span>
+			<span class="titolo">Numero di occorrenze di carattere nella stringa [ricorsivo]</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva che ricevuta in input una stringa e un carattere e restituisca il numero di occorrenze del carattere nella stringa. Ad esempio se la stringa sia “nonno giovanni ” e il carattere è n, la funzione deve restituire 45
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 20</span>
+			<span class="titolo">Numero di elementi positivi</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva  che, avendo in input un
+				array di n interi non negativi, l'indice iniziale del vettore e l'indice finale del vettore, dia in output il numero degli
+				elementi positivi presenti nel vettore.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 21</span>
+			<span class="titolo">Funzione ricorsiva da una funzione matematica</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva:<br><br>
+
+				T(0) = 0; T(1) = 1<br><br>
+
+				T(n) = 2T(n-2)+5  se n>=2
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 22</span>
+			<span class="titolo">Potenza fra 2 numeri</span>
+			<div class="testo">
+					Scrivere in C++ la procedura ricorsiva che effettua la potenza tra due numeri
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 23</span>
+			<span class="titolo">Minimo vettore di interi [ricorsivo]</span>
+			<div class="testo">
+				Scrivere in C++ una procedura ricorsiva che calcoli l'elemento minimo di un vettore di interi. <br>Il prototipo della procedura è il seguente:
+					<br>int minRic(int a [ ], int from, int to)
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 24</span>
+			<span class="titolo">Prodotto da formula ricorsiva</span>
+			<div class="testo">
+				Scrivere un programma che calcoli il prodotto tra due numeri interi a e b mediante una formula ricorsiva.<br><br>
+
+				a*b = a*(b-1)+a; se b>0<br>
+
+				a*b =0; se b=0.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 25</span>
+			<span class="titolo">Quoziente di divisione tra naturali</span>
+			<div class="testo">
+				Scrivere un programma che calcoli il quoziente della divisione tra naturali.<br><br>
+
+				Suggerimento: x/y = (x - y + y)/y = 1 + (x - y)/y. <br>Utilizzare una funzione ricorsiva.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 26</span>
+			<span class="titolo">Visualizza vettore</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva<br><br>
+
+				int visualizzaa (int v[ ], int n);<br><br>
+
+				che visualizzi un vettore di interi.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 27</span>
+			<span class="titolo">Prodotto tra 10 e n</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva che calcoli il prodotto tra il numero 10 e un numero n passato come parametro.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 28</span>
+			<span class="titolo">2 alla n</span>
+			<div class="testo">
+				Scrivere una funzione ricorsiva che calcoli la potenza 2^n.
+			</div>
+
+		</div>
+
+		<div class="esercizio">
+			<!--Esercizio senza soluzione-->
+			<span class="numero">Es. 29</span>
+			<span class="titolo">Ricorsione da funzione matematica</span>
+			<div class="testo">
+				Scrivere una funzione C++ che implementi la funzione F(N) così definita:<br><br>
+
+				F(N)=1 se N <= 0,<br>
+
+				F(N)=-1+4*F(N-1) + F(N-2), altrimenti.
+			</div>
+
+		</div>
+
 
 
 	</div>
