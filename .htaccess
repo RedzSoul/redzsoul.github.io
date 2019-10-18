@@ -1,4 +1,0 @@
-AuthName "Private"
-AuthType Basic
-AuthUserFile privato/.htpasswd
-Require valid-user
